@@ -1,0 +1,15 @@
+C:\Code\C#\Mvc\Projects\DreamEleven\DreamEleven.Identity\bin\Debug\net9.0\DreamEleven.Identity.deps.json
+C:\Code\C#\Mvc\Projects\DreamEleven\DreamEleven.Identity\bin\Debug\net9.0\DreamEleven.Identity.dll
+C:\Code\C#\Mvc\Projects\DreamEleven\DreamEleven.Identity\bin\Debug\net9.0\DreamEleven.Identity.pdb
+C:\Code\C#\Mvc\Projects\DreamEleven\DreamEleven.Identity\bin\Debug\net9.0\DreamEleven.Entities.dll
+C:\Code\C#\Mvc\Projects\DreamEleven\DreamEleven.Identity\bin\Debug\net9.0\DreamEleven.Entities.pdb
+C:\Code\C#\Mvc\Projects\DreamEleven\DreamEleven.Identity\obj\Debug\net9.0\DreamEleven.Identity.csproj.AssemblyReference.cache
+C:\Code\C#\Mvc\Projects\DreamEleven\DreamEleven.Identity\obj\Debug\net9.0\DreamEleven.Identity.GeneratedMSBuildEditorConfig.editorconfig
+C:\Code\C#\Mvc\Projects\DreamEleven\DreamEleven.Identity\obj\Debug\net9.0\DreamEleven.Identity.AssemblyInfoInputs.cache
+C:\Code\C#\Mvc\Projects\DreamEleven\DreamEleven.Identity\obj\Debug\net9.0\DreamEleven.Identity.AssemblyInfo.cs
+C:\Code\C#\Mvc\Projects\DreamEleven\DreamEleven.Identity\obj\Debug\net9.0\DreamEleven.Identity.csproj.CoreCompileInputs.cache
+C:\Code\C#\Mvc\Projects\DreamEleven\DreamEleven.Identity\obj\Debug\net9.0\DreamEle.96A75B28.Up2Date
+C:\Code\C#\Mvc\Projects\DreamEleven\DreamEleven.Identity\obj\Debug\net9.0\DreamEleven.Identity.dll
+C:\Code\C#\Mvc\Projects\DreamEleven\DreamEleven.Identity\obj\Debug\net9.0\refint\DreamEleven.Identity.dll
+C:\Code\C#\Mvc\Projects\DreamEleven\DreamEleven.Identity\obj\Debug\net9.0\DreamEleven.Identity.pdb
+C:\Code\C#\Mvc\Projects\DreamEleven\DreamEleven.Identity\obj\Debug\net9.0\ref\DreamEleven.Identity.dll
