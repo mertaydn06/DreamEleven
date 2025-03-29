@@ -13,3 +13,4 @@ C:\Code\C#\Mvc\Projects\DreamEleven\DreamEleven.Identity\obj\Debug\net9.0\DreamE
 C:\Code\C#\Mvc\Projects\DreamEleven\DreamEleven.Identity\obj\Debug\net9.0\refint\DreamEleven.Identity.dll
 C:\Code\C#\Mvc\Projects\DreamEleven\DreamEleven.Identity\obj\Debug\net9.0\DreamEleven.Identity.pdb
 C:\Code\C#\Mvc\Projects\DreamEleven\DreamEleven.Identity\obj\Debug\net9.0\ref\DreamEleven.Identity.dll
+C:\Code\C#\Mvc\Projects\DreamEleven\DreamEleven.Identity\obj\Debug\net9.0\DreamEleven.Identity.sourcelink.json

@@ -9,3 +9,4 @@ C:\Code\C#\Mvc\Projects\DreamEleven\DreamEleven.Entities\obj\Debug\net9.0\DreamE
 C:\Code\C#\Mvc\Projects\DreamEleven\DreamEleven.Entities\obj\Debug\net9.0\refint\DreamEleven.Entities.dll
 C:\Code\C#\Mvc\Projects\DreamEleven\DreamEleven.Entities\obj\Debug\net9.0\DreamEleven.Entities.pdb
 C:\Code\C#\Mvc\Projects\DreamEleven\DreamEleven.Entities\obj\Debug\net9.0\ref\DreamEleven.Entities.dll
+C:\Code\C#\Mvc\Projects\DreamEleven\DreamEleven.Entities\obj\Debug\net9.0\DreamEleven.Entities.sourcelink.json

@@ -17,3 +17,4 @@ C:\Code\C#\Mvc\Projects\DreamEleven\DreamEleven.Business\obj\Debug\net9.0\DreamE
 C:\Code\C#\Mvc\Projects\DreamEleven\DreamEleven.Business\obj\Debug\net9.0\ref\DreamEleven.Business.dll
 C:\Code\C#\Mvc\Projects\DreamEleven\DreamEleven.Business\bin\Debug\net9.0\DreamEleven.Identity.dll
 C:\Code\C#\Mvc\Projects\DreamEleven\DreamEleven.Business\bin\Debug\net9.0\DreamEleven.Identity.pdb
+C:\Code\C#\Mvc\Projects\DreamEleven\DreamEleven.Business\obj\Debug\net9.0\DreamEleven.Business.sourcelink.json

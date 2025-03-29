@@ -17,3 +17,4 @@ C:\Code\C#\Mvc\Projects\DreamEleven\DreamEleven.DataAccess\obj\Debug\net9.0\Drea
 C:\Code\C#\Mvc\Projects\DreamEleven\DreamEleven.DataAccess\obj\Debug\net9.0\ref\DreamEleven.DataAccess.dll
 C:\Code\C#\Mvc\Projects\DreamEleven\DreamEleven.DataAccess\bin\Debug\net9.0\DreamEleven.Identity.dll
 C:\Code\C#\Mvc\Projects\DreamEleven\DreamEleven.DataAccess\bin\Debug\net9.0\DreamEleven.Identity.pdb
+C:\Code\C#\Mvc\Projects\DreamEleven\DreamEleven.DataAccess\obj\Debug\net9.0\DreamEleven.DataAccess.sourcelink.json

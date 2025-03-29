@@ -1,4 +1,8 @@
+using DreamEleven.Business.Abstract;
+using DreamEleven.Business.Concrete;
 using DreamEleven.DataAccess;
+using DreamEleven.DataAccess.Abstract;
+using DreamEleven.DataAccess.Concrete;
 using DreamEleven.Identity;
 using DreamEleven.Web;
 using Microsoft.AspNetCore.Identity;
@@ -8,6 +12,14 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<DreamElevenDbContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("Sql_connection")));  //  DreamElevenDbContext sınıfı SQLite veritabanına bağlanacak şekilde yapılandırılmış olur. Uygulama çalıştırıldığında DreamEleven.db veritabanı kullanılır ve EF Core üzerinden veritabanı işlemleri gerçekleştirilebilir.
+
+
+// Servisleri dependency injection container'a ekliyoruz
+builder.Services.AddScoped<ITeamRepository, EfTeamRepository>();  // DB erişimi için
+builder.Services.AddScoped<ITeamService, TeamManager>();          // Controller'a servis için
+builder.Services.AddScoped<IPlayerRepository, EfPlayerRepository>();
+builder.Services.AddScoped<IPlayerService, PlayerManager>();
+
 
 
 // Identity servisleri

@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DreamEleven.DataAccess.Migrations
 {
     [DbContext(typeof(DreamElevenDbContext))]
-    [Migration("20250328152603_InitialCreate")]
+    [Migration("20250329172845_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />

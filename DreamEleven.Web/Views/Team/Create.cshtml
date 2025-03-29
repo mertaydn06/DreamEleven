@@ -1,0 +1,64 @@
+@model CreateTeamViewModel
+@using DreamEleven.Entities
+@using DreamEleven.Web.Helpers
+
+@{
+    ViewBag.Title = "Takım Oluştur";
+    var allPlayers = ViewBag.AllPlayers as List<Player> ?? new List<Player>();
+    var formations = ViewBag.Formations as List<string> ?? new List<string>();
+}
+
+<h2>Takım Oluştur</h2>
+
+<form asp-action="Create" method="post">
+    <div class="mb-3">
+        <label>Takım Adı</label>
+        <input type="text" class="form-control" asp-for="TeamName" />
+    </div>
+
+    <div class="mb-3">
+        <label>Diziliş Seç</label>
+        <select class="form-select" id="formationSelect">
+            @foreach (var formation in formations)
+            {
+                <option value="@formation" selected="@(Model.Formation == formation)">@formation</option>
+            }
+        </select>
+    </div>
+
+    <h4>Oyuncu Pozisyonları</h4>
+    <div id="playerSlots" class="row">
+        @for (int i = 0; i < Model.Players.Count; i++)
+        {
+            var slot = Model.Players[i].PositionSlot;
+            var positionType = SlotPositionMapper.GetPositionType(slot);
+            var filtered = allPlayers.Where(p => p.Position == positionType).ToList();
+
+            <div class="col-md-4 mb-3">
+                <label>@slot</label>
+                <select class="form-select" name="Players[@i].PlayerId">
+                    <option value="">-- @positionType oyuncusu seç --</option>
+                    @foreach (var player in filtered)
+                    {
+                        <option value="@player.Id">@player.Name (@player.RealTeam)</option>
+                    }
+                </select>
+                <input type="hidden" name="Players[@i].PositionSlot" value="@slot" />
+            </div>
+        }
+    </div>
+
+    <input type="hidden" name="Formation" id="Formation" value="@Model.Formation" />
+    <button type="submit" class="btn btn-success">Takımı Kaydet</button>
+</form>
+
+@section Scripts {
+    <script>
+        document.getElementById('formationSelect').addEventListener('change', function () {
+            const selectedFormation = this.value;
+            const hiddenInput = document.getElementById('Formation');
+            hiddenInput.value = selectedFormation;
+            this.form.submit();
+        });
+    </script>
+}
