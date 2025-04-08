@@ -1,0 +1,233 @@
+@model List<DreamEleven.Entities.TeamPlayer>
+
+@{
+    ViewData["Title"] = "Oyuncu Detayları";
+    var groupedTeams = Model
+    .GroupBy(tp => tp.Team)
+    .OrderByDescending(g => g.Key.CreatedAt);
+}
+
+<div class="container mt-4">
+    <h2 class="mb-4">@Model.First().Player.Name</h2>
+
+    @foreach (var teamGroup in groupedTeams)
+    {
+        var team = teamGroup.Key;
+
+        <div class="card shadow-sm mb-5">
+            <div class="card-header bg-white">
+                <h4 class="mb-0">
+                    <a href="/team/details/@team.Id" class="text-decoration-none text-dark">
+                        @team.TeamName
+                    </a>
+                </h4>
+            </div>
+            <div class="card-body">
+                <p><strong>Diziliş:</strong> @team.Formation</p>
+                <p><strong>Oluşturulma Tarihi:</strong> @team.CreatedAt.ToShortDateString()</p>
+
+                <!-- Saha -->
+                <div class="football-field position-relative mx-auto mt-4" style="height: 600px;">
+                    <div id="playerPositions" class="position-relative h-100">
+                        @foreach (var slot in team.TeamPlayers)
+                        {
+                            <div class="player-slot position-absolute" data-position="@slot.PositionSlot"
+                                style="transform: translate(-50%, -50%);">
+                                <a href="/player/@slot.Player.Slug" class="text-decoration-none text-dark">
+                                    <div
+                                        class="player-card @(slot.Player.Id == Model.First().Player.Id ? "border border-warning border-2" : "")">
+                                        <img src="@slot.Player.ImageUrl" alt="@slot.Player.Name">
+                                        <div class="player-info">
+                                            <div class="player-name">@slot.Player.Name</div>
+                                            <div class="player-overall">@slot.Player.Overall</div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+
+@section Scripts {
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('.football-field').forEach(function (field, index) {
+                const container = field.closest('.mb-5');
+                const formationText = container.querySelector('.card-body p').textContent;
+                const match = formationText.match(/(\d-\d-\d)/);
+                if (!match) return;
+
+                const formation = match[1];
+                const formationParts = formation.split('-').map(Number);
+                const defCount = formationParts[0];
+                const midCount = formationParts[1];
+                const fwdCount = formationParts[2];
+                const playerSlots = field.querySelectorAll('.player-slot');
+
+                // Kaleci
+                const gkSlot = Array.from(playerSlots).find(p => p.dataset.position === 'GK');
+                if (gkSlot) {
+                    gkSlot.style.left = '50%';
+                    gkSlot.style.top = '90%';
+                }
+
+                // Defans
+                let i = 0;
+                playerSlots.forEach(p => {
+                    const pos = p.dataset.position;
+                    if (pos.startsWith('CB') || pos === 'LB' || pos === 'RB' || pos === 'LWB' || pos === 'RWB') {
+                        let horizontal;
+                        if (pos === 'LB' || pos === 'LWB') horizontal = '15%';
+                        else if (pos === 'RB' || pos === 'RWB') horizontal = '85%';
+                        else {
+                            const cbNumber = parseInt(pos.replace('CB', ''));
+                            if (defCount === 3) horizontal = ['30%', '50%', '70%'][cbNumber - 1];
+                            if (defCount === 4) horizontal = ['35%', '65%'][cbNumber - 1];
+                            if (defCount === 5) horizontal = ['30%', '50%', '70%'][cbNumber - 1];
+                        }
+                        p.style.left = horizontal;
+                        p.style.top = '70%';
+                    }
+                });
+
+                // Orta saha
+                i = 0;
+                playerSlots.forEach(p => {
+                    const pos = p.dataset.position;
+                    if (pos.startsWith('CM') || pos === 'LM' || pos === 'RM' || pos === 'CAM') {
+                        let horizontal;
+                        if (pos === 'LM') horizontal = '15%';
+                        else if (pos === 'RM') horizontal = '85%';
+                        else if (pos === 'CAM') horizontal = '50%';
+                        else {
+                            const cmNumber = parseInt(pos.replace('CM', ''));
+                            if (midCount === 3) horizontal = ['30%', '50%', '70%'][cmNumber - 1];
+                            if (midCount === 4) horizontal = ['35%', '65%'][cmNumber - 1];
+                            if (midCount === 5) horizontal = ['30%', '70%'][cmNumber - 1];
+                        }
+                        p.style.left = horizontal;
+                        p.style.top = '45%';
+                    }
+                });
+
+                // Forvet
+                i = 0;
+                playerSlots.forEach(p => {
+                    const pos = p.dataset.position;
+                    if (pos.startsWith('ST') || pos === 'LW' || pos === 'RW') {
+                        let horizontal;
+                        if (pos === 'LW') horizontal = '15%';
+                        else if (pos === 'RW') horizontal = '85%';
+                        else {
+                            const stNumber = parseInt(pos.replace('ST', '') || '1');
+                            if (fwdCount === 1) horizontal = '50%';
+                            if (fwdCount === 2) horizontal = ['35%', '65%'][stNumber - 1];
+                            if (fwdCount === 3) horizontal = '50%';
+                        }
+                        p.style.left = horizontal;
+                        p.style.top = '20%';
+                    }
+                });
+            });
+        });
+    </script>
+
+    <style>
+        .football-field {
+            background-image: linear-gradient(#4CAF50, #388E3C);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .football-field::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.7);
+        }
+
+        .football-field::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100px;
+            height: 100px;
+            border: 2px solid rgba(255, 255, 255, 0.7);
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .player-slot {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            z-index: 10;
+        }
+
+        .player-card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            width: 80px;
+            height: 100px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 5px;
+            transition: transform 0.3s;
+        }
+
+        .player-card:hover {
+            transform: scale(1.1);
+        }
+
+        .player-card img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #fff;
+        }
+
+        .player-info {
+            text-align: center;
+            width: 100%;
+            margin-top: 5px;
+        }
+
+        .player-name {
+            font-size: 11px;
+            font-weight: bold;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .player-overall {
+            background: #0d6efd;
+            color: white;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            line-height: 24px;
+            font-size: 12px;
+            font-weight: bold;
+            margin: 0 auto;
+        }
+    </style>
+}

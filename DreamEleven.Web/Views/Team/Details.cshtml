@@ -1,0 +1,310 @@
+@model DreamEleven.Entities.Team
+@using DreamEleven.Web.Helpers
+@using DreamEleven.Entities
+
+@{
+    ViewBag.Title = "Takım Detayları";
+}
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h3 class="mb-0">@Model.TeamName</h3>
+                </div>
+                <div class="card-body">
+                    <p><strong>Diziliş:</strong> @Model.Formation</p>
+                    <p><strong>Oluşturulma Tarihi:</strong> @Model.CreatedAt.ToShortDateString()</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="mb-0">Takım Kadrosu</h4>
+                </div>
+                <div class="card-body p-0">
+                    <div class="list-group list-group-flush">
+
+                        @foreach (var teamPlayer in Model.TeamPlayers.OrderBy(p => p.Player.Overall))
+                        {
+                            <a href="/player/@teamPlayer.Player.Slug"
+                                class="list-group-item d-flex align-items-center text-decoration-none text-dark">
+                                <!-- 🔗 Link eklendi -->
+                                <img src="@teamPlayer.Player.ImageUrl" class="me-2"
+                                    style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">
+                                <div>
+                                    <h6 class="mb-0">@teamPlayer.Player.Name</h6>
+                                    <small class="text-muted">@teamPlayer.Player.RealTeam</small>
+                                </div>
+                                <div class="ms-auto">
+                                    <span class="badge bg-primary rounded-pill">@teamPlayer.Player.Overall</span>
+                                </div>
+                            </a>
+                        }
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-8">
+            <div class="football-field position-relative"
+                style="background: #4CAF50; height: 600px; border-radius: 10px; border: 2px solid white;">
+                <div id="playerPositions" class="position-relative h-100">
+
+                    @foreach (var teamPlayer in Model.TeamPlayers)
+                    {
+                        <div class="player-slot position-absolute" data-position="@teamPlayer.PositionSlot"
+                            style="transform: translate(-50%, -50%);">
+                            <a href="/player/@teamPlayer.Player.Slug" class="text-decoration-none text-dark">
+                                <!-- 🔗 Link eklendi -->
+                                <div class="player-card">
+                                    <img src="@teamPlayer.Player.ImageUrl" alt="@teamPlayer.Player.Name">
+                                    <div class="player-info">
+                                        <div class="player-name">@teamPlayer.Player.Name</div>
+                                        <div class="player-overall">@teamPlayer.Player.Overall</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const formation = '@Model.Formation';
+            const playerSlots = document.querySelectorAll('.player-slot');
+
+            // Tüm pozisyonları konsola yazdır (debugging için)
+            console.log("Formation:", formation);
+            playerSlots.forEach(slot => {
+                console.log("Position:", slot.getAttribute('data-position'));
+            });
+
+            // Kaleci pozisyonu her zaman sabit
+            const gkSlot = Array.from(playerSlots).find(p => p.getAttribute('data-position') === 'GK');
+            if (gkSlot) {
+                gkSlot.style.left = '50%';
+                gkSlot.style.top = '90%';
+            }
+
+            // Formasyon tipine göre diğer oyuncuları yerleştir
+            const formationParts = formation.split('-').map(Number);
+            const defCount = formationParts[0];
+            const midCount = formationParts[1];
+            const fwdCount = formationParts[2];
+
+            // ---- 1. Defans oyuncularını yerleştir ----
+            const defenders = Array.from(playerSlots).filter(p => {
+                const pos = p.getAttribute('data-position');
+                return pos.startsWith('CB') || pos === 'LB' || pos === 'RB' || pos === 'LWB' || pos === 'RWB';
+            });
+
+            defenders.forEach(def => {
+                const pos = def.getAttribute('data-position');
+                let horizontalPosition;
+
+                if (pos === 'LB' || pos === 'LWB') {
+                    horizontalPosition = '15%';
+                } else if (pos === 'RB' || pos === 'RWB') {
+                    horizontalPosition = '85%';
+                } else if (pos.startsWith('CB')) {
+                    // Stoperler için daha iyi konumlandırma
+                    const cbNumber = parseInt(pos.replace('CB', ''));
+                    if (defCount === 3) {
+                        if (cbNumber === 1) horizontalPosition = '30%';
+                        else if (cbNumber === 2) horizontalPosition = '50%';
+                        else if (cbNumber === 3) horizontalPosition = '70%';
+                    } else if (defCount === 4) {
+                        if (cbNumber === 1) horizontalPosition = '35%';
+                        else if (cbNumber === 2) horizontalPosition = '65%';
+                    } else if (defCount === 5) {
+                        if (cbNumber === 1) horizontalPosition = '30%';
+                        else if (cbNumber === 2) horizontalPosition = '50%';
+                        else if (cbNumber === 3) horizontalPosition = '70%';
+                    }
+                }
+
+                def.style.left = horizontalPosition;
+                def.style.top = '70%';
+            });
+
+            // ---- 2. Orta saha oyuncularını yerleştir ----
+            const midfielders = Array.from(playerSlots).filter(p => {
+                const pos = p.getAttribute('data-position');
+                return pos.startsWith('CM') || pos === 'LM' || pos === 'RM' || pos === 'CAM';
+            });
+
+            midfielders.forEach(mid => {
+                const pos = mid.getAttribute('data-position');
+                let horizontalPosition;
+
+                if (pos === 'LM') {
+                    horizontalPosition = '15%';
+                } else if (pos === 'RM') {
+                    horizontalPosition = '85%';
+                } else if (pos === 'CAM') {
+                    horizontalPosition = '50%';
+                } else if (pos.startsWith('CM')) {
+                    const cmNumber = parseInt(pos.replace('CM', ''));
+                    if (midCount === 3) {
+                        if (cmNumber === 1) horizontalPosition = '30%';
+                        else if (cmNumber === 2) horizontalPosition = '50%';
+                        else if (cmNumber === 3) horizontalPosition = '70%';
+                    } else if (midCount === 4) {
+                        if (cmNumber === 1) horizontalPosition = '35%';
+                        else if (cmNumber === 2) horizontalPosition = '65%';
+                    } else if (midCount === 5) {
+                        if (cmNumber === 1) horizontalPosition = '30%';
+                        else if (cmNumber === 2) horizontalPosition = '70%';
+                    }
+                }
+
+                mid.style.left = horizontalPosition;
+                mid.style.top = '45%';
+            });
+
+            // ---- 3. Forvet oyuncularını yerleştir ----
+            const forwards = Array.from(playerSlots).filter(p => {
+                const pos = p.getAttribute('data-position');
+                return pos.startsWith('ST') || pos === 'LW' || pos === 'RW';
+            });
+
+            forwards.forEach(fwd => {
+                const pos = fwd.getAttribute('data-position');
+                let horizontalPosition;
+
+                if (pos === 'LW') {
+                    horizontalPosition = '15%';
+                } else if (pos === 'RW') {
+                    horizontalPosition = '85%';
+                } else if (pos.startsWith('ST')) {
+                    const stNumber = parseInt(pos.replace('ST', '') || '1');
+                    if (fwdCount === 1) {
+                        horizontalPosition = '50%';
+                    } else if (fwdCount === 2) {
+                        if (stNumber === 1) horizontalPosition = '35%';
+                        else if (stNumber === 2) horizontalPosition = '65%';
+                    } else if (fwdCount === 3) {
+                        horizontalPosition = '50%'; // ST ortada
+                    }
+                }
+
+                fwd.style.left = horizontalPosition;
+                fwd.style.top = '20%';
+            });
+        });
+    </script>
+
+    <style>
+        .football-field {
+            background-image: linear-gradient(#4CAF50, #388E3C);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .football-field::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.7);
+            pointer-events: none;
+        }
+
+        .football-field::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100px;
+            height: 100px;
+            border: 2px solid rgba(255, 255, 255, 0.7);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        #playerPositions {
+            position: relative;
+            z-index: 5;
+        }
+
+        .player-slot {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            z-index: 10;
+        }
+
+        .player-card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            width: 80px;
+            height: 100px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 5px;
+            transition: transform 0.3s;
+            z-index: 10;
+        }
+
+        .player-card:hover {
+            transform: scale(1.1);
+            z-index: 20;
+        }
+
+        .player-card img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #fff;
+            background: white;
+        }
+
+        .player-info {
+            text-align: center;
+            width: 100%;
+            margin-top: 5px;
+        }
+
+        .player-name {
+            font-size: 11px;
+            font-weight: bold;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin-bottom: 2px;
+        }
+
+        .player-overall {
+            background: #0d6efd;
+            color: white;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            line-height: 24px;
+            font-size: 12px;
+            font-weight: bold;
+            margin: 0 auto;
+        }
+    </style>
+}

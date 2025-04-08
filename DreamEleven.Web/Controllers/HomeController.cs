@@ -1,31 +1,45 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using DreamEleven.Web.Models;
+using DreamEleven.Business.Abstract;
 
 namespace DreamEleven.Web.Controllers;
 
 public class HomeController : Controller
 {
-    private readonly ILogger<HomeController> _logger;
+    private readonly ITeamService _teamService;
+    private readonly IPlayerService _playerService;
 
-    public HomeController(ILogger<HomeController> logger)
+    public HomeController(ITeamService teamService, IPlayerService playerService)
     {
-        _logger = logger;
+        _teamService = teamService;
+        _playerService = playerService;
     }
+
 
     public IActionResult Index()
     {
         return View();
     }
 
-    public IActionResult Privacy()
+
+    public async Task<IActionResult> PlayerDetails(string slug)
     {
-        return View();
+        if (string.IsNullOrEmpty(slug))
+            return NotFound();
+
+        var player = await _playerService.GetBySlugAsync(slug);
+
+        if (player == null)
+            return NotFound();
+
+
+        var teamPlayers = player.TeamPlayers.ToList();  // TeamPlayer'ları Include ederek aldık.
+
+        return View(teamPlayers); // 👈 direkt View'a gönderiyoruz
     }
 
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-    public IActionResult Error()
-    {
-        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-    }
+
+
+
 }

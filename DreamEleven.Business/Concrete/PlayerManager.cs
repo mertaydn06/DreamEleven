@@ -4,7 +4,7 @@ using DreamEleven.Entities;
 
 namespace DreamEleven.Business.Concrete
 {
-    public class PlayerManager : IPlayerService
+    public class PlayerManager : IPlayerService  // IPlayerService'i uygulayan sınıf — Controller buradan çağırır
     {
         private readonly IPlayerRepository _playerRepository;
 
@@ -13,19 +13,20 @@ namespace DreamEleven.Business.Concrete
             _playerRepository = playerRepository;
         }
 
+
         public Task<List<Player>> GetAllPlayersAsync()
         {
             return _playerRepository.GetAllPlayersAsync();
         }
 
-        public Task<List<Player>> GetPlayersByPositionAsync(string position)
+        public Task<Player?> GetPlayerByIdAsync(int id)
         {
-            return _playerRepository.GetPlayersByPositionAsync(position);
+            return _playerRepository.GetPlayerByIdAsync(id);
         }
 
-        public Task<Player?> GetPlayerBySlugAsync(string slug)
+        public async Task<Player?> GetBySlugAsync(string slug)
         {
-            return _playerRepository.GetPlayerBySlugAsync(slug);
+            return await _playerRepository.GetBySlugAsync(slug);
         }
 
         public Task AddPlayerAsync(Player player)

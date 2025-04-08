@@ -8,57 +8,349 @@
     var formations = ViewBag.Formations as List<string> ?? new List<string>();
 }
 
-<h2>Takım Oluştur</h2>
+<div class="container mt-4">
+    <h2 class="text-center mb-4">Takım Oluştur</h2>
 
-<form asp-action="Create" method="post">
-    <div class="mb-3">
-        <label>Takım Adı</label>
-        <input type="text" class="form-control" asp-for="TeamName" />
-    </div>
+    <form asp-action="Create" method="post">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="mb-3">
+                    <label class="form-label">Takım Adı</label>
+                    <input type="text" class="form-control" asp-for="TeamName" required />
+                </div>
 
-    <div class="mb-3">
-        <label>Diziliş Seç</label>
-        <select class="form-select" id="formationSelect">
-            @foreach (var formation in formations)
-            {
-                <option value="@formation" selected="@(Model.Formation == formation)">@formation</option>
-            }
-        </select>
-    </div>
-
-    <h4>Oyuncu Pozisyonları</h4>
-    <div id="playerSlots" class="row">
-        @for (int i = 0; i < Model.Players.Count; i++)
-        {
-            var slot = Model.Players[i].PositionSlot;
-            var positionType = SlotPositionMapper.GetPositionType(slot);
-            var filtered = allPlayers.Where(p => p.Position == positionType).ToList();
-
-            <div class="col-md-4 mb-3">
-                <label>@slot</label>
-                <select class="form-select" name="Players[@i].PlayerId">
-                    <option value="">-- @positionType oyuncusu seç --</option>
-                    @foreach (var player in filtered)
-                    {
-                        <option value="@player.Id">@player.Name (@player.RealTeam)</option>
-                    }
-                </select>
-                <input type="hidden" name="Players[@i].PositionSlot" value="@slot" />
+                <div class="mb-3">
+                    <label class="form-label">Diziliş Seç</label>
+                    <select class="form-select" id="formationSelect">
+                        @foreach (var formation in formations)
+                        {
+                            <option value="@formation" selected="@(Model.Formation == formation)">@formation</option>
+                        }
+                    </select>
+                </div>
             </div>
-        }
-    </div>
 
-    <input type="hidden" name="Formation" id="Formation" value="@Model.Formation" />
-    <button type="submit" class="btn btn-success">Takımı Kaydet</button>
-</form>
+            <div class="col-md-8">
+                <div class="football-field position-relative" style="background: #4CAF50; height: 600px; border-radius: 10px; border: 2px solid white;">
+                    <div id="playerPositions" class="position-relative h-100">
+                        @for (int i = 0; i < Model.Players.Count; i++)
+                        {
+                            var slot = Model.Players[i].PositionSlot;
+                            var positionType = FormationSlotMapper.GetPositionType(slot);
+                            var filtered = allPlayers.Where(p => p.Position == positionType).ToList();
+
+                            <div class="player-slot position-absolute" data-position="@slot" style="transform: translate(-50%, -50%);">
+                                <!-- Seçili oyuncunun mini kartı -->
+                                @if (Model.Players[i].PlayerId > 0)
+                                {
+                                    var selectedPlayer = filtered.FirstOrDefault(p => p.Id == Model.Players[i].PlayerId);
+                                    if (selectedPlayer != null)
+                                    {
+                                        <div class="selected-player-mini">
+                                            <img src="@selectedPlayer.ImageUrl" alt="@selectedPlayer.Name">
+                                            <div class="mini-overall">@selectedPlayer.Overall</div>
+                                        </div>
+                                    }
+                                }
+                                
+                                <button type="button" class="btn btn-light rounded-circle position-select @(Model.Players[i].PlayerId > 0 ? "btn-success" : "")" 
+                                        data-bs-toggle="modal" 
+                                        data-bs-target="#playerModal@(i)">
+                                    <i class="bi bi-person-fill"></i>
+                                </button>
+                            </div>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="playerModal@(i)" tabindex="-1" aria-labelledby="playerModalLabel@(i)" aria-hidden="true">
+                                <div class="modal-dialog modal-lg">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="playerModalLabel@(i)">@positionType Oyuncusu Seç</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="row row-cols-1 row-cols-md-2 g-4">
+                                                @foreach (var player in filtered.OrderByDescending(p => p.Overall))
+                                                {
+                                                    <div class="col">
+                                                        <div class="card h-100 player-card @(Model.Players[i].PlayerId == player.Id ? "selected" : "")" 
+                                                             onclick="selectPlayerCard(@i, @player.Id, this, '@player.ImageUrl', '@player.Overall')">
+                                                            <div class="row g-0">
+                                                                <div class="col-md-4 d-flex align-items-center justify-content-center p-2">
+                                                                    <img src="@player.ImageUrl" class="img-fluid rounded" alt="@player.Name"
+                                                                         style="height: 120px; width: 120px; object-fit: cover;">
+                                                                </div>
+                                                                <div class="col-md-8">
+                                                                    <div class="card-body">
+                                                                        <h5 class="card-title mb-1">@player.Name</h5>
+                                                                        <p class="card-text mb-2">
+                                                                            <small class="text-muted">@player.RealTeam</small>
+                                                                        </p>
+                                                                        <div class="overall-badge">
+                                                                            <span class="badge bg-primary rounded-pill">@player.Overall</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                }
+                                            </div>
+                                            <input type="hidden" name="Players[@i].PlayerId" id="playerSelect@(i)" value="@Model.Players[i].PlayerId" />
+                                            <input type="hidden" name="Players[@i].PositionSlot" value="@slot" />
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-4">
+            <input type="hidden" name="Formation" id="Formation" value="@Model.Formation" />
+            <button type="submit" class="btn btn-success btn-lg">Takımı Kaydet</button>
+        </div>
+        
+    </form>
+</div>
 
 @section Scripts {
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
     <script>
-        document.getElementById('formationSelect').addEventListener('change', function () {
-            const selectedFormation = this.value;
-            const hiddenInput = document.getElementById('Formation');
-            hiddenInput.value = selectedFormation;
-            this.form.submit();
+        function selectPlayerCard(index, playerId, card, playerImage, playerOverall) {
+            // Seçili kartın stilini güncelle
+            const allCards = card.closest('.modal-body').querySelectorAll('.player-card');
+            allCards.forEach(c => c.classList.remove('selected'));
+            card.classList.add('selected');
+            
+            // Hidden input'u güncelle
+            document.getElementById('playerSelect' + index).value = playerId;
+            
+            // Pozisyon butonunu güncelle
+            const button = document.querySelector(`[data-bs-target="#playerModal${index}"]`);
+            button.classList.remove('btn-light');
+            button.classList.add('btn-success');
+            
+            // Mini kart güncelleme
+            const playerSlot = button.closest('.player-slot');
+            let miniCard = playerSlot.querySelector('.selected-player-mini');
+            
+            if (!miniCard) {
+                miniCard = document.createElement('div');
+                miniCard.className = 'selected-player-mini';
+                playerSlot.insertBefore(miniCard, button);
+            }
+            
+            miniCard.innerHTML = `
+                <img src="${playerImage}" alt="Selected Player">
+                <div class="mini-overall">${playerOverall}</div>
+            `;
+            
+            // Modal'ı kapat
+            const modal = document.getElementById('playerModal' + index);
+            const bsModal = bootstrap.Modal.getInstance(modal);
+            bsModal.hide();
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const formationSelect = document.getElementById('formationSelect');
+            
+            function updatePositions(formation) {
+                const positions = document.querySelectorAll('.player-slot');
+                const [def, mid, fwd] = formation.split('-').map(Number);
+                
+                // Kaleci pozisyonu (sabit)
+                positions[0].style.left = '50%';
+                positions[0].style.top = '90%';
+                
+                let currentIndex = 1;
+                
+                // Defans pozisyonları
+                for (let i = 0; i < def; i++) {
+                    positions[currentIndex].style.left = `${(100 / (def + 1)) * (i + 1)}%`;
+                    positions[currentIndex].style.top = '70%';
+                    currentIndex++;
+                }
+                
+                // Orta saha pozisyonları
+                for (let i = 0; i < mid; i++) {
+                    positions[currentIndex].style.left = `${(100 / (mid + 1)) * (i + 1)}%`;
+                    positions[currentIndex].style.top = '45%';
+                    currentIndex++;
+                }
+                
+                // Forvet pozisyonları
+                for (let i = 0; i < fwd; i++) {
+                    positions[currentIndex].style.left = `${(100 / (fwd + 1)) * (i + 1)}%`;
+                    positions[currentIndex].style.top = '20%';
+                    currentIndex++;
+                }
+            }
+            
+            formationSelect.addEventListener('change', function() {
+                const selectedFormation = this.value;
+                document.getElementById('Formation').value = selectedFormation;
+                
+                // Formasyon değiştiğinde sayfayı yenile ve yeni formasyonu seçili olarak getir
+                window.location.href = `/Team/Create?formation=${selectedFormation}`;
+            });
+            
+            // Sayfa yüklendiğinde ilk pozisyonları ayarla
+            updatePositions(formationSelect.value);
         });
     </script>
+    
+    <style>
+        .football-field {
+            background-image: linear-gradient(#4CAF50, #388E3C);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .football-field::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: rgba(255,255,255,0.7);
+        }
+        
+.football-field::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    border: 2px solid rgba(255,255,255,0.7);
+    border-radius: 50%;
+    pointer-events: none; /* Bu satırı ekleyerek tıklamaların daire üzerinden oyuncuya geçmesini sağlıyoruz */
+    z-index: 0; /* Bu satırı ekleyerek daireyi oyuncu butonlarının altına yerleştiriyoruz */
+}
+        
+        .player-slot {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            width: 50px;
+            height: 50px;
+        }
+
+        .selected-player-mini {
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            margin-bottom: 5px;
+            z-index: 2;
+        }
+
+        .selected-player-mini img {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            border: 2px solid white;
+            background: white;
+            object-fit: cover;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .mini-overall {
+            background: #0d6efd;
+            color: white;
+            border-radius: 50%;
+            width: 22px;
+            height: 22px;
+            line-height: 22px;
+            font-size: 12px;
+            text-align: center;
+            position: absolute;
+            bottom: -5px;
+            right: -5px;
+            border: 2px solid white;
+            font-weight: bold;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            z-index: 3;
+        }
+
+        .position-select {
+            width: 50px !important;
+            height: 50px !important;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            background: white;
+            border: 2px solid rgba(255,255,255,0.8);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            z-index: 1;
+        }
+        
+        .position-select:hover {
+            transform: scale(1.1);
+        }
+        
+        .position-select.btn-success {
+            background: #198754;
+            border-color: white;
+        }
+        
+        .position-select.btn-success .bi-person-fill {
+            color: white;
+        }
+        
+        .bi-person-fill {
+            font-size: 1.5rem;
+        }
+        
+        .modal-backdrop {
+            opacity: 0.5;
+        }
+        
+        .player-card {
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .player-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .player-card.selected {
+            border-color: #198754;
+            background-color: #f8f9fa;
+        }
+        
+        .overall-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+        
+        .overall-badge .badge {
+            font-size: 1.2rem;
+            padding: 0.5rem 1rem;
+        }
+        
+        .modal-lg {
+            max-width: 800px;
+        }
+        
+        .player-card img {
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+    </style>
 }

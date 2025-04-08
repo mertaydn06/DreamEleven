@@ -23,40 +23,39 @@ namespace DreamEleven.Web.Controllers
         }
 
 
-        public async Task<IActionResult> Create(string? formation)
-        {
-            var selectedFormation = formation ?? "4-4-2"; // eğer boş gelirse default ver
+
+        [HttpGet]
+public async Task<IActionResult> Create(string formation = "4-4-2")
+{
+    // Eğer URL'den formasyon parametresi geldiyse onu kullan, yoksa varsayılan "4-4-2" kullan
+    var defaultFormation = string.IsNullOrEmpty(formation) ? "4-4-2" : formation;
 
             var model = new CreateTeamViewModel
             {
-                Formation = selectedFormation,
-                Players = FormationHelper.GetSlots(selectedFormation)
+                Formation = defaultFormation,
+                Players = FormationHelper.GetSlots(defaultFormation)
                     .Select(slot => new TeamPlayerInput { PositionSlot = slot })
                     .ToList()
             };
 
             ViewBag.Formations = new List<string> { "4-4-2", "4-3-3", "3-5-2", "5-3-2", "4-5-1", "3-4-3" };
-            ViewBag.AllPlayers = await _playerService.GetAllPlayersAsync(); // null değilse
+            ViewBag.AllPlayers = await _playerService.GetAllPlayersAsync();
 
             return View(model);
         }
 
-
-
-
-
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(CreateTeamViewModel model)
         {
-            if (!ModelState.IsValid || model.Players.Count != 11)
+            if (!ModelState.IsValid || model.Players.Any(p => p.PlayerId <= 0))
             {
                 ModelState.AddModelError("", "Tüm pozisyonlara oyuncu seçmelisiniz.");
                 ViewBag.Formations = new List<string> { "4-4-2", "4-3-3", "3-5-2", "5-3-2", "4-5-1", "3-4-3" };
+                ViewBag.AllPlayers = await _playerService.GetAllPlayersAsync();
                 return View(model);
             }
 
-            var userId = "d7a27839-7375-46bd-81ad-6a5db45db25a";
+            var userId = "1b452f1c-d413-4025-85d9-2b892eabd9bf"; // oturum açmış kullanıcıdan id alıyoruz
 
             var team = new Team
             {
@@ -71,11 +70,22 @@ namespace DreamEleven.Web.Controllers
                 }).ToList()
             };
 
-            // ✔️ Servis üzerinden kayıt
             await _teamService.CreateTeamAsync(team);
 
-            return RedirectToAction("Details", new { id = team.Id });
+            return RedirectToAction("Index", "Home");
         }
 
+
+        public async Task<IActionResult> Details(int id)
+        {
+            var team = await _teamService.GetTeamByIdAsync(id);
+
+            if (team == null)
+            {
+                return NotFound();
+            }
+
+            return View(team);
+        }
     }
 }

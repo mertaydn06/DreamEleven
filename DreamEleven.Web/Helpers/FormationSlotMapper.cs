@@ -2,7 +2,7 @@ using DreamEleven.Entities;
 
 namespace DreamEleven.Web.Helpers
 {
-    public static class SlotPositionMapper
+    public static class FormationSlotMapper
     {
         public static Player.PositionType GetPositionType(string slot)
         {
