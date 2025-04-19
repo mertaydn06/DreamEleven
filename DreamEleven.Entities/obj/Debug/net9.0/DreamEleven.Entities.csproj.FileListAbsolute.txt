@@ -10,3 +10,15 @@ C:\Code\C#\Mvc\Projects\DreamEleven\DreamEleven.Entities\obj\Debug\net9.0\refint
 C:\Code\C#\Mvc\Projects\DreamEleven\DreamEleven.Entities\obj\Debug\net9.0\DreamEleven.Entities.pdb
 C:\Code\C#\Mvc\Projects\DreamEleven\DreamEleven.Entities\obj\Debug\net9.0\ref\DreamEleven.Entities.dll
 C:\Code\C#\Mvc\Projects\DreamEleven\DreamEleven.Entities\obj\Debug\net9.0\DreamEleven.Entities.sourcelink.json
+C:\Code\C#\Mvc\DreamEleven\DreamEleven.Entities\bin\Debug\net9.0\DreamEleven.Entities.deps.json
+C:\Code\C#\Mvc\DreamEleven\DreamEleven.Entities\bin\Debug\net9.0\DreamEleven.Entities.dll
+C:\Code\C#\Mvc\DreamEleven\DreamEleven.Entities\bin\Debug\net9.0\DreamEleven.Entities.pdb
+C:\Code\C#\Mvc\DreamEleven\DreamEleven.Entities\obj\Debug\net9.0\DreamEleven.Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Code\C#\Mvc\DreamEleven\DreamEleven.Entities\obj\Debug\net9.0\DreamEleven.Entities.AssemblyInfoInputs.cache
+C:\Code\C#\Mvc\DreamEleven\DreamEleven.Entities\obj\Debug\net9.0\DreamEleven.Entities.AssemblyInfo.cs
+C:\Code\C#\Mvc\DreamEleven\DreamEleven.Entities\obj\Debug\net9.0\DreamEleven.Entities.csproj.CoreCompileInputs.cache
+C:\Code\C#\Mvc\DreamEleven\DreamEleven.Entities\obj\Debug\net9.0\DreamEleven.Entities.sourcelink.json
+C:\Code\C#\Mvc\DreamEleven\DreamEleven.Entities\obj\Debug\net9.0\DreamEleven.Entities.dll
+C:\Code\C#\Mvc\DreamEleven\DreamEleven.Entities\obj\Debug\net9.0\refint\DreamEleven.Entities.dll
+C:\Code\C#\Mvc\DreamEleven\DreamEleven.Entities\obj\Debug\net9.0\DreamEleven.Entities.pdb
+C:\Code\C#\Mvc\DreamEleven\DreamEleven.Entities\obj\Debug\net9.0\ref\DreamEleven.Entities.dll

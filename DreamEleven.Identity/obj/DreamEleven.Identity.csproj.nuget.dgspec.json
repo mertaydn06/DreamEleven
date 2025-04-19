@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Code\\C#\\Mvc\\Projects\\DreamEleven\\DreamEleven.Identity\\DreamEleven.Identity.csproj": {}
+    "C:\\Code\\C#\\Mvc\\DreamEleven\\DreamEleven.Identity\\DreamEleven.Identity.csproj": {}
   },
   "projects": {
-    "C:\\Code\\C#\\Mvc\\Projects\\DreamEleven\\DreamEleven.Entities\\DreamEleven.Entities.csproj": {
+    "C:\\Code\\C#\\Mvc\\DreamEleven\\DreamEleven.Entities\\DreamEleven.Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Code\\C#\\Mvc\\Projects\\DreamEleven\\DreamEleven.Entities\\DreamEleven.Entities.csproj",
+        "projectUniqueName": "C:\\Code\\C#\\Mvc\\DreamEleven\\DreamEleven.Entities\\DreamEleven.Entities.csproj",
         "projectName": "DreamEleven.Entities",
-        "projectPath": "C:\\Code\\C#\\Mvc\\Projects\\DreamEleven\\DreamEleven.Entities\\DreamEleven.Entities.csproj",
+        "projectPath": "C:\\Code\\C#\\Mvc\\DreamEleven\\DreamEleven.Entities\\DreamEleven.Entities.csproj",
         "packagesPath": "C:\\Users\\salie\\.nuget\\packages\\",
-        "outputPath": "C:\\Code\\C#\\Mvc\\Projects\\DreamEleven\\DreamEleven.Entities\\obj\\",
+        "outputPath": "C:\\Code\\C#\\Mvc\\DreamEleven\\DreamEleven.Entities\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -69,14 +69,14 @@
         }
       }
     },
-    "C:\\Code\\C#\\Mvc\\Projects\\DreamEleven\\DreamEleven.Identity\\DreamEleven.Identity.csproj": {
+    "C:\\Code\\C#\\Mvc\\DreamEleven\\DreamEleven.Identity\\DreamEleven.Identity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Code\\C#\\Mvc\\Projects\\DreamEleven\\DreamEleven.Identity\\DreamEleven.Identity.csproj",
+        "projectUniqueName": "C:\\Code\\C#\\Mvc\\DreamEleven\\DreamEleven.Identity\\DreamEleven.Identity.csproj",
         "projectName": "DreamEleven.Identity",
-        "projectPath": "C:\\Code\\C#\\Mvc\\Projects\\DreamEleven\\DreamEleven.Identity\\DreamEleven.Identity.csproj",
+        "projectPath": "C:\\Code\\C#\\Mvc\\DreamEleven\\DreamEleven.Identity\\DreamEleven.Identity.csproj",
         "packagesPath": "C:\\Users\\salie\\.nuget\\packages\\",
-        "outputPath": "C:\\Code\\C#\\Mvc\\Projects\\DreamEleven\\DreamEleven.Identity\\obj\\",
+        "outputPath": "C:\\Code\\C#\\Mvc\\DreamEleven\\DreamEleven.Identity\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -97,8 +97,8 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "C:\\Code\\C#\\Mvc\\Projects\\DreamEleven\\DreamEleven.Entities\\DreamEleven.Entities.csproj": {
-                "projectPath": "C:\\Code\\C#\\Mvc\\Projects\\DreamEleven\\DreamEleven.Entities\\DreamEleven.Entities.csproj"
+              "C:\\Code\\C#\\Mvc\\DreamEleven\\DreamEleven.Entities\\DreamEleven.Entities.csproj": {
+                "projectPath": "C:\\Code\\C#\\Mvc\\DreamEleven\\DreamEleven.Entities\\DreamEleven.Entities.csproj"
               }
             }
           }

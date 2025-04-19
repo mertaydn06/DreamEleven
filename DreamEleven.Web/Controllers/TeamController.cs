@@ -55,7 +55,7 @@ public async Task<IActionResult> Create(string formation = "4-4-2")
                 return View(model);
             }
 
-            var userId = "1b452f1c-d413-4025-85d9-2b892eabd9bf"; // oturum açmış kullanıcıdan id alıyoruz
+            var userId = "01a8bbc4-ddf6-4ee7-9dfa-311d82b64e3f"; // oturum açmış kullanıcıdan id alıyoruz
 
             var team = new Team
             {
