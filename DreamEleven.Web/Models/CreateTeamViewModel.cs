@@ -5,6 +5,6 @@ namespace DreamEleven.Web.Models
         public string TeamName { get; set; } = string.Empty;
         public string Formation { get; set; } = string.Empty;
 
-    public List<TeamPlayerInput> Players { get; set; } = new List<TeamPlayerInput>();
+        public List<TeamPlayerInput> Players { get; set; } = new List<TeamPlayerInput>();
     }
 }

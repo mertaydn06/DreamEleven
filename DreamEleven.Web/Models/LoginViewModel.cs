@@ -2,20 +2,16 @@ using System.ComponentModel.DataAnnotations;
 
 namespace DreamEleven.Web;
 
-public class RegisterViewModel
+public class LoginViewModel
 {
     [Required(ErrorMessage = "Email zorunludur.")]
     [EmailAddress(ErrorMessage = "Geçerli bir email giriniz.")]
     public string Email { get; set; } = string.Empty;
 
-    [Required]
-    public string UserName { get; set; } = string.Empty;
-
     [Required(ErrorMessage = "Şifre zorunludur.")]
     [DataType(DataType.Password)]
     public string Password { get; set; } = string.Empty;
 
-    [DataType(DataType.Password)]
-    [Compare("Password", ErrorMessage = "Şifreler uyuşmuyor.")]
-    public string ConfirmPassword { get; set; } = string.Empty;
+    [Display(Name = "Beni Hatırla")]
+    public bool RememberMe { get; set; }
 }

@@ -28,15 +28,17 @@
 
                         @foreach (var teamPlayer in Model.TeamPlayers.OrderBy(p => p.Player.Overall))
                         {
-                            <a href="/player/@teamPlayer.Player.Slug"
+                            <a asp-controller="Home" asp-action="PlayerDetails" asp-route-slug="@teamPlayer.Player.Slug"
                                 class="list-group-item d-flex align-items-center text-decoration-none text-dark">
-                                <!-- 🔗 Link eklendi -->
+
                                 <img src="@teamPlayer.Player.ImageUrl" class="me-2"
                                     style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">
+
                                 <div>
                                     <h6 class="mb-0">@teamPlayer.Player.Name</h6>
                                     <small class="text-muted">@teamPlayer.Player.RealTeam</small>
                                 </div>
+                                
                                 <div class="ms-auto">
                                     <span class="badge bg-primary rounded-pill">@teamPlayer.Player.Overall</span>
                                 </div>

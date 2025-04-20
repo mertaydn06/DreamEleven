@@ -5,6 +5,7 @@ using DreamEleven.Web.Models;
 using Microsoft.AspNetCore.Identity;
 using DreamEleven.Identity;
 using DreamEleven.Web.Helpers;
+using Microsoft.AspNetCore.Authorization;
 
 namespace DreamEleven.Web.Controllers
 {
@@ -23,12 +24,11 @@ namespace DreamEleven.Web.Controllers
         }
 
 
-
-        [HttpGet]
-public async Task<IActionResult> Create(string formation = "4-4-2")
-{
-    // Eğer URL'den formasyon parametresi geldiyse onu kullan, yoksa varsayılan "4-4-2" kullan
-    var defaultFormation = string.IsNullOrEmpty(formation) ? "4-4-2" : formation;
+        [Authorize]
+        public async Task<IActionResult> Create(string formation = "4-4-2")
+        {
+            // Eğer URL'den formasyon parametresi geldiyse onu kullan, yoksa varsayılan "4-4-2" kullan
+            var defaultFormation = string.IsNullOrEmpty(formation) ? "4-4-2" : formation;
 
             var model = new CreateTeamViewModel
             {
@@ -44,6 +44,7 @@ public async Task<IActionResult> Create(string formation = "4-4-2")
             return View(model);
         }
 
+        [Authorize]
         [HttpPost]
         public async Task<IActionResult> Create(CreateTeamViewModel model)
         {
