@@ -37,6 +37,7 @@ namespace DreamEleven.DataAccess.Concrete
                 .Where(t => t.UserId == userId)                 // Verilen userId'ye sahip olan tüm takımları filtrele
                 .Include(t => t.TeamPlayers)                    // Her takımın içindeki TeamPlayer ilişkilerini dahil et
                 .ThenInclude(tp => tp.Player)                   // TeamPlayer'dan Player'a olan ilişkiyi de dahil et
+                .OrderByDescending(t => t.CreatedAt)            // Takımları oluşturma tarihine göre sırala
                 .ToListAsync();                                 // Sonucu liste olarak asenkron şekilde getir
         }
 
@@ -73,5 +74,12 @@ namespace DreamEleven.DataAccess.Concrete
             _context.Teams.Update(team);
             await _context.SaveChangesAsync();
         }
+
+        public async Task AddCommentAsync(Comment comment)
+        {
+            await _context.Comments.AddAsync(comment);
+            await _context.SaveChangesAsync();
+        }
+
     }
 }

@@ -1,0 +1,39 @@
+@model EditUserViewModel
+@{
+    ViewData["Title"] = "Profili Düzenle";
+}
+
+<div class="container mt-5">
+    <h2>Profili Güncelle</h2>
+    <hr />
+    <form method="post">
+        <div class="mb-3">
+            <label class="form-label">Kullanıcı Adı</label>
+            <input asp-for="Username" class="form-control" />
+            <span asp-validation-for="Username" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input asp-for="Email" class="form-control" readonly />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Profil Resmi URL</label>
+            <input asp-for="Image" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Yeni Şifre</label>
+            <input asp-for="NewPassword" class="form-control" />
+            <span asp-validation-for="NewPassword" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Güncelle</button>
+        <a href="/" class="btn btn-secondary">İptal</a>
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

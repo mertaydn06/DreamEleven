@@ -80,13 +80,24 @@ namespace DreamEleven.Web.Controllers
         public async Task<IActionResult> Details(int id)
         {
             var team = await _teamService.GetTeamByIdAsync(id);
+            if (team == null) return NotFound();
 
-            if (team == null)
+            var commentVMs = new List<CommentViewModel>();  // 
+
+            foreach (var comment in team.Comments.OrderByDescending(c => c.CreatedAt))
             {
-                return NotFound();
+                var user = await _userManager.FindByIdAsync(comment.UserId);
+                commentVMs.Add(new CommentViewModel
+                {
+                    Content = comment.Content,
+                    CreatedAt = comment.CreatedAt,
+                    UserName = user?.UserName ?? "Bilinmeyen"
+                });
             }
 
+            ViewBag.Comments = commentVMs;  // Yorumları ViewBag ile View'a gönderdik.ç
             return View(team);
         }
+
     }
 }

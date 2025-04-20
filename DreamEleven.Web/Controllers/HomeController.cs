@@ -1,4 +1,3 @@
-using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using DreamEleven.Web.Models;
 using DreamEleven.Business.Abstract;
@@ -23,6 +22,7 @@ public class HomeController : Controller
     }
 
 
+    [Route("player/{slug}")]
     public async Task<IActionResult> PlayerDetails(string slug)
     {
         if (string.IsNullOrEmpty(slug))

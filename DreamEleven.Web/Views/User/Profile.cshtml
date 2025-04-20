@@ -1,0 +1,224 @@
+@model UserProfileViewModel
+
+@{
+    ViewData["Title"] = "Kullanıcı Profili";
+}
+
+<div class="container mt-4">
+    <div class="row">
+
+        <!-- SOL: Kullanıcı Bilgisi -->
+        <div class="col-md-4">
+            <div class="card text-center mb-4">
+                <div class="card-body">
+                    <img src="@Model.User.Image" alt="Profil" class="rounded-circle mb-2"
+                        style="width: 100px; height: 100px; object-fit: cover;">
+                    <h5 class="card-title">@Model.User.UserName</h5>
+                    <p class="text-muted">Katılım: @Model.User.CreatedAt.ToShortDateString()</p>
+                </div>
+            </div>
+
+            @if (User.Identity!.IsAuthenticated && User.Identity.Name == Model.User.UserName) @* Kullanıcı kendi profil detay sayfasına bakıyorsa "Profil Düzenle" butonu gelir. *@
+            {
+                <div class="text-end mb-3">
+                    <a asp-controller="User" asp-action="Edit" asp-route-username="@User.Identity.Name"
+                        class="btn btn-dark btn-sm">Profili Düzenle</a>
+                </div>
+            }
+        </div>
+
+        <!-- SAĞ: Takımlar -->
+        <div class="col-md-8">
+            <h5 class="mb-3 text-center"><i class="bi bi-clipboard"></i> Takımlar</h5>
+
+            @if (!Model.Teams.Any()) @* Eğer kullanıcın herhangi bir takımı yoksa. *@
+            {
+                <p>Henüz takım oluşturulmamış.</p>
+            }
+
+            @foreach (var team in Model.Teams.OrderByDescending(t => t.CreatedAt))
+            {
+                <div class="card mb-4">
+
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <a href="/team/details/@team.Id" class="text-decoration-none fw-bold">@team.TeamName</a>
+                        <span>@team.CreatedAt.ToShortDateString()</span>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="football-field position-relative"
+                            style="background: #4CAF50; height: 600px; border-radius: 10px; border: 2px solid white;">
+                            <div id="playerPositions" class="position-relative h-100">
+                                @foreach (var tp in team.TeamPlayers)
+                                {
+                                    <div class="player-slot position-absolute" data-position="@tp.PositionSlot"
+                                        style="transform: translate(-50%, -50%);">
+                                        <a href="/player/@tp.Player.Slug" class="text-decoration-none text-dark">
+                                            <div class="player-card">
+                                                <img src="@tp.Player.ImageUrl" alt="@tp.Player.Name">
+                                                <div class="player-info">
+                                                    <div class="player-name">@tp.Player.Name</div>
+                                                    <div class="player-overall">@tp.Player.Overall</div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('.football-field').forEach(field => {
+                const headerText = field.closest('.card').querySelector('.card-header').innerText;
+                const formation = headerText.match(/\d-\d-\d/)?.[0] ?? "4-4-2";
+                const playerSlots = field.querySelectorAll('.player-slot');
+
+                const formationParts = formation.split('-').map(Number);
+                const defCount = formationParts[0];
+                const midCount = formationParts[1];
+                const fwdCount = formationParts[2];
+
+                const getHorizontal = (i, count) =>
+                    count === 1 ? '50%' :
+                        count === 2 ? ['35%', '65%'][i] :
+                            count === 3 ? ['25%', '50%', '75%'][i] :
+                                count === 4 ? ['20%', '40%', '60%', '80%'][i] :
+                                    count === 5 ? ['15%', '32%', '50%', '68%', '85%'][i] : '50%';
+
+                const groupAndPlace = (prefixes, count, top) => {
+                    let i = 0;
+                    playerSlots.forEach(p => {
+                        const pos = p.dataset.position;
+                        if (prefixes.some(prefix => pos.startsWith(prefix))) {
+                            p.style.left = getHorizontal(i++, count);
+                            p.style.top = top;
+                        }
+                    });
+                };
+
+                const gk = Array.from(playerSlots).find(p => p.dataset.position === 'GK');
+                if (gk) {
+                    gk.style.left = '50%';
+                    gk.style.top = '90%';
+                }
+
+                groupAndPlace(['CB', 'LB', 'RB', 'LWB', 'RWB'], defCount, '70%');
+                groupAndPlace(['CM', 'LM', 'RM', 'CAM'], midCount, '45%');
+                groupAndPlace(['ST', 'LW', 'RW'], fwdCount, '20%');
+            });
+        });
+    </script>
+
+    <style>
+        .football-field {
+            background-image: linear-gradient(#4CAF50, #388E3C);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .football-field::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.7);
+            pointer-events: none;
+        }
+
+        .football-field::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100px;
+            height: 100px;
+            border: 2px solid rgba(255, 255, 255, 0.7);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        #playerPositions {
+            position: relative;
+            z-index: 5;
+        }
+
+        .player-slot {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            z-index: 10;
+        }
+
+        .player-card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            width: 80px;
+            height: 100px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 5px;
+            transition: transform 0.3s;
+            z-index: 10;
+        }
+
+        .player-card:hover {
+            transform: scale(1.1);
+            z-index: 20;
+        }
+
+        .player-card img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #fff;
+            background: white;
+        }
+
+        .player-info {
+            text-align: center;
+            width: 100%;
+            margin-top: 5px;
+        }
+
+        .player-name {
+            font-size: 11px;
+            font-weight: bold;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin-bottom: 2px;
+        }
+
+        .player-overall {
+            background: #0d6efd;
+            color: white;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            line-height: 24px;
+            font-size: 12px;
+            font-weight: bold;
+            margin: 0 auto;
+        }
+    </style>
+}

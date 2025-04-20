@@ -12,5 +12,7 @@ namespace DreamEleven.Business.Abstract
         Task CreateTeamAsync(Team team);                 // Yeni takım ekle
         Task DeleteTeamAsync(int id);                    // Takımı sil
         Task UpdateTeamAsync(Team team);                 // Takımı güncelle
+
+        Task AddCommentAsync(Comment comment);
     }
 }

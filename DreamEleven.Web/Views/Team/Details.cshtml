@@ -74,6 +74,48 @@
 
                 </div>
             </div>
+
+            <!-- 💬 Yorum Ekleme Formu (sadece giriş yapmış kullanıcılar için) -->
+@if (User.Identity!.IsAuthenticated)
+{
+    <form method="post" asp-action="AddComment" asp-controller="User">
+        <input type="hidden" name="teamId" value="@Model.Id" />
+        <div class="mb-3">
+            <label for="comment" class="form-label">Yorum Yap</label>
+            <textarea name="content" class="form-control" rows="3" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Gönder</button>
+    </form>
+}
+
+<hr />
+
+<!-- 📜 Takıma Yapılan Yorumlar -->
+<h5>Yorumlar</h5>
+
+@{
+    var comments = ViewBag.Comments as List<CommentViewModel>;
+}
+
+@if (comments != null && comments.Any())
+{
+    foreach (var comment in comments)
+    {
+        <div class="card mb-2">
+            <div class="card-body">
+                <strong>@comment.UserName</strong>  <!-- 👈 artık username yazıyor -->
+                <p class="mb-1">@comment.Content</p>
+                <small class="text-muted">@comment.CreatedAt.ToString("g")</small>
+            </div>
+        </div>
+    }
+}
+else
+{
+    <p>Henüz yorum yapılmamış.</p>
+}
+
+
         </div>
     </div>
 </div>
