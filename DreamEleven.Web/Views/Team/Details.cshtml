@@ -75,10 +75,10 @@
                 </div>
             </div>
 
-            <!-- 💬 Yorum Ekleme Formu (sadece giriş yapmış kullanıcılar için) -->
+            <!-- Yorum Ekleme Formu (sadece giriş yapmış kullanıcılar için) -->
 @if (User.Identity!.IsAuthenticated)
 {
-    <form method="post" asp-action="AddComment" asp-controller="User">
+    <form method="post" asp-controller="Comment" asp-action="AddComment" >
         <input type="hidden" name="teamId" value="@Model.Id" />
         <div class="mb-3">
             <label for="comment" class="form-label">Yorum Yap</label>
@@ -90,7 +90,7 @@
 
 <hr />
 
-<!-- 📜 Takıma Yapılan Yorumlar -->
+<!-- Takıma Yapılan Yorumlar -->
 <h5>Yorumlar</h5>
 
 @{
@@ -103,10 +103,25 @@
     {
         <div class="card mb-2">
             <div class="card-body">
-                <strong>@comment.UserName</strong>  <!-- 👈 artık username yazıyor -->
+<strong>
+    <a href="/profile/@comment.UserName" class="text-decoration-none">
+        @comment.UserName
+    </a>
+</strong>
                 <p class="mb-1">@comment.Content</p>
                 <small class="text-muted">@comment.CreatedAt.ToString("g")</small>
-            </div>
+    @* Eğer yorum yapan kullanıcı şu anki kullanıcıysa butonları göster *@
+    @if (User.Identity.IsAuthenticated && User.Identity.Name == comment.UserName)
+    {
+        <div class="mt-2">
+            <a asp-controller="Comment" asp-action="EditComment" asp-route-id="@comment.Id" class="btn btn-sm btn-secondary me-2">Düzenle</a>
+
+            <form asp-controller="Comment" asp-action="DeleteComment" asp-route-id="@comment.Id" method="post" class="d-inline">
+                <button class="btn btn-sm btn-danger" onclick="return confirm('Yorumu silmek istediğine emin misin?')">Sil</button>
+            </form>
+        </div>
+    }
+</div>
         </div>
     }
 }

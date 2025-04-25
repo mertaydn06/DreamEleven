@@ -82,20 +82,22 @@ namespace DreamEleven.Web.Controllers
             var team = await _teamService.GetTeamByIdAsync(id);
             if (team == null) return NotFound();
 
-            var commentVMs = new List<CommentViewModel>();  // 
+            var commentVMs = new List<CommentViewModel>();  // CommentViewModel sınıfından nesne oluşturduk.
 
             foreach (var comment in team.Comments.OrderByDescending(c => c.CreatedAt))
             {
                 var user = await _userManager.FindByIdAsync(comment.UserId);
+
                 commentVMs.Add(new CommentViewModel
                 {
+                    Id = comment.Id,
                     Content = comment.Content,
                     CreatedAt = comment.CreatedAt,
                     UserName = user?.UserName ?? "Bilinmeyen"
                 });
             }
 
-            ViewBag.Comments = commentVMs;  // Yorumları ViewBag ile View'a gönderdik.ç
+            ViewBag.Comments = commentVMs;  // Yorumları ViewBag ile View'a gönderdik.
             return View(team);
         }
 

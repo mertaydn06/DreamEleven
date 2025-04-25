@@ -1,0 +1,23 @@
+@model DreamEleven.Entities.Comment
+
+@{
+    ViewData["Title"] = "Yorumu Düzenle";
+}
+
+<div class="container mt-5">
+    <h2>Yorumu Güncelle</h2>
+    <form method="post">
+        <input type="hidden" asp-for="Id" />
+        <input type="hidden" asp-for="TeamId" />
+        <div class="mb-3">
+            <textarea asp-for="Content" class="form-control" rows="4"></textarea>
+            <span asp-validation-for="Content" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-primary">Kaydet</button>
+        <a asp-controller="Team" asp-action="Details" asp-route-id="@Model.TeamId" class="btn btn-secondary">İptal</a>
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

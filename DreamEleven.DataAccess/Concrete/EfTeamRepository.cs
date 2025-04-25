@@ -62,6 +62,7 @@ namespace DreamEleven.DataAccess.Concrete
         public async Task DeleteTeamAsync(int id)
         {
             var team = await _context.Teams.FindAsync(id);
+
             if (team != null)
             {
                 _context.Teams.Remove(team);
@@ -75,11 +76,32 @@ namespace DreamEleven.DataAccess.Concrete
             await _context.SaveChangesAsync();
         }
 
+
         public async Task AddCommentAsync(Comment comment)
         {
             await _context.Comments.AddAsync(comment);
             await _context.SaveChangesAsync();
         }
 
+        public async Task UpdateCommentAsync(Comment comment)
+        {
+            _context.Comments.Update(comment);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task DeleteCommentAsync(int id)
+        {
+            var comment = await _context.Comments.FindAsync(id);
+            if (comment != null)
+            {
+                _context.Comments.Remove(comment);
+                await _context.SaveChangesAsync();
+            }
+        }
+
+        public async Task<Comment?> GetCommentByIdAsync(int id)
+        {
+            return await _context.Comments.FindAsync(id);
+        }
     }
 }

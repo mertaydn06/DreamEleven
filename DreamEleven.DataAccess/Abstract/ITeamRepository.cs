@@ -14,5 +14,8 @@ namespace DreamEleven.DataAccess.Abstract
         Task UpdateTeamAsync(Team team);                 // Takımı güncelle
 
         Task AddCommentAsync(Comment comment);
+        Task UpdateCommentAsync(Comment comment);
+        Task DeleteCommentAsync(int id);
+        Task<Comment?> GetCommentByIdAsync(int id);
     }
 }

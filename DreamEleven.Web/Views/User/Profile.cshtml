@@ -18,7 +18,7 @@
                 </div>
             </div>
 
-            @if (User.Identity!.IsAuthenticated && User.Identity.Name == Model.User.UserName) @* Kullanıcı kendi profil detay sayfasına bakıyorsa "Profil Düzenle" butonu gelir. *@
+            @if (User.Identity!.IsAuthenticated && User.Identity.Name == Model.User.UserName)
             {
                 <div class="text-end mb-3">
                     <a asp-controller="User" asp-action="Edit" asp-route-username="@User.Identity.Name"
@@ -31,7 +31,7 @@
         <div class="col-md-8">
             <h5 class="mb-3 text-center"><i class="bi bi-clipboard"></i> Takımlar</h5>
 
-            @if (!Model.Teams.Any()) @* Eğer kullanıcın herhangi bir takımı yoksa. *@
+            @if (!Model.Teams.Any())
             {
                 <p>Henüz takım oluşturulmamış.</p>
             }
@@ -39,15 +39,15 @@
             @foreach (var team in Model.Teams.OrderByDescending(t => t.CreatedAt))
             {
                 <div class="card mb-4">
-
                     <div class="card-header d-flex justify-content-between align-items-center">
                         <a href="/team/details/@team.Id" class="text-decoration-none fw-bold">@team.TeamName</a>
                         <span>@team.CreatedAt.ToShortDateString()</span>
                     </div>
 
                     <div class="card-body">
-                        <div class="football-field position-relative"
+                        <div class="football-field position-relative" data-formation="@team.Formation"
                             style="background: #4CAF50; height: 600px; border-radius: 10px; border: 2px solid white;">
+
                             <div id="playerPositions" class="position-relative h-100">
                                 @foreach (var tp in team.TeamPlayers)
                                 {
@@ -77,8 +77,8 @@
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             document.querySelectorAll('.football-field').forEach(field => {
-                const headerText = field.closest('.card').querySelector('.card-header').innerText;
-                const formation = headerText.match(/\d-\d-\d/)?.[0] ?? "4-4-2";
+                const formation = field.dataset.formation ?? "4-4-2";
+
                 const playerSlots = field.querySelectorAll('.player-slot');
 
                 const formationParts = formation.split('-').map(Number);
@@ -133,7 +133,6 @@
             right: 0;
             height: 2px;
             background: rgba(255, 255, 255, 0.7);
-            pointer-events: none;
         }
 
         .football-field::after {
@@ -146,21 +145,15 @@
             height: 100px;
             border: 2px solid rgba(255, 255, 255, 0.7);
             border-radius: 50%;
-            pointer-events: none;
             z-index: 1;
         }
 
-        #playerPositions {
-            position: relative;
-            z-index: 5;
-        }
-
         .player-slot {
+            position: absolute;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            position: absolute;
             width: 80px;
             height: 80px;
             z-index: 10;
@@ -177,7 +170,6 @@
             align-items: center;
             padding: 5px;
             transition: transform 0.3s;
-            z-index: 10;
         }
 
         .player-card:hover {
@@ -196,7 +188,6 @@
 
         .player-info {
             text-align: center;
-            width: 100%;
             margin-top: 5px;
         }
 
@@ -206,7 +197,6 @@
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
-            margin-bottom: 2px;
         }
 
         .player-overall {
