@@ -4,15 +4,17 @@
     ViewData["Title"] = "Kullanıcı Profili";
 }
 
-<div class="container mt-4">
+<div class="container md-4">
     <div class="row">
 
         <!-- SOL: Kullanıcı Bilgisi -->
         <div class="col-md-4">
             <div class="card text-center mb-4">
                 <div class="card-body">
-                    <img src="@Model.User.Image" alt="Profil" class="rounded-circle mb-2"
-                        style="width: 100px; height: 100px; object-fit: cover;">
+                    <img src="@(string.IsNullOrEmpty(Model.User.Image) ? "/images/User.jpg" : Model.User.Image)"
+                        alt="Profil" class="rounded-circle mb-2"
+                        style="width: 100px; height: 100px; object-fit: cover;" />
+
                     <h5 class="card-title">@Model.User.UserName</h5>
                     <p class="text-muted">Katılım: @Model.User.CreatedAt.ToShortDateString()</p>
                 </div>
@@ -25,6 +27,35 @@
                         class="btn btn-dark btn-sm">Profili Düzenle</a>
                 </div>
             }
+            <!-- Kullanıcının Yorumları -->
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="mb-0">Yaptığı Yorumlar</h6>
+                </div>
+                <div class="card-body p-3">
+                    @{
+                        var comments = ViewBag.UserComments as List<CommentViewModel>;
+                    }
+
+                    @if (comments != null && comments.Any())
+                    {
+                        foreach (var comment in comments)
+                        {
+                            <div class="mb-3 border-bottom pb-2">
+                                <a href="/team/details/@comment.TeamId" class="fw-bold text-decoration-none">
+                                    @comment.TeamName
+                                </a>
+                                <p class="mb-1">@comment.Content</p>
+                                <small class="text-muted">@comment.CreatedAt.ToShortDateString()</small>
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        <p class="text-muted">Henüz yorum yapmamış.</p>
+                    }
+                </div>
+            </div>
         </div>
 
         <!-- SAĞ: Takımlar -->
@@ -48,7 +79,17 @@
                         <div class="football-field position-relative" data-formation="@team.Formation"
                             style="background: #4CAF50; height: 600px; border-radius: 10px; border: 2px solid white;">
 
+                            <!-- Ceza sahaları -->
+                            <div class="penalty-box top-box">
+                                <div class="penalty-dot"></div>
+                            </div>
+
+                            <div class="penalty-box bottom-box">
+                                <div class="penalty-dot"></div>
+                            </div>
+
                             <div id="playerPositions" class="position-relative h-100">
+
                                 @foreach (var tp in team.TeamPlayers)
                                 {
                                     <div class="player-slot position-absolute" data-position="@tp.PositionSlot"
@@ -107,12 +148,12 @@
                 const gk = Array.from(playerSlots).find(p => p.dataset.position === 'GK');
                 if (gk) {
                     gk.style.left = '50%';
-                    gk.style.top = '90%';
+                    gk.style.top = '85%';
                 }
 
-                groupAndPlace(['CB', 'LB', 'RB', 'LWB', 'RWB'], defCount, '70%');
-                groupAndPlace(['CM', 'LM', 'RM', 'CAM'], midCount, '45%');
-                groupAndPlace(['ST', 'LW', 'RW'], fwdCount, '20%');
+                groupAndPlace(['CB', 'LB', 'RB', 'LWB', 'RWB'], defCount, '63%');
+                groupAndPlace(['CM', 'LM', 'RM', 'CAM'], midCount, '40%');
+                groupAndPlace(['ST', 'LW', 'RW'], fwdCount, '15%');
             });
         });
     </script>
@@ -160,7 +201,7 @@
         }
 
         .player-card {
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.2);
             border-radius: 8px;
             width: 80px;
             height: 100px;
@@ -178,11 +219,10 @@
         }
 
         .player-card img {
-            width: 60px;
-            height: 60px;
+            width: 65px;
+            height: 65px;
             border-radius: 50%;
             object-fit: cover;
-            border: 2px solid #fff;
             background: white;
         }
 
@@ -194,10 +234,17 @@
         .player-name {
             font-size: 11px;
             font-weight: bold;
-            white-space: nowrap;
+            text-align: center;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            /* en fazla 2 satır */
+            -webkit-box-orient: vertical;
             overflow: hidden;
-            text-overflow: ellipsis;
+            max-width: 80px;
+            line-height: 1.1;
+            height: 25px;
         }
+
 
         .player-overall {
             background: #0d6efd;
@@ -209,6 +256,26 @@
             font-size: 12px;
             font-weight: bold;
             margin: 0 auto;
+        }
+
+        .penalty-box {
+            position: absolute;
+            width: 180px;
+            height: 70px;
+            border: 2px solid white;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 0;
+        }
+
+        .top-box {
+            top: 0;
+            border-top: none;
+        }
+
+        .bottom-box {
+            bottom: 0;
+            border-bottom: none;
         }
     </style>
 }

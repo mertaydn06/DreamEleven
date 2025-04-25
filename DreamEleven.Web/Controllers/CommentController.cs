@@ -11,14 +11,13 @@ namespace DreamEleven.Web.Controllers
     public class CommentController : Controller
     {
         private readonly UserManager<User> _userManager;
-        private readonly ITeamService _teamService;
+        private readonly ICommentService _commentService;
 
-        public CommentController(ITeamService teamService, UserManager<User> userManager)
+        public CommentController(ICommentService commentService, UserManager<User> userManager)
         {
-            _teamService = teamService;
+            _commentService = commentService;
             _userManager = userManager;
         }
-
 
         [HttpPost]
         public async Task<IActionResult> AddComment(int teamId, string content)
@@ -38,7 +37,7 @@ namespace DreamEleven.Web.Controllers
                 CreatedAt = DateTime.Now
             };
 
-            await _teamService.AddCommentAsync(comment);
+            await _commentService.AddCommentAsync(comment);
 
             return RedirectToAction("Details", "Team", new { id = teamId });
         }
@@ -47,7 +46,7 @@ namespace DreamEleven.Web.Controllers
         [HttpGet]
         public async Task<IActionResult> EditComment(int id)
         {
-            var comment = await _teamService.GetCommentByIdAsync(id);
+            var comment = await _commentService.GetCommentByIdAsync(id);
 
             var user = await _userManager.GetUserAsync(User);
 
@@ -61,27 +60,30 @@ namespace DreamEleven.Web.Controllers
         public async Task<IActionResult> EditComment(Comment model)
         {
             var user = await _userManager.GetUserAsync(User);
-            var comment = await _teamService.GetCommentByIdAsync(model.Id);
+
+            var comment = await _commentService.GetCommentByIdAsync(model.Id);
 
             if (comment == null || comment.UserId != user?.Id)
                 return Unauthorized();
 
             comment.Content = model.Content;
-            await _teamService.UpdateCommentAsync(comment);
+            await _commentService.UpdateCommentAsync(comment);
 
             return RedirectToAction("Details", "Team", new { id = comment.TeamId });
         }
 
+
         [HttpPost]
         public async Task<IActionResult> DeleteComment(int id)
         {
-            var comment = await _teamService.GetCommentByIdAsync(id);
+            var comment = await _commentService.GetCommentByIdAsync(id);
+
             var user = await _userManager.GetUserAsync(User);
 
             if (comment == null || comment.UserId != user?.Id)
                 return Unauthorized();
 
-            await _teamService.DeleteCommentAsync(id);
+            await _commentService.DeleteCommentAsync(id);
             return RedirectToAction("Details", "Team", new { id = comment.TeamId });
         }
     }

@@ -19,6 +19,8 @@ builder.Services.AddScoped<ITeamRepository, EfTeamRepository>();  // DB erişimi
 builder.Services.AddScoped<ITeamService, TeamManager>();          // Controller'a servis için
 builder.Services.AddScoped<IPlayerRepository, EfPlayerRepository>();
 builder.Services.AddScoped<IPlayerService, PlayerManager>();
+builder.Services.AddScoped<ICommentRepository, EfCommentRepository>();
+builder.Services.AddScoped<ICommentService, CommentManager>();
 
 
 

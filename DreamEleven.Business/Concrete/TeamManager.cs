@@ -48,26 +48,5 @@ namespace DreamEleven.Business.Concrete
         {
             return _teamRepository.UpdateTeamAsync(team);
         }
-
-
-        public async Task AddCommentAsync(Comment comment)
-        {
-            await _teamRepository.AddCommentAsync(comment);
-        }
-
-        public async Task UpdateCommentAsync(Comment comment)
-        {
-            await _teamRepository.UpdateCommentAsync(comment);
-        }
-
-        public async Task DeleteCommentAsync(int id)
-        {
-            await _teamRepository.DeleteCommentAsync(id);
-        }
-
-        public async Task<Comment?> GetCommentByIdAsync(int id)
-        {
-            return await _teamRepository.GetCommentByIdAsync(id);
-        }
     }
 }

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "KTrgKa6/8fBMpAzy67wsYrNPsPzCRCM2jAJNX6ymB6Q=",
+  "Hash": "PC440XiB17WnbIWDrauOOoUD2Hgp4mYGz+TYaWcxs1Q=",
   "Source": "DreamEleven.Web",
   "BasePath": "_content/DreamEleven.Web",
   "Mode": "Default",
@@ -1443,6 +1443,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Code\\C#\\Mvc\\DreamEleven\\DreamEleven.Web\\wwwroot\\images\\User.jpg",
+      "SourceId": "DreamEleven.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Code\\C#\\Mvc\\DreamEleven\\DreamEleven.Web\\wwwroot\\",
+      "BasePath": "_content/DreamEleven.Web",
+      "RelativePath": "images/User#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "qj2crncpxn",
+      "Integrity": "GrFIB0+g/zfRiE/Wv9QUqGnfNNM0KwC1HCtixYeaHhQ=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\User.jpg"
     },
     {
       "Identity": "C:\\Code\\C#\\Mvc\\DreamEleven\\DreamEleven.Web\\wwwroot\\js\\site.js",
@@ -3916,6 +3937,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-wfFuuYm+Lh6RbCeeiUqxw334b/hIOkp5j9eokGUM1Y0="
+        }
+      ]
+    },
+    {
+      "Route": "images/User.jpg",
+      "AssetFile": "C:\\Code\\C#\\Mvc\\DreamEleven\\DreamEleven.Web\\wwwroot\\images\\User.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "46415"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"GrFIB0+g/zfRiE/Wv9QUqGnfNNM0KwC1HCtixYeaHhQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 25 Apr 2025 17:26:32 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-GrFIB0+g/zfRiE/Wv9QUqGnfNNM0KwC1HCtixYeaHhQ="
+        }
+      ]
+    },
+    {
+      "Route": "images/User.qj2crncpxn.jpg",
+      "AssetFile": "C:\\Code\\C#\\Mvc\\DreamEleven\\DreamEleven.Web\\wwwroot\\images\\User.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "46415"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"GrFIB0+g/zfRiE/Wv9QUqGnfNNM0KwC1HCtixYeaHhQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 25 Apr 2025 17:26:32 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "qj2crncpxn"
+        },
+        {
+          "Name": "label",
+          "Value": "images/User.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-GrFIB0+g/zfRiE/Wv9QUqGnfNNM0KwC1HCtixYeaHhQ="
         }
       ]
     },

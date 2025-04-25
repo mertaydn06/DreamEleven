@@ -36,7 +36,8 @@ namespace DreamEleven.Web.Controllers
             {
                 UserName = model.UserName,
                 Email = model.Email,
-                CreatedAt = DateTime.UtcNow
+                CreatedAt = DateTime.UtcNow,
+                Image = "/images/User.jpg"
             };
 
             IdentityResult result = await _userManager.CreateAsync(user, model.Password);  // Şifreyi hashleyerek (PasswordHasher) veritabanına kaydeder.

@@ -14,12 +14,15 @@ namespace DreamEleven.Web.Controllers
         private readonly UserManager<User> _userManager;
         private readonly SignInManager<User> _signInManager;
         private readonly ITeamService _teamService;
+        private readonly ICommentService _commentService;
 
-        public UserController(UserManager<User> userManager, SignInManager<User> signInManager, ITeamService teamService)
+
+        public UserController(UserManager<User> userManager, SignInManager<User> signInManager, ITeamService teamService, ICommentService commentService)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _teamService = teamService;           // Takım işlemleri servisi
+            _commentService = commentService;
         }
 
 
@@ -39,7 +42,17 @@ namespace DreamEleven.Web.Controllers
                 Teams = teams,
                 IsCurrentUser = User.Identity!.Name == username
             };
+            var userComments = await _commentService.GetCommentsByUserIdAsync(user.Id);
 
+            var commentVMs = userComments.Select(c => new CommentViewModel
+            {
+                TeamId = c.TeamId,
+                TeamName = c.Team?.TeamName ?? "Bilinmeyen",
+                Content = c.Content,
+                CreatedAt = c.CreatedAt
+            }).ToList();
+
+            ViewBag.UserComments = commentVMs;
             return View(model);
         }
 

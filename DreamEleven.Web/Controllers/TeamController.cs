@@ -93,7 +93,9 @@ namespace DreamEleven.Web.Controllers
                     Id = comment.Id,
                     Content = comment.Content,
                     CreatedAt = comment.CreatedAt,
-                    UserName = user?.UserName ?? "Bilinmeyen"
+                    UserName = user?.UserName ?? "Bilinmeyen",
+                    UserImage = string.IsNullOrEmpty(user?.Image) ? "/images/User.jpg"
+                    : user.Image
                 });
             }
 
