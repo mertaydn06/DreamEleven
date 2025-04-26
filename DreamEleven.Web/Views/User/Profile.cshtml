@@ -7,7 +7,7 @@
 <div class="container md-4">
     <div class="row">
 
-        <!-- SOL: Kullanıcı Bilgisi -->
+        <!-- Sol: Kullanıcı Bilgisi -->
         <div class="col-md-4">
             <div class="card text-center mb-4">
                 <div class="card-body">
@@ -20,18 +20,21 @@
                 </div>
             </div>
 
-            @if (User.Identity!.IsAuthenticated && User.Identity.Name == Model.User.UserName)
+            <!-- Profili düzenle butonu (sadece kendi profiline bakıyorsa) -->
+            @if (User.Identity!.IsAuthenticated &&
+                        User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value == Model.User.Id)
             {
                 <div class="text-end mb-3">
-                    <a asp-controller="User" asp-action="Edit" asp-route-username="@User.Identity.Name"
-                        class="btn btn-dark btn-sm">Profili Düzenle</a>
+                    <a asp-controller="User" asp-action="Edit" class="btn btn-dark btn-sm">Profili Düzenle</a>
                 </div>
             }
-            <!-- Kullanıcının Yorumları -->
+
+            <!-- Sol: Kullanıcının Yorumları -->
             <div class="card">
                 <div class="card-header">
                     <h6 class="mb-0">Yaptığı Yorumlar</h6>
                 </div>
+
                 <div class="card-body p-3">
                     @{
                         var comments = ViewBag.UserComments as List<CommentViewModel>;
@@ -58,7 +61,8 @@
             </div>
         </div>
 
-        <!-- SAĞ: Takımlar -->
+
+        <!-- Takımlar -->
         <div class="col-md-8">
             <h5 class="mb-3 text-center"><i class="bi bi-clipboard"></i> Takımlar</h5>
 
@@ -73,11 +77,22 @@
                     <div class="card-header d-flex justify-content-between align-items-center">
                         <a href="/team/details/@team.Id" class="text-decoration-none fw-bold">@team.TeamName</a>
                         <span>@team.CreatedAt.ToShortDateString()</span>
+
+                        @if (Model.IsCurrentUser)
+                        {
+                            <form asp-action="DeleteTeam" asp-controller="Team" method="post" class="ms-3">
+                                <input type="hidden" name="teamId" value="@team.Id" />
+                                <button type="submit" class="btn btn-sm btn-danger"
+                                    onclick="return confirm('Bu takımı silmek istediğine emin misin?')">
+                                    Sil
+                                </button>
+                            </form>
+                        }
                     </div>
 
+                    <!-- Saha -->
                     <div class="card-body">
-                        <div class="football-field position-relative" data-formation="@team.Formation"
-                            style="background: #4CAF50; height: 600px; border-radius: 10px; border: 2px solid white;">
+                        <div class="football-field position-relative" data-formation="@team.Formation">
 
                             <!-- Ceza sahaları -->
                             <div class="penalty-box top-box">
@@ -89,7 +104,6 @@
                             </div>
 
                             <div id="playerPositions" class="position-relative h-100">
-
                                 @foreach (var tp in team.TeamPlayers)
                                 {
                                     <div class="player-slot position-absolute" data-position="@tp.PositionSlot"
@@ -114,7 +128,10 @@
     </div>
 </div>
 
+
+
 @section Scripts {
+
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             document.querySelectorAll('.football-field').forEach(field => {
@@ -122,11 +139,13 @@
 
                 const playerSlots = field.querySelectorAll('.player-slot');
 
+                // Formasyonun defans, orta saha ve forvet kısımlarına ayrılması
                 const formationParts = formation.split('-').map(Number);
                 const defCount = formationParts[0];
                 const midCount = formationParts[1];
                 const fwdCount = formationParts[2];
 
+                // Pozisyonlara göre yatay konum hesaplama
                 const getHorizontal = (i, count) =>
                     count === 1 ? '50%' :
                         count === 2 ? ['35%', '65%'][i] :
@@ -134,6 +153,7 @@
                                 count === 4 ? ['20%', '40%', '60%', '80%'][i] :
                                     count === 5 ? ['15%', '32%', '50%', '68%', '85%'][i] : '50%';
 
+                // Belirli pozisyonları grup olarak konumlandırma
                 const groupAndPlace = (prefixes, count, top) => {
                     let i = 0;
                     playerSlots.forEach(p => {
@@ -145,12 +165,14 @@
                     });
                 };
 
+                // Kaleciyi yerleştir
                 const gk = Array.from(playerSlots).find(p => p.dataset.position === 'GK');
                 if (gk) {
                     gk.style.left = '50%';
                     gk.style.top = '85%';
                 }
 
+                // Defans, orta saha ve forvetleri konumlandır
                 groupAndPlace(['CB', 'LB', 'RB', 'LWB', 'RWB'], defCount, '63%');
                 groupAndPlace(['CM', 'LM', 'RM', 'CAM'], midCount, '40%');
                 groupAndPlace(['ST', 'LW', 'RW'], fwdCount, '15%');
@@ -158,14 +180,20 @@
         });
     </script>
 
+
     <style>
+        /* Saha alanının arka planı, kenar çizgileri ve genel görünümü */
         .football-field {
             background-image: linear-gradient(#4CAF50, #388E3C);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             overflow: hidden;
             position: relative;
+            height: 600px;
+            border-radius: 10px;
+            border: 2px solid white;
         }
 
+        /* Orta saha çizgisi */
         .football-field::before {
             content: '';
             position: absolute;
@@ -173,9 +201,11 @@
             left: 0;
             right: 0;
             height: 2px;
-            background: rgba(255, 255, 255, 0.7);
+            background: rgba(255, 255, 255, 0.6);
+            pointer-events: none;
         }
 
+        /* Orta saha çemberi */
         .football-field::after {
             content: '';
             position: absolute;
@@ -184,68 +214,93 @@
             transform: translate(-50%, -50%);
             width: 100px;
             height: 100px;
-            border: 2px solid rgba(255, 255, 255, 0.7);
+            border: 2px solid rgba(255, 255, 255, 0.6);
             border-radius: 50%;
-            z-index: 1;
+            pointer-events: none;
         }
 
+        /* Ceza sahası kutuları */
+        .penalty-box {
+            position: absolute;
+            width: 180px;
+            height: 70px;
+            border: 2px solid white;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 0;
+        }
+
+        /* Üst ceza sahası */
+        .top-box {
+            top: 0;
+            border-top: none;
+        }
+
+        /* Alt ceza sahası */
+        .bottom-box {
+            bottom: 0;
+            border-bottom: none;
+        }
+
+        /* Oyuncu yerleşim noktası (slot) */
         .player-slot {
             position: absolute;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
-            width: 80px;
-            height: 80px;
+            transform: translate(-50%, -50%);
             z-index: 10;
         }
 
+        /* Oyuncu kartı kutusu */
         .player-card {
             background: rgba(255, 255, 255, 0.2);
-            border-radius: 8px;
+            border-radius: 10px;
             width: 80px;
-            height: 100px;
+            height: 102px;
             box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 5px;
-            transition: transform 0.3s;
+            padding: 6px;
+            transition: transform 0.25s ease;
         }
 
+        /* Kart üzerine gelince büyüme efekti */
         .player-card:hover {
             transform: scale(1.1);
-            z-index: 20;
         }
 
+        /* Oyuncu fotoğrafı */
         .player-card img {
-            width: 65px;
-            height: 65px;
+            width: 67px;
+            height: 67px;
             border-radius: 50%;
             object-fit: cover;
             background: white;
         }
 
+        /* Oyuncu ismi ve puanı kutusu */
         .player-info {
             text-align: center;
             margin-top: 5px;
         }
 
+        /* Oyuncu ismi */
         .player-name {
             font-size: 11px;
-            font-weight: bold;
+            font-weight: 600;
             text-align: center;
             display: -webkit-box;
             -webkit-line-clamp: 2;
-            /* en fazla 2 satır */
             -webkit-box-orient: vertical;
             overflow: hidden;
             max-width: 80px;
-            line-height: 1.1;
             height: 25px;
+            line-height: 1.1;
         }
 
-
+        /* Oyuncu genel puanı */
         .player-overall {
             background: #0d6efd;
             color: white;
@@ -257,25 +312,6 @@
             font-weight: bold;
             margin: 0 auto;
         }
-
-        .penalty-box {
-            position: absolute;
-            width: 180px;
-            height: 70px;
-            border: 2px solid white;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 0;
-        }
-
-        .top-box {
-            top: 0;
-            border-top: none;
-        }
-
-        .bottom-box {
-            bottom: 0;
-            border-bottom: none;
-        }
     </style>
+
 }

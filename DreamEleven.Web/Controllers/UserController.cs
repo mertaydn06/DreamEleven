@@ -58,14 +58,17 @@ namespace DreamEleven.Web.Controllers
 
 
         [Authorize]
+        [HttpGet("edit")]
         public async Task<IActionResult> Edit()
         {
             var user = await _userManager.GetUserAsync(User);
+
             if (user == null) return NotFound();
 
-            var model = new EditUserViewModel
+            var model = new UserEditViewModel
             {
-                Username = user.UserName!,
+                Id = user.Id,
+                UserName = user.UserName!,
                 Email = user.Email!,
                 Image = user.Image
             };
@@ -74,43 +77,72 @@ namespace DreamEleven.Web.Controllers
         }
 
         [Authorize]
-        [HttpPost]
-        public async Task<IActionResult> Edit(EditUserViewModel model)
+        [HttpPost("edit")]
+        public async Task<IActionResult> Edit(UserEditViewModel model)
         {
-            if (!ModelState.IsValid) return View(model);
+            if (!ModelState.IsValid)
+                return View(model);
 
-            var user = await _userManager.GetUserAsync(User);
-            if (user == null) return NotFound();
+            var user = await _userManager.FindByIdAsync(model.Id);
 
-            user.UserName = model.Username;
-            user.Image = model.Image;
+            if (user == null)
+                return NotFound();
 
-            var updateResult = await _userManager.UpdateAsync(user);
-
-            if (!string.IsNullOrEmpty(model.NewPassword))
+            // 📷 Eğer dosya geldiyse işle
+            if (model.ImageFile != null && model.ImageFile.Length > 0)
             {
-                var token = await _userManager.GeneratePasswordResetTokenAsync(user);
-                var passResult = await _userManager.ResetPasswordAsync(user, token, model.NewPassword);
-
-                if (!passResult.Succeeded)
+                // 5MB sınır kontrolü
+                if (model.ImageFile.Length > 5 * 1024 * 1024)
                 {
-                    foreach (var err in passResult.Errors)
-                        ModelState.AddModelError("", err.Description);
+                    ModelState.AddModelError("", "Yüklenen dosya en fazla 5 MB olmalıdır.");
                     return View(model);
                 }
+
+                // Uzantı kontrolü
+                var allowedExtensions = new[] { ".jpg", ".jpeg", ".png" };
+                var extension = Path.GetExtension(model.ImageFile.FileName).ToLowerInvariant();
+
+                if (!allowedExtensions.Contains(extension))
+                {
+                    ModelState.AddModelError("", "Sadece JPG, JPEG veya PNG dosyaları yükleyebilirsiniz.");
+                    return View(model);
+                }
+
+                // Yükleme işlemi
+                var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images/users");
+
+                if (!Directory.Exists(uploadsFolder))
+                    Directory.CreateDirectory(uploadsFolder);
+
+                var uniqueFileName = Guid.NewGuid().ToString() + extension;
+                var filePath = Path.Combine(uploadsFolder, uniqueFileName);
+
+                using (var fileStream = new FileStream(filePath, FileMode.Create))
+                {
+                    await model.ImageFile.CopyToAsync(fileStream);
+                }
+
+                user.Image = "/images/users/" + uniqueFileName;
             }
 
-            if (updateResult.Succeeded)
+            // Diğer kullanıcı bilgileri güncelleniyor
+            user.Email = model.Email;
+            user.UserName = model.UserName;
+
+            var result = await _userManager.UpdateAsync(user);
+
+            if (!result.Succeeded)
             {
-                await _signInManager.RefreshSignInAsync(user);
-                return RedirectToAction("Profile", new { username = user.UserName });
+                foreach (var error in result.Errors)
+                    ModelState.AddModelError("", error.Description);
+
+                return View(model);
             }
 
-            foreach (var err in updateResult.Errors)
-                ModelState.AddModelError("", err.Description);
+            // Kullanıcı oturumunu yenile
+            await _signInManager.RefreshSignInAsync(user);
 
-            return View(model);
+            return RedirectToAction("Profile", new { username = user.UserName });
         }
-
     }
 }

@@ -56,14 +56,14 @@ namespace DreamEleven.Web.Controllers
                 return View(model);
             }
 
-            var userId = "01a8bbc4-ddf6-4ee7-9dfa-311d82b64e3f"; // oturum açmış kullanıcıdan id alıyoruz
+            var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
 
             var team = new Team
             {
                 TeamName = model.TeamName,
                 Formation = model.Formation,
                 CreatedAt = DateTime.UtcNow,
-                UserId = userId,
+                UserId = userId!,
                 TeamPlayers = model.Players.Select(p => new TeamPlayer
                 {
                     PlayerId = p.PlayerId,
@@ -99,9 +99,33 @@ namespace DreamEleven.Web.Controllers
                 });
             }
 
+            var owner = await _userManager.FindByIdAsync(team.UserId);
+            ViewBag.TeamOwner = owner;
+
+
             ViewBag.Comments = commentVMs;  // Yorumları ViewBag ile View'a gönderdik.
             return View(team);
         }
+
+        [Authorize]
+        [HttpPost]
+        public async Task<IActionResult> DeleteTeam(int teamId)
+        {
+            var team = await _teamService.GetTeamByIdAsync(teamId);
+
+            if (team == null)
+                return NotFound();
+
+            var currentUserId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+
+            if (team.UserId != currentUserId)
+                return Forbid(); // Başkasının takımını silemesin
+
+            await _teamService.DeleteTeamAsync(teamId); // 🔥 SADECE ID VERİYORSUN
+
+            return Redirect($"/profile/{User.Identity!.Name}");
+        }
+
 
     }
 }

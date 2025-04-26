@@ -48,6 +48,18 @@
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"qj2crncpxn"},{"Name":"integrity","Value":"sha256-GrFIB0\u002Bg/zfRiE/Wv9QUqGnfNNM0KwC1HCtixYeaHhQ="},{"Name":"label","Value":"_content/DreamEleven.Web/images/User.jpg"}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"46415"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022GrFIB0\u002Bg/zfRiE/Wv9QUqGnfNNM0KwC1HCtixYeaHhQ=\u0022"},{"Name":"Last-Modified","Value":"Fri, 25 Apr 2025 17:26:32 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DreamEleven.Web/images/users/84febc07-6f73-45d8-8de7-355835810266.da968kq8ox.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\users\84febc07-6f73-45d8-8de7-355835810266.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"da968kq8ox"},{"Name":"integrity","Value":"sha256-exP0GBRj7LefhL0Dlv5K65vGZuwK2f7Gy9s0fKT/Cbk="},{"Name":"label","Value":"_content/DreamEleven.Web/images/users/84febc07-6f73-45d8-8de7-355835810266.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"25417"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022exP0GBRj7LefhL0Dlv5K65vGZuwK2f7Gy9s0fKT/Cbk=\u0022"},{"Name":"Last-Modified","Value":"Sat, 26 Apr 2025 08:35:51 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DreamEleven.Web/images/users/84febc07-6f73-45d8-8de7-355835810266.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\users\84febc07-6f73-45d8-8de7-355835810266.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-exP0GBRj7LefhL0Dlv5K65vGZuwK2f7Gy9s0fKT/Cbk="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"25417"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022exP0GBRj7LefhL0Dlv5K65vGZuwK2f7Gy9s0fKT/Cbk=\u0022"},{"Name":"Last-Modified","Value":"Sat, 26 Apr 2025 08:35:51 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/DreamEleven.Web/js/site.js">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\site.js'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>

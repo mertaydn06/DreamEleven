@@ -1,6 +1,4 @@
 @model DreamEleven.Entities.Team
-@using DreamEleven.Web.Helpers
-@using DreamEleven.Entities
 
 @{
     ViewBag.Title = "Takım Detayları";
@@ -9,24 +7,45 @@
 <div class="container mt-4">
     <div class="row">
         <div class="col-md-4">
+
+            <!-- Sol: Takım Bilgisi -->
             <div class="card mb-4">
+
                 <div class="card-header">
                     <h3 class="mb-0">@Model.TeamName</h3>
                 </div>
-                <div class="card-body">
+
+                <div class="card-body text-center">
                     <p><strong>Diziliş:</strong> @Model.Formation</p>
+
                     <p><strong>Oluşturulma Tarihi:</strong> @Model.CreatedAt.ToShortDateString()</p>
+
+                    <p class="d-flex align-items-center justify-content-center mb-0">
+                        <strong class="me-2">Oluşturan:</strong>
+                        <a href="/profile/@ViewBag.TeamOwner.UserName"
+                            class="d-flex align-items-center text-decoration-none">
+                            <img src="@(string.IsNullOrEmpty(ViewBag.TeamOwner?.Image) ? "/images/User.jpg" : ViewBag.TeamOwner.Image)"
+                                class="rounded-circle" style="width: 30px; height: 30px; object-fit: cover;" />
+                            <span class="ms-2">@ViewBag.TeamOwner.UserName</span>
+                        </a>
+                    </p>
+
                 </div>
             </div>
 
+
+            <!-- Sol: Takımdaki Oyuncular -->
             <div class="card">
+
                 <div class="card-header">
                     <h4 class="mb-0">Takım Kadrosu</h4>
                 </div>
+
                 <div class="card-body p-0">
                     <div class="list-group list-group-flush">
-
-                        @foreach (var teamPlayer in Model.TeamPlayers.OrderBy(p => p.Player.Overall))
+                        @foreach (var teamPlayer in Model.TeamPlayers
+                                                .OrderBy(tp => tp.Player.Position) // Önce pozisyona göre sıralıyoruz
+                                                .ThenByDescending(tp => tp.Player.Overall)) // Aynı pozisyondakilerde en iyisi üste çıksın
                         {
                             <a asp-controller="Home" asp-action="PlayerDetails" asp-route-slug="@teamPlayer.Player.Slug"
                                 class="list-group-item d-flex align-items-center text-decoration-none text-dark">
@@ -38,38 +57,40 @@
                                     <h6 class="mb-0">@teamPlayer.Player.Name</h6>
                                     <small class="text-muted">@teamPlayer.Player.RealTeam</small>
                                 </div>
-                                
+
                                 <div class="ms-auto">
                                     <span class="badge bg-primary rounded-pill">@teamPlayer.Player.Overall</span>
                                 </div>
                             </a>
                         }
-
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="col-md-8">
-            <div class="football-field position-relative"
-                style="background: #4CAF50; height: 600px; border-radius: 10px; border: 2px solid white;">
-                <!-- Ceza sahası çizgileri -->
-<div class="penalty-box top-box">
-    <div class="penalty-dot"></div>
-</div>
-<div class="penalty-box bottom-box">
-    <div class="penalty-dot"></div>
-</div>
 
-                
+        <!-- Saha -->
+        <div class="col-md-8">
+            <div class="football-field position-relative">
+
+                <!-- Ceza sahası çizgileri -->
+                <div class="penalty-box top-box">
+                    <div class="penalty-dot"></div>
+                </div>
+                <div class="penalty-box bottom-box">
+                    <div class="penalty-dot"></div>
+                </div>
+
+
+                <!-- Saha içindeki oyuncu konumları için container -->
                 <div id="playerPositions" class="position-relative h-100">
 
+                    <!-- Takım oyuncularını saha üstüne yerleştirme -->
                     @foreach (var teamPlayer in Model.TeamPlayers)
                     {
                         <div class="player-slot position-absolute" data-position="@teamPlayer.PositionSlot"
                             style="transform: translate(-50%, -50%);">
                             <a href="/player/@teamPlayer.Player.Slug" class="text-decoration-none text-dark">
-                                <!-- 🔗 Link eklendi -->
                                 <div class="player-card">
                                     <img src="@teamPlayer.Player.ImageUrl" alt="@teamPlayer.Player.Name">
                                     <div class="player-info">
@@ -80,245 +101,264 @@
                             </a>
                         </div>
                     }
-
                 </div>
             </div>
 
-            <!-- Yorum Ekleme Formu (sadece giriş yapmış kullanıcılar için) -->
-@if (User.Identity!.IsAuthenticated)
-{
-    <form method="post" asp-controller="Comment" asp-action="AddComment" >
-        <input type="hidden" name="teamId" value="@Model.Id" />
-        <div class="mb-3">
-<h4 class=" my-3 fw-semibold">Yorum Yap</h4>
-<textarea name="content" class="form-control shadow-sm p-1" rows="4" style="resize: none;" required></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary">Gönder</button>
-    </form>
-}
 
-<hr />
+            <!-- Kullanıcı giriş yaptıysa yorum ekleme -->
+            @if (User.Identity!.IsAuthenticated)
+            {
+                <form method="post" asp-controller="Comment" asp-action="AddComment">
+                    <input type="hidden" name="teamId" value="@Model.Id" />
+                    <div class="mb-3">
+                        <h4 class=" my-3 fw-semibold">Yorum Yap</h4>
+                        <textarea name="content" class="form-control shadow-sm p-1" rows="4" style="resize: none;"
+                        required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Gönder</button>
+                </form>
+            }
 
-<!-- Takıma Yapılan Yorumlar -->
-<h3 class=" text-center my-3 fw-semibold">Yorumlar</h4>
+            <hr />
 
-@{
-    var comments = ViewBag.Comments as List<CommentViewModel>;
-}
+            <!-- Yorumları listeleme bölümü -->
+            <h3 class=" text-center my-3 fw-semibold">Yorumlar</h4>
 
-@if (comments != null && comments.Any())
-{
-    foreach (var comment in comments)
-    {
-        <div class="card mb-2">
-            <div class="card-body d-flex align-items-start">
-                
-                <a href="/profile/@comment.UserName" class="text-decoration-none">
-                    <img src="@comment.UserImage" alt="Profil" class="rounded-circle me-3"
-                         style="width: 40px; height: 40px; object-fit: cover;">
-                </a>
+                @{
+                    var comments = ViewBag.Comments as List<CommentViewModel>;
+                }
 
-                <div class="flex-grow-1">
-                    <strong>
-                        <a href="/profile/@comment.UserName" class="text-decoration-none">@comment.UserName</a>
-                    </strong>
-                    <p class="mb-1">@comment.Content</p>
-                    <small class="text-muted">@comment.CreatedAt.ToString("g")</small>
-
-                    @if (User.Identity.IsAuthenticated && User.Identity.Name == comment.UserName)
+                <!-- Yapılan yorumları kart şeklinde listele -->
+                @if (comments != null && comments.Any())
+                {
+                    foreach (var comment in comments)
                     {
-                        <div class="mt-2">
-                            <a asp-controller="Comment" asp-action="EditComment" asp-route-id="@comment.Id"
-                               class="btn btn-sm btn-secondary me-2">Düzenle</a>
+                        <div class="card mb-2">
+                            <div class="card-body d-flex align-items-start">
 
-                            <form asp-controller="Comment" asp-action="DeleteComment" asp-route-id="@comment.Id"
-                                  method="post" class="d-inline">
-                                <button class="btn btn-sm btn-danger"
-                                        onclick="return confirm('Yorumu silmek istediğine emin misin?')">Sil</button>
-                            </form>
+                                <a href="/profile/@comment.UserName" class="text-decoration-none">
+                                    <img src="@comment.UserImage" alt="Profil" class="rounded-circle me-3"
+                                        style="width: 40px; height: 40px; object-fit: cover;">
+                                </a>
+
+                                <div class="flex-grow-1">
+                                    <strong>
+                                        <a href="/profile/@comment.UserName" class="text-decoration-none">@comment.UserName</a>
+                                    </strong>
+                                    <p class="mb-1">@comment.Content</p>
+                                    <small class="text-muted">@comment.CreatedAt.ToString("g")</small>
+
+                                    <!-- Eğer yorum yapan kullanıcı giriş yapmış kullanıcıysa düzenle/sil butonları göster -->
+                                    @if (User.Identity.IsAuthenticated && User.Identity.Name == comment.UserName)
+                                    {
+                                        <div class="mt-2">
+                                            <a asp-controller="Comment" asp-action="EditComment" asp-route-id="@comment.Id"
+                                                class="btn btn-sm btn-secondary me-2">Düzenle</a>
+
+                                            <form asp-controller="Comment" asp-action="DeleteComment" asp-route-id="@comment.Id"
+                                                method="post" class="d-inline">
+                                                <button class="btn btn-sm btn-danger"
+                                                    onclick="return confirm('Yorumu silmek istediğine emin misin?')">Sil</button>
+                                            </form>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
                         </div>
                     }
-                </div>
-            </div>
-        </div>
-    }
-}
-else
-{
-    <p>Henüz yorum yapılmamış.</p>
-}
-
-
+                }
+                else
+                {
+                    <!-- Henüz yorum yoksa mesaj göster -->
+                    <p>Henüz yorum yapılmamış.</p>
+                }
 
         </div>
     </div>
 </div>
 
+
+
 @section Scripts {
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const formation = '@Model.Formation';
-        const playerSlots = document.querySelectorAll('.player-slot');
 
-        const formationParts = formation.split('-').map(Number);
-        const defCount = formationParts[0];
-        const midCount = formationParts[1];
-        const fwdCount = formationParts[2];
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const formation = '@Model.Formation';
+            const playerSlots = document.querySelectorAll('.player-slot');
 
-        const getHorizontal = (i, count) =>
-            count === 1 ? '50%' :
-                count === 2 ? ['35%', '65%'][i] :
-                    count === 3 ? ['25%', '50%', '75%'][i] :
-                        count === 4 ? ['20%', '40%', '60%', '80%'][i] :
-                            count === 5 ? ['15%', '32%', '50%', '68%', '85%'][i] : '50%';
+            // Formasyonun defans, orta saha ve forvet kısımlarına ayrılması
+            const formationParts = formation.split('-').map(Number);
+            const defCount = formationParts[0];
+            const midCount = formationParts[1];
+            const fwdCount = formationParts[2];
 
-        const groupAndPlace = (prefixes, count, top) => {
-            let i = 0;
-            playerSlots.forEach(p => {
-                const pos = p.dataset.position;
-                if (prefixes.some(prefix => pos.startsWith(prefix))) {
-                    p.style.left = getHorizontal(i++, count);
-                    p.style.top = top;
-                }
-            });
-        };
+            // Pozisyonlara göre yatay konum hesaplama
+            const getHorizontal = (i, count) =>
+                count === 1 ? '50%' :
+                    count === 2 ? ['35%', '65%'][i] :
+                        count === 3 ? ['25%', '50%', '75%'][i] :
+                            count === 4 ? ['20%', '40%', '60%', '80%'][i] :
+                                count === 5 ? ['15%', '32%', '50%', '68%', '85%'][i] : '50%';
 
-        // Kaleci
-        const gk = Array.from(playerSlots).find(p => p.dataset.position === 'GK');
-        if (gk) {
-            gk.style.left = '50%';
-            gk.style.top = '84%';
+            // Belirli pozisyonları grup olarak konumlandırma
+            const groupAndPlace = (prefixes, count, top) => {
+                let i = 0;
+                playerSlots.forEach(p => {
+                    const pos = p.dataset.position;
+                    if (prefixes.some(prefix => pos.startsWith(prefix))) {
+                        p.style.left = getHorizontal(i++, count);
+                        p.style.top = top;
+                    }
+                });
+            };
+
+            // Kaleciyi yerleştir
+            const gk = Array.from(playerSlots).find(p => p.dataset.position === 'GK');
+            if (gk) {
+                gk.style.left = '50%';
+                gk.style.top = '84%';
+            }
+
+            // Defans, orta saha ve forvetleri konumlandır
+            groupAndPlace(['CB', 'LB', 'RB', 'LWB', 'RWB'], defCount, '63%');
+            groupAndPlace(['CM', 'LM', 'RM', 'CAM'], midCount, '38%');
+            groupAndPlace(['ST', 'LW', 'RW'], fwdCount, '13%');
+        });
+    </script>
+
+
+    <style>
+        /* Saha alanının arka planı, kenar çizgileri ve genel görünümü */
+        .football-field {
+            background-image: linear-gradient(#4CAF50, #388E3C);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            position: relative;
+            height: 600px;
+            border-radius: 10px;
+            border: 2px solid white;
         }
 
-        // Gruplar
-        groupAndPlace(['CB', 'LB', 'RB', 'LWB', 'RWB'], defCount, '63%');
-        groupAndPlace(['CM', 'LM', 'RM', 'CAM'], midCount, '38%');
-        groupAndPlace(['ST', 'LW', 'RW'], fwdCount, '13%');
-    });
-</script>
+        /* Orta saha çizgisi */
+        .football-field::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.6);
+            pointer-events: none;
+        }
 
+        /* Orta saha çemberi */
+        .football-field::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100px;
+            height: 100px;
+            border: 2px solid rgba(255, 255, 255, 0.6);
+            border-radius: 50%;
+            pointer-events: none;
+        }
 
-<style>
-    .football-field {
-        background-image: linear-gradient(#4CAF50, #388E3C);
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        overflow: hidden;
-        position: relative;
-        height: 700px;
-        border-radius: 10px;
-        border: 2px solid white;
-    }
+        /* Ceza sahası kutuları */
+        .penalty-box {
+            position: absolute;
+            width: 180px;
+            height: 70px;
+            border: 2px solid white;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 0;
+        }
 
-    .football-field::before {
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: 0;
-        right: 0;
-        height: 2px;
-        background: rgba(255, 255, 255, 0.6);
-        pointer-events: none;
-    }
+        /* Üst ceza sahası */
+        .top-box {
+            top: 0;
+            border-top: none;
+        }
 
-    .football-field::after {
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 100px;
-        height: 100px;
-        border: 2px solid rgba(255, 255, 255, 0.6);
-        border-radius: 50%;
-        pointer-events: none;
-        z-index: 1;
-    }
+        /* Alt ceza sahası */
+        .bottom-box {
+            bottom: 0;
+            border-bottom: none;
+        }
 
-    .penalty-box {
-        position: absolute;
-        width: 180px;
-        height: 70px;
-        border: 2px solid white;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 0;
-    }
+        /* Oyuncu yerleşim noktası (slot) */
+        .player-slot {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+        }
 
-    .top-box {
-        top: 0;
-        border-top: none;
-    }
+        /* Oyuncu kartı kutusu */
+        .player-card {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            width: 80px;
+            height: 102px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 6px;
+            transition: transform 0.25s ease;
+        }
 
-    .bottom-box {
-        bottom: 0;
-        border-bottom: none;
-    }
+        /* Kart üzerine gelince büyüme efekti */
+        .player-card:hover {
+            transform: scale(1.1);
+        }
 
-    .player-slot {
-        position: absolute;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transform: translate(-50%, -50%);
-        z-index: 10;
-    }
+        /* Oyuncu fotoğrafı */
+        .player-card img {
+            width: 67px;
+            height: 67px;
+            border-radius: 50%;
+            /* yuvarlak yap */
+            object-fit: cover;
+            background: white;
+        }
 
-    .player-card {
-        background: rgba(255, 255, 255, 0.2);
-        border-radius: 10px;
-        width: 80px;
-        height: 100px;
-        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 6px;
-        transition: transform 0.25s ease;
-    }
+        /* Oyuncu ismi ve puanı kutusu */
+        .player-info {
+            text-align: center;
+            margin-top: 5px;
+        }
 
-    .player-card:hover {
-        transform: scale(1.1);
-        z-index: 20;
-    }
+        /* Oyuncu ismi */
+        .player-name {
+            font-size: 11px;
+            font-weight: 600;
+            text-align: center;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            max-width: 80px;
+            height: 25px;
+            line-height: 1.1;
+        }
 
-    .player-card img {
-        width: 65px;
-        height: 65px;
-        border-radius: 50%;
-        object-fit: cover;
-        background: white;
-    }
-
-    .player-info {
-        text-align: center;
-        margin-top: 5px;
-    }
-
-    .player-name {
-        font-size: 11px;
-        font-weight: 600;
-        text-align: center;
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-        max-width: 80px;
-        height: 25px;
-        line-height: 1.1;
-    }
-
-    .player-overall {
-        background: #0d6efd;
-        color: white;
-        border-radius: 50%;
-        width: 24px;
-        height: 24px;
-        line-height: 24px;
-        font-size: 12px;
-        font-weight: bold;
-        margin: 0 auto;
-    }
-</style>
-
+        /* Oyuncu genel puanı */
+        .player-overall {
+            background: #0d6efd;
+            color: white;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            line-height: 24px;
+            font-size: 12px;
+            font-weight: bold;
+            margin: 0 auto;
+        }
+    </style>
 
 }

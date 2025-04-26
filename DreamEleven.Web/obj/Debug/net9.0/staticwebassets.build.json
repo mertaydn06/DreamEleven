@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "PC440XiB17WnbIWDrauOOoUD2Hgp4mYGz+TYaWcxs1Q=",
+  "Hash": "E/l4f73ToMLZy3YiSKPQzjfaEBO/jfzkDGR0stEIE9A=",
   "Source": "DreamEleven.Web",
   "BasePath": "_content/DreamEleven.Web",
   "Mode": "Default",
@@ -1464,6 +1464,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\User.jpg"
+    },
+    {
+      "Identity": "C:\\Code\\C#\\Mvc\\DreamEleven\\DreamEleven.Web\\wwwroot\\images\\users\\84febc07-6f73-45d8-8de7-355835810266.jpg",
+      "SourceId": "DreamEleven.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Code\\C#\\Mvc\\DreamEleven\\DreamEleven.Web\\wwwroot\\",
+      "BasePath": "_content/DreamEleven.Web",
+      "RelativePath": "images/users/84febc07-6f73-45d8-8de7-355835810266#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "da968kq8ox",
+      "Integrity": "exP0GBRj7LefhL0Dlv5K65vGZuwK2f7Gy9s0fKT/Cbk=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\users\\84febc07-6f73-45d8-8de7-355835810266.jpg"
     },
     {
       "Identity": "C:\\Code\\C#\\Mvc\\DreamEleven\\DreamEleven.Web\\wwwroot\\js\\site.js",
@@ -4019,6 +4040,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-GrFIB0+g/zfRiE/Wv9QUqGnfNNM0KwC1HCtixYeaHhQ="
+        }
+      ]
+    },
+    {
+      "Route": "images/users/84febc07-6f73-45d8-8de7-355835810266.da968kq8ox.jpg",
+      "AssetFile": "C:\\Code\\C#\\Mvc\\DreamEleven\\DreamEleven.Web\\wwwroot\\images\\users\\84febc07-6f73-45d8-8de7-355835810266.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "25417"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"exP0GBRj7LefhL0Dlv5K65vGZuwK2f7Gy9s0fKT/Cbk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 26 Apr 2025 08:35:51 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "da968kq8ox"
+        },
+        {
+          "Name": "label",
+          "Value": "images/users/84febc07-6f73-45d8-8de7-355835810266.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-exP0GBRj7LefhL0Dlv5K65vGZuwK2f7Gy9s0fKT/Cbk="
+        }
+      ]
+    },
+    {
+      "Route": "images/users/84febc07-6f73-45d8-8de7-355835810266.jpg",
+      "AssetFile": "C:\\Code\\C#\\Mvc\\DreamEleven\\DreamEleven.Web\\wwwroot\\images\\users\\84febc07-6f73-45d8-8de7-355835810266.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "25417"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"exP0GBRj7LefhL0Dlv5K65vGZuwK2f7Gy9s0fKT/Cbk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 26 Apr 2025 08:35:51 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-exP0GBRj7LefhL0Dlv5K65vGZuwK2f7Gy9s0fKT/Cbk="
         }
       ]
     },

@@ -1,4 +1,4 @@
-@model EditUserViewModel
+@model UserEditViewModel
 @{
     ViewData["Title"] = "Profili Düzenle";
 }
@@ -6,27 +6,25 @@
 <div class="container mt-5">
     <h2>Profili Güncelle</h2>
     <hr />
-    <form method="post">
+    <form asp-action="Edit" method="post" enctype="multipart/form-data">
+
+        <input asp-for="Id" type="hidden" />
+
         <div class="mb-3">
             <label class="form-label">Kullanıcı Adı</label>
-            <input asp-for="Username" class="form-control" />
-            <span asp-validation-for="Username" class="text-danger"></span>
+            <input asp-for="UserName" class="form-control" />
+            <span asp-validation-for="UserName" class="text-danger"></span>
         </div>
 
         <div class="mb-3">
             <label class="form-label">Email</label>
-            <input asp-for="Email" class="form-control" readonly />
+            <input asp-for="Email" class="form-control" />
+            <span asp-validation-for="Email" class="text-danger"></span>
         </div>
 
         <div class="mb-3">
-            <label class="form-label">Profil Resmi URL</label>
-            <input asp-for="Image" class="form-control" />
-        </div>
-
-        <div class="mb-3">
-            <label class="form-label">Yeni Şifre</label>
-            <input asp-for="NewPassword" class="form-control" />
-            <span asp-validation-for="NewPassword" class="text-danger"></span>
+            <label for="ImageFile" class="form-label">Profil Fotoğrafı</label>
+            <input asp-for="ImageFile" type="file" class="form-control" accept="image/*" />
         </div>
 
         <button type="submit" class="btn btn-primary">Güncelle</button>
