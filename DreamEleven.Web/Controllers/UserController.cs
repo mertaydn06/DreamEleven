@@ -27,7 +27,7 @@ namespace DreamEleven.Web.Controllers
 
 
         [HttpGet("{username}")]
-        public async Task<IActionResult> Profile(string username)
+        public async Task<IActionResult> Profile(string username, int page = 1)
         {
             var user = await _userManager.FindByNameAsync(username);  // Gelen username' ait kullanıcı bilgileri user'a aktarılır.
 
@@ -36,12 +36,22 @@ namespace DreamEleven.Web.Controllers
 
             var teams = await _teamService.GetTeamsByUserIdAsync(user.Id);  // Kullanıcıya ait takımları getirir.
 
+            // Sayfalama işlemi 👇
+            int pageSize = 3;  // Bir sayfada gösterilecek takım sayısı
+
+            var pagedTeams = teams
+                .OrderByDescending(t => t.CreatedAt)
+                .Skip((page - 1) * pageSize)
+                .Take(pageSize)
+                .ToList();
+
             var model = new UserProfileViewModel
             {
                 User = user,
-                Teams = teams,
+                Teams = pagedTeams,   // Sadece o sayfadaki takımlar
                 IsCurrentUser = User.Identity!.Name == username
             };
+
             var userComments = await _commentService.GetCommentsByUserIdAsync(user.Id);
 
             var commentVMs = userComments.Select(c => new CommentViewModel
@@ -53,8 +63,14 @@ namespace DreamEleven.Web.Controllers
             }).ToList();
 
             ViewBag.UserComments = commentVMs;
+
+            // Sayfalama bilgileri ViewBag ile View'a gönderiyoruz
+            ViewBag.CurrentPage = page;
+            ViewBag.TotalPages = (int)Math.Ceiling((double)teams.Count() / pageSize);
+
             return View(model);
         }
+
 
 
         [Authorize]

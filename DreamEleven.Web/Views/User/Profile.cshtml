@@ -9,54 +9,54 @@
 
         <!-- Sol: Kullanıcı Bilgisi -->
         <div class="col-md-4">
-            <div class="card text-center mb-4">
-                <div class="card-body">
-                    <img src="@(string.IsNullOrEmpty(Model.User.Image) ? "/images/User.jpg" : Model.User.Image)"
-                        alt="Profil" class="rounded-circle mb-2"
-                        style="width: 100px; height: 100px; object-fit: cover;" />
+            <div style="position: sticky; top: 20px;">
 
-                    <h5 class="card-title">@Model.User.UserName</h5>
-                    <p class="text-muted">Katılım: @Model.User.CreatedAt.ToShortDateString()</p>
-                </div>
-            </div>
+                <div class="card text-center mb-4">
+                    <div class="card-body">
+                        <img src="@(string.IsNullOrEmpty(Model.User.Image) ? "/images/User.jpg" : Model.User.Image)"
+                            alt="Profil" class="rounded-circle mb-2"
+                            style="width: 100px; height: 100px; object-fit: cover;" />
+                        <h5 class="card-title">@Model.User.UserName</h5>
+                        <p class="text-muted">Katılım: @Model.User.CreatedAt.ToShortDateString()</p>
 
-            <!-- Profili düzenle butonu (sadece kendi profiline bakıyorsa) -->
-            @if (User.Identity!.IsAuthenticated &&
-                        User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value == Model.User.Id)
-            {
-                <div class="text-end mb-3">
-                    <a asp-controller="User" asp-action="Edit" class="btn btn-dark btn-sm">Profili Düzenle</a>
-                </div>
-            }
-
-            <!-- Sol: Kullanıcının Yorumları -->
-            <div class="card">
-                <div class="card-header">
-                    <h6 class="mb-0">Yaptığı Yorumlar</h6>
-                </div>
-
-                <div class="card-body p-3">
-                    @{
-                        var comments = ViewBag.UserComments as List<CommentViewModel>;
-                    }
-
-                    @if (comments != null && comments.Any())
-                    {
-                        foreach (var comment in comments)
+                        @if (User.Identity!.IsAuthenticated &&
+                                                User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value == Model.User.Id)
                         {
-                            <div class="mb-3 border-bottom pb-2">
-                                <a href="/team/details/@comment.TeamId" class="fw-bold text-decoration-none">
-                                    @comment.TeamName
-                                </a>
-                                <p class="mb-1">@comment.Content</p>
-                                <small class="text-muted">@comment.CreatedAt.ToShortDateString()</small>
+                            <div class="d-flex justify-content-center mt-2 mb-0">
+                                <a asp-controller="User" asp-action="Edit" class="btn btn-dark btn-sm">Profili Düzenle</a>
                             </div>
+
                         }
-                    }
-                    else
-                    {
-                        <p class="text-muted">Henüz yorum yapmamış.</p>
-                    }
+                    </div>
+                </div>
+
+                <!-- Sol: Kullanıcının yaptığı yorumlar -->
+                <div class="card">
+                    <div class="card-header">
+                        <h6 class="mb-0">Yaptığı Yorumlar</h6>
+                    </div>
+                    <div class="card-body p-3">
+                        @{
+                            var comments = ViewBag.UserComments as List<CommentViewModel>;
+                        }
+                        @if (comments != null && comments.Any())
+                        {
+                            foreach (var comment in comments.Take(5))
+                            {
+                                <div class="mb-3 border-bottom pb-2">
+                                    <a href="/team/details/@comment.TeamId" class="fw-bold text-decoration-none">
+                                        @comment.TeamName
+                                    </a>
+                                    <p class="mb-1">@comment.Content</p>
+                                    <small class="text-muted">@comment.CreatedAt.ToShortDateString()</small>
+                                </div>
+                            }
+                        }
+                        else
+                        {
+                            <p class="text-muted">Henüz yorum yapmamış.</p>
+                        }
+                    </div>
                 </div>
             </div>
         </div>
@@ -124,6 +124,37 @@
                     </div>
                 </div>
             }
+
+
+            <!-- Pagination işlemi -->
+            <div class="d-flex justify-content-center mt-4" style="width: 100%;">
+                <div style="width: 100%; display: flex; justify-content: center;">
+                    <nav>
+                        <ul class="pagination">
+                            @if (ViewBag.CurrentPage > 1)
+                            {
+                                <li class="page-item">
+                                    <a class="page-link" href="?page=@(ViewBag.CurrentPage - 1)">« Önceki</a>
+                                </li>
+                            }
+
+                            @for (int i = 1; i <= ViewBag.TotalPages; i++)
+                            {
+                                <li class="page-item @(i == ViewBag.CurrentPage ? "active" : "")">
+                                    <a class="page-link" href="?page=@i">@i</a>
+                                </li>
+                            }
+
+                            @if (ViewBag.CurrentPage < ViewBag.TotalPages)
+                            {
+                                <li class="page-item">
+                                    <a class="page-link" href="?page=@(ViewBag.CurrentPage + 1)">Sonraki »</a>
+                                </li>
+                            }
+                        </ul>
+                    </nav>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -136,50 +167,62 @@
         document.addEventListener('DOMContentLoaded', function () {
             document.querySelectorAll('.football-field').forEach(field => {
                 const formation = field.dataset.formation ?? "4-4-2";
-
                 const playerSlots = field.querySelectorAll('.player-slot');
 
-                // Formasyonun defans, orta saha ve forvet kısımlarına ayrılması
-                const formationParts = formation.split('-').map(Number);
-                const defCount = formationParts[0];
-                const midCount = formationParts[1];
-                const fwdCount = formationParts[2];
+                // Pozisyona göre gruplar
+                const defenders = ['CB', 'CB1', 'CB2', 'CB3', 'LB', 'RB', 'LWB', 'RWB'];
+                const midfielders = ['CM', 'CM1', 'CM2', 'CM3', 'LM', 'RM', 'CAM', 'CDM'];
+                const forwards = ['ST', 'ST1', 'ST2', 'LW', 'RW', 'CF'];
 
-                // Pozisyonlara göre yatay konum hesaplama
-                const getHorizontal = (i, count) =>
-                    count === 1 ? '50%' :
-                        count === 2 ? ['35%', '65%'][i] :
-                            count === 3 ? ['25%', '50%', '75%'][i] :
-                                count === 4 ? ['20%', '40%', '60%', '80%'][i] :
-                                    count === 5 ? ['15%', '32%', '50%', '68%', '85%'][i] : '50%';
-
-                // Belirli pozisyonları grup olarak konumlandırma
-                const groupAndPlace = (prefixes, count, top) => {
-                    let i = 0;
-                    playerSlots.forEach(p => {
-                        const pos = p.dataset.position;
-                        if (prefixes.some(prefix => pos.startsWith(prefix))) {
-                            p.style.left = getHorizontal(i++, count);
-                            p.style.top = top;
-                        }
-                    });
-                };
-
-                // Kaleciyi yerleştir
-                const gk = Array.from(playerSlots).find(p => p.dataset.position === 'GK');
-                if (gk) {
-                    gk.style.left = '50%';
-                    gk.style.top = '85%';
+                // Pozisyona göre hangi gruba ait olduğunu dönen fonksiyon
+                function getGroup(position) {
+                    if (defenders.some(d => position.startsWith(d))) return 'DEF';
+                    if (midfielders.some(m => position.startsWith(m))) return 'MID';
+                    if (forwards.some(f => position.startsWith(f))) return 'FWD';
+                    if (position === 'GK') return 'GK';
+                    return 'MID'; // default fallback
                 }
 
-                // Defans, orta saha ve forvetleri konumlandır
-                groupAndPlace(['CB', 'LB', 'RB', 'LWB', 'RWB'], defCount, '63%');
-                groupAndPlace(['CM', 'LM', 'RM', 'CAM'], midCount, '40%');
-                groupAndPlace(['ST', 'LW', 'RW'], fwdCount, '15%');
+                // Grupları baştan boş olarak oluşturuyoruz
+                const groupedSlots = {
+                    GK: [],
+                    DEF: [],
+                    MID: [],
+                    FWD: []
+                };
+
+                // Bütün oyuncuları ilgili gruba ekliyoruz
+                playerSlots.forEach(p => {
+                    const group = getGroup(p.dataset.position);
+                    groupedSlots[group].push(p);
+                });
+
+                // Gruplara göre sahada dikeyde (Y ekseni) nerede duracaklarını belirliyoruz
+                const positionsY = {
+                    GK: '85%',
+                    DEF: '63%',
+                    MID: '40%',
+                    FWD: '15%'
+                };
+
+                // Oyuncuları yatayda eşit aralıkla yerleştiriyoruz
+                function distributeHorizontally(players, topPercent) {
+                    const count = players.length;
+                    players.forEach((p, i) => {
+                        const x = (100 / (count + 1)) * (i + 1);
+                        p.style.left = `${x}%`;
+                        p.style.top = topPercent;
+                    });
+                }
+
+                // Her grup için sahaya yerleştirme işlemini uyguluyoruz
+                distributeHorizontally(groupedSlots.DEF, positionsY.DEF);
+                distributeHorizontally(groupedSlots.MID, positionsY.MID);
+                distributeHorizontally(groupedSlots.FWD, positionsY.FWD);
+                distributeHorizontally(groupedSlots.GK, positionsY.GK);
             });
         });
     </script>
-
 
     <style>
         /* Saha alanının arka planı, kenar çizgileri ve genel görünümü */

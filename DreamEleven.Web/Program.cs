@@ -23,7 +23,6 @@ builder.Services.AddScoped<ICommentRepository, EfCommentRepository>();
 builder.Services.AddScoped<ICommentService, CommentManager>();
 
 
-
 // Identity servisleri
 builder.Services.AddIdentity<User, IdentityRole>()
     .AddEntityFrameworkStores<DreamElevenDbContext>()
