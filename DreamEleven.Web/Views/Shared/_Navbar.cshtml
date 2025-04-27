@@ -1,0 +1,82 @@
+@inject SignInManager<User> SignInManager
+@inject UserManager<User> UserManager
+
+
+<nav class="navbar navbar-expand-sm box-shadow mb-3" style="background: rgba(37, 36, 36, 0.5);">
+    <div class="container-fluid">
+
+        <a class="navbar-brand" asp-controller="Home" asp-action="Index">
+            <img src="~/images/logo.png" alt="Dream Eleven"
+                style="height: 40px;  margin-left: 100px; margin-right: -5px;">
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"
+            aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button> @* Küçük ekranlarda hamburger menü (3 çizgili ikon) butonu oluşturur. Menü gizliyken bu butona basınca açılır. *@
+
+        <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                <li class="nav-item">
+                    <a class="nav-link text-light" asp-controller="Home" asp-action="Index">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link text-light" asp-controller="Team" asp-action="Create">Takım Oluştur</a>
+                </li>
+            </ul>
+
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" name="query" placeholder="Futbolcu Ara"
+                    aria-label="Search"
+                    style="width: 250px; background-color: #ebebeb; color: #000000; outline: none; box-shadow: none; border: 1px solid #555;">
+
+            </form>
+
+            <ul class="navbar-nav">
+                @if (SignInManager.IsSignedIn(User)) @* Kullanıcı giriş yapmışsa. *@
+                {
+                    <li class="nav-item dropdown">
+
+                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                            data-bs-toggle="dropdown">
+                            @User.Identity!.Name
+                        </a>
+
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+
+                            <li>
+                                <a class="dropdown-item text-dark" asp-area="" asp-controller="User" asp-action="Profile"
+                                    asp-route-username="@User.Identity.Name">Profilim</a>
+
+                            </li>
+
+                            <li>
+                                <form asp-controller="Account" asp-action="Logout" method="post" class="dropdown-item p-0">
+                                    <button type="submit" class="btn w-100 text-start text-dark">Çıkış Yap</button>
+                                </form>
+                            </li>
+                        </ul>
+                    </li>
+                }
+
+                else
+                @* Kullanıcı giriş yapmamışsa. *@
+                {
+                    <li class="nav-item">
+                        <a class="nav-link" style="color: #cac9c9;" asp-controller="Account" asp-action="Login">Giriş
+                            Yap</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" style="color: #cac9c9;" asp-controller="Account" asp-action="Register">Kayıt
+                            Ol</a>
+                    </li>
+                }
+            </ul>
+
+        </div>
+    </div>
+</nav>

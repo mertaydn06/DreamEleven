@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Identity;
 using DreamEleven.Identity;
 using Microsoft.AspNetCore.Mvc;
 using DreamEleven.Business.Abstract;
+using DreamEleven.Entities;
 
 public class HomeController : Controller
 {
@@ -29,21 +30,64 @@ public class HomeController : Controller
             .Take(pageSize)
             .ToList();
 
-        var popularPlayers = players
-            .OrderBy(x => Guid.NewGuid()) // Rastgele popüler oyuncular
-            .Take(8)
-            .ToList();
+        // 🔥 Popüler Oyuncular
+        List<Player> popularPlayers;
+        if (HttpContext.Session.GetString("PopularPlayers") == null)
+        {
+            var selectedPlayers = players
+                .OrderBy(x => Guid.NewGuid())
+                .Take(8)
+                .Select(p => p.Name)  // Sadece isimleri kaydedelim
+                .ToList();
 
-        var lastTeams = teams
-            .OrderBy(x => Guid.NewGuid()) // Rastgele takımlar (Haftanın takımı)
-            .Take(10)
-            .ToList();
+            HttpContext.Session.SetString("PopularPlayers", System.Text.Json.JsonSerializer.Serialize(selectedPlayers));
+            popularPlayers = players.Where(p => selectedPlayers.Contains(p.Name)).ToList();
+        }
+        else
+        {
+            var selectedPlayers = System.Text.Json.JsonSerializer.Deserialize<List<string>>(HttpContext.Session.GetString("PopularPlayers")!);
+            popularPlayers = players.Where(p => selectedPlayers!.Contains(p.Name)).ToList();
+        }
 
-        var randomPlayer = players  // Rastgele oyuncu
-            .OrderBy(x => Guid.NewGuid())
-            .FirstOrDefault();
+        // 🔥 Haftanın Takımları
+        List<Team> lastTeams;
+        if (HttpContext.Session.GetString("LastTeams") == null)
+        {
+            var selectedTeamIds = teams
+                .OrderBy(x => Guid.NewGuid())
+                .Take(10)
+                .Select(t => t.Id)
+                .ToList();
 
-        // ✨ Burada takımları oluşturan kullanıcı bilgilerini topluyoruz
+            HttpContext.Session.SetString("LastTeams", System.Text.Json.JsonSerializer.Serialize(selectedTeamIds));
+            lastTeams = selectedTeamIds
+                .Select(id => teams.First(t => t.Id == id))
+                .ToList();
+        }
+        else
+        {
+            var selectedTeamIds = System.Text.Json.JsonSerializer.Deserialize<List<int>>(HttpContext.Session.GetString("LastTeams")!);
+            lastTeams = teams.Where(t => selectedTeamIds!.Contains(t.Id)).ToList();
+        }
+
+        // 🔥 Haftanın Oyuncusu
+        Player? randomPlayer;
+        if (HttpContext.Session.GetString("RandomPlayer") == null)
+        {
+            var selected = players.OrderBy(x => Guid.NewGuid()).FirstOrDefault();
+            if (selected != null)
+            {
+                HttpContext.Session.SetString("RandomPlayer", selected.Name);
+            }
+            randomPlayer = selected;
+        }
+        else
+        {
+            var selectedName = HttpContext.Session.GetString("RandomPlayer");
+            randomPlayer = players.FirstOrDefault(p => p.Name == selectedName);
+        }
+
+        //  Burada takımları oluşturan kullanıcı bilgilerini topluyoruz
         var teamOwners = new Dictionary<int, string>();
         var teamOwnerImages = new Dictionary<int, string>();
 
@@ -136,4 +180,24 @@ public class HomeController : Controller
 
         return View(pagedTeamPlayers);
     }
+
+
+    [HttpGet]
+    public async Task<IActionResult> SearchPlayers(string query)
+    {
+        if (string.IsNullOrEmpty(query))
+            return Json(new List<object>());
+
+        var players = await _playerService.GetPlayersByNameAsync(query);
+
+        var result = players.Select(p => new
+        {
+            name = p.Name,
+            slug = p.Slug,
+            imageUrl = p.ImageUrl
+        });
+
+        return Json(result);
+    }
+
 }

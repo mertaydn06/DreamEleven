@@ -8,8 +8,8 @@
     <div class="row">
 
         <!-- Ana içerik: Takımlar -->
-<div class="col-md-8 pe-4">
-            <h4 class="mb-3 text-center"><i class="bi bi-clipboard"></i> Son Oluşturulan Takımlar</h4>
+        <div class="col-md-8 pe-4">
+            <h3 class="mb-3 text-center" style="color: #ffffff;"><i class="bi bi-clipboard"></i>Takımlar</h3>
 
             @if (!Model.Any())
             {
@@ -17,7 +17,7 @@
             }
             @foreach (var team in Model)
             {
-                <div class="card mb-4">
+                <div class="card" style="margin-bottom: 50px;">
                     <div class="card-header d-flex justify-content-between align-items-center">
                         <a href="/team/details/@team.Id" class="text-decoration-none fw-bold">@team.TeamName</a>
                         <span>@team.CreatedAt.ToShortDateString()</span>
@@ -55,7 +55,7 @@
                         <div class="d-flex justify-content-end align-items-center"
                             style="margin-top: -4px; margin-bottom: -7px; padding: 0 4px;">
                             <a href="/profile/@ViewBag.TeamOwners[team.Id]"
-                                class="d-flex align-items-center text-decoration-none text-dark" style="font-size: 13px;">
+                                class="d-flex align-items-center text-decoration-none" style="font-size: 13px;">
                                 <img src="@(string.IsNullOrEmpty(ViewBag.TeamOwnerImages[team.Id]) ? "/images/User.jpg" : ViewBag.TeamOwnerImages[team.Id])"
                                     alt="@ViewBag.TeamOwners[team.Id]" class="rounded-circle"
                                     style="width: 22px; height: 22px; object-fit: cover; margin-right: 5px;">
@@ -106,7 +106,7 @@
                 <!-- Sağ: Popüler Oyuncular -->
                 <div class="card mb-4">
                     <div class="card-header">
-                        <h6 class="mb-0">Popüler Oyuncular</h6>
+                        <h5 class="mb-0">Popüler Oyuncular</h5>
                     </div>
 
                     <div class="card-body p-2">
@@ -133,8 +133,8 @@
 
                 <!-- Sağ: Haftanın Takımları -->
                 <div class="card" style="margin-top: 40px;">
-                    <div class="card-header">
-                        <h6 class="mb-0">Haftanın En İyi Takımları</h6>
+                    <div class="card-header remove-border">
+                        <h5 class="mb-0 text-center">Haftanın En İyi Takımları</h5>
                     </div>
 
                     <div class="card-body p-2">
@@ -145,9 +145,10 @@
                         {
                             foreach (var team in lastTeams)
                             {
-                                <div class="d-flex align-items-center mb-2">
+                                <div class="d-flex align-items-center mb-2 mb-3 pb-2"
+                                    style="border-bottom: 1px solid rgba(85, 85, 85, 0.651);">
                                     <i class="bi bi-shield-fill-check text-primary me-2"></i>
-                                    <a href="/team/details/@team.Id" class="fw-semibold text-dark text-decoration-none">
+                                    <a href="/team/details/@team.Id" class="fw-semibold text-decoration-none">
                                         @team.TeamName
                                     </a>
                                 </div>
@@ -162,8 +163,8 @@
 
                 <!-- Sağ: Günün Oyuncusu -->
                 <div class="card" style="margin-top: 40px;">
-                    <div class="card-header">
-                        <h6 class="mb-0">Haftanın Oyuncusu</h6>
+                    <div class="card-header  remove-border">
+                        <h5 class="mb-0 text-center">Haftanın Oyuncusu</h5>
                     </div>
 
                     <div class="card-body text-center">
@@ -177,7 +178,7 @@
                                     <img src="@randomPlayer.ImageUrl" alt="@randomPlayer.Name"
                                         style="width: 125px; height: 125px; object-fit: cover; border-radius: 20px;">
                                 </div>
-                                <div class="fw-semibold text-dark">@randomPlayer.Name</div>
+                                <div class="fw-semibold">@randomPlayer.Name</div>
                             </a>
                         }
                         else
@@ -252,16 +253,17 @@
 
 
     <style>
+        /* Saha alanının arka planı, kenar çizgileri ve genel görünümü */
         .football-field {
-            background-image: linear-gradient(#4CAF50, #388E3C);
+            background-image: linear-gradient(#49884b, #388E3C);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             overflow: hidden;
             position: relative;
             height: 600px;
             border-radius: 10px;
-            border: 2px solid white;
         }
 
+        /* Orta saha çizgisi */
         .football-field::before {
             content: '';
             position: absolute;
@@ -272,6 +274,7 @@
             background: rgba(255, 255, 255, 0.6);
         }
 
+        /* Orta saha çemberi */
         .football-field::after {
             content: '';
             position: absolute;
@@ -284,6 +287,7 @@
             border-radius: 50%;
         }
 
+        /* Ceza sahası kutuları */
         .penalty-box {
             position: absolute;
             width: 180px;
@@ -294,16 +298,19 @@
             z-index: 0;
         }
 
+        /* Üst ceza sahası */
         .top-box {
             top: 0;
             border-top: none;
         }
 
+        /* Alt ceza sahası */
         .bottom-box {
             bottom: 0;
             border-bottom: none;
         }
 
+        /* Oyuncu yerleşim noktası (slot) */
         .player-slot {
             position: absolute;
             display: flex;
@@ -313,6 +320,7 @@
             z-index: 10;
         }
 
+        /* Oyuncu kartı kutusu */
         .player-card {
             background: rgba(255, 255, 255, 0.2);
             border-radius: 10px;
@@ -326,10 +334,12 @@
             transition: transform 0.25s ease;
         }
 
+        /* Kart üzerine gelince büyüme efekti */
         .player-card:hover {
             transform: scale(1.1);
         }
 
+        /* Oyuncu fotoğrafı */
         .player-card img {
             width: 67px;
             height: 67px;
@@ -338,11 +348,13 @@
             background: white;
         }
 
+        /* Oyuncu ismi ve puanı kutusu */
         .player-info {
             text-align: center;
             margin-top: 5px;
         }
 
+        /* Oyuncu ismi */
         .player-name {
             font-size: 11px;
             font-weight: 600;
@@ -356,8 +368,9 @@
             line-height: 1.1;
         }
 
+        /* Oyuncu genel puanı */
         .player-overall {
-            background: #0d6efd;
+            background: #1a5388;
             color: white;
             border-radius: 50%;
             width: 24px;

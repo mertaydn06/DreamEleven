@@ -1,48 +1,52 @@
 @model RegisterViewModel
+
 @{
     ViewData["Title"] = "Kayıt Ol";
+    ViewData["NoContainer"] = true;
 }
 
-<div class="container mt-5" style="max-width: 500px;">
-    <h2 class="text-center mb-4">Kayıt Ol</h2>
+<div class="d-flex justify-content-center align-items-center" style="min-height: 80vh;">
+    <div
+        style="background: rgba(0,0,0,0.7); padding: 50px; border-radius: 20px; width: 500px; color: white; font-size: 18px;">
+        <h2 class="text-center mb-4">Kayıt Ol</h2>
 
-    <form asp-controller="Account" asp-action="Register" method="post">
-        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <form asp-controller="Account" asp-action="Register" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-        <div class="mb-3">
-            <label asp-for="UserName" class="form-label"></label>
-            <input asp-for="UserName" class="form-control" />
-            <span asp-validation-for="UserName" class="text-danger"></span>
+            <div class="mb-3">
+                <label asp-for="UserName" class="form-label"></label>
+                <input asp-for="UserName" class="form-control" />
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Email" class="form-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Password" class="form-label"></label>
+                <input asp-for="Password" type="password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="ConfirmPassword" class="form-label"></label>
+                <input asp-for="ConfirmPassword" type="password" class="form-control" />
+                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">Kayıt Ol</button>
+        </form>
+
+        <div class="text-center mt-3">
+            <p class="mb-0">
+                Hesabınız var mı?
+                <a href="/account/login" class="btn btn-link">Giriş yapın</a>
+            </p>
         </div>
-
-        <div class="mb-3">
-            <label asp-for="Email" class="form-label"></label>
-            <input asp-for="Email" class="form-control" />
-            <span asp-validation-for="Email" class="text-danger"></span>
-        </div>
-
-        <div class="mb-3">
-            <label asp-for="Password" class="form-label"></label>
-            <input asp-for="Password" type="password" class="form-control" />
-            <span asp-validation-for="Password" class="text-danger"></span>
-        </div>
-
-        <div class="mb-3">
-            <label asp-for="ConfirmPassword" class="form-label"></label>
-            <input asp-for="ConfirmPassword" type="password" class="form-control" />
-            <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
-        </div>
-
-
-        <button type="submit" class="btn btn-primary w-100">Kayıt Ol</button>
-    </form>
-</div>
-
-<div class="text-center mt-3">
-    <p class="mb-0">
-        Hesabınız var mı?
-        <a href="/account/login" class="btn btn-link">Giriş yapın</a>
-    </p>
+    </div>
 </div>
 
 @section Scripts {

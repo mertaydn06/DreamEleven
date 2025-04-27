@@ -17,7 +17,7 @@
                             alt="Profil" class="rounded-circle mb-2"
                             style="width: 100px; height: 100px; object-fit: cover;" />
                         <h5 class="card-title">@Model.User.UserName</h5>
-                        <p class="text-muted">Katılım: @Model.User.CreatedAt.ToShortDateString()</p>
+                        <p class="text-light">Katılım: @Model.User.CreatedAt.ToShortDateString()</p>
 
                         @if (User.Identity!.IsAuthenticated &&
                                                 User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value == Model.User.Id)
@@ -33,7 +33,7 @@
                 <!-- Sol: Kullanıcının yaptığı yorumlar -->
                 <div class="card">
                     <div class="card-header">
-                        <h6 class="mb-0">Yaptığı Yorumlar</h6>
+                        <h6 class="mb-0 ">Yaptığı Yorumlar</h6>
                     </div>
                     <div class="card-body p-3">
                         @{
@@ -44,17 +44,17 @@
                             foreach (var comment in comments.Take(5))
                             {
                                 <div class="mb-3 border-bottom pb-2">
-                                    <a href="/team/details/@comment.TeamId" class="fw-bold text-decoration-none">
-                                        @comment.TeamName
+                                    <a href="/team/details/@comment.TeamId" class="fw-bold text-decoration-none"><h5> @comment.TeamName</h5>
+                                       
                                     </a>
-                                    <p class="mb-1">@comment.Content</p>
-                                    <small class="text-muted">@comment.CreatedAt.ToShortDateString()</small>
+                                    <p class="mb-1" style="color: rgba(255, 255, 255, 0.658);">@comment.Content</p>
+                                    <small style="color: #aaa;">@comment.CreatedAt.ToShortDateString()</small>
                                 </div>
                             }
                         }
                         else
                         {
-                            <p class="text-muted">Henüz yorum yapmamış.</p>
+                            <p class="text-light">Henüz yorum yapmamış.</p>
                         }
                     </div>
                 </div>
@@ -64,14 +64,14 @@
 
         <!-- Takımlar -->
         <div class="col-md-8">
-            <h5 class="mb-3 text-center">
+            <h5 class="mb-3 text-center text-light">
                 <i class="bi bi-clipboard"></i>
                 @(char.ToUpper(Model.User.UserName![0]) + Model.User.UserName.Substring(1)) Kullanıcısının Takımları
             </h5>
 
             @if (!Model.Teams.Any())
             {
-                <p>Henüz takım oluşturulmamış.</p>
+                <p class="text-light">Henüz takım oluşturulmamış.</p>
             }
 
             @foreach (var team in Model.Teams.OrderByDescending(t => t.CreatedAt))

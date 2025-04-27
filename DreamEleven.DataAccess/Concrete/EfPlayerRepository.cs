@@ -39,5 +39,13 @@ namespace DreamEleven.DataAccess.Concrete
             _context.Players.Add(player);
             await _context.SaveChangesAsync();
         }
+
+        public async Task<List<Player>> GetPlayersByNameAsync(string query)
+        {
+            query = query.ToLower();
+            return await _context.Players
+                .Where(p => p.Name.ToLower().Contains(query))
+                .ToListAsync();
+        }
     }
 }

@@ -48,14 +48,14 @@
                                                 .ThenByDescending(tp => tp.Player.Overall)) // Aynı pozisyondakilerde en iyisi üste çıksın
                         {
                             <a asp-controller="Home" asp-action="PlayerDetails" asp-route-slug="@teamPlayer.Player.Slug"
-                                class="list-group-item d-flex align-items-center text-decoration-none text-dark">
+                                class="list-group-item d-flex align-items-center text-decoration-none">
 
                                 <img src="@teamPlayer.Player.ImageUrl" class="me-2"
                                     style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">
 
                                 <div>
                                     <h6 class="mb-0">@teamPlayer.Player.Name</h6>
-                                    <small class="text-muted">@teamPlayer.Player.RealTeam</small>
+                                    <small>@teamPlayer.Player.RealTeam</small>
                                 </div>
 
                                 <div class="ms-auto">
@@ -106,72 +106,74 @@
 
 
             <!-- Kullanıcı giriş yaptıysa yorum ekleme -->
+
+
+            <hr />
+
+            <!-- Yorumları listeleme bölümü -->
+            <h3 class=" text-center my-3 fw-semibold" style="color: rgb(212, 211, 211);">Yorumlar</h3>
+
+            @{
+                var comments = ViewBag.Comments as List<CommentViewModel>;
+            }
+
+            <!-- Yapılan yorumları kart şeklinde listele -->
+            @if (comments != null && comments.Any())
+            {
+                foreach (var comment in comments)
+                {
+                    <div class="card mb-2">
+                        <div class="card-body d-flex align-items-start">
+
+                            <a href="/profile/@comment.UserName" class="text-decoration-none">
+                                <img src="@comment.UserImage" alt="Profil" class="rounded-circle me-3"
+                                    style="width: 40px; height: 40px; object-fit: cover;">
+                            </a>
+
+                            <div class="flex-grow-1">
+                                <strong>
+                                    <a href="/profile/@comment.UserName" class="text-decoration-none">@comment.UserName</a>
+                                </strong>
+                                <p class="mb-1">@comment.Content</p>
+                                <small>@comment.CreatedAt.ToString("g")</small>
+
+                                <!-- Eğer yorum yapan kullanıcı giriş yapmış kullanıcıysa düzenle/sil butonları göster -->
+                                @if (User.Identity!.IsAuthenticated && User.Identity.Name == comment.UserName)
+                                {
+                                    <div class="mt-2">
+                                        <a asp-controller="Comment" asp-action="EditComment" asp-route-id="@comment.Id"
+                                            class="btn btn-sm btn-secondary me-2">Düzenle</a>
+
+                                        <form asp-controller="Comment" asp-action="DeleteComment" asp-route-id="@comment.Id"
+                                            method="post" class="d-inline">
+                                            <button class="btn btn-sm btn-danger"
+                                                onclick="return confirm('Yorumu silmek istediğine emin misin?')">Sil</button>
+                                        </form>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+            else
+            {
+                <!-- Henüz yorum yoksa mesaj göster -->
+                <p class="border-bottom pb-2" style="color: rgb(212, 211, 211); padding-bottom: 40px; margin-bottom: 25px;">Henüz yorum yapılmamış.</p>
+            }
+
             @if (User.Identity!.IsAuthenticated)
             {
                 <form method="post" asp-controller="Comment" asp-action="AddComment">
                     <input type="hidden" name="teamId" value="@Model.Id" />
                     <div class="mb-3">
-                        <h4 class=" my-3 fw-semibold">Yorum Yap</h4>
-                        <textarea name="content" class="form-control shadow-sm p-1" rows="4" style="resize: none;"
-                        required></textarea>
+                        <h5 class="my-3" style="color: rgb(212, 211, 211);">Yorum Yap</h5>
+                        <textarea name="content" class="form-control shadow-sm p-1" rows="4"
+                        style="resize: none; color: white; background-color: #1e1e1e91;" required></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary">Gönder</button>
+                    <button type="submit" class="btn btn-primary float-end">Gönder</button>
                 </form>
             }
-
-            <hr />
-
-            <!-- Yorumları listeleme bölümü -->
-            <h3 class=" text-center my-3 fw-semibold">Yorumlar</h4>
-
-                @{
-                    var comments = ViewBag.Comments as List<CommentViewModel>;
-                }
-
-                <!-- Yapılan yorumları kart şeklinde listele -->
-                @if (comments != null && comments.Any())
-                {
-                    foreach (var comment in comments)
-                    {
-                        <div class="card mb-2">
-                            <div class="card-body d-flex align-items-start">
-
-                                <a href="/profile/@comment.UserName" class="text-decoration-none">
-                                    <img src="@comment.UserImage" alt="Profil" class="rounded-circle me-3"
-                                        style="width: 40px; height: 40px; object-fit: cover;">
-                                </a>
-
-                                <div class="flex-grow-1">
-                                    <strong>
-                                        <a href="/profile/@comment.UserName" class="text-decoration-none">@comment.UserName</a>
-                                    </strong>
-                                    <p class="mb-1">@comment.Content</p>
-                                    <small class="text-muted">@comment.CreatedAt.ToString("g")</small>
-
-                                    <!-- Eğer yorum yapan kullanıcı giriş yapmış kullanıcıysa düzenle/sil butonları göster -->
-                                    @if (User.Identity.IsAuthenticated && User.Identity.Name == comment.UserName)
-                                    {
-                                        <div class="mt-2">
-                                            <a asp-controller="Comment" asp-action="EditComment" asp-route-id="@comment.Id"
-                                                class="btn btn-sm btn-secondary me-2">Düzenle</a>
-
-                                            <form asp-controller="Comment" asp-action="DeleteComment" asp-route-id="@comment.Id"
-                                                method="post" class="d-inline">
-                                                <button class="btn btn-sm btn-danger"
-                                                    onclick="return confirm('Yorumu silmek istediğine emin misin?')">Sil</button>
-                                            </form>
-                                        </div>
-                                    }
-                                </div>
-                            </div>
-                        </div>
-                    }
-                }
-                else
-                {
-                    <!-- Henüz yorum yoksa mesaj göster -->
-                    <p>Henüz yorum yapılmamış.</p>
-                }
 
         </div>
     </div>
@@ -251,7 +253,6 @@
             position: relative;
             height: 600px;
             border-radius: 10px;
-            border: 2px solid white;
         }
 
         /* Orta saha çizgisi */
@@ -364,7 +365,7 @@
 
         /* Oyuncu genel puanı */
         .player-overall {
-            background: #0d6efd;
+            background: #1a5388;
             color: white;
             border-radius: 50%;
             width: 24px;

@@ -33,5 +33,11 @@ namespace DreamEleven.Business.Concrete
         {
             return _playerRepository.AddPlayerAsync(player);
         }
+
+        public async Task<List<Player>> GetPlayersByNameAsync(string query)
+        {
+            return await _playerRepository.GetPlayersByNameAsync(query);
+        }
+
     }
 }

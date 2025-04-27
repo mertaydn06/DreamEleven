@@ -68,6 +68,8 @@ builder.Services.ConfigureApplicationCookie(options =>
 });
 
 
+builder.Services.AddSession();
+
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
@@ -87,6 +89,8 @@ app.UseRouting();
 
 app.UseAuthentication();
 app.UseAuthorization();
+
+app.UseSession();
 
 
 // Seed Data - Admin ve Roller
