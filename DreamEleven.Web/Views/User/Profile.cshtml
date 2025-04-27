@@ -8,8 +8,8 @@
     <div class="row">
 
         <!-- Sol: Kullanıcı Bilgisi -->
-        <div class="col-md-4">
-            <div style="position: sticky; top: 20px;">
+        <div class="col-md-4" style="margin-top: 40px;">
+            <div style="position: sticky; top: 25px;">
 
                 <div class="card text-center mb-4">
                     <div class="card-body">
@@ -64,7 +64,10 @@
 
         <!-- Takımlar -->
         <div class="col-md-8">
-            <h5 class="mb-3 text-center"><i class="bi bi-clipboard"></i> Takımlar</h5>
+            <h5 class="mb-3 text-center">
+                <i class="bi bi-clipboard"></i>
+                @(char.ToUpper(Model.User.UserName![0]) + Model.User.UserName.Substring(1)) Kullanıcısının Takımları
+            </h5>
 
             @if (!Model.Teams.Any())
             {

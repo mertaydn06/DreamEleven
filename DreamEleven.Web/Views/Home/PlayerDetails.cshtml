@@ -10,8 +10,8 @@
     <div class="row">
 
         <!-- SOL: Oyuncu Bilgisi -->
-        <div class="col-md-4">
-            <div style="position: sticky; top: 20px;">
+        <div class="col-md-4" style="margin-top: 45px;">
+            <div style="position: sticky; top: 25px;">
 
                 <div class="card text-center mb-4">
                     <div class="card-body">
@@ -63,7 +63,7 @@
 
         <!-- Takımlar -->
         <div class="col-md-8">
-            <h4 class="mb-3 text-center"><i class="bi bi-clipboard"></i> Oyuncunun Bulunduğu Takımlar</h4>
+            <h4 class="mb-3 text-center"><i class="bi bi-clipboard"></i> @(char.ToUpper(player.Name![0]) + player.Name.Substring(1)) Oynadığı Takımlar</h4>
 
             @foreach (var group in groupedTeams)
             {

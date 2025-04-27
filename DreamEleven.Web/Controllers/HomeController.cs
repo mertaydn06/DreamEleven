@@ -16,10 +16,66 @@ public class HomeController : Controller
         _userManager = userManager;
     }
 
-    public IActionResult Index()
+    public async Task<IActionResult> Index(int page = 1)
     {
-        return View();
+        var teams = await _teamService.GetAllTeamsAsync();
+        var players = await _playerService.GetAllPlayersAsync();
+
+        var pageSize = 3; // Her sayfada 3 takım
+
+        var pagedTeams = teams
+            .OrderByDescending(t => t.CreatedAt)
+            .Skip((page - 1) * pageSize)
+            .Take(pageSize)
+            .ToList();
+
+        var popularPlayers = players
+            .OrderBy(x => Guid.NewGuid()) // Rastgele popüler oyuncular
+            .Take(8)
+            .ToList();
+
+        var lastTeams = teams
+            .OrderBy(x => Guid.NewGuid()) // Rastgele takımlar (Haftanın takımı)
+            .Take(10)
+            .ToList();
+
+        var randomPlayer = players  // Rastgele oyuncu
+            .OrderBy(x => Guid.NewGuid())
+            .FirstOrDefault();
+
+        // ✨ Burada takımları oluşturan kullanıcı bilgilerini topluyoruz
+        var teamOwners = new Dictionary<int, string>();
+        var teamOwnerImages = new Dictionary<int, string>();
+
+        foreach (var team in pagedTeams)
+        {
+            var user = await _userManager.FindByIdAsync(team.UserId);
+
+            if (user != null)
+            {
+                teamOwners[team.Id] = user.UserName!;
+                teamOwnerImages[team.Id] = user.Image ?? "/images/User.jpg";
+            }
+            else
+            {
+                teamOwners[team.Id] = "Bilinmeyen";
+                teamOwnerImages[team.Id] = "/images/User.jpg";
+            }
+        }
+
+        // ✨ ViewBag'lere atıyoruz
+        ViewBag.Teams = pagedTeams;
+        ViewBag.PopularPlayers = popularPlayers;
+        ViewBag.LastTeams = lastTeams;
+        ViewBag.TeamOwners = teamOwners;
+        ViewBag.TeamOwnerImages = teamOwnerImages;
+        ViewBag.RandomPlayer = randomPlayer;
+        ViewBag.CurrentPage = page;
+        ViewBag.TotalPages = (int)Math.Ceiling((double)teams.Count / pageSize);
+
+        return View(pagedTeams);
     }
+
 
 
     [Route("player/{slug}")]
