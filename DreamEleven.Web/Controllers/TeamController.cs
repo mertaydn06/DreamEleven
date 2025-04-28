@@ -28,7 +28,7 @@ namespace DreamEleven.Web.Controllers
         public async Task<IActionResult> Create(string formation = "4-4-2")
         {
             // Eğer URL'den formasyon parametresi geldiyse onu kullan, yoksa varsayılan "4-4-2" kullan
-            var defaultFormation = string.IsNullOrEmpty(formation) ? "4-4-2" : formation;
+            var defaultFormation = formation ?? "4-4-2";
 
             var model = new CreateTeamViewModel
             {

@@ -11,7 +11,7 @@
             <!-- Sol: Takım Bilgisi -->
             <div class="card mb-4">
 
-                <div class="card-header">
+                <div class="card-header text-center">
                     <h3 class="mb-0">@Model.TeamName</h3>
                 </div>
 
@@ -159,7 +159,8 @@
             else
             {
                 <!-- Henüz yorum yoksa mesaj göster -->
-                <p class="border-bottom pb-2" style="color: rgb(212, 211, 211); padding-bottom: 40px; margin-bottom: 25px;">Henüz yorum yapılmamış.</p>
+                <p class="border-bottom pb-2" style="color: rgb(212, 211, 211); padding-bottom: 40px; margin-bottom: 25px;">
+                    Henüz yorum yapılmamış.</p>
             }
 
             @if (User.Identity!.IsAuthenticated)

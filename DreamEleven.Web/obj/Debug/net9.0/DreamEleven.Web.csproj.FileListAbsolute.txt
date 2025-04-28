@@ -389,7 +389,6 @@ C:\Code\C#\Mvc\DreamEleven\DreamEleven.Web\obj\Debug\net9.0\DreamEleven.Web.sour
 C:\Code\C#\Mvc\DreamEleven\DreamEleven.Web\obj\Debug\net9.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Code\C#\Mvc\DreamEleven\DreamEleven.Web\obj\Debug\net9.0\scopedcss\bundle\DreamEleven.Web.styles.css
 C:\Code\C#\Mvc\DreamEleven\DreamEleven.Web\obj\Debug\net9.0\scopedcss\projectbundle\DreamEleven.Web.bundle.scp.css
-C:\Code\C#\Mvc\DreamEleven\DreamEleven.Web\obj\Debug\net9.0\compressed\kk7k9caw0k-b9sayid5wm.gz
 C:\Code\C#\Mvc\DreamEleven\DreamEleven.Web\obj\Debug\net9.0\compressed\g056jzqxsa-61n19gt1b8.gz
 C:\Code\C#\Mvc\DreamEleven\DreamEleven.Web\obj\Debug\net9.0\compressed\dacm9sehdw-xtxxf3hu2r.gz
 C:\Code\C#\Mvc\DreamEleven\DreamEleven.Web\obj\Debug\net9.0\compressed\i3zoq3yhgc-bqjiyaj88i.gz
@@ -451,8 +450,6 @@ C:\Code\C#\Mvc\DreamEleven\DreamEleven.Web\obj\Debug\net9.0\compressed\g76rupfjy
 C:\Code\C#\Mvc\DreamEleven\DreamEleven.Web\obj\Debug\net9.0\compressed\bo65f41pjd-muycvpuwrr.gz
 C:\Code\C#\Mvc\DreamEleven\DreamEleven.Web\obj\Debug\net9.0\compressed\4iej6vloz2-87fc7y1x7t.gz
 C:\Code\C#\Mvc\DreamEleven\DreamEleven.Web\obj\Debug\net9.0\compressed\mt5ve54b6x-mlv21k5csn.gz
-C:\Code\C#\Mvc\DreamEleven\DreamEleven.Web\obj\Debug\net9.0\compressed\rvnhgscno3-x4pmp3nhtp.gz
-C:\Code\C#\Mvc\DreamEleven\DreamEleven.Web\obj\Debug\net9.0\compressed\txld7xgasv-x4pmp3nhtp.gz
 C:\Code\C#\Mvc\DreamEleven\DreamEleven.Web\obj\Debug\net9.0\staticwebassets.build.json
 C:\Code\C#\Mvc\DreamEleven\DreamEleven.Web\obj\Debug\net9.0\staticwebassets.development.json
 C:\Code\C#\Mvc\DreamEleven\DreamEleven.Web\obj\Debug\net9.0\staticwebassets.build.endpoints.json
@@ -468,3 +465,6 @@ C:\Code\C#\Mvc\DreamEleven\DreamEleven.Web\obj\Debug\net9.0\refint\DreamEleven.W
 C:\Code\C#\Mvc\DreamEleven\DreamEleven.Web\obj\Debug\net9.0\DreamEleven.Web.pdb
 C:\Code\C#\Mvc\DreamEleven\DreamEleven.Web\obj\Debug\net9.0\DreamEleven.Web.genruntimeconfig.cache
 C:\Code\C#\Mvc\DreamEleven\DreamEleven.Web\obj\Debug\net9.0\ref\DreamEleven.Web.dll
+C:\Code\C#\Mvc\DreamEleven\DreamEleven.Web\obj\Debug\net9.0\compressed\rvnhgscno3-t754m7p81e.gz
+C:\Code\C#\Mvc\DreamEleven\DreamEleven.Web\obj\Debug\net9.0\compressed\txld7xgasv-t754m7p81e.gz
+C:\Code\C#\Mvc\DreamEleven\DreamEleven.Web\obj\Debug\net9.0\compressed\kk7k9caw0k-7eu3wvurol.gz

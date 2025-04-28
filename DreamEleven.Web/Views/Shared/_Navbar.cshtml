@@ -40,7 +40,7 @@
                 {
                     <li class="nav-item dropdown">
 
-                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                        <a class="nav-link dropdown-toggle text-light" href="#" id="userDropdown" role="button"
                             data-bs-toggle="dropdown">
                             @User.Identity!.Name
                         </a>
@@ -48,14 +48,14 @@
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
 
                             <li>
-                                <a class="dropdown-item text-dark" asp-area="" asp-controller="User" asp-action="Profile"
+                                <a class="dropdown-item text-light" asp-area="" asp-controller="User" asp-action="Profile"
                                     asp-route-username="@User.Identity.Name">Profilim</a>
 
                             </li>
 
                             <li>
                                 <form asp-controller="Account" asp-action="Logout" method="post" class="dropdown-item p-0">
-                                    <button type="submit" class="btn w-100 text-start text-dark">Çıkış Yap</button>
+                                    <button type="submit" class="btn w-100 text-start text-light">Çıkış Yap</button>
                                 </form>
                             </li>
                         </ul>

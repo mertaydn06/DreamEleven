@@ -26,12 +26,6 @@ namespace DreamEleven.Web.Helpers
                     slots.AddRange(new[] { "ST1", "ST2" });
                     break;
 
-                case "5-3-2":
-                    slots.AddRange(new[] { "LWB", "CB1", "CB2", "CB3", "RWB" });
-                    slots.AddRange(new[] { "CM1", "CM2", "CAM" });
-                    slots.AddRange(new[] { "ST1", "ST2" });
-                    break;
-
                 case "4-5-1":
                     slots.AddRange(new[] { "LB", "CB1", "CB2", "RB" });
                     slots.AddRange(new[] { "LM", "CM1", "CAM", "CM2", "RM" });
@@ -42,6 +36,12 @@ namespace DreamEleven.Web.Helpers
                     slots.AddRange(new[] { "CB1", "CB2", "CB3" });
                     slots.AddRange(new[] { "LM", "CM1", "CM2", "RM" });
                     slots.AddRange(new[] { "LW", "ST", "RW" });
+                    break;
+
+                case "5-3-2":
+                    slots.AddRange(new[] { "LWB", "CB1", "CB2", "CB3", "RWB" });
+                    slots.AddRange(new[] { "CM1", "CM2", "CAM" });
+                    slots.AddRange(new[] { "ST1", "ST2" });
                     break;
 
                 default:

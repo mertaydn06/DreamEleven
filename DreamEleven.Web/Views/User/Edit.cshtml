@@ -1,35 +1,42 @@
 @model UserEditViewModel
+
 @{
     ViewData["Title"] = "Profili Düzenle";
+    ViewData["NoContainer"] = true;
 }
 
-<div class="container mt-5">
-    <h2>Profili Güncelle</h2>
-    <hr />
-    <form asp-action="Edit" method="post" enctype="multipart/form-data">
+<div class="d-flex justify-content-center align-items-center" style="min-height: 80vh;">
+    <div style="background: rgba(0, 0, 0, 0.7); padding: 50px; border-radius: 20px; width: 800px; color: white;">
+        <h2 class="mb-4">Profili Güncelle</h2>
+        <hr class="mb-4" style="border-top: 1px solid rgba(255,255,255,0.3);" />
 
-        <input asp-for="Id" type="hidden" />
+        <form asp-action="Edit" method="post" enctype="multipart/form-data">
+            <input asp-for="Id" type="hidden" />
 
-        <div class="mb-3">
-            <label class="form-label">Kullanıcı Adı</label>
-            <input asp-for="UserName" class="form-control" />
-            <span asp-validation-for="UserName" class="text-danger"></span>
-        </div>
+            <div class="mb-3">
+                <label asp-for="UserName" class="form-label">Kullanıcı Adı</label>
+                <input asp-for="UserName" class="form-control" />
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
 
-        <div class="mb-3">
-            <label class="form-label">Email</label>
-            <input asp-for="Email" class="form-control" />
-            <span asp-validation-for="Email" class="text-danger"></span>
-        </div>
+            <div class="mb-3">
+                <label asp-for="Email" class="form-label">Email</label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
 
-        <div class="mb-3">
-            <label for="ImageFile" class="form-label">Profil Fotoğrafı</label>
-            <input asp-for="ImageFile" type="file" class="form-control" accept="image/*" />
-        </div>
+            <div class="mb-3">
+                <label asp-for="ImageFile" class="form-label">Profil Fotoğrafı</label>
+                <input asp-for="ImageFile" type="file" class="form-control" accept="image/*" />
+            </div>
 
-        <button type="submit" class="btn btn-primary">Güncelle</button>
-        <a href="/" class="btn btn-secondary">İptal</a>
-    </form>
+            <button type="submit" class="btn btn-primary w-100">Güncelle</button>
+
+            <div class="text-center mt-3">
+                <a href="/" class="btn btn-link text-light">İptal</a>
+            </div>
+        </form>
+    </div>
 </div>
 
 @section Scripts {
