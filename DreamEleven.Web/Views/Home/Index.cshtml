@@ -7,7 +7,7 @@
 <div class="container md-4">
     <div class="row">
 
-        <!-- Ana içerik: Takımlar -->
+        <!-- Sol: Anasayfa -->
         <div class="col-md-8 pe-4">
             <h3 class="mb-3 text-center" style="color: #ffffff;">Anasayfa</h3>
 
@@ -15,9 +15,12 @@
             {
                 <p>Henüz hiç takım oluşturulmamış.</p>
             }
+
             @foreach (var team in Model)
             {
                 <div class="card" style="margin-bottom: 50px;">
+
+                    <!-- Takım Adı -->
                     <div class="card-header d-flex justify-content-between align-items-center">
                         <a href="/team/details/@team.Id" class="text-decoration-none fw-bold">@team.TeamName</a>
                         <span>@team.CreatedAt.ToShortDateString()</span>
@@ -26,12 +29,13 @@
                     <div class="card-body">
                         <!-- Futbol sahası -->
                         <div class="football-field position-relative mb-3">
-                            <div class="penalty-box top-box">
-                                <div class="penalty-dot"></div>
-                            </div>
-                            <div class="penalty-box bottom-box">
-                                <div class="penalty-dot"></div>
-                            </div>
+
+                            <!-- Orta saha ve ceza sahası çizgileri -->
+                            <div class="penalty-box top-box"></div>
+                            <div class="penalty-box bottom-box"></div>
+
+                            <div class="midline"></div>
+                            <div class="midcircle"></div>
 
                             <div class="position-relative h-100">
                                 @foreach (var tp in team.TeamPlayers)
@@ -51,7 +55,7 @@
                             </div>
                         </div>
 
-                        <!-- Kullanıcı Bilgisi - Daha küçük -->
+                        <!-- Takımı oluşturan kullanıcı -->
                         <div class="d-flex justify-content-end align-items-center"
                             style="margin-top: -4px; margin-bottom: -7px; padding: 0 4px;">
                             <a href="/profile/@ViewBag.TeamOwners[team.Id]"
@@ -62,7 +66,6 @@
                                 <span class="fw-semibold">@ViewBag.TeamOwners[team.Id]</span>
                             </a>
                         </div>
-
 
                     </div>
                 </div>
@@ -99,7 +102,7 @@
 
         </div>
 
-        <!-- Sağ: Popüler Oyuncular ve Son Takımlar -->
+        <!-- Sağ: Popüler Oyuncular ve Takımlar -->
         <div class="col-md-4" style="margin-top: 45px;">
             <div style="position: sticky; top: 35px;">
 
@@ -190,195 +193,7 @@
 
             </div>
         </div>
-
     </div>
 </div>
 </div>
 </div>
-
-
-
-@section Scripts {
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            document.querySelectorAll('.football-field').forEach(field => {
-                const formation = field.dataset.formation ?? "4-4-2";
-                const playerSlots = field.querySelectorAll('.player-slot');
-
-                // Pozisyona göre gruplar
-                const defenders = ['CB', 'CB1', 'CB2', 'CB3', 'LB', 'RB', 'LWB', 'RWB'];
-                const midfielders = ['CM', 'CM1', 'CM2', 'CM3', 'LM', 'RM', 'CAM', 'CDM'];
-                const forwards = ['ST', 'ST1', 'ST2', 'LW', 'RW', 'CF'];
-
-                function getGroup(position) {
-                    if (defenders.some(d => position.startsWith(d))) return 'DEF';
-                    if (midfielders.some(m => position.startsWith(m))) return 'MID';
-                    if (forwards.some(f => position.startsWith(f))) return 'FWD';
-                    if (position === 'GK') return 'GK';
-                    return 'MID';
-                }
-
-                const groupedSlots = { GK: [], DEF: [], MID: [], FWD: [] };
-
-                playerSlots.forEach(p => {
-                    const group = getGroup(p.dataset.position);
-                    groupedSlots[group].push(p);
-                });
-
-                const positionsY = {
-                    GK: '85%',
-                    DEF: '63%',
-                    MID: '40%',
-                    FWD: '15%'
-                };
-
-                function distributeHorizontally(players, topPercent) {
-                    const count = players.length;
-                    players.forEach((p, i) => {
-                        const x = (100 / (count + 1)) * (i + 1);
-                        p.style.left = `${x}%`;
-                        p.style.top = topPercent;
-                    });
-                }
-
-                distributeHorizontally(groupedSlots.DEF, positionsY.DEF);
-                distributeHorizontally(groupedSlots.MID, positionsY.MID);
-                distributeHorizontally(groupedSlots.FWD, positionsY.FWD);
-                distributeHorizontally(groupedSlots.GK, positionsY.GK);
-            });
-        });
-    </script>
-
-
-    <style>
-        /* Saha alanının arka planı, kenar çizgileri ve genel görünümü */
-        .football-field {
-            background-image: linear-gradient(#49884b, #388E3C);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            position: relative;
-            height: 600px;
-            border-radius: 10px;
-        }
-
-        /* Orta saha çizgisi */
-        .football-field::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: rgba(255, 255, 255, 0.6);
-        }
-
-        /* Orta saha çemberi */
-        .football-field::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 100px;
-            height: 100px;
-            border: 2px solid rgba(255, 255, 255, 0.6);
-            border-radius: 50%;
-        }
-
-        /* Ceza sahası kutuları */
-        .penalty-box {
-            position: absolute;
-            width: 180px;
-            height: 70px;
-            border: 2px solid white;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 0;
-        }
-
-        /* Üst ceza sahası */
-        .top-box {
-            top: 0;
-            border-top: none;
-        }
-
-        /* Alt ceza sahası */
-        .bottom-box {
-            bottom: 0;
-            border-bottom: none;
-        }
-
-        /* Oyuncu yerleşim noktası (slot) */
-        .player-slot {
-            position: absolute;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transform: translate(-50%, -50%);
-            z-index: 10;
-        }
-
-        /* Oyuncu kartı kutusu */
-        .player-card {
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 10px;
-            width: 80px;
-            height: 102px;
-            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 6px;
-            transition: transform 0.25s ease;
-        }
-
-        /* Kart üzerine gelince büyüme efekti */
-        .player-card:hover {
-            transform: scale(1.1);
-        }
-
-        /* Oyuncu fotoğrafı */
-        .player-card img {
-            width: 67px;
-            height: 67px;
-            border-radius: 50%;
-            object-fit: cover;
-            background: white;
-        }
-
-        /* Oyuncu ismi ve puanı kutusu */
-        .player-info {
-            text-align: center;
-            margin-top: 5px;
-        }
-
-        /* Oyuncu ismi */
-        .player-name {
-            font-size: 11px;
-            font-weight: 600;
-            text-align: center;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            max-width: 80px;
-            height: 25px;
-            line-height: 1.1;
-        }
-
-        /* Oyuncu genel puanı */
-        .player-overall {
-            background: #1a5388;
-            color: white;
-            border-radius: 50%;
-            width: 24px;
-            height: 24px;
-            line-height: 24px;
-            font-size: 12px;
-            font-weight: bold;
-            margin: 0 auto;
-        }
-    </style>
-
-}

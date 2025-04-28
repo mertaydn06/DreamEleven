@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DreamEleven.DataAccess")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d85027d55ea8dcf8a02b01aa294cf1712b0ca4d8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fd50c6271df027512f2bca642e1155e70915c89b")]
 [assembly: System.Reflection.AssemblyProductAttribute("DreamEleven.DataAccess")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DreamEleven.DataAccess")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

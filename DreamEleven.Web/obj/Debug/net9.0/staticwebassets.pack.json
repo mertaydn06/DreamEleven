@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\DreamEleven.Web.t754m7p81e.bundle.scp.css"
     },
     {
+      "Id": "C:\\Code\\C#\\Mvc\\DreamEleven\\DreamEleven.Web\\wwwroot\\css\\field.css",
+      "PackagePath": "staticwebassets\\css\\field.css"
+    },
+    {
       "Id": "C:\\Code\\C#\\Mvc\\DreamEleven\\DreamEleven.Web\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
@@ -23,6 +27,10 @@
     {
       "Id": "C:\\Code\\C#\\Mvc\\DreamEleven\\DreamEleven.Web\\wwwroot\\images\\users\\84febc07-6f73-45d8-8de7-355835810266.jpg",
       "PackagePath": "staticwebassets\\images\\users\\84febc07-6f73-45d8-8de7-355835810266.jpg"
+    },
+    {
+      "Id": "C:\\Code\\C#\\Mvc\\DreamEleven\\DreamEleven.Web\\wwwroot\\js\\field.js",
+      "PackagePath": "staticwebassets\\js\\field.js"
     },
     {
       "Id": "C:\\Code\\C#\\Mvc\\DreamEleven\\DreamEleven.Web\\wwwroot\\js\\site.js",
