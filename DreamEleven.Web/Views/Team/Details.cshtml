@@ -1,4 +1,6 @@
 @model DreamEleven.Entities.Team
+@inject UserManager<User> UserManager
+@inject SignInManager<User> SignInManager
 
 @{
     ViewBag.Title = "Takım Detayları";
@@ -10,14 +12,12 @@
 
             <!-- Sol: Takım Bilgisi -->
             <div class="card mb-4">
-
                 <div class="card-header text-center">
                     <h3 class="mb-0">@Model.TeamName</h3>
                 </div>
 
                 <div class="card-body text-center">
                     <p><strong>Diziliş:</strong> @Model.Formation</p>
-
                     <p><strong>Oluşturulma Tarihi:</strong> @Model.CreatedAt.ToShortDateString()</p>
 
                     <p class="d-flex align-items-center justify-content-center mb-0">
@@ -29,14 +29,11 @@
                             <span class="ms-2">@ViewBag.TeamOwner.UserName</span>
                         </a>
                     </p>
-
                 </div>
             </div>
 
-
             <!-- Sol: Takımdaki Oyuncular -->
             <div class="card">
-
                 <div class="card-header">
                     <h4 class="mb-0">Takım Kadrosu</h4>
                 </div>
@@ -44,20 +41,17 @@
                 <div class="card-body p-0">
                     <div class="list-group list-group-flush">
                         @foreach (var teamPlayer in Model.TeamPlayers
-                                                .OrderBy(tp => tp.Player.Position) // Önce pozisyona göre sıralıyoruz
-                                                .ThenByDescending(tp => tp.Player.Overall)) // Aynı pozisyondakilerde en iyisi üste çıksın
+                                                .OrderBy(tp => tp.Player.Position)
+                                                .ThenByDescending(tp => tp.Player.Overall))
                         {
-                            <a asp-controller="Home" asp-action="PlayerDetails" asp-route-slug="@teamPlayer.Player.Slug"
+                            <a asp-controller="Player" asp-action="PlayerDetails" asp-route-slug="@teamPlayer.Player.Slug"
                                 class="list-group-item d-flex align-items-center text-decoration-none">
-
                                 <img src="@teamPlayer.Player.ImageUrl" class="me-2"
                                     style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">
-
                                 <div>
                                     <h6 class="mb-0">@teamPlayer.Player.Name</h6>
                                     <small>@teamPlayer.Player.RealTeam</small>
                                 </div>
-
                                 <div class="ms-auto">
                                     <span class="badge bg-primary rounded-pill">@teamPlayer.Player.Overall</span>
                                 </div>
@@ -68,44 +62,63 @@
             </div>
         </div>
 
-
         <!-- Saha -->
         <div class="col-md-8">
-            <div class="football-field position-relative" data-formation="@Model.Formation">
+            <div class="card shadow-lg p-3 mb-4" style="background: rgba(25, 25, 25, 0.85); border-radius: 15px;">
+                <div class="football-field position-relative" data-formation="@Model.Formation">
 
-                <!-- Orta saha ve ceza sahası çizgileri -->
-                <div class="penalty-box top-box"></div>
-                <div class="penalty-box bottom-box"></div>
+                    <!-- Orta saha ve ceza sahası çizgileri -->
+                    <div class="penalty-box top-box"></div>
+                    <div class="penalty-box bottom-box"></div>
 
-                <div class="midline"></div>
-                <div class="midcircle"></div>
+                    <div class="midline"></div>
+                    <div class="midcircle"></div>
 
-                <!-- Saha içindeki oyuncu konumları için container -->
-                <div id="playerPositions" class="position-relative h-100">
-
-                    <!-- Takım oyuncularını saha üstüne yerleştirme -->
-                    @foreach (var teamPlayer in Model.TeamPlayers)
-                    {
-                        <div class="player-slot position-absolute" data-position="@teamPlayer.PositionSlot"
-                            style="transform: translate(-50%, -50%);">
-                            <a href="/player/@teamPlayer.Player.Slug" class="text-decoration-none text-dark">
-                                <div class="player-card">
-                                    <img src="@teamPlayer.Player.ImageUrl" alt="@teamPlayer.Player.Name">
-                                    <div class="player-info">
-                                        <div class="player-name">@teamPlayer.Player.Name</div>
-                                        <div class="player-overall">@teamPlayer.Player.Overall</div>
+                    <!-- Saha içindeki oyuncu konumları için container -->
+                    <div id="playerPositions" class="position-relative h-100">
+                        <!-- Takım oyuncularını saha üstüne yerleştirme -->
+                        @foreach (var teamPlayer in Model.TeamPlayers)
+                        {
+                            <div class="player-slot position-absolute" data-position="@teamPlayer.PositionSlot"
+                                style="transform: translate(-50%, -50%);">
+                                <a href="/player/@teamPlayer.Player.Slug" class="text-decoration-none text-dark">
+                                    <div class="player-card">
+                                        <img src="@teamPlayer.Player.ImageUrl" alt="@teamPlayer.Player.Name">
+                                        <div class="player-info">
+                                            <div class="player-name">@teamPlayer.Player.Name</div>
+                                            <div class="player-overall">@teamPlayer.Player.Overall</div>
+                                        </div>
                                     </div>
-                                </div>
-                            </a>
+                                </a>
+                            </div>
+                        }
+                    </div>
+                </div>
+
+                @if (SignInManager.IsSignedIn(User))
+                {
+                    var currentUserId = UserManager.GetUserId(User);
+
+                    if (currentUserId == Model.UserId)
+                    {
+                        <div class="text-end mt-3">
+                            <form asp-action="DeleteTeam" asp-controller="Team" method="post"
+                                style="display: inline; margin-right: 10px;">
+                                <input type="hidden" name="teamId" value="@Model.Id" />
+                                <button type="submit" class="btn btn-sm btn-danger"
+                                    onclick="return confirm('Bu takımı silmek istediğine emin misin?')">
+                                    Takımı Sil
+                                </button>
+                            </form>
                         </div>
                     }
-                </div>
+                }
             </div>
 
             <hr />
 
             <!-- Yorumları listeleme bölümü -->
-            <h3 class=" text-center my-3 fw-semibold" style="color: rgb(212, 211, 211);">Yorumlar</h3>
+            <h3 class="text-center my-3 fw-semibold" style="color: rgb(212, 211, 211);">Yorumlar</h3>
 
             @{
                 var comments = ViewBag.Comments as List<CommentViewModel>;
@@ -118,7 +131,6 @@
                 {
                     <div class="card mb-2">
                         <div class="card-body d-flex align-items-start">
-
                             <a href="/profile/@comment.UserName" class="text-decoration-none">
                                 <img src="@comment.UserImage" alt="Profil" class="rounded-circle me-3"
                                     style="width: 40px; height: 40px; object-fit: cover;">
@@ -141,7 +153,9 @@
                                         <form asp-controller="Comment" asp-action="DeleteComment" asp-route-id="@comment.Id"
                                             method="post" class="d-inline">
                                             <button class="btn btn-sm btn-danger"
-                                                onclick="return confirm('Yorumu silmek istediğine emin misin?')">Sil</button>
+                                                onclick="return confirm('Yorumu silmek istediğine emin misin?')">
+                                                Sil
+                                            </button>
                                         </form>
                                     </div>
                                 }
@@ -154,7 +168,8 @@
             {
                 <!-- Henüz yorum yoksa mesaj göster -->
                 <p class="border-bottom pb-2" style="color: rgb(212, 211, 211); padding-bottom: 40px; margin-bottom: 25px;">
-                    Henüz yorum yapılmamış.</p>
+                    Henüz yorum yapılmamış.
+                </p>
             }
 
             <!-- Kullanıcı giriş yaptıysa yorum ekleme -->
@@ -162,15 +177,16 @@
             {
                 <form method="post" asp-controller="Comment" asp-action="AddComment">
                     <input type="hidden" name="teamId" value="@Model.Id" />
+
                     <div class="mb-3">
                         <h5 class="my-3" style="color: rgb(212, 211, 211);">Yorum Yap</h5>
                         <textarea name="content" class="form-control shadow-sm p-1" rows="4"
                         style="resize: none; color: white; background-color: #1e1e1e91;" required></textarea>
                     </div>
+
                     <button type="submit" class="btn btn-primary float-end">Gönder</button>
                 </form>
             }
-
         </div>
     </div>
 </div>

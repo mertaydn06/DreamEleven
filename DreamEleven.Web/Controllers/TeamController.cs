@@ -82,7 +82,7 @@ namespace DreamEleven.Web.Controllers
             var team = await _teamService.GetTeamByIdAsync(id);
             if (team == null) return NotFound();
 
-            var commentVMs = new List<CommentViewModel>();  // CommentViewModel sınıfından nesne oluşturduk.
+            var commentVMs = new List<CommentViewModel>();
 
             foreach (var comment in team.Comments.OrderByDescending(c => c.CreatedAt))
             {
@@ -103,7 +103,7 @@ namespace DreamEleven.Web.Controllers
             ViewBag.TeamOwner = owner;
 
 
-            ViewBag.Comments = commentVMs;  // Yorumları ViewBag ile View'a gönderdik.
+            ViewBag.Comments = commentVMs;
             return View(team);
         }
 
@@ -119,9 +119,9 @@ namespace DreamEleven.Web.Controllers
             var currentUserId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
 
             if (team.UserId != currentUserId)
-                return Forbid(); // Başkasının takımını silemesin
+                return Forbid();
 
-            await _teamService.DeleteTeamAsync(teamId); // 🔥 SADECE ID VERİYORSUN
+            await _teamService.DeleteTeamAsync(teamId);
 
             return Redirect($"/profile/{User.Identity!.Name}");
         }

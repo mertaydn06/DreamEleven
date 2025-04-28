@@ -54,10 +54,21 @@
                             </li>
 
                             <li>
-                                <form asp-controller="Account" asp-action="Logout" method="post" class="dropdown-item p-0">
-                                    <button type="submit" class="btn w-100 text-start text-light">Çıkış Yap</button>
+                                <form id="logoutForm" asp-controller="Account" asp-action="Logout" method="post"
+                                    class="dropdown-item p-0">
+                                    <button type="button" class="btn w-100 text-start text-light"
+                                        onclick="confirmLogout()">Çıkış Yap</button>
                                 </form>
                             </li>
+
+                            <script>
+                                function confirmLogout() {
+                                    if (confirm('Çıkış yapmak istediğinize emin misiniz?')) {
+                                        document.getElementById('logoutForm').submit();
+                                    }
+                                }
+                            </script>
+
                         </ul>
                     </li>
                 }

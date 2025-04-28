@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "q2RFkN/YcEooiRRmAWESMP2LOOh8D0dogB/EL8Ebbfk=",
+  "Hash": "PTbAddHETj+KtpH0B8HHtQM7aUNQ4okeI2SLPoD6BJw=",
   "Source": "DreamEleven.Web",
   "BasePath": "_content/DreamEleven.Web",
   "Mode": "Default",
@@ -815,12 +815,12 @@
       "OriginalItemSpec": "C:\\Code\\C#\\Mvc\\DreamEleven\\DreamEleven.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Code\\C#\\Mvc\\DreamEleven\\DreamEleven.Web\\obj\\Debug\\net9.0\\compressed\\kk7k9caw0k-7eu3wvurol.gz",
+      "Identity": "C:\\Code\\C#\\Mvc\\DreamEleven\\DreamEleven.Web\\obj\\Debug\\net9.0\\compressed\\kk7k9caw0k-przel8umlp.gz",
       "SourceId": "DreamEleven.Web",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Code\\C#\\Mvc\\DreamEleven\\DreamEleven.Web\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/DreamEleven.Web",
-      "RelativePath": "css/site#[.{fingerprint=7eu3wvurol}]?.css.gz",
+      "RelativePath": "css/site#[.{fingerprint=przel8umlp}]?.css.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -829,8 +829,8 @@
       "RelatedAsset": "C:\\Code\\C#\\Mvc\\DreamEleven\\DreamEleven.Web\\wwwroot\\css\\site.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "n14il1tg9x",
-      "Integrity": "BXLYjKlCwsGiFOnmNpmwTm+OK+OYDbkteWLW3DukjjY=",
+      "Fingerprint": "th6p8rlvyp",
+      "Integrity": "IVEqHiY4kgReOlk0vLEGUWeo16WcYF9J7T/cv9LVpZQ=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Code\\C#\\Mvc\\DreamEleven\\DreamEleven.Web\\wwwroot\\css\\site.css"
@@ -1480,8 +1480,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "7eu3wvurol",
-      "Integrity": "Yad+SgmZmWXF6+3YZecdI+un1IxeADkOU1Tb9dHUGbg=",
+      "Fingerprint": "przel8umlp",
+      "Integrity": "lWFwCmpH+WswDrJ9rhvqSuJqjOfC8ELWzV+1ZybCllg=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
@@ -2899,7 +2899,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 28 Apr 2025 16:16:37 GMT"
+          "Value": "Mon, 28 Apr 2025 16:54:53 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2960,7 +2960,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 28 Apr 2025 16:16:37 GMT"
+          "Value": "Mon, 28 Apr 2025 16:54:53 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3005,7 +3005,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 28 Apr 2025 16:16:37 GMT"
+          "Value": "Mon, 28 Apr 2025 16:54:53 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3060,7 +3060,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 28 Apr 2025 16:16:37 GMT"
+          "Value": "Mon, 28 Apr 2025 16:54:53 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3113,7 +3113,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 28 Apr 2025 16:16:37 GMT"
+          "Value": "Mon, 28 Apr 2025 16:54:53 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3150,7 +3150,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 28 Apr 2025 16:16:37 GMT"
+          "Value": "Mon, 28 Apr 2025 16:54:53 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3173,13 +3173,13 @@
       ]
     },
     {
-      "Route": "css/site.7eu3wvurol.css",
-      "AssetFile": "C:\\Code\\C#\\Mvc\\DreamEleven\\DreamEleven.Web\\obj\\Debug\\net9.0\\compressed\\kk7k9caw0k-7eu3wvurol.gz",
+      "Route": "css/site.css",
+      "AssetFile": "C:\\Code\\C#\\Mvc\\DreamEleven\\DreamEleven.Web\\obj\\Debug\\net9.0\\compressed\\kk7k9caw0k-przel8umlp.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000808407437"
+          "Quality": "0.000777000777"
         }
       ],
       "ResponseHeaders": [
@@ -3189,19 +3189,19 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1236"
+          "Value": "1286"
         },
         {
           "Name": "ETag",
-          "Value": "\"BXLYjKlCwsGiFOnmNpmwTm+OK+OYDbkteWLW3DukjjY=\""
+          "Value": "\"IVEqHiY4kgReOlk0vLEGUWeo16WcYF9J7T/cv9LVpZQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 28 Apr 2025 13:05:08 GMT"
+          "Value": "Mon, 28 Apr 2025 17:16:03 GMT"
         },
         {
           "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
+          "Value": "no-cache"
         },
         {
           "Name": "Content-Encoding",
@@ -3217,26 +3217,18 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"Yad+SgmZmWXF6+3YZecdI+un1IxeADkOU1Tb9dHUGbg=\""
+          "Value": "W/\"lWFwCmpH+WswDrJ9rhvqSuJqjOfC8ELWzV+1ZybCllg=\""
         }
       ],
       "EndpointProperties": [
         {
-          "Name": "fingerprint",
-          "Value": "7eu3wvurol"
-        },
-        {
-          "Name": "label",
-          "Value": "css/site.css"
-        },
-        {
           "Name": "integrity",
-          "Value": "sha256-Yad+SgmZmWXF6+3YZecdI+un1IxeADkOU1Tb9dHUGbg="
+          "Value": "sha256-lWFwCmpH+WswDrJ9rhvqSuJqjOfC8ELWzV+1ZybCllg="
         }
       ]
     },
     {
-      "Route": "css/site.7eu3wvurol.css",
+      "Route": "css/site.css",
       "AssetFile": "C:\\Code\\C#\\Mvc\\DreamEleven\\DreamEleven.Web\\wwwroot\\css\\site.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -3246,7 +3238,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3469"
+          "Value": "3723"
         },
         {
           "Name": "Content-Type",
@@ -3254,11 +3246,156 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"Yad+SgmZmWXF6+3YZecdI+un1IxeADkOU1Tb9dHUGbg=\""
+          "Value": "\"lWFwCmpH+WswDrJ9rhvqSuJqjOfC8ELWzV+1ZybCllg=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 28 Apr 2025 13:05:08 GMT"
+          "Value": "Mon, 28 Apr 2025 17:16:03 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-lWFwCmpH+WswDrJ9rhvqSuJqjOfC8ELWzV+1ZybCllg="
+        }
+      ]
+    },
+    {
+      "Route": "css/site.css.gz",
+      "AssetFile": "C:\\Code\\C#\\Mvc\\DreamEleven\\DreamEleven.Web\\obj\\Debug\\net9.0\\compressed\\kk7k9caw0k-przel8umlp.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1286"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"IVEqHiY4kgReOlk0vLEGUWeo16WcYF9J7T/cv9LVpZQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 28 Apr 2025 17:16:03 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-IVEqHiY4kgReOlk0vLEGUWeo16WcYF9J7T/cv9LVpZQ="
+        }
+      ]
+    },
+    {
+      "Route": "css/site.przel8umlp.css",
+      "AssetFile": "C:\\Code\\C#\\Mvc\\DreamEleven\\DreamEleven.Web\\obj\\Debug\\net9.0\\compressed\\kk7k9caw0k-przel8umlp.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000777000777"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1286"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"IVEqHiY4kgReOlk0vLEGUWeo16WcYF9J7T/cv9LVpZQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 28 Apr 2025 17:16:03 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"lWFwCmpH+WswDrJ9rhvqSuJqjOfC8ELWzV+1ZybCllg=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "przel8umlp"
+        },
+        {
+          "Name": "label",
+          "Value": "css/site.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-lWFwCmpH+WswDrJ9rhvqSuJqjOfC8ELWzV+1ZybCllg="
+        }
+      ]
+    },
+    {
+      "Route": "css/site.przel8umlp.css",
+      "AssetFile": "C:\\Code\\C#\\Mvc\\DreamEleven\\DreamEleven.Web\\wwwroot\\css\\site.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3723"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"lWFwCmpH+WswDrJ9rhvqSuJqjOfC8ELWzV+1ZybCllg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 28 Apr 2025 17:16:03 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3268,7 +3405,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "7eu3wvurol"
+          "Value": "przel8umlp"
         },
         {
           "Name": "label",
@@ -3276,13 +3413,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-Yad+SgmZmWXF6+3YZecdI+un1IxeADkOU1Tb9dHUGbg="
+          "Value": "sha256-lWFwCmpH+WswDrJ9rhvqSuJqjOfC8ELWzV+1ZybCllg="
         }
       ]
     },
     {
-      "Route": "css/site.7eu3wvurol.css.gz",
-      "AssetFile": "C:\\Code\\C#\\Mvc\\DreamEleven\\DreamEleven.Web\\obj\\Debug\\net9.0\\compressed\\kk7k9caw0k-7eu3wvurol.gz",
+      "Route": "css/site.przel8umlp.css.gz",
+      "AssetFile": "C:\\Code\\C#\\Mvc\\DreamEleven\\DreamEleven.Web\\obj\\Debug\\net9.0\\compressed\\kk7k9caw0k-przel8umlp.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3291,7 +3428,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1236"
+          "Value": "1286"
         },
         {
           "Name": "Content-Type",
@@ -3299,11 +3436,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"BXLYjKlCwsGiFOnmNpmwTm+OK+OYDbkteWLW3DukjjY=\""
+          "Value": "\"IVEqHiY4kgReOlk0vLEGUWeo16WcYF9J7T/cv9LVpZQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 28 Apr 2025 13:05:08 GMT"
+          "Value": "Mon, 28 Apr 2025 17:16:03 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3321,7 +3458,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "7eu3wvurol"
+          "Value": "przel8umlp"
         },
         {
           "Name": "label",
@@ -3329,144 +3466,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-BXLYjKlCwsGiFOnmNpmwTm+OK+OYDbkteWLW3DukjjY="
-        }
-      ]
-    },
-    {
-      "Route": "css/site.css",
-      "AssetFile": "C:\\Code\\C#\\Mvc\\DreamEleven\\DreamEleven.Web\\obj\\Debug\\net9.0\\compressed\\kk7k9caw0k-7eu3wvurol.gz",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip",
-          "Quality": "0.000808407437"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1236"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"BXLYjKlCwsGiFOnmNpmwTm+OK+OYDbkteWLW3DukjjY=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 28 Apr 2025 13:05:08 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "W/\"Yad+SgmZmWXF6+3YZecdI+un1IxeADkOU1Tb9dHUGbg=\""
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-Yad+SgmZmWXF6+3YZecdI+un1IxeADkOU1Tb9dHUGbg="
-        }
-      ]
-    },
-    {
-      "Route": "css/site.css",
-      "AssetFile": "C:\\Code\\C#\\Mvc\\DreamEleven\\DreamEleven.Web\\wwwroot\\css\\site.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "3469"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"Yad+SgmZmWXF6+3YZecdI+un1IxeADkOU1Tb9dHUGbg=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 28 Apr 2025 13:05:08 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-Yad+SgmZmWXF6+3YZecdI+un1IxeADkOU1Tb9dHUGbg="
-        }
-      ]
-    },
-    {
-      "Route": "css/site.css.gz",
-      "AssetFile": "C:\\Code\\C#\\Mvc\\DreamEleven\\DreamEleven.Web\\obj\\Debug\\net9.0\\compressed\\kk7k9caw0k-7eu3wvurol.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1236"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"BXLYjKlCwsGiFOnmNpmwTm+OK+OYDbkteWLW3DukjjY=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 28 Apr 2025 13:05:08 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-BXLYjKlCwsGiFOnmNpmwTm+OK+OYDbkteWLW3DukjjY="
+          "Value": "sha256-IVEqHiY4kgReOlk0vLEGUWeo16WcYF9J7T/cv9LVpZQ="
         }
       ]
     },
@@ -3495,7 +3495,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 27 Apr 2025 18:50:00 GMT"
+          "Value": "Mon, 28 Apr 2025 17:40:11 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3548,7 +3548,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 27 Apr 2025 18:50:00 GMT"
+          "Value": "Mon, 28 Apr 2025 17:40:11 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3585,7 +3585,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 27 Apr 2025 18:50:00 GMT"
+          "Value": "Mon, 28 Apr 2025 17:40:11 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3632,7 +3632,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 27 Apr 2025 18:50:00 GMT"
+          "Value": "Mon, 28 Apr 2025 17:40:11 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3685,7 +3685,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 27 Apr 2025 18:50:00 GMT"
+          "Value": "Mon, 28 Apr 2025 17:40:11 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3722,7 +3722,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 27 Apr 2025 18:50:00 GMT"
+          "Value": "Mon, 28 Apr 2025 17:40:11 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3769,7 +3769,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 27 Apr 2025 18:50:00 GMT"
+          "Value": "Mon, 28 Apr 2025 17:40:11 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3830,7 +3830,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 27 Apr 2025 18:50:00 GMT"
+          "Value": "Mon, 28 Apr 2025 17:40:11 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3875,7 +3875,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 27 Apr 2025 18:50:00 GMT"
+          "Value": "Mon, 28 Apr 2025 17:40:11 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3930,7 +3930,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 27 Apr 2025 18:50:00 GMT"
+          "Value": "Mon, 28 Apr 2025 17:40:11 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3991,7 +3991,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 27 Apr 2025 18:50:00 GMT"
+          "Value": "Mon, 28 Apr 2025 17:40:11 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -4036,7 +4036,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 27 Apr 2025 18:50:00 GMT"
+          "Value": "Mon, 28 Apr 2025 17:40:11 GMT"
         },
         {
           "Name": "Cache-Control",

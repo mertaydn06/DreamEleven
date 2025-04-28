@@ -111,7 +111,7 @@ using (var scope = app.Services.CreateScope())  // Uygulama kapsamı (scope) olu
 app.MapControllerRoute(
     name: "player-details",
     pattern: "player/{slug}",
-    defaults: new { controller = "Home", action = "PlayerDetails" });  // .../player/lionel-messi
+    defaults: new { controller = "Player", action = "PlayerDetails" });  // .../player/"player-slug"
 
 
 app.MapControllerRoute(

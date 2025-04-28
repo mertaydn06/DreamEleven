@@ -57,7 +57,7 @@
                     return;
                 }
 
-                fetch(`/Home/SearchPlayers?query=${encodeURIComponent(query)}`)
+                fetch(`/Player/SearchPlayers?query=${encodeURIComponent(query)}`)
                     .then(response => response.json())
                     .then(data => {
                         if (resultBox) resultBox.remove();
