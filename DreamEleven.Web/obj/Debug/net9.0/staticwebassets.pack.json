@@ -17,16 +17,16 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\Code\\C#\\Mvc\\DreamEleven\\DreamEleven.Web\\wwwroot\\images\\User.jpg",
-      "PackagePath": "staticwebassets\\images\\User.jpg"
+      "Id": "C:\\Code\\C#\\Mvc\\DreamEleven\\DreamEleven.Web\\wwwroot\\images\\background.jpg",
+      "PackagePath": "staticwebassets\\images\\background.jpg"
     },
     {
       "Id": "C:\\Code\\C#\\Mvc\\DreamEleven\\DreamEleven.Web\\wwwroot\\images\\logo.png",
       "PackagePath": "staticwebassets\\images\\logo.png"
     },
     {
-      "Id": "C:\\Code\\C#\\Mvc\\DreamEleven\\DreamEleven.Web\\wwwroot\\images\\users\\84febc07-6f73-45d8-8de7-355835810266.jpg",
-      "PackagePath": "staticwebassets\\images\\users\\84febc07-6f73-45d8-8de7-355835810266.jpg"
+      "Id": "C:\\Code\\C#\\Mvc\\DreamEleven\\DreamEleven.Web\\wwwroot\\images\\users\\User.jpg",
+      "PackagePath": "staticwebassets\\images\\users\\User.jpg"
     },
     {
       "Id": "C:\\Code\\C#\\Mvc\\DreamEleven\\DreamEleven.Web\\wwwroot\\js\\field.js",

@@ -20,7 +20,6 @@ namespace DreamEleven.Web.Controllers
             _teamService = teamService;           // Takım işlemleri servisi
             _playerService = playerService;       // Oyuncu işlemleri servisi (listeleme vs.)
             _userManager = userManager;
-
         }
 
 
@@ -125,7 +124,6 @@ namespace DreamEleven.Web.Controllers
 
             return Redirect($"/profile/{User.Identity!.Name}");
         }
-
 
     }
 }

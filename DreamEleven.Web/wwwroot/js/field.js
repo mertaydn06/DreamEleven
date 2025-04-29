@@ -3,12 +3,20 @@ document.addEventListener('DOMContentLoaded', function () {
         const formation = field.dataset.formation ?? "4-4-2";
         const playerSlots = field.querySelectorAll('.player-slot');
 
-        // Pozisyona göre gruplar
+        // Pozisyona göre gruplar ve sıralama öncelikleri
+        const positionPriorities = {
+            // Defans öncelikleri (soldan sağa)
+            'LWB': 0, 'LB': 1, 'CB1': 2, 'CB2': 3, 'CB3': 4, 'RB': 5, 'RWB': 6,
+            // Orta saha öncelikleri (soldan sağa)
+            'LM': 0, 'CM1': 1, 'CDM': 2, 'CM2': 3, 'CM3': 4, 'CAM': 5, 'RM': 6,
+            // Forvet öncelikleri (soldan sağa)
+            'LW': 0, 'ST1': 1, 'ST': 2, 'ST2': 3, 'CF': 4, 'RW': 5
+        };
+
         const defenders = ['CB', 'CB1', 'CB2', 'CB3', 'LB', 'RB', 'LWB', 'RWB'];
         const midfielders = ['CM', 'CM1', 'CM2', 'CM3', 'LM', 'RM', 'CAM', 'CDM'];
         const forwards = ['ST', 'ST1', 'ST2', 'LW', 'RW', 'CF'];
 
-        // Pozisyona göre hangi gruba ait olduğunu dönen fonksiyon
         function getGroup(position) {
             if (defenders.some(d => position.startsWith(d))) return 'DEF';
             if (midfielders.some(m => position.startsWith(m))) return 'MID';
@@ -17,16 +25,35 @@ document.addEventListener('DOMContentLoaded', function () {
             return 'MID';
         }
 
-        // Grupları baştan boş olarak oluşturuyoruz
+        function getPositionPriority(position) {
+            // Tam eşleşme varsa önceliği döndür
+            if (position in positionPriorities) {
+                return positionPriorities[position];
+            }
+            // Eşleşme yoksa, başlangıç karakterlerine göre kontrol et
+            for (const [key, value] of Object.entries(positionPriorities)) {
+                if (position.startsWith(key)) {
+                    return value;
+                }
+            }
+            return 999; // Bilinmeyen pozisyonlar için yüksek öncelik
+        }
+
         const groupedSlots = { GK: [], DEF: [], MID: [], FWD: [] };
 
-        // Bütün oyuncuları ilgili gruba ekliyoruz
-        playerSlots.forEach(p => {
+        // Oyuncuları gruplara eklerken pozisyon önceliklerine göre sırala
+        const sortedSlots = Array.from(playerSlots).sort((a, b) => {
+            const posA = a.dataset.position;
+            const posB = b.dataset.position;
+            return getPositionPriority(posA) - getPositionPriority(posB);
+        });
+
+        // Sıralanmış oyuncuları gruplara ekle
+        sortedSlots.forEach(p => {
             const group = getGroup(p.dataset.position);
             groupedSlots[group].push(p);
         });
 
-        // Gruplara göre sahada dikeyde (Y ekseni) nerede duracaklarını belirliyoruz
         const positionsY = {
             GK: '85%',
             DEF: '63%',
@@ -34,7 +61,6 @@ document.addEventListener('DOMContentLoaded', function () {
             FWD: '15%'
         };
 
-        // Oyuncuları yatayda eşit aralıkla yerleştiriyoruz
         function distributeHorizontally(players, topPercent) {
             const count = players.length;
             players.forEach((p, i) => {
@@ -44,7 +70,6 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         }
 
-        // Her grup için sahaya yerleştirme işlemini uyguluyoruz
         distributeHorizontally(groupedSlots.DEF, positionsY.DEF);
         distributeHorizontally(groupedSlots.MID, positionsY.MID);
         distributeHorizontally(groupedSlots.FWD, positionsY.FWD);

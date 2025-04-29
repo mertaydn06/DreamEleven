@@ -52,6 +52,7 @@ namespace DreamEleven.Web
             }
 
             // Normal kullanıcı
+            const string username = "mertaydn";
             const string userEmail = "user@gmail.com";
             const string userPassword = "User123*";
 
@@ -61,7 +62,7 @@ namespace DreamEleven.Web
             {
                 appUser = new User
                 {
-                    UserName = userEmail,
+                    UserName = username,
                     Email = userEmail,
                     EmailConfirmed = true,
                     CreatedAt = DateTime.UtcNow
@@ -92,7 +93,20 @@ namespace DreamEleven.Web
                     new Player { Name = "Marc-André ter Stegen", Overall = 88, RealTeam = "Barcelona", Position = Player.PositionType.Goalkeeper, ImageUrl = "https://img.a.transfermarkt.technology/portrait/header/74857-1674465246.jpg?lm=1", Slug = "ter-stegen" },
                     new Player { Name = "Rúben Dias", Overall = 87, RealTeam = "Manchester City", Position = Player.PositionType.Defender, ImageUrl = "https://img.a.transfermarkt.technology/portrait/header/258004-1684921271.jpg?lm=1", Slug = "ruben-dias" },
                     new Player { Name = "Marquinhos", Overall = 86, RealTeam = "Paris Saint-Germain", Position = Player.PositionType.Defender, ImageUrl = "https://img.a.transfermarkt.technology/portrait/header/181767-1672303747.jpg?lm=1", Slug = "marquinhos" },
-                    new Player { Name = "Éder Militão", Overall = 86, RealTeam = "Real Madrid", Position = Player.PositionType.Defender, ImageUrl = "https://img.a.transfermarkt.technology/portrait/header/401530-1719653438.jpg?lm=1", Slug = "eder-militao" }
+                    new Player { Name = "Éder Militão", Overall = 86, RealTeam = "Real Madrid", Position = Player.PositionType.Defender, ImageUrl = "https://img.a.transfermarkt.technology/portrait/header/401530-1719653438.jpg?lm=1", Slug = "eder-militao" },
+new Player { Name = "Luka Modrić", Overall = 87, RealTeam = "Real Madrid", Position = Player.PositionType.Midfielder, ImageUrl = "https://img.a.transfermarkt.technology/portrait/header/27992-1687776160.jpg?lm=1", Slug = "luka-modric" },
+new Player { Name = "Pedri", Overall = 86, RealTeam = "FC Barcelona", Position = Player.PositionType.Midfielder, ImageUrl = "https://img.a.transfermarkt.technology/portrait/header/683840-1744278342.jpg?lm=1", Slug = "pedri" },
+new Player { Name = "Federico Valverde", Overall = 86, RealTeam = "Real Madrid", Position = Player.PositionType.Midfielder, ImageUrl = "https://img.a.transfermarkt.technology/portrait/header/369081-1731018042.jpg?lm=1", Slug = "federico-valverde" },
+new Player { Name = "Bruno Fernandes", Overall = 88, RealTeam = "Manchester United", Position = Player.PositionType.Midfielder, ImageUrl = "https://img.a.transfermarkt.technology/portrait/header/240306-1683882766.jpg?lm=1", Slug = "bruno-fernandes" },
+new Player { Name = "Martin Ødegaard", Overall = 87, RealTeam = "Arsenal", Position = Player.PositionType.Midfielder, ImageUrl = "https://img.a.transfermarkt.technology/portrait/header/316264-1678877651.jpg?lm=1", Slug = "martin-odegaard" },
+new Player { Name = "Kylian Mbappé", Overall = 91, RealTeam = "Paris Saint-Germain", Position = Player.PositionType.Forward, ImageUrl = "https://img.a.transfermarkt.technology/portrait/header/342229-1682683695.jpg?lm=1", Slug = "kylian-mbappe" },
+new Player { Name = "Neymar Jr.", Overall = 89, RealTeam = "Al-Hilal", Position = Player.PositionType.Forward, ImageUrl = "https://img.a.transfermarkt.technology/portrait/header/68290-1692601435.jpg?lm=1", Slug = "neymar" },
+new Player { Name = "Harry Kane", Overall = 90, RealTeam = "Bayern Munich", Position = Player.PositionType.Forward, ImageUrl = "https://img.a.transfermarkt.technology/portrait/header/132098-1700211169.jpg?lm=1", Slug = "harry-kane" },
+new Player { Name = "Vinícius Júnior", Overall = 89, RealTeam = "Real Madrid", Position = Player.PositionType.Forward, ImageUrl = "https://img.a.transfermarkt.technology/portrait/header/371998-1664869583.jpg?lm=1", Slug = "vinicius-junior" },
+new Player { Name = "Robert Lewandowski", Overall = 90, RealTeam = "FC Barcelona", Position = Player.PositionType.Forward, ImageUrl = "https://img.a.transfermarkt.technology/portrait/header/38253-1701118759.jpg?lm=1", Slug = "robert-lewandowski" },
+
+
+
                 };
 
                 context.Players.AddRange(players);

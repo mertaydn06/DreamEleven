@@ -15,7 +15,7 @@
 
                 <div class="card text-center mb-4">
                     <div class="card-body">
-                        <img src="@(string.IsNullOrEmpty(Model.User.Image) ? "/images/User.jpg" : Model.User.Image)"
+                        <img src="@(string.IsNullOrEmpty(Model.User.Image) ? "/images/users/User.jpg" : Model.User.Image)"
                             alt="Profil" class="rounded-circle mb-2"
                             style="width: 100px; height: 100px; object-fit: cover;" />
                         <h5 class="card-title">@Model.User.UserName</h5>
@@ -55,7 +55,7 @@
                         }
                         else
                         {
-                            <p class="text-light">Henüz yorum yapmamış.</p>
+                            <p class="text-center text-light">Henüz yorum yapılmamış.</p>
                         }
                     </div>
                 </div>
@@ -64,14 +64,14 @@
 
         <!-- Sağ: Takımlar -->
         <div class="col-md-8">
-            <h5 class="mb-3 text-center text-light">
+            <h4 class="mb-3 text-center text-light">
                 <i class="bi bi-clipboard"></i>
                 @(char.ToUpper(Model.User.UserName![0]) + Model.User.UserName.Substring(1)) Kullanıcısının Takımları
-            </h5>
+            </h4>
 
             @if (!Model.Teams.Any())
             {
-                <p class="text-light">Henüz takım oluşturulmamış.</p>
+                <p class="text-center text-light">Kullanıcı henüz takım oluşturulmamış.</p>
             }
 
             @foreach (var team in Model.Teams.OrderByDescending(t => t.CreatedAt))

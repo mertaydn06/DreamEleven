@@ -27,7 +27,7 @@ namespace DreamEleven.Web.Controllers
             if (player == null)
                 return NotFound();
 
-            var teamPlayers = player.TeamPlayers.ToList();
+            var teamPlayers = player.TeamPlayers?.ToList() ?? new List<DreamEleven.Entities.TeamPlayer>();
 
             var allTeams = teamPlayers
                 .Select(tp => tp.Team)
@@ -68,12 +68,14 @@ namespace DreamEleven.Web.Controllers
             ViewBag.TeamOwnerImages = teamOwnerImages;
             ViewBag.CurrentPage = page;
             ViewBag.TotalPages = (int)Math.Ceiling((double)allTeams.Count / pageSize);
+            ViewBag.Player = player;
 
             return View(pagedTeamPlayers);
         }
 
 
         [HttpGet]
+        [Route("Player/SearchPlayers")]
         public async Task<IActionResult> SearchPlayers(string query)
         {
             if (string.IsNullOrEmpty(query))
