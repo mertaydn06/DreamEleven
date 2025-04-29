@@ -27,12 +27,35 @@ namespace DreamEleven.Web.Controllers
             if (player == null)
                 return NotFound();
 
+            var sessionKey = $"RandomTeamOrder_{slug}";
+
             var teamPlayers = player.TeamPlayers?.ToList() ?? new List<DreamEleven.Entities.TeamPlayer>();
 
             var allTeams = teamPlayers
                 .Select(tp => tp.Team)
                 .DistinctBy(t => t.Id)
-                .OrderByDescending(t => t.CreatedAt)
+                .ToList();
+
+            // Sıralı ID listesi Session'da var mı kontrol ediyoruz
+            var sessionData = HttpContext.Session.GetString(sessionKey);
+            List<int> shuffledIds;
+
+            if (string.IsNullOrEmpty(sessionData))
+            {
+                // Session'da yoksa ID'leri rastgele sırala ve Session'a kaydediyoruz
+                shuffledIds = allTeams.Select(t => t.Id).OrderBy(_ => Guid.NewGuid()).ToList();
+                var serialized = System.Text.Json.JsonSerializer.Serialize(shuffledIds);
+                HttpContext.Session.SetString(sessionKey, serialized);
+            }
+            else
+            {
+                // Session'dan sırayı alıyoruz
+                shuffledIds = System.Text.Json.JsonSerializer.Deserialize<List<int>>(sessionData)!;
+            }
+
+            // Şu anda elimizde rastgele sıralanmış ID'ler var, bu ID'lere göre sıralıyoruz
+            allTeams = shuffledIds
+                .Select(id => allTeams.First(t => t.Id == id))
                 .ToList();
 
             var pageSize = 3;

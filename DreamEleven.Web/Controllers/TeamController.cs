@@ -37,7 +37,7 @@ namespace DreamEleven.Web.Controllers
                     .ToList()
             };
 
-            ViewBag.Formations = new List<string> { "4-4-2", "4-3-3", "3-5-2", "5-3-2", "4-5-1", "3-4-3" };
+            ViewBag.Formations = FormationHelper.AvailableFormations;
             ViewBag.AllPlayers = await _playerService.GetAllPlayersAsync();
 
             return View(model);
@@ -50,7 +50,7 @@ namespace DreamEleven.Web.Controllers
             if (!ModelState.IsValid || model.Players.Any(p => p.PlayerId <= 0))
             {
                 ModelState.AddModelError("", "Tüm pozisyonlara oyuncu seçmelisiniz.");
-                ViewBag.Formations = new List<string> { "4-4-2", "4-3-3", "3-5-2", "5-3-2", "4-5-1", "3-4-3" };
+                ViewBag.Formations = FormationHelper.AvailableFormations;
                 ViewBag.AllPlayers = await _playerService.GetAllPlayersAsync();
                 return View(model);
             }
@@ -105,6 +105,7 @@ namespace DreamEleven.Web.Controllers
             ViewBag.Comments = commentVMs;
             return View(team);
         }
+
 
         [Authorize]
         [HttpPost]

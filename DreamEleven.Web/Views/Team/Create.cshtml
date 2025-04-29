@@ -160,27 +160,27 @@
 
 <script>
 
-   // Seçilen oyuncuları tutacak bir Set oluşturuyoruz
-let selectedPlayers = new Set();
+    // Seçilen oyuncuları tutacak bir Set oluşturuyoruz
+    let selectedPlayers = new Set();
 
-function selectPlayerCard(index, playerId, card, playerImage, playerOverall, playerName) {
-    // Önceki seçili oyuncuyu kaldır
-    const previousPlayerId = document.getElementById('playerSelect' + index).value;
-    if (previousPlayerId && previousPlayerId !== "0") {
-        selectedPlayers.delete(parseInt(previousPlayerId));
-    }
+    function selectPlayerCard(index, playerId, card, playerImage, playerOverall, playerName) {
+        // Önceki seçili oyuncuyu kaldır
+        const previousPlayerId = document.getElementById('playerSelect' + index).value;
+        if (previousPlayerId && previousPlayerId !== "0") {
+            selectedPlayers.delete(parseInt(previousPlayerId));
+        }
 
-    // Yeni oyuncuyu ekle
-    selectedPlayers.add(playerId);
+        // Yeni oyuncuyu ekle
+        selectedPlayers.add(playerId);
 
-    // Mevcut seçim işlemleri
-    const allCards = card.closest('.modal-body').querySelectorAll('.modal-player-card');
-    allCards.forEach(c => c.classList.remove('selected'));
-    card.classList.add('selected');
+        // Mevcut seçim işlemleri
+        const allCards = card.closest('.modal-body').querySelectorAll('.modal-player-card');
+        allCards.forEach(c => c.classList.remove('selected'));
+        card.classList.add('selected');
 
-    document.getElementById('playerSelect' + index).value = playerId;
-    const playerSlot = document.querySelector(`[data-position="${slotFromIndex(index)}"]`);
-    playerSlot.innerHTML = `
+        document.getElementById('playerSelect' + index).value = playerId;
+        const playerSlot = document.querySelector(`[data-position="${slotFromIndex(index)}"]`);
+        playerSlot.innerHTML = `
         <div class="player-card" data-bs-toggle="modal" data-bs-target="#playerModal${index}" style="cursor:pointer;">
             <img src="${playerImage}" alt="${playerName}">
             <div class="player-info">
@@ -190,137 +190,137 @@ function selectPlayerCard(index, playerId, card, playerImage, playerOverall, pla
         </div>
     `;
 
-    // Tüm modallardaki oyuncu görünürlüğünü güncelle
-    updatePlayerVisibility();
+        // Tüm modallardaki oyuncu görünürlüğünü güncelle
+        updatePlayerVisibility();
 
-    const modal = document.getElementById('playerModal' + index);
-    const bsModal = bootstrap.Modal.getInstance(modal);
-    bsModal.hide();
-}
+        const modal = document.getElementById('playerModal' + index);
+        const bsModal = bootstrap.Modal.getInstance(modal);
+        bsModal.hide();
+    }
 
-function slotFromIndex(index) {
-    const playerSlots = document.querySelectorAll('.player-slot');
-    return playerSlots[index]?.dataset.position;
-}
+    function slotFromIndex(index) {
+        const playerSlots = document.querySelectorAll('.player-slot');
+        return playerSlots[index]?.dataset.position;
+    }
 
-// Oyuncu görünürlüğünü güncelleyen fonksiyon
-function updatePlayerVisibility() {
-    document.querySelectorAll('.modal-player-card').forEach(card => {
-        const playerId = parseInt(card.getAttribute('onclick').match(/selectPlayerCard\(\d+,\s*(\d+)/)[1]);
-        const col = card.closest('.col');
-        
-        // Eğer oyuncu seçiliyse ve bu kart seçili olan kartın modalında değilse, gizle
-        if (selectedPlayers.has(playerId)) {
-            const modalId = card.closest('.modal').id;
-            const currentPlayerId = document.getElementById('playerSelect' + modalId.replace('playerModal', '')).value;
-            
-            if (parseInt(currentPlayerId) !== playerId) {
-                col.style.display = 'none';
+    // Oyuncu görünürlüğünü güncelleyen fonksiyon
+    function updatePlayerVisibility() {
+        document.querySelectorAll('.modal-player-card').forEach(card => {
+            const playerId = parseInt(card.getAttribute('onclick').match(/selectPlayerCard\(\d+,\s*(\d+)/)[1]);
+            const col = card.closest('.col');
+
+            // Eğer oyuncu seçiliyse ve bu kart seçili olan kartın modalında değilse, gizle
+            if (selectedPlayers.has(playerId)) {
+                const modalId = card.closest('.modal').id;
+                const currentPlayerId = document.getElementById('playerSelect' + modalId.replace('playerModal', '')).value;
+
+                if (parseInt(currentPlayerId) !== playerId) {
+                    col.style.display = 'none';
+                } else {
+                    col.style.display = '';
+                }
             } else {
                 col.style.display = '';
             }
-        } else {
-            col.style.display = '';
-        }
-    });
-}
-
-document.addEventListener('DOMContentLoaded', function () {
-    // Başlangıçta seçili olan oyuncuları topluyoruz
-    document.querySelectorAll('input[name$=".PlayerId"]').forEach(input => {
-        if (input.value && input.value !== "0") {
-            selectedPlayers.add(parseInt(input.value));
-        }
-    });
-
-    // Seçili oyuncuları gizle
-    updatePlayerVisibility();
-
-    const formationSelect = document.getElementById('formationSelect');
-
-    function updatePositions(formation) {
-        const positions = document.querySelectorAll('.player-slot');
-        const [def, mid, fwd] = formation.split('-').map(Number);
-
-        positions[0].style.left = '50%';
-        positions[0].style.top = '85%';
-
-        let currentIndex = 1;
-
-        for (let i = 0; i < def; i++) {
-            positions[currentIndex].style.left = `${(100 / (def + 1)) * (i + 1)}%`;
-            positions[currentIndex].style.top = '63%';
-            currentIndex++;
-        }
-
-        for (let i = 0; i < mid; i++) {
-            positions[currentIndex].style.left = `${(100 / (mid + 1)) * (i + 1)}%`;
-            positions[currentIndex].style.top = '40%';
-            currentIndex++;
-        }
-
-        for (let i = 0; i < fwd; i++) {
-            positions[currentIndex].style.left = `${(100 / (fwd + 1)) * (i + 1)}%`;
-            positions[currentIndex].style.top = '15%';
-            currentIndex++;
-        }
+        });
     }
 
-    formationSelect.addEventListener('change', function () {
-        const selectedFormation = this.value;
-        document.getElementById('Formation').value = selectedFormation;
-        window.location.href = `/Team/Create?formation=${selectedFormation}`;
-    });
-
-    updatePositions(formationSelect.value);
-
-    const saveTeamBtn = document.getElementById('saveTeamBtn');
-    saveTeamBtn.addEventListener('click', function (e) {
-        let allSelected = true;
-
-        document.querySelectorAll('input[name$=".PlayerId"]').forEach((input) => {
-            if (input.value === "" || input.value === "0") {
-                allSelected = false;
+    document.addEventListener('DOMContentLoaded', function () {
+        // Başlangıçta seçili olan oyuncuları topluyoruz
+        document.querySelectorAll('input[name$=".PlayerId"]').forEach(input => {
+            if (input.value && input.value !== "0") {
+                selectedPlayers.add(parseInt(input.value));
             }
         });
 
-        if (!allSelected) {
-            e.preventDefault();
-            e.stopPropagation();
-            alert("Tüm oyuncuları seçmelisiniz!");
+        // Seçili oyuncuları gizle
+        updatePlayerVisibility();
+
+        const formationSelect = document.getElementById('formationSelect');
+
+        function updatePositions(formation) {
+            const positions = document.querySelectorAll('.player-slot');
+            const [def, mid, fwd] = formation.split('-').map(Number);
+
+            positions[0].style.left = '50%';
+            positions[0].style.top = '85%';
+
+            let currentIndex = 1;
+
+            for (let i = 0; i < def; i++) {
+                positions[currentIndex].style.left = `${(100 / (def + 1)) * (i + 1)}%`;
+                positions[currentIndex].style.top = '63%';
+                currentIndex++;
+            }
+
+            for (let i = 0; i < mid; i++) {
+                positions[currentIndex].style.left = `${(100 / (mid + 1)) * (i + 1)}%`;
+                positions[currentIndex].style.top = '40%';
+                currentIndex++;
+            }
+
+            for (let i = 0; i < fwd; i++) {
+                positions[currentIndex].style.left = `${(100 / (fwd + 1)) * (i + 1)}%`;
+                positions[currentIndex].style.top = '15%';
+                currentIndex++;
+            }
         }
-    });
 
-    // Modal açıldığında oyuncu görünürlüğünü güncelle
-    document.querySelectorAll('.modal').forEach(modal => {
-        modal.addEventListener('show.bs.modal', function() {
-            updatePlayerVisibility();
+        formationSelect.addEventListener('change', function () {
+            const selectedFormation = this.value;
+            document.getElementById('Formation').value = selectedFormation;
+            window.location.href = `/Team/Create?formation=${selectedFormation}`;
         });
-    });
 
-    // Arama işlevselliği
-    document.querySelectorAll('.player-search').forEach(searchInput => {
-        searchInput.addEventListener('input', function() {
-            const modalId = this.dataset.modalId;
-            const searchTerm = this.value.toLowerCase();
-            const playerCards = document.querySelectorAll(`#playerModal${modalId} .modal-player-card`);
+        updatePositions(formationSelect.value);
 
-            playerCards.forEach(card => {
-                const col = card.closest('.col');
-                if (col.style.display !== 'none') { // Sadece zaten gizli olmayan kartları kontrol et
-                    const playerName = card.querySelector('.card-title').textContent.toLowerCase();
-                    const playerTeam = card.querySelector('small').textContent.toLowerCase();
+        const saveTeamBtn = document.getElementById('saveTeamBtn');
+        saveTeamBtn.addEventListener('click', function (e) {
+            let allSelected = true;
 
-                    if (playerName.includes(searchTerm) || playerTeam.includes(searchTerm)) {
-                        col.style.display = '';
-                    } else {
-                        col.style.display = 'none';
-                    }
+            document.querySelectorAll('input[name$=".PlayerId"]').forEach((input) => {
+                if (input.value === "" || input.value === "0") {
+                    allSelected = false;
                 }
+            });
+
+            if (!allSelected) {
+                e.preventDefault();
+                e.stopPropagation();
+                alert("Tüm oyuncuları seçmelisiniz!");
+            }
+        });
+
+        // Modal açıldığında oyuncu görünürlüğünü güncelle
+        document.querySelectorAll('.modal').forEach(modal => {
+            modal.addEventListener('show.bs.modal', function () {
+                updatePlayerVisibility();
+            });
+        });
+
+        // Arama işlevselliği
+        document.querySelectorAll('.player-search').forEach(searchInput => {
+            searchInput.addEventListener('input', function () {
+                const modalId = this.dataset.modalId;
+                const searchTerm = this.value.toLowerCase();
+                const playerCards = document.querySelectorAll(`#playerModal${modalId} .modal-player-card`);
+
+                playerCards.forEach(card => {
+                    const col = card.closest('.col');
+                    if (col.style.display !== 'none') { // Sadece zaten gizli olmayan kartları kontrol et
+                        const playerName = card.querySelector('.card-title').textContent.toLowerCase();
+                        const playerTeam = card.querySelector('small').textContent.toLowerCase();
+
+                        if (playerName.includes(searchTerm) || playerTeam.includes(searchTerm)) {
+                            col.style.display = '';
+                        } else {
+                            col.style.display = 'none';
+                        }
+                    }
+                });
             });
         });
     });
-});
 
 </script>
 
