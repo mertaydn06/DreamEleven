@@ -104,7 +104,7 @@ using (var scope = app.Services.CreateScope())  // Uygulama kapsamı (scope) olu
     var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
 
     // Migration işlemi ve admin ve rollerin oluşturulması
-    await SeedData.SeedRolesAndAdminAsync(roleManager, userManager, context);
+    await SeedData.SeedRolesAndAdminAsync(roleManager, userManager, context, app.Environment);
 }
 
 

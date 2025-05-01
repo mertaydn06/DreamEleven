@@ -307,15 +307,13 @@
 
                 playerCards.forEach(card => {
                     const col = card.closest('.col');
-                    if (col.style.display !== 'none') { // Sadece zaten gizli olmayan kartları kontrol et
-                        const playerName = card.querySelector('.card-title').textContent.toLowerCase();
-                        const playerTeam = card.querySelector('small').textContent.toLowerCase();
+                    const playerName = card.querySelector('.card-title').textContent.toLowerCase();
+                    const playerTeam = card.querySelector('small').textContent.toLowerCase();
 
-                        if (playerName.includes(searchTerm) || playerTeam.includes(searchTerm)) {
-                            col.style.display = '';
-                        } else {
-                            col.style.display = 'none';
-                        }
+                    if (searchTerm === "" || playerName.includes(searchTerm) || playerTeam.includes(searchTerm)) {
+                        col.style.display = ''; // Eğer arama kutusu boşsa, tüm oyuncuları göster
+                    } else {
+                        col.style.display = 'none'; // Diğer durumda gizle
                     }
                 });
             });

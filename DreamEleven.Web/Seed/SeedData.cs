@@ -1,3 +1,4 @@
+using System.Text.Json;
 using DreamEleven.DataAccess;
 using DreamEleven.Entities;
 using DreamEleven.Identity;
@@ -11,14 +12,13 @@ namespace DreamEleven.Web
         public static async Task SeedRolesAndAdminAsync(
             RoleManager<IdentityRole> roleManager,
             UserManager<User> userManager,
-            DreamElevenDbContext context)
+            DreamElevenDbContext context,
+            IWebHostEnvironment env)
         {
-
             if (context.Database.GetPendingMigrations().Any()) // Eğer herhangi bir migration bekliyorsa
             {
                 await context.Database.MigrateAsync(); // Migration işlemini uygula
             }
-
 
             // Admin ve User rolleri yoksa oluştur
             if (!await roleManager.RoleExistsAsync("Admin"))
@@ -27,8 +27,7 @@ namespace DreamEleven.Web
             if (!await roleManager.RoleExistsAsync("User"))
                 await roleManager.CreateAsync(new IdentityRole("User"));
 
-
-            // Admin kullanıcı
+            // Admin
             const string adminEmail = "admin@gmail.com";
             const string adminPassword = "Admin123*";
 
@@ -40,7 +39,7 @@ namespace DreamEleven.Web
                 {
                     UserName = "admin",
                     Email = adminEmail,
-                    EmailConfirmed = true // Eğer e-posta doğrulaması zorunlu değilse
+                    EmailConfirmed = true  // Eğer e-posta doğrulaması zorunlu değilse
                 };
 
                 var result = await userManager.CreateAsync(adminUser, adminPassword);
@@ -48,6 +47,9 @@ namespace DreamEleven.Web
                 if (result.Succeeded)
                 {
                     await userManager.AddToRoleAsync(adminUser, "Admin");
+
+                    adminUser.Image = "/images/users/User.jpg";
+                    await userManager.UpdateAsync(adminUser);
                 }
             }
 
@@ -73,44 +75,28 @@ namespace DreamEleven.Web
                 if (result.Succeeded)
                 {
                     await userManager.AddToRoleAsync(appUser, "User");
+
+                    appUser.Image = "/images/users/User.jpg";
+                    await userManager.UpdateAsync(appUser);
                 }
             }
 
-            // Oyuncular
-            if (!context.Players.Any())
+            // Oyuncular JSON'dan yüklenecek
+            string filePath = Path.Combine(env.WebRootPath, "data", "players.json");
+            if (File.Exists(filePath))
             {
-                var players = new List<Player>
+                string json = await File.ReadAllTextAsync(filePath);
+                var players = JsonSerializer.Deserialize<List<Player>>(json, new JsonSerializerOptions
                 {
-                    new Player { Name = "Lionel Messi", Overall = 93, RealTeam = "Inter Miami", Position = Player.PositionType.Forward, ImageUrl = "https://img.a.transfermarkt.technology/portrait/big/28003-1740766555.jpg?lm=1", Slug = "lionel-messi" },
-                    new Player { Name = "Cristiano Ronaldo", Overall = 91, RealTeam = "Al-Nassr", Position = Player.PositionType.Forward, ImageUrl = "https://img.a.transfermarkt.technology/portrait/header/8198-1694609670.jpg?lm=1", Slug = "cristiano-ronaldo" },
-                    new Player { Name = "Kevin De Bruyne", Overall = 91, RealTeam = "Man City", Position = Player.PositionType.Midfielder, ImageUrl = "https://img.a.transfermarkt.technology/portrait/header/88755-1713391485.jpg?lm=1", Slug = "kevin-de-bruyne" },
-                    new Player { Name = "Erling Haaland", Overall = 91, RealTeam = "Man City", Position = Player.PositionType.Forward, ImageUrl = "https://img.a.transfermarkt.technology/portrait/header/418560-1709108116.png?lm=1", Slug = "erling-haaland" },
-                    new Player { Name = "Jude Bellingham", Overall = 89, RealTeam = "Real Madrid", Position = Player.PositionType.Midfielder, ImageUrl = "https://img.a.transfermarkt.technology/portrait/header/581678-1693987944.jpg?lm=1", Slug = "jude-bellingham" },
-                    new Player { Name = "Thibaut Courtois", Overall = 89, RealTeam = "Real Madrid", Position = Player.PositionType.Goalkeeper, ImageUrl = "https://img.a.transfermarkt.technology/portrait/header/108390-1717280733.jpg?lm=1", Slug = "thibaut-courtois" },
-                    new Player { Name = "Virgil van Dijk", Overall = 88, RealTeam = "Liverpool", Position = Player.PositionType.Defender, ImageUrl = "https://img.a.transfermarkt.technology/portrait/header/139208-1702049837.jpg?lm=1", Slug = "virgil-van-dijk" },
-                    new Player { Name = "Bukayo Saka", Overall = 87, RealTeam = "Arsenal", Position = Player.PositionType.Midfielder, ImageUrl = "https://img.a.transfermarkt.technology/portrait/header/433177-1684155052.jpg?lm=1", Slug = "bukayo-saka" },
-                    new Player { Name = "Joshua Kimmich", Overall = 87, RealTeam = "Bayern Munich", Position = Player.PositionType.Midfielder, ImageUrl = "https://img.a.transfermarkt.technology/portrait/header/161056-1700039639.jpg?lm=1", Slug = "joshua-kimmich" },
-                    new Player { Name = "Marc-André ter Stegen", Overall = 88, RealTeam = "Barcelona", Position = Player.PositionType.Goalkeeper, ImageUrl = "https://img.a.transfermarkt.technology/portrait/header/74857-1674465246.jpg?lm=1", Slug = "ter-stegen" },
-                    new Player { Name = "Rúben Dias", Overall = 87, RealTeam = "Manchester City", Position = Player.PositionType.Defender, ImageUrl = "https://img.a.transfermarkt.technology/portrait/header/258004-1684921271.jpg?lm=1", Slug = "ruben-dias" },
-                    new Player { Name = "Marquinhos", Overall = 86, RealTeam = "Paris Saint-Germain", Position = Player.PositionType.Defender, ImageUrl = "https://img.a.transfermarkt.technology/portrait/header/181767-1672303747.jpg?lm=1", Slug = "marquinhos" },
-                    new Player { Name = "Éder Militão", Overall = 86, RealTeam = "Real Madrid", Position = Player.PositionType.Defender, ImageUrl = "https://img.a.transfermarkt.technology/portrait/header/401530-1719653438.jpg?lm=1", Slug = "eder-militao" },
-new Player { Name = "Luka Modrić", Overall = 87, RealTeam = "Real Madrid", Position = Player.PositionType.Midfielder, ImageUrl = "https://img.a.transfermarkt.technology/portrait/header/27992-1687776160.jpg?lm=1", Slug = "luka-modric" },
-new Player { Name = "Pedri", Overall = 86, RealTeam = "FC Barcelona", Position = Player.PositionType.Midfielder, ImageUrl = "https://img.a.transfermarkt.technology/portrait/header/683840-1744278342.jpg?lm=1", Slug = "pedri" },
-new Player { Name = "Federico Valverde", Overall = 86, RealTeam = "Real Madrid", Position = Player.PositionType.Midfielder, ImageUrl = "https://img.a.transfermarkt.technology/portrait/header/369081-1731018042.jpg?lm=1", Slug = "federico-valverde" },
-new Player { Name = "Bruno Fernandes", Overall = 88, RealTeam = "Manchester United", Position = Player.PositionType.Midfielder, ImageUrl = "https://img.a.transfermarkt.technology/portrait/header/240306-1683882766.jpg?lm=1", Slug = "bruno-fernandes" },
-new Player { Name = "Martin Ødegaard", Overall = 87, RealTeam = "Arsenal", Position = Player.PositionType.Midfielder, ImageUrl = "https://img.a.transfermarkt.technology/portrait/header/316264-1678877651.jpg?lm=1", Slug = "martin-odegaard" },
-new Player { Name = "Kylian Mbappé", Overall = 91, RealTeam = "Paris Saint-Germain", Position = Player.PositionType.Forward, ImageUrl = "https://img.a.transfermarkt.technology/portrait/header/342229-1682683695.jpg?lm=1", Slug = "kylian-mbappe" },
-new Player { Name = "Neymar Jr.", Overall = 89, RealTeam = "Al-Hilal", Position = Player.PositionType.Forward, ImageUrl = "https://img.a.transfermarkt.technology/portrait/header/68290-1692601435.jpg?lm=1", Slug = "neymar" },
-new Player { Name = "Harry Kane", Overall = 90, RealTeam = "Bayern Munich", Position = Player.PositionType.Forward, ImageUrl = "https://img.a.transfermarkt.technology/portrait/header/132098-1700211169.jpg?lm=1", Slug = "harry-kane" },
-new Player { Name = "Vinícius Júnior", Overall = 89, RealTeam = "Real Madrid", Position = Player.PositionType.Forward, ImageUrl = "https://img.a.transfermarkt.technology/portrait/header/371998-1664869583.jpg?lm=1", Slug = "vinicius-junior" },
-new Player { Name = "Robert Lewandowski", Overall = 90, RealTeam = "FC Barcelona", Position = Player.PositionType.Forward, ImageUrl = "https://img.a.transfermarkt.technology/portrait/header/38253-1701118759.jpg?lm=1", Slug = "robert-lewandowski" },
+                    PropertyNameCaseInsensitive = true,
+                    Converters = { new PositionTypeConverter() } // Enum için konverter ekledik
+                });
 
-
-
-                };
-
-                context.Players.AddRange(players);
-                await context.SaveChangesAsync();
+                if (players != null)
+                {
+                    context.Players.AddRange(players);
+                    await context.SaveChangesAsync();
+                }
             }
         }
     }

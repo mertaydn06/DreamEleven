@@ -1,0 +1,2754 @@
+[
+    {
+        "Name": "David Raya",
+        "Overall": 83,
+        "RealTeam": "Arsenal",
+        "Position": "Goalkeeper",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/262749-1668168018.jpg?lm=1",
+        "Slug": "david-raya"
+    },
+    {
+        "Name": "Gregor Kobel",
+        "Overall": 84,
+        "RealTeam": "Borussia Dortmund",
+        "Position": "Goalkeeper",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/257814-1709559904.jpg?lm=1",
+        "Slug": "gregor-kobel"
+    },
+    {
+        "Name": "Diogo Costa",
+        "Overall": 85,
+        "RealTeam": "FC Porto",
+        "Position": "Goalkeeper",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/357153-1716296015.jpg?lm=1",
+        "Slug": "diogo-costa"
+    },
+    {
+        "Name": "Mert Günok",
+        "Overall": 78,
+        "RealTeam": "Beşiktaş",
+        "Position": "Goalkeeper",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/51894-1727355668.png?lm=1",
+        "Slug": "mert-gunok"
+    },
+    {
+        "Name": "Mike Maignan",
+        "Overall": 86,
+        "RealTeam": "AC Milan",
+        "Position": "Goalkeeper",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/182906-1681459155.jpg?lm=1",
+        "Slug": "mike-maignan"
+    },
+    {
+        "Name": "Gianluigi Donnarumma",
+        "Overall": 88,
+        "RealTeam": "Paris Saint-Germain",
+        "Position": "Goalkeeper",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/315858-1672304477.jpg?lm=1",
+        "Slug": "gianluigi-donnarumma"
+    },
+    {
+        "Name": "Giorgi Mamardashvili",
+        "Overall": 82,
+        "RealTeam": "Valencia",
+        "Position": "Goalkeeper",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/502676-1716542116.jpg?lm=1",
+        "Slug": "giorgi-mamardashvili"
+    },
+    {
+        "Name": "Guglielmo Vicario",
+        "Overall": 81,
+        "RealTeam": "Tottenham Hotspur",
+        "Position": "Goalkeeper",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/286047-1725874745.jpg?lm=1",
+        "Slug": "guglielmo-vicario"
+    },
+    {
+        "Name": "Marc-André ter Stegen",
+        "Overall": 88,
+        "RealTeam": "Barcelona",
+        "Position": "Goalkeeper",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/74857-1674465246.jpg?lm=1",
+        "Slug": "ter-stegen"
+    },
+    {
+        "Name": "Ersin Destanoğlu",
+        "Overall": 73,
+        "RealTeam": "Beşiktaş",
+        "Position": "Goalkeeper",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/500091-1727354578.png?lm=1",
+        "Slug": "ersin-destanoglu"
+    },
+    {
+        "Name": "Jan Oblak",
+        "Overall": 87,
+        "RealTeam": "Atlético Madrid",
+        "Position": "Goalkeeper",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/121483-1719350076.jpg?lm=1",
+        "Slug": "jan-oblak"
+    },
+    {
+        "Name": "Anatoliy Trubin",
+        "Overall": 79,
+        "RealTeam": "Benfica",
+        "Position": "Goalkeeper",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/537844-1737497981.jpg?lm=1",
+        "Slug": "anatoliy-trubin"
+    },
+    {
+        "Name": "Unai Simón",
+        "Overall": 83,
+        "RealTeam": "Athletic Bilbao",
+        "Position": "Goalkeeper",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/262396-1709674901.png?lm=1",
+        "Slug": "unai-simon"
+    },
+    {
+        "Name": "Alex Remiro",
+        "Overall": 82,
+        "RealTeam": "Real Sociedad",
+        "Position": "Goalkeeper",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/212862-1694594210.jpg?lm=1",
+        "Slug": "alex-remiro"
+    },
+    {
+        "Name": "Aaron Ramsdale",
+        "Overall": 82,
+        "RealTeam": "Southampton",
+        "Position": "Goalkeeper",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/427568-1681828000.jpg?lm=1",
+        "Slug": "aaron-ramsdale"
+    },
+    {
+        "Name": "Alisson Becker",
+        "Overall": 89,
+        "RealTeam": "Liverpool",
+        "Position": "Goalkeeper",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/105470-1668522221.jpg?lm=1",
+        "Slug": "alisson"
+    },
+    {
+        "Name": "Ederson",
+        "Overall": 88,
+        "RealTeam": "Manchester City",
+        "Position": "Goalkeeper",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/238223-1713391842.jpg?lm=1",
+        "Slug": "ederson"
+    },
+    {
+        "Name": "Yassine Bounou",
+        "Overall": 83,
+        "RealTeam": "Al-Hilal",
+        "Position": "Goalkeeper",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/207834-1697055166.png?lm=1",
+        "Slug": "yassine-bounou"
+    },
+    {
+        "Name": "Dominik Livakovic",
+        "Overall": 80,
+        "RealTeam": "Fenerbahçe",
+        "Position": "Goalkeeper",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/205927-1728392573.JPG?lm=1",
+        "Slug": "dominik-livakovic"
+    },
+    {
+        "Name": "Günay Güvenç",
+        "Overall": 75,
+        "RealTeam": "Galatasaray",
+        "Position": "Goalkeeper",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/114422-1744295861.jpeg?lm=1",
+        "Slug": "gunay-guvenc"
+    },
+    {
+        "Name": "Edouard Mendy",
+        "Overall": 83,
+        "RealTeam": "Al Ahli",
+        "Position": "Goalkeeper",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/442531-1600951863.jpg?lm=1",
+        "Slug": "edouard-mendy"
+    },
+    {
+        "Name": "Uğurcan Çakır",
+        "Overall": 78,
+        "RealTeam": "Trabzonspor",
+        "Position": "Goalkeeper",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/292199-1723802510.jpg?lm=1",
+        "Slug": "uğurcan-cakır"
+    },
+    {
+        "Name": "Kepa Arrizabalaga",
+        "Overall": 81,
+        "RealTeam": "Bournemouth",
+        "Position": "Goalkeeper",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/192279-1661855851.jpg?lm=1",
+        "Slug": "kepa"
+    },
+    {
+        "Name": "Emiliano Martínez",
+        "Overall": 85,
+        "RealTeam": "Aston Villa",
+        "Position": "Goalkeeper",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/111873-1668180824.jpg?lm=1",
+        "Slug": "emiliano-martinez"
+    },
+    {
+        "Name": "Wojciech Szczęsny",
+        "Overall": 86,
+        "RealTeam": "Barcelona",
+        "Position": "Goalkeeper",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/44058-1744278078.jpg?lm=1",
+        "Slug": "wojciech-szczesny"
+    },
+    {
+        "Name": "Thibaut Courtois",
+        "Overall": 89,
+        "RealTeam": "Real Madrid",
+        "Position": "Goalkeeper",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/108390-1717280733.jpg?lm=1",
+        "Slug": "thibaut-courtois"
+    },
+    {
+        "Name": "Fernando Muslera",
+        "Overall": 84,
+        "RealTeam": "Galatasaray",
+        "Position": "Goalkeeper",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/58088-1671035581.png?lm=1",
+        "Slug": "muslera"
+    },
+    {
+        "Name": "Andre Onana",
+        "Overall": 85,
+        "RealTeam": "Manchester United",
+        "Position": "Goalkeeper",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/234509-1686929812.jpg?lm=1",
+        "Slug": "andre-onana"
+    },
+    {
+        "Name": "Lucas Chevalier",
+        "Overall": 77,
+        "RealTeam": "Lille",
+        "Position": "Goalkeeper",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/463600-1708342501.jpg?lm=1",
+        "Slug": "lucas-chevalier"
+    },
+    {
+        "Name": "Bart Verbruggen",
+        "Overall": 75,
+        "RealTeam": "Brighton & Hove Albion",
+        "Position": "Goalkeeper",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/565093-1716990260.jpg?lm=1",
+        "Slug": "bart-verbruggen"
+    },
+    {
+        "Name": "Caoimhin Kelleher",
+        "Overall": 78,
+        "RealTeam": "Liverpool",
+        "Position": "Goalkeeper",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/340918-1708933663.jpg?lm=1",
+        "Slug": "caoimhin-kelleher"
+    },
+    {
+        "Name": "Kasper Schmeichel",
+        "Overall": 81,
+        "RealTeam": "Nice",
+        "Position": "Goalkeeper",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/16911-1659600543.jpg?lm=1",
+        "Slug": "kasper-schmeichel"
+    },
+    {
+        "Name": "William Saliba",
+        "Overall": 85,
+        "RealTeam": "Arsenal",
+        "Position": "Defender",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/495666-1718697201.jpg?lm=1",
+        "Slug": "william-saliba"
+    },
+    {
+        "Name": "Ruben Dias",
+        "Overall": 88,
+        "RealTeam": "Manchester City",
+        "Position": "Defender",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/258004-1684921271.jpg?lm=1",
+        "Slug": "ruben-dias"
+    },
+    {
+        "Name": "Reece James",
+        "Overall": 84,
+        "RealTeam": "Chelsea",
+        "Position": "Defender",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/472423-1683900849.jpg?lm=1",
+        "Slug": "reece-james"
+    },
+    {
+        "Name": "Trent Alexander-Arnold",
+        "Overall": 85,
+        "RealTeam": "Liverpool",
+        "Position": "Defender",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/314353-1701680958.jpg?lm=1",
+        "Slug": "trent-alexander-arnold"
+    },
+    {
+        "Name": "Theo Hernandez",
+        "Overall": 87,
+        "RealTeam": "AC Milan",
+        "Position": "Defender",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/339808-1725532072.jpg?lm=1",
+        "Slug": "theo-hernandez"
+    },
+    {
+        "Name": "Jonathan Tah",
+        "Overall": 86,
+        "RealTeam": "Bayer Leverkusen",
+        "Position": "Defender",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/196357-1695367765.jpg?lm=1",
+        "Slug": "jonathan-tah"
+    },
+    {
+        "Name": "Marc Cucurella",
+        "Overall": 83,
+        "RealTeam": "Chelsea",
+        "Position": "Defender",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/284857-1659559729.jpg?lm=1",
+        "Slug": "marc-cucurella"
+    },
+    {
+        "Name": "Virgil van Dijk",
+        "Overall": 89,
+        "RealTeam": "Liverpool",
+        "Position": "Defender",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/139208-1702049837.jpg?lm=1",
+        "Slug": "virgil-van-dijk"
+    },
+    {
+        "Name": "Olivier Boscagli",
+        "Overall": 85,
+        "RealTeam": "PSV Eindhoven",
+        "Position": "Defender",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/318508-1701700523.jpg?lm=1",
+        "Slug": "olivier-boscagli"
+    },
+    {
+        "Name": "Angel Gomes",
+        "Overall": 85,
+        "RealTeam": "Lille",
+        "Position": "Defender",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/392770-1666690396.jpg?lm=1",
+        "Slug": "angel-gomes"
+    },
+    {
+        "Name": "Joshua Kimmich",
+        "Overall": 86,
+        "RealTeam": "Bayern Munich",
+        "Position": "Defender",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/161056-1700039639.jpg?lm=1",
+        "Slug": "joshua-kimmich"
+    },
+    {
+        "Name": "Alphonso Davies",
+        "Overall": 82,
+        "RealTeam": "Bayern Munich",
+        "Position": "Defender",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/424204-1711745534.jpg?lm=1",
+        "Slug": "alphonso-davies"
+    },
+    {
+        "Name": "Marquinhos",
+        "Overall": 86,
+        "RealTeam": "Paris Saint-Germain",
+        "Position": "Defender",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/181767-1672303747.jpg?lm=1",
+        "Slug": "marquinhos"
+    },
+    {
+        "Name": "Éder Militão",
+        "Overall": 86,
+        "RealTeam": "Real Madrid",
+        "Position": "Defender",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/401530-1719653438.jpg?lm=1",
+        "Slug": "eder-militao"
+    },
+    {
+        "Name": "Loftus Cheek",
+        "Overall": 81,
+        "RealTeam": "AC Milan",
+        "Position": "Defender",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/202886-1692879593.jpg?lm=1",
+        "Slug": "loftus-cheek"
+    },
+    {
+        "Name": "Aymeric Laporte",
+        "Overall": 84,
+        "RealTeam": "Al-Nassr",
+        "Position": "Defender",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/176553-1685546335.jpg?lm=1",
+        "Slug": "aymeric-laporte"
+    },
+    {
+        "Name": "Piero Hincapie",
+        "Overall": 84,
+        "RealTeam": "Bayer Leverkusen",
+        "Position": "Defender",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/659813-1727377918.jpg?lm=1",
+        "Slug": "piero-hincapie"
+    },
+    {
+        "Name": "João Cancelo",
+        "Overall": 82,
+        "RealTeam": "Al-Hilal",
+        "Position": "Defender",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/182712-1675080937.jpg?lm=1",
+        "Slug": "joao-cancelo"
+    },
+    {
+        "Name": "Andrew Robertson",
+        "Overall": 85,
+        "RealTeam": "Liverpool",
+        "Position": "Defender",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/234803-1709147379.jpg?lm=1",
+        "Slug": "andrew-robertson"
+    },
+    {
+        "Name": "Benoit Badiashile",
+        "Overall": 81,
+        "RealTeam": "Chelsea",
+        "Position": "Defender",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/463603-1714721596.jpg?lm=1",
+        "Slug": "benoit-badiashile"
+    },
+    {
+        "Name": "Ben White",
+        "Overall": 83,
+        "RealTeam": "Arsenal",
+        "Position": "Defender",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/335721-1683275943.jpg?lm=1",
+        "Slug": "ben-white"
+    },
+    {
+        "Name": "Jayden Oosterwolde",
+        "Overall": 77,
+        "RealTeam": "Fenerbahçe",
+        "Position": "Defender",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/591361-1728392223.JPG?lm=1",
+        "Slug": "jayden-oosterwolde"
+    },
+    {
+        "Name": "Diego Carlos",
+        "Overall": 79,
+        "RealTeam": "Fenerbahçe",
+        "Position": "Defender",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/329145-1737106245.jpg?lm=1",
+        "Slug": "diego-carlos"
+    },
+    {
+        "Name": "Przemyslaw Frankowski",
+        "Overall": 76,
+        "RealTeam": "Galatasaray",
+        "Position": "Defender",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/239743-1669189009.jpg?lm=1",
+        "Slug": "przemyslaw-frankowski"
+    },
+    {
+        "Name": "Çağlar Söyüncü",
+        "Overall": 78,
+        "RealTeam": "Fenerbahçe",
+        "Position": "Defender",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/320141-1728391611.JPG?lm=1",
+        "Slug": "caglar-soyuncu"
+    },
+    {
+        "Name": "Felix Uduokhai",
+        "Overall": 79,
+        "RealTeam": "Beşiktaş",
+        "Position": "Defender",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/278343-1727357502.png?lm=1",
+        "Slug": "felix-uduokhai"
+    },
+    {
+        "Name": "Elias Jelert",
+        "Overall": 77,
+        "RealTeam": "Galatasaray",
+        "Position": "Defender",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/646478-1744295625.jpg?lm=1",
+        "Slug": "elias-jelert"
+    },
+    {
+        "Name": "Alexander Djiku",
+        "Overall": 81,
+        "RealTeam": "Fenerbahçe",
+        "Position": "Defender",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/250844-1728391726.JPG?lm=1",
+        "Slug": "alexander-djiku"
+    },
+    {
+        "Name": "Abdülkerim Bardakçı",
+        "Overall": 77,
+        "RealTeam": "Galatasaray",
+        "Position": "Defender",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/199316-1671036661.png?lm=1",
+        "Slug": "abdulkerim-bardakci"
+    },
+    {
+        "Name": "Ismail Jakobs",
+        "Overall": 79,
+        "RealTeam": "Galatasaray",
+        "Position": "Defender",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/375137-1744296477.jpg?lm=1",
+        "Slug": "ismail-jakobs"
+    },
+    {
+        "Name": "Bright Osayi-Samuel",
+        "Overall": 77,
+        "RealTeam": "Fenerbahçe",
+        "Position": "Defender",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/358948-1728392103.JPG?lm=1",
+        "Slug": "bright-osayi-samuel"
+    },
+    {
+        "Name": "Rodrigo Becão",
+        "Overall": 80,
+        "RealTeam": "Fenerbahçe",
+        "Position": "Defender",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/410158-1728392628.JPG?lm=1",
+        "Slug": "rodrigo-becao"
+    },
+    {
+        "Name": "Mert Müldür",
+        "Overall": 75,
+        "RealTeam": "Fenerbahçe",
+        "Position": "Defender",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/353922-1728391929.JPG?lm=1",
+        "Slug": "mert-muldur"
+    },
+    {
+        "Name": "Eren Elmalı",
+        "Overall": 77,
+        "RealTeam": "Galatasaray",
+        "Position": "Defender",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/616894-1723801363.jpg?lm=1",
+        "Slug": "eren-elmali"
+    },
+    {
+        "Name": "Kaan Ayhan",
+        "Overall": 78,
+        "RealTeam": "Galatasaray",
+        "Position": "Defender",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/119031-1742638125.jpeg?lm=1",
+        "Slug": "kaan-ayhan"
+    },
+    {
+        "Name": "Nicolas Tagliafico",
+        "Overall": 80,
+        "RealTeam": "Lyon",
+        "Position": "Defender",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/131225-1668181437.jpg?lm=1",
+        "Slug": "nicolas-tagliafico"
+    },
+    {
+        "Name": "Antonio Rudiger",
+        "Overall": 87,
+        "RealTeam": "Real Madrid",
+        "Position": "Defender",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/86202-1684484602.jpg?lm=1",
+        "Slug": "antonio-rudiger"
+    },
+    {
+        "Name": "Cristian Romero",
+        "Overall": 84,
+        "RealTeam": "Tottenham Hotspur",
+        "Position": "Defender",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/355915-1665609429.jpg?lm=1",
+        "Slug": "cristian-romero"
+    },
+    {
+        "Name": "Denzel Dumfries",
+        "Overall": 84,
+        "RealTeam": "Inter",
+        "Position": "Defender",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/321528-1746042223.jpg?lm=1",
+        "Slug": "denzel-dumfries"
+    },
+    {
+        "Name": "Milan Skriniar",
+        "Overall": 85,
+        "RealTeam": "Fenerbahçe",
+        "Position": "Defender",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/204069-1738665259.png?lm=1",
+        "Slug": "milan-skriniar"
+    },
+    {
+        "Name": "Matthijs de Ligt",
+        "Overall": 85,
+        "RealTeam": "Bayern Munich",
+        "Position": "Defender",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/326031-1700659567.jpg?lm=1",
+        "Slug": "matthijs-de-ligt"
+    },
+    {
+        "Name": "Jules Koundé",
+        "Overall": 86,
+        "RealTeam": "Barcelona",
+        "Position": "Defender",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/411975-1702502639.jpg?lm=1",
+        "Slug": "jules-kounde"
+    },
+    {
+        "Name": "David Alaba",
+        "Overall": 83,
+        "RealTeam": "Real Madrid",
+        "Position": "Defender",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/59016-1684921582.jpeg?lm=1",
+        "Slug": "david-alaba"
+    },
+    {
+        "Name": "Malo Gusto",
+        "Overall": 82,
+        "RealTeam": "Chelsea",
+        "Position": "Defender",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/620322-1672831209.jpg?lm=1",
+        "Slug": "malo-gusto"
+    },
+    {
+        "Name": "Benjamin Pavard",
+        "Overall": 85,
+        "RealTeam": "Inter",
+        "Position": "Defender",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/353366-1713819215.jpg?lm=1",
+        "Slug": "benjamin-pavard"
+    },
+    {
+        "Name": "Pau Cubarsi",
+        "Overall": 86,
+        "RealTeam": "Barcelona",
+        "Position": "Defender",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/962110-1712779232.jpg?lm=1",
+        "Slug": "pau-cubarsi"
+    },
+    {
+        "Name": "Raul Asencio",
+        "Overall": 84,
+        "RealTeam": "Real Madrid",
+        "Position": "Defender",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/935245-1731168094.jpg?lm=1",
+        "Slug": "raul-asencio"
+    },
+    {
+        "Name": "Gabriel Magalhaes",
+        "Overall": 87,
+        "RealTeam": "Arsenal",
+        "Position": "Defender",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/435338-1684162833.jpg?lm=1",
+        "Slug": "gabriel-magalhaes"
+    },
+    {
+        "Name": "Alessandro Bastoni",
+        "Overall": 88,
+        "RealTeam": "Inter",
+        "Position": "Defender",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/315853-1742497518.jpg?lm=1",
+        "Slug": "alessandro-bastoni"
+    },
+    {
+        "Name": "Wesley Fofana",
+        "Overall": 83,
+        "RealTeam": "Chelsea",
+        "Position": "Defender",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/475411-1683899212.jpg?lm=1",
+        "Slug": "wesley-fofana"
+    },
+    {
+        "Name": "Ronald Araujo",
+        "Overall": 86,
+        "RealTeam": "Barcelona",
+        "Position": "Defender",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/480267-1736431980.jpg?lm=1",
+        "Slug": "ronald-araujo"
+    },
+    {
+        "Name": "Ferland Mendy",
+        "Overall": 82,
+        "RealTeam": "Real Madrid",
+        "Position": "Defender",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/291417-1701294025.jpg?lm=1",
+        "Slug": "ferland-mendy"
+    },
+    {
+        "Name": "Yann Bisseck",
+        "Overall": 83,
+        "RealTeam": "Inter",
+        "Position": "Defender",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/441986-1742497863.jpg?lm=1",
+        "Slug": "yann-bisseck"
+    },
+    {
+        "Name": "Daniel Carvajal",
+        "Overall": 84,
+        "RealTeam": "Real Madrid",
+        "Position": "Defender",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/138927-1721026790.jpg?lm=1",
+        "Slug": "daniel-carvajal"
+    },
+    {
+        "Name": "Alejandro Balde",
+        "Overall": 85,
+        "RealTeam": "Barcelona",
+        "Position": "Defender",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/636688-1662836200.jpg?lm=1",
+        "Slug": "alejandro-balde"
+    },
+    {
+        "Name": "Federico Dimarco",
+        "Overall": 86,
+        "RealTeam": "Inter",
+        "Position": "Defender",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/198116-1725531769.jpg?lm=1",
+        "Slug": "federico-dimarco"
+    },
+    {
+        "Name": "Josko Gvardiol",
+        "Overall": 88,
+        "RealTeam": "Manchester City",
+        "Position": "Defender",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/475959-1713391602.jpg?lm=1",
+        "Slug": "josko-gvardiol"
+    },
+    {
+        "Name": "Achraf Hakimi",
+        "Overall": 88,
+        "RealTeam": "Paris Saint-Germain",
+        "Position": "Defender",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/398073-1672304327.jpg?lm=1",
+        "Slug": "achraf-hakimi"
+    },
+    {
+        "Name": "Ibrahima Konate",
+        "Overall": 86,
+        "RealTeam": "Liverpool",
+        "Position": "Defender",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/357119-1669190550.jpg?lm=1",
+        "Slug": "ibrahima-konate"
+    },
+    {
+        "Name": "Murillo",
+        "Overall": 85,
+        "RealTeam": "Nottingham Forest",
+        "Position": "Defender",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/1005649-1709159139.jpg?lm=1",
+        "Slug": "murillo"
+    },
+    {
+        "Name": "Leny Yoro",
+        "Overall": 85,
+        "RealTeam": "Manchester United",
+        "Position": "Defender",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/923831-1701768506.jpg?lm=1",
+        "Slug": "leny-yoro"
+    },
+    {
+        "Name": "Nuno Mendes",
+        "Overall": 85,
+        "RealTeam": "Paris Saint-Germain",
+        "Position": "Defender",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/923831-1701768506.jpg?lm=1",
+        "Slug": "nuno-mendes"
+    },
+    {
+        "Name": "Levi Colwill",
+        "Overall": 85,
+        "RealTeam": "Chelsea",
+        "Position": "Defender",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/614258-1694614507.jpg?lm=1",
+        "Slug": "levi-colwill"
+    },
+    {
+        "Name": "Micky van de Ven",
+        "Overall": 84,
+        "RealTeam": "Tottenham Hotspur",
+        "Position": "Defender",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/557459-1744313600.jpg?lm=1",
+        "Slug": "micky-van-de-ven"
+    },
+    {
+        "Name": "Jarrad Branthwaite",
+        "Overall": 83,
+        "RealTeam": "Everton",
+        "Position": "Defender",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/661053-1687975679.jpg?lm=1",
+        "Slug": "jarrad-branthwaite"
+    },
+    {
+        "Name": "Edmond Tapsoba",
+        "Overall": 84,
+        "RealTeam": "Bayer Leverkusen",
+        "Position": "Defender",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/564545-1695368009.jpg?lm=1",
+        "Slug": "edmond-tapsoba"
+    },
+    {
+        "Name": "Castello Lukeba",
+        "Overall": 85,
+        "RealTeam": "RB Leipzig",
+        "Position": "Defender",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/618472-1713897532.jpg?lm=1",
+        "Slug": "castello-lukeba"
+    },
+    {
+        "Name": "Merih Demiral",
+        "Overall": 82,
+        "RealTeam": "Al-Ahli",
+        "Position": "Defender",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/340879-1734600665.jpeg?lm=1",
+        "Slug": "merih-demiral"
+    },
+    {
+        "Name": "Jurrien Timber",
+        "Overall": 83,
+        "RealTeam": "RB Leipzig",
+        "Position": "Defender",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/420243-1702413077.jpg?lm=1",
+        "Slug": "jurrien-timber"
+    },
+    {
+        "Name": "Davinson Sanchez",
+        "Overall": 83,
+        "RealTeam": "Galatasaray",
+        "Position": "Defender",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/341429-1728904655.jpg?lm=1",
+        "Slug": "davinson-sanchez"
+    },
+    {
+        "Name": "Jude Bellingham",
+        "Overall": 91,
+        "RealTeam": "Real Madrid",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/581678-1693987944.jpg?lm=1",
+        "Slug": "jude-bellingham"
+    },
+    {
+        "Name": "Florian Wirtz",
+        "Overall": 90,
+        "RealTeam": "Bayer Leverkusen",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/598577-1689710503.jpg?lm=1",
+        "Slug": "florian-wirtz"
+    },
+    {
+        "Name": "Jamal Musiala",
+        "Overall": 88,
+        "RealTeam": "Bayern Munich",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/580195-1711745441.jpg?lm=1",
+        "Slug": "jamal-musiala"
+    },
+    {
+        "Name": "Cole Palmer",
+        "Overall": 89,
+        "RealTeam": "Chelsea",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/568177-1712320986.jpg?lm=1",
+        "Slug": "cole-palmer"
+    },
+    {
+        "Name": "Federico Valverde",
+        "Overall": 90,
+        "RealTeam": "Real Madrid",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/369081-1731018042.jpg?lm=1",
+        "Slug": "federico-valverde"
+    },
+    {
+        "Name": "Rodri",
+        "Overall": 91,
+        "RealTeam": "Manchester City",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/357565-1682587890.jpg?lm=1",
+        "Slug": "rodri"
+    },
+    {
+        "Name": "Pedri",
+        "Overall": 89,
+        "RealTeam": "Barcelona",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/683840-1744278342.jpg?lm=1",
+        "Slug": "pedri"
+    },
+    {
+        "Name": "Luka Modrić",
+        "Overall": 86,
+        "RealTeam": "Real Madrid",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/27992-1687776160.jpg?lm=1",
+        "Slug": "luka-modric"
+    },
+    {
+        "Name": "Declan Rice",
+        "Overall": 88,
+        "RealTeam": "Arsenal",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/357662-1687962936.jpg?lm=1",
+        "Slug": "declan-rice"
+    },
+    {
+        "Name": "Martin Ødegaard",
+        "Overall": 87,
+        "RealTeam": "Arsenal",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/316264-1678877651.jpg?lm=1",
+        "Slug": "martin-odegaard"
+    },
+    {
+        "Name": "Alexis Mac Allister",
+        "Overall": 88,
+        "RealTeam": "Liverpool",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/534033-1669835342.jpg?lm=1",
+        "Slug": "alexis-mac-allister"
+    },
+    {
+        "Name": "Moisés Caicedo",
+        "Overall": 88,
+        "RealTeam": "Chelsea",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/687626-1660729724.jpg?lm=1",
+        "Slug": "moises-caicedo"
+    },
+    {
+        "Name": "Bruno Guimarães",
+        "Overall": 85,
+        "RealTeam": "Newcastle United",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/520624-1668522672.jpg?lm=1",
+        "Slug": "bruno-guimaraes"
+    },
+    {
+        "Name": "Dominik Szoboszlai",
+        "Overall": 85,
+        "RealTeam": "Liverpool",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/451276-1700209677.jpg?lm=1",
+        "Slug": "dominik-szoboszlai"
+    },
+    {
+        "Name": "Aurélien Tchouaméni",
+        "Overall": 86,
+        "RealTeam": "Real Madrid",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/413112-1668500754.jpg?lm=1",
+        "Slug": "aurelien-tchouameni"
+    },
+    {
+        "Name": "Nicolò Barella",
+        "Overall": 88,
+        "RealTeam": "Inter",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/255942-1725531625.jpg?lm=1",
+        "Slug": "nicolo-barella"
+    },
+    {
+        "Name": "Enzo Fernández",
+        "Overall": 87,
+        "RealTeam": "Chelsea",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/648195-1669894717.jpg?lm=1",
+        "Slug": "enzo-fernandez"
+    },
+    {
+        "Name": "Gavi",
+        "Overall": 85,
+        "RealTeam": "Barcelona",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/646740-1682685701.jpg?lm=1",
+        "Slug": "gavi"
+    },
+    {
+        "Name": "Eduardo Camavinga",
+        "Overall": 86,
+        "RealTeam": "Real Madrid",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/640428-1668500874.jpg?lm=1",
+        "Slug": "eduardo-camavinga"
+    },
+    {
+        "Name": "Xavi Simons",
+        "Overall": 84,
+        "RealTeam": "RB Leipzig",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/566931-1729778226.jpg?lm=1",
+        "Slug": "xavi-simons"
+    },
+    {
+        "Name": "Ryan Gravenberch",
+        "Overall": 85,
+        "RealTeam": "Bayern Munich",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/478573-1718097194.jpg?lm=1",
+        "Slug": "ryan-gravenberch"
+    },
+    {
+        "Name": "João Neves",
+        "Overall": 84,
+        "RealTeam": "Benfica",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/670681-1701295511.jpg?lm=1",
+        "Slug": "joao-neves"
+    },
+    {
+        "Name": "Zaïre-Emery",
+        "Overall": 82,
+        "RealTeam": "Paris Saint-Germain",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/810092-1672303575.jpg?lm=1",
+        "Slug": "zaire-emery"
+    },
+    {
+        "Name": "Oihan Sancet",
+        "Overall": 84,
+        "RealTeam": "Athletic Bilbao",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/571020-1709676037.png?lm=1",
+        "Slug": "oihan-sancet"
+    },
+    {
+        "Name": "Vitinha",
+        "Overall": 86,
+        "RealTeam": "Paris Saint-Germain",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/487469-1672303629.jpg?lm=1",
+        "Slug": "vitinha"
+    },
+    {
+        "Name": "Dejan Kulusevski",
+        "Overall": 84,
+        "RealTeam": "Tottenham Hotspur",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/431755-1684943454.jpg?lm=1",
+        "Slug": "dejan-kulusevski"
+    },
+    {
+        "Name": "Martín Zubimendi",
+        "Overall": 84,
+        "RealTeam": "Real Sociedad",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/423440-1684149419.jpg?lm=1",
+        "Slug": "martin-zubimendi"
+    },
+    {
+        "Name": "Dani Olmo",
+        "Overall": 84,
+        "RealTeam": "Barcelona",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/293385-1711546268.jpg?lm=1",
+        "Slug": "dani-olmo"
+    },
+    {
+        "Name": "Kobbie Mainoo",
+        "Overall": 81,
+        "RealTeam": "Manchester United",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/820374-1719349758.jpg?lm=1",
+        "Slug": "kobbie-mainoo"
+    },
+    {
+        "Name": "Amadou Onana",
+        "Overall": 83,
+        "RealTeam": "Aston Villa",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/485706-1718697649.jpg?lm=1",
+        "Slug": "amadou-onana"
+    },
+    {
+        "Name": "Eberechi Eze",
+        "Overall": 80,
+        "RealTeam": "Crystal Palace",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/479999-1678466922.jpg?lm=1",
+        "Slug": "eberechi-eze"
+    },
+    {
+        "Name": "Bruno Fernandes",
+        "Overall": 87,
+        "RealTeam": "Manchester United",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/240306-1683882766.jpg?lm=1",
+        "Slug": "bruno-fernandes"
+    },
+    {
+        "Name": "Aleksandar Pavlovic",
+        "Overall": 83,
+        "RealTeam": "Bayern Münih",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/792380-1727098078.jpg?lm=1",
+        "Slug": "aleksandar-pavlovic"
+    },
+    {
+        "Name": "Pablo Barrios",
+        "Overall": 81,
+        "RealTeam": "Atletico Madrid",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/775605-1699431384.jpg?lm=1",
+        "Slug": "pablo-barrios"
+    },
+    {
+        "Name": "Fermín López",
+        "Overall": 81,
+        "RealTeam": "Barcelona",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/636703-1698086824.jpg?lm=1",
+        "Slug": "fermin-lopez"
+    },
+    {
+        "Name": "Morgan Rogers",
+        "Overall": 81,
+        "RealTeam": "Aston Villa",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/503743-1706786450.jpg?lm=1",
+        "Slug": "morgan-rogers"
+    },
+    {
+        "Name": "Jeremie Frimpong",
+        "Overall": 84,
+        "RealTeam": "Bayer Leverkusen",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/484547-1689710682.jpg?lm=1",
+        "Slug": "jeremie-frimpong"
+    },
+    {
+        "Name": "Manuel Ugarte",
+        "Overall": 81,
+        "RealTeam": "Manchester United",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/476701-1715107512.jpg?lm=1",
+        "Slug": "manuel-ugarte"
+    },
+    {
+        "Name": "Tijjani Reijnders",
+        "Overall": 80,
+        "RealTeam": "AC Milan",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/460939-1676466080.jpg?lm=1",
+        "Slug": "tijjani-reijnders"
+    },
+    {
+        "Name": "Curtis Jones",
+        "Overall": 80,
+        "RealTeam": "Liverpool",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/433188-1701681163.jpg?lm=1",
+        "Slug": "curtis-jones"
+    },
+    {
+        "Name": "Morgan Gibbs-White",
+        "Overall": 80,
+        "RealTeam": "Nottingham Forest",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/429014-1687975822.jpg?lm=1",
+        "Slug": "morgan-gibbs-white"
+    },
+    {
+        "Name": "James Maddison",
+        "Overall": 84,
+        "RealTeam": "Tottenham Hotspur",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/294057-1687982662.jpg?lm=1",
+        "Slug": "james-maddison"
+    },
+    {
+        "Name": "Alejandro Garnacho",
+        "Overall": 83,
+        "RealTeam": "Manchester United",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/811779-1703629085.jpg?lm=1",
+        "Slug": "alejandro-garnacho"
+    },
+    {
+        "Name": "Morten Hjulmand",
+        "Overall": 83,
+        "RealTeam": "Sporting Lizbon",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/461496-1725633200.jpg?lm=1",
+        "Slug": "morten-hjulmand"
+    },
+    {
+        "Name": "Sandro Tonali",
+        "Overall": 85,
+        "RealTeam": "Newcastle United",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/397033-1688389270.jpg?lm=1",
+        "Slug": "sandro-tonali"
+    },
+    {
+        "Name": "Frenkie de Jong",
+        "Overall": 86,
+        "RealTeam": "Barcelona",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/326330-1746041680.jpg?lm=1",
+        "Slug": "frenkie-de-jong"
+    },
+    {
+        "Name": "Bernardo Silva",
+        "Overall": 86,
+        "RealTeam": "Manchester City",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/241641-1684311533.jpg?lm=1",
+        "Slug": "bernardo-silva"
+    },
+    {
+        "Name": "Hugo Larsson",
+        "Overall": 82,
+        "RealTeam": "Eintracht Frankfurt",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/931838-1696509259.jpg?lm=1",
+        "Slug": "hugo-larsson"
+    },
+    {
+        "Name": "N'Golo Kanté",
+        "Overall": 86,
+        "RealTeam": "Al-Ittihad",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/225083-1703279938.png?lm=1",
+        "Slug": "kante"
+    },
+    {
+        "Name": "Kevin De Bruyne",
+        "Overall": 90,
+        "RealTeam": "Man City",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/88755-1713391485.jpg?lm=1",
+        "Slug": "kevin-de-bruyne"
+    },
+    {
+        "Name": "João Gomes",
+        "Overall": 80,
+        "RealTeam": "Wolverhampton",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/735570-1675092223.jpg?lm=1",
+        "Slug": "joao-gomes"
+    },
+    {
+        "Name": "Roméo Lavia",
+        "Overall": 80,
+        "RealTeam": "Chelsea",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/628451-1683898478.jpg?lm=1",
+        "Slug": "romeo-lavia"
+    },
+    {
+        "Name": "Pape Matar Sarr",
+        "Overall": 76,
+        "RealTeam": "Tottenham Hotspur",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/568693-1668163083.jpg?lm=1",
+        "Slug": "pape-matar-sarr"
+    },
+    {
+        "Name": "Conor Gallagher",
+        "Overall": 81,
+        "RealTeam": "Atlético Madrid",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/488362-1668500476.jpg?lm=1",
+        "Slug": "conor-gallagher"
+    },
+    {
+        "Name": "Arda Güler",
+        "Overall": 82,
+        "RealTeam": "Real Madrid",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/861410-1699472585.jpg?lm=1",
+        "Slug": "arda-guler"
+    },
+    {
+        "Name": "Nico González",
+        "Overall": 80,
+        "RealTeam": "Manchester City",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/466805-1743669968.jpg?lm=1",
+        "Slug": "nico-gonzalez"
+    },
+    {
+        "Name": "Khéphren Thuram",
+        "Overall": 80,
+        "RealTeam": "Juventus",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/463618-1683889273.jpg?lm=1",
+        "Slug": "khephren-thuram"
+    },
+    {
+        "Name": "Exequiel Palacios",
+        "Overall": 81,
+        "RealTeam": "Bayer Leverkusen",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/401578-1695368200.jpg?lm=1",
+        "Slug": "exequiel-palacios"
+    },
+    {
+        "Name": "Teun Koopmeiners",
+        "Overall": 82,
+        "RealTeam": "Juventus",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/360518-1707302998.jpg?lm=1",
+        "Slug": "teun-koopmeiners"
+    },
+    {
+        "Name": "Joelinton",
+        "Overall": 81,
+        "RealTeam": "Newcastle United",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/333241-1674210135.jpg?lm=1",
+        "Slug": "joelinton"
+    },
+    {
+        "Name": "Scott McTominay",
+        "Overall": 81,
+        "RealTeam": "Napoli",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/315969-1718626681.jpg?lm=1",
+        "Slug": "scott-mctominay"
+    },
+    {
+        "Name": "João Palhinha",
+        "Overall": 81,
+        "RealTeam": "Bayern Münih",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/257455-1684773447.jpg?lm=1",
+        "Slug": "joao-palhinha"
+    },
+    {
+        "Name": "Douglas Luiz",
+        "Overall": 82,
+        "RealTeam": "Juventus",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/447661-1696598670.jpg?lm=1",
+        "Slug": "douglas-luiz"
+    },
+    {
+        "Name": "Angelo Stiller",
+        "Overall": 80,
+        "RealTeam": "Stuttgart",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/443710-1723707618.jpg?lm=1",
+        "Slug": "angelo-stiller"
+    },
+    {
+        "Name": "Charles De Ketelaere",
+        "Overall": 79,
+        "RealTeam": "Atalanta",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/435772-1659601388.jpg?lm=1",
+        "Slug": "charles-de-ketelaere"
+    },
+    {
+        "Name": "Boubacar Kamara",
+        "Overall": 81,
+        "RealTeam": "Aston Villa",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/394327-1736160460.jpg?lm=1",
+        "Slug": "boubacar-kamara"
+    },
+    {
+        "Name": "Carlos Baleba",
+        "Overall": 80,
+        "RealTeam": "Brighton & Hove Albion",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/973085-1666690662.jpg?lm=1",
+        "Slug": "carlos-baleba"
+    },
+    {
+        "Name": "Adam Wharton",
+        "Overall": 79,
+        "RealTeam": "Crystal Palace",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/744149-1716297290.jpg?lm=1",
+        "Slug": "adam-wharton"
+    },
+    {
+        "Name": "Manu Koné",
+        "Overall": 80,
+        "RealTeam": "AS Roma",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/624690-1691248968.jpg?lm=1",
+        "Slug": "manu-kone"
+    },
+    {
+        "Name": "Matheus Nunes",
+        "Overall": 83,
+        "RealTeam": "Manchester City",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/601883-1693561106.jpg?lm=1",
+        "Slug": "matheus-nunes"
+    },
+    {
+        "Name": "Antoine Semenyo",
+        "Overall": 80,
+        "RealTeam": "Bournemouth",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/583255-1737452028.jpg?lm=1",
+        "Slug": "antoine-semenyo"
+    },
+    {
+        "Name": "Enzo Millot",
+        "Overall": 80,
+        "RealTeam": "Stuttgart",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/569366-1723707547.jpg?lm=1",
+        "Slug": "enzo-millot"
+    },
+    {
+        "Name": "Harvey Elliott",
+        "Overall": 80,
+        "RealTeam": "Liverpool",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/565822-1665128076.jpg?lm=1",
+        "Slug": "harvey-elliott"
+    },
+    {
+        "Name": "Mikel Merino",
+        "Overall": 84,
+        "RealTeam": "Arsenal",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/338424-1716803831.jpg?lm=1",
+        "Slug": "mikel-merino"
+    },
+    {
+        "Name": "Orkun Kökçü",
+        "Overall": 81,
+        "RealTeam": "Benfica",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/454567-1701333892.jpg?lm=1",
+        "Slug": "orkun-kokcu"
+    },
+    {
+        "Name": "Justin Kluivert",
+        "Overall": 79,
+        "RealTeam": "Bournemouth",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/330659-1596107153.jpg?lm=1",
+        "Slug": "justin-kluivert"
+    },
+    {
+        "Name": "Youri Tielemans",
+        "Overall": 83,
+        "RealTeam": "Aston Villa",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/249565-1716886438.jpg?lm=1",
+        "Slug": "youri-tielemans"
+    },
+    {
+        "Name": "Hakan Çalhanoğlu",
+        "Overall": 84,
+        "RealTeam": "Inter",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/126414-1709035146.jpg?lm=1",
+        "Slug": "hakan-calhanoglu"
+    },
+    {
+        "Name": "Gabriel Sara",
+        "Overall": 80,
+        "RealTeam": "Galatasaray",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/553469-1731009174.jpg?lm=1",
+        "Slug": "gabriel-sara"
+    },
+    {
+        "Name": "Sofyan Amrabat",
+        "Overall": 79,
+        "RealTeam": "Fenerbahçe",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/287579-1728392547.jpg?lm=1",
+        "Slug": "sofyan-amrabat"
+    },
+    {
+        "Name": "Youssouf Fofana",
+        "Overall": 82,
+        "RealTeam": "AC Milan",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/569598-1725528517.jpg?lm=1",
+        "Slug": "youssouf-fofana"
+    },
+    {
+        "Name": "Samuele Ricci",
+        "Overall": 80,
+        "RealTeam": "Torino FC",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/467992-1730125512.jpg?lm=1",
+        "Slug": "samuele-ricci"
+    },
+    {
+        "Name": "Nicolò Rovella",
+        "Overall": 79,
+        "RealTeam": "Lazio",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/525704-1730127184.jpg?lm=1",
+        "Slug": "nicolo-rovella"
+    },
+    {
+        "Name": "Manuel Locatelli",
+        "Overall": 81,
+        "RealTeam": "Juventus",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/265088-1730125083.jpg?lm=1",
+        "Slug": "manuel-locatelli"
+    },
+    {
+        "Name": "Frank Anguissa",
+        "Overall": 84,
+        "RealTeam": "Napoli",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/354361-1695026237.jpg?lm=1",
+        "Slug": "frank-anguissa"
+    },
+    {
+        "Name": "Stanislav Lobotka",
+        "Overall": 82,
+        "RealTeam": "Napoli",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/192735-1661509021.jpg?lm=1",
+        "Slug": "stanislav-lobotka"
+    },
+    {
+        "Name": "Dries Mertens",
+        "Overall": 81,
+        "RealTeam": "Galatasaray",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/56416-1671109411.png?lm=1",
+        "Slug": "dries-mertens"
+    },
+    {
+        "Name": "Weston McKennie",
+        "Overall": 81,
+        "RealTeam": "Juventus",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/332697-1642687384.jpg?lm=1",
+        "Slug": "weston-mckennie"
+    },
+    {
+        "Name": "Lewis Ferguson",
+        "Overall": 78,
+        "RealTeam": "Bologna FC",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/428563-1663656344.jpg?lm=1",
+        "Slug": "lewis-ferguson"
+    },
+    {
+        "Name": "Yunus Musah",
+        "Overall": 81,
+        "RealTeam": "AC Milan",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/503991-1684913655.jpg?lm=1",
+        "Slug": "yunus-musah"
+    },
+    {
+        "Name": "Raoul Bellanova",
+        "Overall": 77,
+        "RealTeam": "Atalanta",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/357992-1695028689.jpg?lm=1",
+        "Slug": "raoul-bellanova"
+    },
+    {
+        "Name": "Morten Frendrup",
+        "Overall": 77,
+        "RealTeam": "Genoa",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/503871-1707815910.jpg?lm=1",
+        "Slug": "morten-frendrup"
+    },
+    {
+        "Name": "Lazar Samardžić",
+        "Overall": 79,
+        "RealTeam": "Atalanta",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/528833-1677073457.jpg?lm=1",
+        "Slug": "lazar-samardzic"
+    },
+    {
+        "Name": "Gedson Fernandes",
+        "Overall": 80,
+        "RealTeam": "Beşiktaş",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/337800-1727354898.png?lm=1",
+        "Slug": "gedson-fernandes"
+    },
+    {
+        "Name": "Sebastian Szymański",
+        "Overall": 80,
+        "RealTeam": "Fenerbahçe",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/320748-1728392667.JPG?lm=1",
+        "Slug": "sebastian-szymanski"
+    },
+    {
+        "Name": "Lucas Torreira",
+        "Overall": 81,
+        "RealTeam": "Galatasaray",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/318077-1671110829.png?lm=1",
+        "Slug": "lucas-torreira"
+    },
+    {
+        "Name": "Elliot Anderson",
+        "Overall": 79,
+        "RealTeam": "Nottingham Forest",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/567576-1696453772.jpg?lm=1",
+        "Slug": "elliot-anderson"
+    },
+    {
+        "Name": "Rodrigo Bentancur",
+        "Overall": 82,
+        "RealTeam": "Tottenham Hotspur",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/354362-1740605779.jpg?lm=1",
+        "Slug": "rodrigo-bentancur"
+    },
+    {
+        "Name": "Edson Álvarez",
+        "Overall": 81,
+        "RealTeam": "West Ham United",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/401356-1742822886.jpg?lm=1",
+        "Slug": "edson-alvarez"
+    },
+    {
+        "Name": "Mason Mount",
+        "Overall": 83,
+        "RealTeam": "Manchester United",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/346483-1683291495.jpg?lm=1",
+        "Slug": "mason-mount"
+    },
+    {
+        "Name": "Joe Willock",
+        "Overall": 80,
+        "RealTeam": "Newcastle United",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/340329-1683890024.jpg?lm=1",
+        "Slug": "joe-willock"
+    },
+    {
+        "Name": "Ibrahim Sangaré",
+        "Overall": 82,
+        "RealTeam": "Nottingham Forest",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/375885-1700738495.jpg?lm=1",
+        "Slug": "ibrahim-sangare"
+    },
+    {
+        "Name": "Yves Bissouma",
+        "Overall": 81,
+        "RealTeam": "Tottenham Hotspur",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/410425-1665607355.jpg?lm=1",
+        "Slug": "yves-bissouma"
+    },
+    {
+        "Name": "Fred",
+        "Overall": 81,
+        "RealTeam": "Fenerbahçe",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/191614-1728391871.JPG?lm=1",
+        "Slug": "fred"
+    },
+    {
+        "Name": "Talisca",
+        "Overall": 80,
+        "RealTeam": "Fenerbahçe",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/258626-1738664288.jpg?lm=1",
+        "Slug": "talisca"
+    },
+    {
+        "Name": "Batista Mendy",
+        "Overall": 74,
+        "RealTeam": "Trabzonspor",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/395234-1723800722.jpg?lm=1",
+        "Slug": "batista-mendy"
+    },
+    {
+        "Name": "Mario Lemina",
+        "Overall": 80,
+        "RealTeam": "Galatasaray",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/170934-1667549900.jpg?lm=1",
+        "Slug": "mario-lemina"
+    },
+    {
+        "Name": "Georgiy Sudakov",
+        "Overall": 78,
+        "RealTeam": "Shakhtar Donetsk",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/623325-1723486618.png?lm=1",
+        "Slug": "georgiy-sudakov"
+    },
+    {
+        "Name": "Jacob Ramsey",
+        "Overall": 80,
+        "RealTeam": "Aston Villa",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/503749-1687975464.jpg?lm=1",
+        "Slug": "jacob-ramsey"
+    },
+    {
+        "Name": "Mattéo Guendouzi",
+        "Overall": 81,
+        "RealTeam": "Lazio",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/465830-1730125468.jpg?lm=1",
+        "Slug": "matteo-guendouzi"
+    },
+    {
+        "Name": "Quinten Timber",
+        "Overall": 79,
+        "RealTeam": "Feyenoord",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/420213-1673870004.jpg?lm=1",
+        "Slug": "quinten-timber"
+    },
+    {
+        "Name": "Davide Frattesi",
+        "Overall": 80,
+        "RealTeam": "Inter",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/394300-1730126974.jpg?lm=1",
+        "Slug": "davide-frattesi"
+    },
+    {
+        "Name": "Lucas Paquetá",
+        "Overall": 82,
+        "RealTeam": "West Ham United",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/444523-1695370009.jpg?lm=1",
+        "Slug": "lucas-paqueta"
+    },
+    {
+        "Name": "Fabián Ruiz",
+        "Overall": 85,
+        "RealTeam": "Paris Saint-Germain",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/350219-1718958379.jpg?lm=1",
+        "Slug": "fabian-ruiz"
+    },
+    {
+        "Name": "Lionel Messi",
+        "Overall": 87,
+        "RealTeam": "Inter Miami",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/big/28003-1740766555.jpg?lm=1",
+        "Slug": "lionel-messi"
+    },
+    {
+        "Name": "Cristiano Ronaldo",
+        "Overall": 85,
+        "RealTeam": "Al-Nassr",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/8198-1694609670.jpg?lm=1",
+        "Slug": "cristiano-ronaldo"
+    },
+    {
+        "Name": "Neymar Jr.",
+        "Overall": 85,
+        "RealTeam": "Al-Hilal",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/68290-1692601435.jpg?lm=1",
+        "Slug": "neymar"
+    },
+    {
+        "Name": "Erling Haaland",
+        "Overall": 91,
+        "RealTeam": "Manchester City",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/418560-1709108116.png?lm=1",
+        "Slug": "erling-haaland"
+    },
+    {
+        "Name": "Vinicius Junior",
+        "Overall": 91,
+        "RealTeam": "Real Madrid",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/371998-1664869583.jpg?lm=1",
+        "Slug": "vinicius-junior"
+    },
+    {
+        "Name": "Lamine Yamal",
+        "Overall": 89,
+        "RealTeam": "FC Barcelona",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/937958-1745911454.jpg?lm=1",
+        "Slug": "lamine-yamal"
+    },
+    {
+        "Name": "Kylian Mbappé",
+        "Overall": 91,
+        "RealTeam": "Paris Saint-Germain",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/342229-1682683695.jpg?lm=1",
+        "Slug": "kylian-mbappe"
+    },
+    {
+        "Name": "Bukayo Saka",
+        "Overall": 90,
+        "RealTeam": "Arsenal",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/433177-1684155052.jpg?lm=1",
+        "Slug": "bukayo-saka"
+    },
+    {
+        "Name": "Phil Foden",
+        "Overall": 89,
+        "RealTeam": "Manchester City",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/406635-1668524492.jpg?lm=1",
+        "Slug": "phil-foden"
+    },
+    {
+        "Name": "Rodrygo",
+        "Overall": 88,
+        "RealTeam": "Real Madrid",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/412363-1693988167.jpg?lm=1",
+        "Slug": "rodrygo"
+    },
+    {
+        "Name": "Alexander Isak",
+        "Overall": 88,
+        "RealTeam": "Newcastle United",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/349066-1680791339.jpg?lm=1",
+        "Slug": "alexander-isak"
+    },
+    {
+        "Name": "Lautaro Martínez",
+        "Overall": 87,
+        "RealTeam": "Inter Milan",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/406625-1695024988.jpg?lm=1",
+        "Slug": "lautaro-martinez"
+    },
+    {
+        "Name": "Julián Alvarez",
+        "Overall": 87,
+        "RealTeam": "Manchester City",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/576024-1684920938.jpg?lm=1",
+        "Slug": "julian-alvarez"
+    },
+    {
+        "Name": "Harry Kane",
+        "Overall": 89,
+        "RealTeam": "Bayern Munich",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/132098-1700211169.jpg?lm=1",
+        "Slug": "harry-kane"
+    },
+    {
+        "Name": "Luis Diaz",
+        "Overall": 87,
+        "RealTeam": "Liverpool",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/480692-1697903145.jpg?lm=1",
+        "Slug": "luis-diaz"
+    },
+    {
+        "Name": "Michael Olise",
+        "Overall": 88,
+        "RealTeam": "Bayern Münih",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/566723-1725873883.jpg?lm=1",
+        "Slug": "michael-olise"
+    },
+    {
+        "Name": "Khvicha Kvaratskhelia",
+        "Overall": 89,
+        "RealTeam": "Paris Saint-Germain",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/502670-1708553120.jpg?lm=1",
+        "Slug": "khvicha-kvaratskhelia"
+    },
+    {
+        "Name": "Raphinha",
+        "Overall": 89,
+        "RealTeam": "FC Barcelona",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/411295-1729754479.png?lm=1",
+        "Slug": "raphinha"
+    },
+    {
+        "Name": "Omar Marmoush",
+        "Overall": 87,
+        "RealTeam": "Manchester City",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/445939-1696508916.jpg?lm=1",
+        "Slug": "omar-marmoush"
+    },
+    {
+        "Name": "Rafael Leão",
+        "Overall": 87,
+        "RealTeam": "AC Milan",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/357164-1730126553.jpg?lm=1",
+        "Slug": "rafael-leao"
+    },
+    {
+        "Name": "Viktor Gyökeres",
+        "Overall": 87,
+        "RealTeam": "Sporting Lizbon",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/325443-1737581896.jpg?lm=1",
+        "Slug": "viktor-gyokeres"
+    },
+    {
+        "Name": "Marcus Thuram",
+        "Overall": 84,
+        "RealTeam": "Inter",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/318528-1746041509.jpg?lm=1",
+        "Slug": "marcus-thuram"
+    },
+    {
+        "Name": "Ousmane Dembélé",
+        "Overall": 86,
+        "RealTeam": "Paris Saint-Germain",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/288230-1684148641.jpg?lm=1",
+        "Slug": "ousmane-dembele"
+    },
+    {
+        "Name": "Nico Williams",
+        "Overall": 84,
+        "RealTeam": "Athletic Club",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/709187-1709676169.png?lm=1",
+        "Slug": "nico-williams"
+    },
+    {
+        "Name": "Bradley Barcola",
+        "Overall": 80,
+        "RealTeam": "Paris Saint-Germain",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/708265-1653406915.jpg?lm=1",
+        "Slug": "bradley-barcola"
+    },
+    {
+        "Name": "Cody Gakpo",
+        "Overall": 84,
+        "RealTeam": "Liverpool",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/434675-1682690965.jpg?lm=1",
+        "Slug": "cody-gakpo"
+    },
+    {
+        "Name": "Victor Osimhen",
+        "Overall": 88,
+        "RealTeam": "Galatasaray",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/401923-1737730981.jpg?lm=1",
+        "Slug": "victor-osimhen"
+    },
+    {
+        "Name": "Kai Havertz",
+        "Overall": 84,
+        "RealTeam": "Arsenal",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/309400-1683903902.jpg?lm=1",
+        "Slug": "kai-havertz"
+    },
+    {
+        "Name": "Benjamin Sesko",
+        "Overall": 81,
+        "RealTeam": "RB Leipzig",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/627442-1713897956.jpg?lm=1",
+        "Slug": "benjamin-sesko"
+    },
+    {
+        "Name": "Anthony Gordon",
+        "Overall": 83,
+        "RealTeam": "Newcastle United",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/503733-1660588736.jpg?lm=1",
+        "Slug": "anthony-gordon"
+    },
+    {
+        "Name": "Désiré Doué",
+        "Overall": 77,
+        "RealTeam": "Paris Saint-Germain",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/914562-1667317075.jpg?lm=1",
+        "Slug": "desire-doue"
+    },
+    {
+        "Name": "Ademola Lookman",
+        "Overall": 82,
+        "RealTeam": "Atalanta",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/406040-1682076571.jpg?lm=1",
+        "Slug": "ademola-lookman"
+    },
+    {
+        "Name": "Lois Openda",
+        "Overall": 81,
+        "RealTeam": "RB Leipzig",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/368887-1713944805.jpg?lm=1",
+        "Slug": "lois-openda"
+    },
+    {
+        "Name": "Estêvão",
+        "Overall": 79,
+        "RealTeam": "Palmeiras",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/1056993-1731657826.jpg?lm=1",
+        "Slug": "estevao"
+    },
+    {
+        "Name": "Ethan Nwaneri",
+        "Overall": 78,
+        "RealTeam": "Arsenal",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/890719-1730794927.jpg?lm=1",
+        "Slug": "ethan-nwaneri"
+    },
+    {
+        "Name": "Nicolas Jackson",
+        "Overall": 80,
+        "RealTeam": "Chelsea",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/776890-1726227971.jpg?lm=1",
+        "Slug": "nicolas-jackson"
+    },
+    {
+        "Name": "Savinho",
+        "Overall": 78,
+        "RealTeam": "Manchester City",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/743591-1719653229.jpg?lm=1",
+        "Slug": "savinho"
+    },
+    {
+        "Name": "Hugo Ekitiké",
+        "Overall": 81,
+        "RealTeam": "Eintracht Frankfurt",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/709726-1724772213.jpg?lm=1",
+        "Slug": "hugo-ekitike"
+    },
+    {
+        "Name": "Gabriel Martinelli",
+        "Overall": 85,
+        "RealTeam": "Arsenal",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/655488-1682689091.jpg?lm=1",
+        "Slug": "gabriel-martinelli"
+    },
+    {
+        "Name": "Matheus Cunha",
+        "Overall": 82,
+        "RealTeam": "Wolverhampton Wanderers",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/517894-1696599737.jpg?lm=1",
+        "Slug": "matheus-cunha"
+    },
+    {
+        "Name": "Jérémy Doku",
+        "Overall": 82,
+        "RealTeam": "Manchester City",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/486049-1743670159.jpg?lm=1",
+        "Slug": "jeremy-doku"
+    },
+    {
+        "Name": "Mohamed Salah",
+        "Overall": 90,
+        "RealTeam": "Liverpool",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/148455-1727337594.jpg?lm=1",
+        "Slug": "mohamed-salah"
+    },
+    {
+        "Name": "Samu Aghehowa",
+        "Overall": 81,
+        "RealTeam": "Porto",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/991268-1732829288.jpg?lm=1",
+        "Slug": "samu-aghehowa"
+    },
+    {
+        "Name": "João Félix",
+        "Overall": 81,
+        "RealTeam": "AC Milan",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/462250-1668165358.jpg?lm=1",
+        "Slug": "joao-felix"
+    },
+    {
+        "Name": "Jamie Gittens",
+        "Overall": 79,
+        "RealTeam": "Borussia Dortmund",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/670882-1736780080.jpg?lm=1",
+        "Slug": "jamie-gittens"
+    },
+    {
+        "Name": "Álex Baena",
+        "Overall": 80,
+        "RealTeam": "Villarreal",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/548111-1714487266.jpg?lm=1",
+        "Slug": "alex-baena"
+    },
+    {
+        "Name": "Darwin Núñez",
+        "Overall": 84,
+        "RealTeam": "Liverpool",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/546543-1681827179.jpg?lm=1",
+        "Slug": "darwin-nunez"
+    },
+    {
+        "Name": "Tammy Abraham",
+        "Overall": 80,
+        "RealTeam": "AC Milan",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/331726-1725531680.jpg?lm=1",
+        "Slug": "tammy-abraham"
+    },
+    {
+        "Name": "Mohammed Kudus",
+        "Overall": 83,
+        "RealTeam": "West Ham United",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/543499-1668429218.jpg?lm=1",
+        "Slug": "mohammed-kudus"
+    },
+    {
+        "Name": "Pedro Neto",
+        "Overall": 82,
+        "RealTeam": "Chelsea",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/487465-1709158892.jpg?lm=1",
+        "Slug": "pedro-neto"
+    },
+    {
+        "Name": "Brennan Johnson",
+        "Overall": 81,
+        "RealTeam": "Tottenham Hotspur",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/470607-1692959021.jpg?lm=1",
+        "Slug": "brennan-johnson"
+    },
+    {
+        "Name": "Bryan Mbeumo",
+        "Overall": 82,
+        "RealTeam": "Brentford",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/413039-1668505084.jpg?lm=1",
+        "Slug": "bryan-mbeumo"
+    },
+    {
+        "Name": "Ollie Watkins",
+        "Overall": 84,
+        "RealTeam": "Aston Villa",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/324358-1708341279.jpg?lm=1",
+        "Slug": "ollie-watkins"
+    },
+    {
+        "Name": "Christian Pulisic",
+        "Overall": 80,
+        "RealTeam": "AC Milan",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/315779-1691696699.jpg?lm=1",
+        "Slug": "christian-pulisic"
+    },
+    {
+        "Name": "Marcus Rashford",
+        "Overall": 82,
+        "RealTeam": "Aston Villa",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/258923-1674473054.jpg?lm=1",
+        "Slug": "marcus-rashford"
+    },
+    {
+        "Name": "Geovany Quenda",
+        "Overall": 81,
+        "RealTeam": "Sporting Lizbon",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/1138758-1730207849.jpg?lm=1",
+        "Slug": "geovany-quenda"
+    },
+    {
+        "Name": "Kenan Yıldız",
+        "Overall": 81,
+        "RealTeam": "Juventus",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/845654-1700467996.png?lm=1",
+        "Slug": "kenan-yildiz"
+    },
+    {
+        "Name": "Victor Boniface",
+        "Overall": 83,
+        "RealTeam": "Bayer Leverkusen",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/656681-1727378262.jpg?lm=1",
+        "Slug": "victor-boniface"
+    },
+    {
+        "Name": "Rasmus Højlund",
+        "Overall": 84,
+        "RealTeam": "Manchester United",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/610442-1699471458.jpg?lm=1",
+        "Slug": "rasmus-hojlund"
+    },
+    {
+        "Name": "Mateo Retegui",
+        "Overall": 81,
+        "RealTeam": "Atalanta",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/554903-1681311414.jpg?lm=1",
+        "Slug": "mateo-retegui"
+    },
+    {
+        "Name": "Gonçalo Ramos",
+        "Overall": 81,
+        "RealTeam": "Paris Saint-Germain",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/550550-1681906158.jpg?lm=1",
+        "Slug": "goncalo-ramos"
+    },
+    {
+        "Name": "Jonathan David",
+        "Overall": 84,
+        "RealTeam": "Lille",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/533738-1666690584.jpg?lm=1",
+        "Slug": "jonathan-david"
+    },
+    {
+        "Name": "Kaoru Mitoma",
+        "Overall": 82,
+        "RealTeam": "Brighton & Hove Albion",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/504849-1731683095.jpg?lm=1",
+        "Slug": "kaoru-mitoma"
+    },
+    {
+        "Name": "Dušan Vlahović",
+        "Overall": 85,
+        "RealTeam": "Juventus",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/357498-1683293071.jpg?lm=1",
+        "Slug": "dusan-vlahovic"
+    },
+    {
+        "Name": "Christopher Nkunku",
+        "Overall": 84,
+        "RealTeam": "Chelsea",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/344381-1663686834.jpg?lm=1",
+        "Slug": "christopher-nkunku"
+    },
+    {
+        "Name": "Diogo Jota",
+        "Overall": 84,
+        "RealTeam": "Liverpool",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/340950-1716296423.jpg?lm=1",
+        "Slug": "diogo-jota"
+    },
+    {
+        "Name": "Jarrod Bowen",
+        "Overall": 83,
+        "RealTeam": "West Ham United",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/314875-1662362005.jpg?lm=1",
+        "Slug": "jarrod-bowen"
+    },
+    {
+        "Name": "Brahim Díaz",
+        "Overall": 82,
+        "RealTeam": "Real Madrid",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/314678-1744193327.jpg?lm=1",
+        "Slug": "brahim-diaz"
+    },
+    {
+        "Name": "Dominic Solanke",
+        "Overall": 81,
+        "RealTeam": "Tottenham Hotspur",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/258889-1708340487.jpg?lm=1",
+        "Slug": "dominic-solanke"
+    },
+    {
+        "Name": "Endrick",
+        "Overall": 77,
+        "RealTeam": "Real Madrid",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/971570-1723665994.jpg?lm=1",
+        "Slug": "endrick"
+    },
+    {
+        "Name": "Mathys Tel",
+        "Overall": 80,
+        "RealTeam": "Tottenham Hotspur",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/801734-1700040486.jpg?lm=1",
+        "Slug": "mathys-tel"
+    },
+    {
+        "Name": "Maghnes Akliouche",
+        "Overall": 77,
+        "RealTeam": "Monaco",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/745200-1717406573.jpg?lm=1",
+        "Slug": "maghnes-akliouche"
+    },
+    {
+        "Name": "Amad Diallo",
+        "Overall": 80,
+        "RealTeam": "Manchester United",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/536835-1694616776.jpg?lm=1",
+        "Slug": "amad-diallo"
+    },
+    {
+        "Name": "Noni Madueke",
+        "Overall": 80,
+        "RealTeam": "Chelsea",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/503987-1683102348.jpg?lm=1",
+        "Slug": "noni-madueke"
+    },
+    {
+        "Name": "Karim Adeyemi",
+        "Overall": 82,
+        "RealTeam": "Borussia Dortmund",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/496094-1712859708.jpg?lm=1",
+        "Slug": "karim-adeyemi"
+    },
+    {
+        "Name": "Moise Kean",
+        "Overall": 81,
+        "RealTeam": "Fiorentina",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/364135-1725532147.jpg?lm=1",
+        "Slug": "moise-kean"
+    },
+    {
+        "Name": "Gabriel Jesus",
+        "Overall": 84,
+        "RealTeam": "Arsenal",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/363205-1669711141.jpg?lm=1",
+        "Slug": "gabriel-jesus"
+    },
+    {
+        "Name": "Karim Benzema",
+        "Overall": 84,
+        "RealTeam": "Al-Ittihad",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/18922-1702414196.jpg?lm=1",
+        "Slug": "karim-benzema"
+    },
+    {
+        "Name": "Serhou Guirassy",
+        "Overall": 80,
+        "RealTeam": "Borussia Dortmund",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/270541-1740041276.png?lm=1",
+        "Slug": "serhou-guirassy"
+    },
+    {
+        "Name": "Leroy Sané",
+        "Overall": 85,
+        "RealTeam": "Bayern Munich",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/192565-1694587968.jpg?lm=1",
+        "Slug": "leroy-sane"
+    },
+    {
+        "Name": "Santiago Gimenez",
+        "Overall": 83,
+        "RealTeam": "AC Milan",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/552955-1739903736.jpg?lm=1",
+        "Slug": "santiago-gimenez"
+    },
+    {
+        "Name": "Francisco Conceição",
+        "Overall": 77,
+        "RealTeam": "Juventus",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/487474-1713948689.png?lm=1",
+        "Slug": "francisco-conceicao"
+    },
+    {
+        "Name": "Santiago Castro",
+        "Overall": 78,
+        "RealTeam": "Bologna",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/849520-1724827267.jpg?lm=1",
+        "Slug": "santiago-castro"
+    },
+    {
+        "Name": "Evanilson",
+        "Overall": 81,
+        "RealTeam": "Bournemouth",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/711337-1737452098.jpg?lm=1",
+        "Slug": "evanilson"
+    },
+    {
+        "Name": "Rayan Cherki",
+        "Overall": 81,
+        "RealTeam": "Lyon",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/607223-1672831487.jpg?lm=1",
+        "Slug": "rayan-cherki"
+    },
+    {
+        "Name": "Anthony Elanga",
+        "Overall": 79,
+        "RealTeam": "Nottingham Forest",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/583189-1700739021.jpg?lm=1",
+        "Slug": "anthony-elanga"
+    },
+    {
+        "Name": "Johan Bakayoko",
+        "Overall": 78,
+        "RealTeam": "PSV Eindhoven",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/565424-1697637209.jpg?lm=1",
+        "Slug": "johan-bakayoko"
+    },
+    {
+        "Name": "Mason Greenwood",
+        "Overall": 79,
+        "RealTeam": "Olympique Marsilya",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/532826-1693987766.jpg?lm=1",
+        "Slug": "mason-greenwood"
+    },
+    {
+        "Name": "Joshua Zirkzee",
+        "Overall": 78,
+        "RealTeam": "Manchester United",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/435648-1651087961.jpg?lm=1",
+        "Slug": "joshua-zirkzee"
+    },
+    {
+        "Name": "Moussa Diaby",
+        "Overall": 84,
+        "RealTeam": "Al-Ittihad",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/395516-1642608355.jpg?lm=1",
+        "Slug": "moussa-diaby"
+    },
+    {
+        "Name": "Kingsley Coman",
+        "Overall": 85,
+        "RealTeam": "Bayern Munich",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/243714-1700040256.jpg?lm=1",
+        "Slug": "kingsley-coman"
+    },
+    {
+        "Name": "Jack Grealish",
+        "Overall": 84,
+        "RealTeam": "Manchester City",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/203460-1676499047.jpg?lm=1",
+        "Slug": "jack-grealish"
+    },
+    {
+        "Name": "Leon Bailey",
+        "Overall": 80,
+        "RealTeam": "Aston Villa",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/387626-1694712703.jpg?lm=1",
+        "Slug": "leon-bailey"
+    },
+    {
+        "Name": "Ferran Torres",
+        "Overall": 82,
+        "RealTeam": "Barcelona",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/398184-1699383547.jpg?lm=1",
+        "Slug": "ferran-torres"
+    },
+    {
+        "Name": "Patrik Schick",
+        "Overall": 83,
+        "RealTeam": "Bayer Leverkusen",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/242086-1727378322.jpg?lm=1",
+        "Slug": "patrik-schick"
+    },
+    {
+        "Name": "Ivan Toney",
+        "Overall": 81,
+        "RealTeam": "Al-Ahli",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/251664-1677676808.jpg?lm=1",
+        "Slug": "ivan-toney"
+    },
+    {
+        "Name": "Artem Dovbyk",
+        "Overall": 78,
+        "RealTeam": "AS Roma",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/343537-1719215184.jpg?lm=1",
+        "Slug": "artem-dovbyk"
+    },
+    {
+        "Name": "Serge Gnabry",
+        "Overall": 83,
+        "RealTeam": "Bayern Munich",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/159471-1712776387.jpg?lm=1",
+        "Slug": "serge-gnabry"
+    },
+    {
+        "Name": "Heung-min Son",
+        "Overall": 89,
+        "RealTeam": "Tottenham Hotspur",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/91845-1669336455.jpg?lm=1",
+        "Slug": "heung-min-son"
+    },
+    {
+        "Name": "Jadon Sancho",
+        "Overall": 84,
+        "RealTeam": "Manchester United",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/401173-1688564217.jpg?lm=1",
+        "Slug": "jadon-sancho"
+    },
+    {
+        "Name": "Jean-Philippe Mateta",
+        "Overall": 78,
+        "RealTeam": "Crystal Palace",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/420002-1723202650.jpg?lm=1",
+        "Slug": "jean-philippe-mateta"
+    },
+    {
+        "Name": "Kolo Muani",
+        "Overall": 85,
+        "RealTeam": "Juventus",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/487969-1718697120.jpg?lm=1",
+        "Slug": "kolo-muani"
+    },
+    {
+        "Name": "Mykhaylo Mudryk",
+        "Overall": 81,
+        "RealTeam": "Chelsea",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/537860-1732822624.jpg?lm=1",
+        "Slug": "mykhaylo-mudryk"
+    },
+    {
+        "Name": "Richarlison",
+        "Overall": 82,
+        "RealTeam": "Tottenham Hotspur",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/378710-1665608231.jpg?lm=1",
+        "Slug": "richarlison"
+    },
+    {
+        "Name": "Alexander Sörloth",
+        "Overall": 84,
+        "RealTeam": "Atletico Madrid",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/238407-1716403969.jpg?lm=1",
+        "Slug": "alexander-sorloth"
+    },
+    {
+        "Name": "Romelu Lukaku",
+        "Overall": 85,
+        "RealTeam": "Napoli",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/96341-1661780981.jpg?lm=1",
+        "Slug": "romelu-lukaku"
+    },
+    {
+        "Name": "Antoine Griezmann",
+        "Overall": 86,
+        "RealTeam": "Atletico Madrid",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/125781-1719928503.jpg?lm=1",
+        "Slug": "antoine-griezmann"
+    },
+    {
+        "Name": "Paulo Dybala",
+        "Overall": 86,
+        "RealTeam": "AS Roma",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/206050-1725530843.jpg?lm=1",
+        "Slug": "paulo-dybala"
+    },
+    {
+        "Name": "Youssef En-Nesyri",
+        "Overall": 81,
+        "RealTeam": "Fenerbahçe",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/433049-1728392433.JPG?lm=1",
+        "Slug": "youssef-en-nesyri"
+    },
+    {
+        "Name": "Barış Alper Yılmaz",
+        "Overall": 80,
+        "RealTeam": "Galatasaray",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/541537-1671104025.png?lm=1",
+        "Slug": "baris-alper-yilmaz"
+    },
+    {
+        "Name": "Aleksandar Mitrović",
+        "Overall": 83,
+        "RealTeam": "Al Hilal",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/51152-1697050954.png?lm=1",
+        "Slug": "aleksandar-mitrovic"
+    },
+    {
+        "Name": "Malcom",
+        "Overall": 84,
+        "RealTeam": "Al Hilal",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/323704-1697052788.png?lm=1",
+        "Slug": "malcom"
+    },
+    {
+        "Name": "Roberto Firmino",
+        "Overall": 83,
+        "RealTeam": "Al Ahli",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/131789-1699522816.jpg?lm=1",
+        "Slug": "roberto-firmino"
+    },
+    {
+        "Name": "Allan Saint-Maximin",
+        "Overall": 81,
+        "RealTeam": "Fenerbahçe",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/272642-1728392760.JPG?lm=1",
+        "Slug": "allan-saint-maximin"
+    },
+    {
+        "Name": "Simon Banza",
+        "Overall": 78,
+        "RealTeam": "RC Lens",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/344869-1726586877.jpg?lm=1",
+        "Slug": "simon-banza"
+    },
+    {
+        "Name": "Semih Kılıçsoy",
+        "Overall": 71,
+        "RealTeam": "Beşiktaş",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/875334-1727355952.png?lm=1",
+        "Slug": "semih-kilicsoy"
+    },
+    {
+        "Name": "Álvaro Morata",
+        "Overall": 84,
+        "RealTeam": "Atlético Madrid",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/128223-1719989301.jpg?lm=1",
+        "Slug": "alvaro-morata"
+    },
+    {
+        "Name": "Yunus Akgün",
+        "Overall": 77,
+        "RealTeam": "Galatasaray",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/396908-1671104289.png?lm=1",
+        "Slug": "yunus-akgun"
+    },
+    {
+        "Name": "Ernest Muci",
+        "Overall": 75,
+        "RealTeam": "Beşiktaş",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/583917-1727356057.png?lm=1",
+        "Slug": "ernest-muci"
+    },
+    {
+        "Name": "Mauro Icardi",
+        "Overall": 84,
+        "RealTeam": "Galatasaray",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/68863-1671105169.png?lm=1",
+        "Slug": "mauro-icardi"
+    },
+    {
+        "Name": "Roland Sallai",
+        "Overall": 79,
+        "RealTeam": "Galatasaray",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/332798-1658413418.jpg?lm=1",
+        "Slug": "roland-sallai"
+    },
+    {
+        "Name": "Rafa Silva",
+        "Overall": 80,
+        "RealTeam": "Beşiktaş",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/238055-1727356372.png?lm=1",
+        "Slug": "rafa-silva"
+    },
+    {
+        "Name": "İrfan Can Kahveci",
+        "Overall": 78,
+        "RealTeam": "Fenerbahçe",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/216603-1728391961.JPG?lm=1",
+        "Slug": "irfan-can-kahveci"
+    },
+    {
+        "Name": "Oğuz Aydın",
+        "Overall": 75,
+        "RealTeam": "Fenerbahçe",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/563749-1728392736.JPG?lm=1",
+        "Slug": "oguz-aydin"
+    },
+    {
+        "Name": "Oleksandr Zubkov",
+        "Overall": 79,
+        "RealTeam": "Trabzonspor",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/289075-1723486847.png?lm=1",
+        "Slug": "oleksandr-zubkov"
+    },
+    {
+        "Name": "Milot Rashica",
+        "Overall": 78,
+        "RealTeam": "Beşiktaş",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/291739-1727356752.png?lm=1",
+        "Slug": "milot-rashica"
+    },
+    {
+        "Name": "Rômulo",
+        "Overall": 77,
+        "RealTeam": "Göztepe",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/957874-1727796494.jpg?lm=1",
+        "Slug": "romulo"
+    },
+    {
+        "Name": "Krzysztof Piatek",
+        "Overall": 80,
+        "RealTeam": "Başakşehir",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/216899-1668500874.jpg?lm=1",
+        "Slug": "krzysztof-piatek"
+    }
+]

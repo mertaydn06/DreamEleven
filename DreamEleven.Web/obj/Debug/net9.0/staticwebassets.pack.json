@@ -13,6 +13,14 @@
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
+      "Id": "C:\\Code\\C#\\Mvc\\DreamEleven\\DreamEleven.Web\\wwwroot\\data\\obj\\DreamEleven.DataAccess.EntityFrameworkCore.targets",
+      "PackagePath": "staticwebassets\\data\\obj\\DreamEleven.DataAccess.EntityFrameworkCore.targets"
+    },
+    {
+      "Id": "C:\\Code\\C#\\Mvc\\DreamEleven\\DreamEleven.Web\\wwwroot\\data\\players.json",
+      "PackagePath": "staticwebassets\\data\\players.json"
+    },
+    {
       "Id": "C:\\Code\\C#\\Mvc\\DreamEleven\\DreamEleven.Web\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },

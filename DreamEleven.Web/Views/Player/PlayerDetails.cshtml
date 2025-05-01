@@ -120,13 +120,15 @@
                                     {
                                         <div class="player-slot position-absolute" data-position="@tp.PositionSlot">
                                             <a href="/player/@tp.Player.Slug" class="text-decoration-none text-light">
-                                                <div
-                                                    class="player-card @(tp.Player.Id == player.Id ? "border border-warning border-2" : "")">
+
+                                                <div class="player-card @(tp.Player.Id == player.Id ? "highlighted-player" : "")">
                                                     <img src="@tp.Player.ImageUrl" alt="@tp.Player.Name">
+
                                                     <div class="player-info">
                                                         <div class="player-name text-dark">@tp.Player.Name</div>
                                                         <div class="player-overall">@tp.Player.Overall</div>
                                                     </div>
+
                                                 </div>
                                             </a>
                                         </div>

@@ -12,8 +12,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>6v57hc3e8i</Fingerprint>
-      <Integrity>jtXSihteN8r2uVkgihHobvtrJQi0QbJESWfKNgBPo48=</Integrity>
+      <Fingerprint>bcxiugaby8</Fingerprint>
+      <Integrity>tQgSaEM/hdaZYyXbsCzBTbxazvFt3wVnACOzI4yulE4=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\field.css'))</OriginalItemSpec>
@@ -35,6 +35,42 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\site.css'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\data\obj\DreamEleven.DataAccess.EntityFrameworkCore.targets'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DreamEleven.Web</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DreamEleven.Web</BasePath>
+      <RelativePath>data/obj/DreamEleven.DataAccess.EntityFrameworkCore.targets</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>0vdkokln9z</Fingerprint>
+      <Integrity>1IQMdStygVH6wsdnXzwXvqI7wBeDXno2uk2PIun+560=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\data\obj\DreamEleven.DataAccess.EntityFrameworkCore.targets'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\data\players.json'))">
+      <SourceType>Package</SourceType>
+      <SourceId>DreamEleven.Web</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/DreamEleven.Web</BasePath>
+      <RelativePath>data/players.json</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>90rqtc0yvw</Fingerprint>
+      <Integrity>x4eyW9hJ6FTRVG7Efs8NDd7x4573ENgSCB8hl8VZn7c=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\data\players.json'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\DreamEleven.Web.t754m7p81e.bundle.scp.css'))">
       <SourceType>Package</SourceType>
