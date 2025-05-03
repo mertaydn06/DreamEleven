@@ -64,7 +64,7 @@ builder.Services.ConfigureApplicationCookie(options =>
 
     options.SlidingExpiration = true;  // "SlidingExpiration" özelliği true olduğunda, kullanıcı aktifken (yani herhangi bir işlem yaptığında) çerez süresi uzatılır.
 
-    options.ExpireTimeSpan = TimeSpan.FromDays(30);  // Çerezin geçerlilik süresini belirliyoruz. Burada oturum açıldıktan 30 gün sonra çerez geçersiz olacak.
+    options.ExpireTimeSpan = TimeSpan.FromDays(1);  // Çerezin geçerlilik süresini belirliyoruz. Burada oturum açıldıktan 1 gün sonra çerez geçersiz olacak.
 });
 
 

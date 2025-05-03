@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "haMf9Eu9u9wnVufqcFZi6LQQeB/QN3W70DtcohZiV68=",
+  "Hash": "nm7K2fqrgTgsRMERyBQUKLnBsyOgtJ1I2EuO/rl7zWY=",
   "Source": "DreamEleven.Web",
   "BasePath": "_content/DreamEleven.Web",
   "Mode": "Default",
@@ -773,12 +773,12 @@
       "OriginalItemSpec": "C:\\Code\\C#\\Mvc\\DreamEleven\\DreamEleven.Web\\wwwroot\\lib\\jquery\\dist\\jquery.slim.js"
     },
     {
-      "Identity": "C:\\Code\\C#\\Mvc\\DreamEleven\\DreamEleven.Web\\obj\\Debug\\net9.0\\compressed\\gp21woq0yc-90rqtc0yvw.gz",
+      "Identity": "C:\\Code\\C#\\Mvc\\DreamEleven\\DreamEleven.Web\\obj\\Debug\\net9.0\\compressed\\gp21woq0yc-2ti2xyd36p.gz",
       "SourceId": "DreamEleven.Web",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Code\\C#\\Mvc\\DreamEleven\\DreamEleven.Web\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/DreamEleven.Web",
-      "RelativePath": "data/players#[.{fingerprint=90rqtc0yvw}]?.json.gz",
+      "RelativePath": "data/players#[.{fingerprint=2ti2xyd36p}]?.json.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -787,8 +787,8 @@
       "RelatedAsset": "C:\\Code\\C#\\Mvc\\DreamEleven\\DreamEleven.Web\\wwwroot\\data\\players.json",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "iszdntpevc",
-      "Integrity": "chF7tbl/Cx8Jr3y/DU652NwAF9whbTluBHWttFieawY=",
+      "Fingerprint": "p0z761deyx",
+      "Integrity": "CWcbpKdmJbtRnr5Z6+ZKlcZoknp3e6oTQRnwW/UXDDk=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Code\\C#\\Mvc\\DreamEleven\\DreamEleven.Web\\wwwroot\\data\\players.json"
@@ -962,12 +962,12 @@
       "OriginalItemSpec": "C:\\Code\\C#\\Mvc\\DreamEleven\\DreamEleven.Web\\wwwroot\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Identity": "C:\\Code\\C#\\Mvc\\DreamEleven\\DreamEleven.Web\\obj\\Debug\\net9.0\\compressed\\olowbte3h6-bcxiugaby8.gz",
+      "Identity": "C:\\Code\\C#\\Mvc\\DreamEleven\\DreamEleven.Web\\obj\\Debug\\net9.0\\compressed\\olowbte3h6-cijijaqz5u.gz",
       "SourceId": "DreamEleven.Web",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Code\\C#\\Mvc\\DreamEleven\\DreamEleven.Web\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/DreamEleven.Web",
-      "RelativePath": "css/field#[.{fingerprint=bcxiugaby8}]?.css.gz",
+      "RelativePath": "css/field#[.{fingerprint=cijijaqz5u}]?.css.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -976,8 +976,8 @@
       "RelatedAsset": "C:\\Code\\C#\\Mvc\\DreamEleven\\DreamEleven.Web\\wwwroot\\css\\field.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "ckszdrdeaf",
-      "Integrity": "XESXy/qLDBIwZ5Zx8xP7/8f9jLuS2o8b85wVeRa//I0=",
+      "Fingerprint": "awjn3yf3ec",
+      "Integrity": "eh+i3B26y25CNQIhhFNeNQARDofFq3PzaSz7xADQDws=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Code\\C#\\Mvc\\DreamEleven\\DreamEleven.Web\\wwwroot\\css\\field.css"
@@ -1480,8 +1480,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "bcxiugaby8",
-      "Integrity": "tQgSaEM/hdaZYyXbsCzBTbxazvFt3wVnACOzI4yulE4=",
+      "Fingerprint": "cijijaqz5u",
+      "Integrity": "RO6ltRUrx7BhU07Jw8VPNHXh0oYsdgUcpHHMVYExbNM=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\field.css"
@@ -1543,8 +1543,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "90rqtc0yvw",
-      "Integrity": "x4eyW9hJ6FTRVG7Efs8NDd7x4573ENgSCB8hl8VZn7c=",
+      "Fingerprint": "2ti2xyd36p",
+      "Integrity": "tuShUdUle0ccXe+GhK26EFHr5R4uq8U5HBj3rLjuaUI=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\data\\players.json"
@@ -2938,13 +2938,13 @@
   ],
   "Endpoints": [
     {
-      "Route": "css/field.bcxiugaby8.css",
-      "AssetFile": "C:\\Code\\C#\\Mvc\\DreamEleven\\DreamEleven.Web\\obj\\Debug\\net9.0\\compressed\\olowbte3h6-bcxiugaby8.gz",
+      "Route": "css/field.cijijaqz5u.css",
+      "AssetFile": "C:\\Code\\C#\\Mvc\\DreamEleven\\DreamEleven.Web\\obj\\Debug\\net9.0\\compressed\\olowbte3h6-cijijaqz5u.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.001005025126"
+          "Quality": "0.001002004008"
         }
       ],
       "ResponseHeaders": [
@@ -2954,15 +2954,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "994"
+          "Value": "997"
         },
         {
           "Name": "ETag",
-          "Value": "\"XESXy/qLDBIwZ5Zx8xP7/8f9jLuS2o8b85wVeRa//I0=\""
+          "Value": "\"eh+i3B26y25CNQIhhFNeNQARDofFq3PzaSz7xADQDws=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 01 May 2025 16:35:11 GMT"
+          "Value": "Thu, 01 May 2025 21:25:48 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2982,13 +2982,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"tQgSaEM/hdaZYyXbsCzBTbxazvFt3wVnACOzI4yulE4=\""
+          "Value": "W/\"RO6ltRUrx7BhU07Jw8VPNHXh0oYsdgUcpHHMVYExbNM=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "bcxiugaby8"
+          "Value": "cijijaqz5u"
         },
         {
           "Name": "label",
@@ -2996,12 +2996,12 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-tQgSaEM/hdaZYyXbsCzBTbxazvFt3wVnACOzI4yulE4="
+          "Value": "sha256-RO6ltRUrx7BhU07Jw8VPNHXh0oYsdgUcpHHMVYExbNM="
         }
       ]
     },
     {
-      "Route": "css/field.bcxiugaby8.css",
+      "Route": "css/field.cijijaqz5u.css",
       "AssetFile": "C:\\Code\\C#\\Mvc\\DreamEleven\\DreamEleven.Web\\wwwroot\\css\\field.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -3011,7 +3011,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3663"
+          "Value": "3678"
         },
         {
           "Name": "Content-Type",
@@ -3019,11 +3019,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"tQgSaEM/hdaZYyXbsCzBTbxazvFt3wVnACOzI4yulE4=\""
+          "Value": "\"RO6ltRUrx7BhU07Jw8VPNHXh0oYsdgUcpHHMVYExbNM=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 01 May 2025 16:35:11 GMT"
+          "Value": "Thu, 01 May 2025 21:25:48 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3033,7 +3033,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "bcxiugaby8"
+          "Value": "cijijaqz5u"
         },
         {
           "Name": "label",
@@ -3041,13 +3041,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-tQgSaEM/hdaZYyXbsCzBTbxazvFt3wVnACOzI4yulE4="
+          "Value": "sha256-RO6ltRUrx7BhU07Jw8VPNHXh0oYsdgUcpHHMVYExbNM="
         }
       ]
     },
     {
-      "Route": "css/field.bcxiugaby8.css.gz",
-      "AssetFile": "C:\\Code\\C#\\Mvc\\DreamEleven\\DreamEleven.Web\\obj\\Debug\\net9.0\\compressed\\olowbte3h6-bcxiugaby8.gz",
+      "Route": "css/field.cijijaqz5u.css.gz",
+      "AssetFile": "C:\\Code\\C#\\Mvc\\DreamEleven\\DreamEleven.Web\\obj\\Debug\\net9.0\\compressed\\olowbte3h6-cijijaqz5u.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3056,7 +3056,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "994"
+          "Value": "997"
         },
         {
           "Name": "Content-Type",
@@ -3064,11 +3064,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"XESXy/qLDBIwZ5Zx8xP7/8f9jLuS2o8b85wVeRa//I0=\""
+          "Value": "\"eh+i3B26y25CNQIhhFNeNQARDofFq3PzaSz7xADQDws=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 01 May 2025 16:35:11 GMT"
+          "Value": "Thu, 01 May 2025 21:25:48 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3086,7 +3086,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "bcxiugaby8"
+          "Value": "cijijaqz5u"
         },
         {
           "Name": "label",
@@ -3094,18 +3094,18 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-XESXy/qLDBIwZ5Zx8xP7/8f9jLuS2o8b85wVeRa//I0="
+          "Value": "sha256-eh+i3B26y25CNQIhhFNeNQARDofFq3PzaSz7xADQDws="
         }
       ]
     },
     {
       "Route": "css/field.css",
-      "AssetFile": "C:\\Code\\C#\\Mvc\\DreamEleven\\DreamEleven.Web\\obj\\Debug\\net9.0\\compressed\\olowbte3h6-bcxiugaby8.gz",
+      "AssetFile": "C:\\Code\\C#\\Mvc\\DreamEleven\\DreamEleven.Web\\obj\\Debug\\net9.0\\compressed\\olowbte3h6-cijijaqz5u.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.001005025126"
+          "Quality": "0.001002004008"
         }
       ],
       "ResponseHeaders": [
@@ -3115,15 +3115,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "994"
+          "Value": "997"
         },
         {
           "Name": "ETag",
-          "Value": "\"XESXy/qLDBIwZ5Zx8xP7/8f9jLuS2o8b85wVeRa//I0=\""
+          "Value": "\"eh+i3B26y25CNQIhhFNeNQARDofFq3PzaSz7xADQDws=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 01 May 2025 16:35:11 GMT"
+          "Value": "Thu, 01 May 2025 21:25:48 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3143,13 +3143,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"tQgSaEM/hdaZYyXbsCzBTbxazvFt3wVnACOzI4yulE4=\""
+          "Value": "W/\"RO6ltRUrx7BhU07Jw8VPNHXh0oYsdgUcpHHMVYExbNM=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-tQgSaEM/hdaZYyXbsCzBTbxazvFt3wVnACOzI4yulE4="
+          "Value": "sha256-RO6ltRUrx7BhU07Jw8VPNHXh0oYsdgUcpHHMVYExbNM="
         }
       ]
     },
@@ -3164,7 +3164,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3663"
+          "Value": "3678"
         },
         {
           "Name": "Content-Type",
@@ -3172,11 +3172,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"tQgSaEM/hdaZYyXbsCzBTbxazvFt3wVnACOzI4yulE4=\""
+          "Value": "\"RO6ltRUrx7BhU07Jw8VPNHXh0oYsdgUcpHHMVYExbNM=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 01 May 2025 16:35:11 GMT"
+          "Value": "Thu, 01 May 2025 21:25:48 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3186,13 +3186,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-tQgSaEM/hdaZYyXbsCzBTbxazvFt3wVnACOzI4yulE4="
+          "Value": "sha256-RO6ltRUrx7BhU07Jw8VPNHXh0oYsdgUcpHHMVYExbNM="
         }
       ]
     },
     {
       "Route": "css/field.css.gz",
-      "AssetFile": "C:\\Code\\C#\\Mvc\\DreamEleven\\DreamEleven.Web\\obj\\Debug\\net9.0\\compressed\\olowbte3h6-bcxiugaby8.gz",
+      "AssetFile": "C:\\Code\\C#\\Mvc\\DreamEleven\\DreamEleven.Web\\obj\\Debug\\net9.0\\compressed\\olowbte3h6-cijijaqz5u.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3201,7 +3201,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "994"
+          "Value": "997"
         },
         {
           "Name": "Content-Type",
@@ -3209,11 +3209,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"XESXy/qLDBIwZ5Zx8xP7/8f9jLuS2o8b85wVeRa//I0=\""
+          "Value": "\"eh+i3B26y25CNQIhhFNeNQARDofFq3PzaSz7xADQDws=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 01 May 2025 16:35:11 GMT"
+          "Value": "Thu, 01 May 2025 21:25:48 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3231,7 +3231,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-XESXy/qLDBIwZ5Zx8xP7/8f9jLuS2o8b85wVeRa//I0="
+          "Value": "sha256-eh+i3B26y25CNQIhhFNeNQARDofFq3PzaSz7xADQDws="
         }
       ]
     },
@@ -3616,13 +3616,13 @@
       ]
     },
     {
-      "Route": "data/players.90rqtc0yvw.json",
-      "AssetFile": "C:\\Code\\C#\\Mvc\\DreamEleven\\DreamEleven.Web\\obj\\Debug\\net9.0\\compressed\\gp21woq0yc-90rqtc0yvw.gz",
+      "Route": "data/players.2ti2xyd36p.json",
+      "AssetFile": "C:\\Code\\C#\\Mvc\\DreamEleven\\DreamEleven.Web\\obj\\Debug\\net9.0\\compressed\\gp21woq0yc-2ti2xyd36p.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000075746099"
+          "Quality": "0.000075711690"
         }
       ],
       "ResponseHeaders": [
@@ -3632,15 +3632,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "13201"
+          "Value": "13207"
         },
         {
           "Name": "ETag",
-          "Value": "\"chF7tbl/Cx8Jr3y/DU652NwAF9whbTluBHWttFieawY=\""
+          "Value": "\"CWcbpKdmJbtRnr5Z6+ZKlcZoknp3e6oTQRnwW/UXDDk=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 01 May 2025 20:13:11 GMT"
+          "Value": "Fri, 02 May 2025 19:54:39 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3660,13 +3660,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"x4eyW9hJ6FTRVG7Efs8NDd7x4573ENgSCB8hl8VZn7c=\""
+          "Value": "W/\"tuShUdUle0ccXe+GhK26EFHr5R4uq8U5HBj3rLjuaUI=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "90rqtc0yvw"
+          "Value": "2ti2xyd36p"
         },
         {
           "Name": "label",
@@ -3674,12 +3674,12 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-x4eyW9hJ6FTRVG7Efs8NDd7x4573ENgSCB8hl8VZn7c="
+          "Value": "sha256-tuShUdUle0ccXe+GhK26EFHr5R4uq8U5HBj3rLjuaUI="
         }
       ]
     },
     {
-      "Route": "data/players.90rqtc0yvw.json",
+      "Route": "data/players.2ti2xyd36p.json",
       "AssetFile": "C:\\Code\\C#\\Mvc\\DreamEleven\\DreamEleven.Web\\wwwroot\\data\\players.json",
       "Selectors": [],
       "ResponseHeaders": [
@@ -3689,7 +3689,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "97368"
+          "Value": "97291"
         },
         {
           "Name": "Content-Type",
@@ -3697,11 +3697,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"x4eyW9hJ6FTRVG7Efs8NDd7x4573ENgSCB8hl8VZn7c=\""
+          "Value": "\"tuShUdUle0ccXe+GhK26EFHr5R4uq8U5HBj3rLjuaUI=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 01 May 2025 20:13:11 GMT"
+          "Value": "Fri, 02 May 2025 19:54:39 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3711,7 +3711,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "90rqtc0yvw"
+          "Value": "2ti2xyd36p"
         },
         {
           "Name": "label",
@@ -3719,13 +3719,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-x4eyW9hJ6FTRVG7Efs8NDd7x4573ENgSCB8hl8VZn7c="
+          "Value": "sha256-tuShUdUle0ccXe+GhK26EFHr5R4uq8U5HBj3rLjuaUI="
         }
       ]
     },
     {
-      "Route": "data/players.90rqtc0yvw.json.gz",
-      "AssetFile": "C:\\Code\\C#\\Mvc\\DreamEleven\\DreamEleven.Web\\obj\\Debug\\net9.0\\compressed\\gp21woq0yc-90rqtc0yvw.gz",
+      "Route": "data/players.2ti2xyd36p.json.gz",
+      "AssetFile": "C:\\Code\\C#\\Mvc\\DreamEleven\\DreamEleven.Web\\obj\\Debug\\net9.0\\compressed\\gp21woq0yc-2ti2xyd36p.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3734,7 +3734,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "13201"
+          "Value": "13207"
         },
         {
           "Name": "Content-Type",
@@ -3742,11 +3742,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"chF7tbl/Cx8Jr3y/DU652NwAF9whbTluBHWttFieawY=\""
+          "Value": "\"CWcbpKdmJbtRnr5Z6+ZKlcZoknp3e6oTQRnwW/UXDDk=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 01 May 2025 20:13:11 GMT"
+          "Value": "Fri, 02 May 2025 19:54:39 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3764,7 +3764,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "90rqtc0yvw"
+          "Value": "2ti2xyd36p"
         },
         {
           "Name": "label",
@@ -3772,18 +3772,18 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-chF7tbl/Cx8Jr3y/DU652NwAF9whbTluBHWttFieawY="
+          "Value": "sha256-CWcbpKdmJbtRnr5Z6+ZKlcZoknp3e6oTQRnwW/UXDDk="
         }
       ]
     },
     {
       "Route": "data/players.json",
-      "AssetFile": "C:\\Code\\C#\\Mvc\\DreamEleven\\DreamEleven.Web\\obj\\Debug\\net9.0\\compressed\\gp21woq0yc-90rqtc0yvw.gz",
+      "AssetFile": "C:\\Code\\C#\\Mvc\\DreamEleven\\DreamEleven.Web\\obj\\Debug\\net9.0\\compressed\\gp21woq0yc-2ti2xyd36p.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000075746099"
+          "Quality": "0.000075711690"
         }
       ],
       "ResponseHeaders": [
@@ -3793,15 +3793,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "13201"
+          "Value": "13207"
         },
         {
           "Name": "ETag",
-          "Value": "\"chF7tbl/Cx8Jr3y/DU652NwAF9whbTluBHWttFieawY=\""
+          "Value": "\"CWcbpKdmJbtRnr5Z6+ZKlcZoknp3e6oTQRnwW/UXDDk=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 01 May 2025 20:13:11 GMT"
+          "Value": "Fri, 02 May 2025 19:54:39 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3821,13 +3821,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"x4eyW9hJ6FTRVG7Efs8NDd7x4573ENgSCB8hl8VZn7c=\""
+          "Value": "W/\"tuShUdUle0ccXe+GhK26EFHr5R4uq8U5HBj3rLjuaUI=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-x4eyW9hJ6FTRVG7Efs8NDd7x4573ENgSCB8hl8VZn7c="
+          "Value": "sha256-tuShUdUle0ccXe+GhK26EFHr5R4uq8U5HBj3rLjuaUI="
         }
       ]
     },
@@ -3842,7 +3842,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "97368"
+          "Value": "97291"
         },
         {
           "Name": "Content-Type",
@@ -3850,11 +3850,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"x4eyW9hJ6FTRVG7Efs8NDd7x4573ENgSCB8hl8VZn7c=\""
+          "Value": "\"tuShUdUle0ccXe+GhK26EFHr5R4uq8U5HBj3rLjuaUI=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 01 May 2025 20:13:11 GMT"
+          "Value": "Fri, 02 May 2025 19:54:39 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3864,13 +3864,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-x4eyW9hJ6FTRVG7Efs8NDd7x4573ENgSCB8hl8VZn7c="
+          "Value": "sha256-tuShUdUle0ccXe+GhK26EFHr5R4uq8U5HBj3rLjuaUI="
         }
       ]
     },
     {
       "Route": "data/players.json.gz",
-      "AssetFile": "C:\\Code\\C#\\Mvc\\DreamEleven\\DreamEleven.Web\\obj\\Debug\\net9.0\\compressed\\gp21woq0yc-90rqtc0yvw.gz",
+      "AssetFile": "C:\\Code\\C#\\Mvc\\DreamEleven\\DreamEleven.Web\\obj\\Debug\\net9.0\\compressed\\gp21woq0yc-2ti2xyd36p.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3879,7 +3879,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "13201"
+          "Value": "13207"
         },
         {
           "Name": "Content-Type",
@@ -3887,11 +3887,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"chF7tbl/Cx8Jr3y/DU652NwAF9whbTluBHWttFieawY=\""
+          "Value": "\"CWcbpKdmJbtRnr5Z6+ZKlcZoknp3e6oTQRnwW/UXDDk=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 01 May 2025 20:13:11 GMT"
+          "Value": "Fri, 02 May 2025 19:54:39 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3909,7 +3909,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-chF7tbl/Cx8Jr3y/DU652NwAF9whbTluBHWttFieawY="
+          "Value": "sha256-CWcbpKdmJbtRnr5Z6+ZKlcZoknp3e6oTQRnwW/UXDDk="
         }
       ]
     },

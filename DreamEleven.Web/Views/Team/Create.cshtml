@@ -11,6 +11,7 @@
     <form asp-action="Create" method="post">
         <div class="row">
 
+            <!-- Sol kısım: Takım adı ve diziliş seçimi -->
             <div class="col-md-4 d-flex flex-column" style="margin-top: 55px;">
 
                 <div class="mb-3">
@@ -33,8 +34,12 @@
                 </div>
             </div>
 
+
+            <!-- Sağ kısım: Takım oyuncularının sahada gösterimi -->
             <div class="col-md-8">
                 <h4 class="text-center mb-4 text-light">Takım Oluştur</h4>
+
+                <!-- Futbol sahası alanı -->
                 <div class="football-field position-relative">
 
                     <!-- Orta saha ve ceza sahası çizgileri -->
@@ -44,6 +49,8 @@
                     <div class="midline"></div>
                     <div class="midcircle"></div>
 
+
+                    <!-- Oyuncuların sahadaki yerleri -->
                     <div id="playerPositions" class="position-relative h-100">
                         @for (int i = 0; i < Model.Players.Count; i++)
                         {
@@ -53,6 +60,7 @@
 
                             <div class="player-slot position-absolute" data-position="@slot"
                                 style="transform: translate(-50%, -50%);">
+                                <!-- Oyuncu atanmışsa göster -->
                                 @if (Model.Players[i].PlayerId > 0)
                                 {
                                     var selectedPlayer = filtered.FirstOrDefault(p => p.Id == Model.Players[i].PlayerId);
@@ -68,6 +76,7 @@
                                     }
                                 }
 
+                                <!-- Oyuncu seçme butonu -->
                                 <button type="button"
                                     class="btn btn-light rounded-circle position-select @(Model.Players[i].PlayerId > 0 ? "btn-success" : "")"
                                     data-bs-toggle="modal" data-bs-target="#playerModal@(i)">
@@ -76,11 +85,14 @@
 
                             </div>
 
+
+                            <!-- Oyuncu seçme modalı -->
                             <div class="modal fade" id="playerModal@(i)" tabindex="-1"
                                 aria-labelledby="playerModalLabel@(i)" aria-hidden="true">
                                 <div class="modal-dialog modal-lg">
                                     <div class="modal-content">
 
+                                        <!-- Modal başlığı ve arama -->
                                         <div class="modal-header d-flex align-items-center justify-content-between">
                                             <h5 class="modal-title m-0" id="playerModalLabel@(i)">
                                                 @positionType Oyuncusu Seç
@@ -94,7 +106,7 @@
                                             </div>
                                         </div>
 
-
+                                        <!-- Oyuncu kartları -->
                                         <div class="modal-body">
                                             <div class="row row-cols-1 row-cols-md-2 g-4">
 
@@ -128,6 +140,8 @@
                                                 }
                                             </div>
 
+
+                                            <!-- Seçilen oyuncunun bilgileri formda tutulur -->
                                             <input type="hidden" name="Players[@i].PlayerId" id="playerSelect@(i)"
                                                 value="@Model.Players[i].PlayerId" />
                                             <input type="hidden" name="Players[@i].PositionSlot" value="@slot" />
@@ -145,6 +159,7 @@
                     </div>
                 </div>
 
+                <!-- Takımı kaydet butonu -->
                 <div class="text-center mt-4">
                     <input type="hidden" name="Formation" id="Formation" value="@Model.Formation" />
                     <button type="submit" id="saveTeamBtn" class="btn btn-success"
@@ -313,7 +328,7 @@
                     if (searchTerm === "" || playerName.includes(searchTerm) || playerTeam.includes(searchTerm)) {
                         col.style.display = ''; // Eğer arama kutusu boşsa, tüm oyuncuları göster
                     } else {
-                        col.style.display = 'none'; // Diğer durumda gizle
+                        col.style.display = 'none';
                     }
                 });
             });

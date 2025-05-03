@@ -88,7 +88,7 @@
             height: 67px;
             border-radius: 50%;
             object-fit: cover;
-            background: white;
+            background: rgba(0, 0, 0, 0.250);
         }
 
         /* Oyuncu ismi ve puanı kutusu */

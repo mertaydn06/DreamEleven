@@ -1,16 +1,16 @@
 ﻿<Project>
   <ItemGroup>
-    <StaticWebAssetEndpoint Include="_content/DreamEleven.Web/css/field.bcxiugaby8.css">
+    <StaticWebAssetEndpoint Include="_content/DreamEleven.Web/css/field.cijijaqz5u.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\field.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"bcxiugaby8"},{"Name":"integrity","Value":"sha256-tQgSaEM/hdaZYyXbsCzBTbxazvFt3wVnACOzI4yulE4="},{"Name":"label","Value":"_content/DreamEleven.Web/css/field.css"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"3663"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022tQgSaEM/hdaZYyXbsCzBTbxazvFt3wVnACOzI4yulE4=\u0022"},{"Name":"Last-Modified","Value":"Thu, 01 May 2025 16:35:11 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"cijijaqz5u"},{"Name":"integrity","Value":"sha256-RO6ltRUrx7BhU07Jw8VPNHXh0oYsdgUcpHHMVYExbNM="},{"Name":"label","Value":"_content/DreamEleven.Web/css/field.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"3678"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022RO6ltRUrx7BhU07Jw8VPNHXh0oYsdgUcpHHMVYExbNM=\u0022"},{"Name":"Last-Modified","Value":"Thu, 01 May 2025 21:25:48 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/DreamEleven.Web/css/field.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\field.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-tQgSaEM/hdaZYyXbsCzBTbxazvFt3wVnACOzI4yulE4="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"3663"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022tQgSaEM/hdaZYyXbsCzBTbxazvFt3wVnACOzI4yulE4=\u0022"},{"Name":"Last-Modified","Value":"Thu, 01 May 2025 16:35:11 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-RO6ltRUrx7BhU07Jw8VPNHXh0oYsdgUcpHHMVYExbNM="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"3678"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022RO6ltRUrx7BhU07Jw8VPNHXh0oYsdgUcpHHMVYExbNM=\u0022"},{"Name":"Last-Modified","Value":"Thu, 01 May 2025 21:25:48 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/DreamEleven.Web/css/site.b0scaljdpf.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\site.css'))</AssetFile>
@@ -36,17 +36,17 @@
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-1IQMdStygVH6wsdnXzwXvqI7wBeDXno2uk2PIun\u002B560="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1729"},{"Name":"Content-Type","Value":"application/octet-stream"},{"Name":"ETag","Value":"\u00221IQMdStygVH6wsdnXzwXvqI7wBeDXno2uk2PIun\u002B560=\u0022"},{"Name":"Last-Modified","Value":"Thu, 01 May 2025 13:25:38 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/DreamEleven.Web/data/players.90rqtc0yvw.json">
+    <StaticWebAssetEndpoint Include="_content/DreamEleven.Web/data/players.2ti2xyd36p.json">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\data\players.json'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"90rqtc0yvw"},{"Name":"integrity","Value":"sha256-x4eyW9hJ6FTRVG7Efs8NDd7x4573ENgSCB8hl8VZn7c="},{"Name":"label","Value":"_content/DreamEleven.Web/data/players.json"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"97368"},{"Name":"Content-Type","Value":"application/json"},{"Name":"ETag","Value":"\u0022x4eyW9hJ6FTRVG7Efs8NDd7x4573ENgSCB8hl8VZn7c=\u0022"},{"Name":"Last-Modified","Value":"Thu, 01 May 2025 20:13:11 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"2ti2xyd36p"},{"Name":"integrity","Value":"sha256-tuShUdUle0ccXe\u002BGhK26EFHr5R4uq8U5HBj3rLjuaUI="},{"Name":"label","Value":"_content/DreamEleven.Web/data/players.json"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"97291"},{"Name":"Content-Type","Value":"application/json"},{"Name":"ETag","Value":"\u0022tuShUdUle0ccXe\u002BGhK26EFHr5R4uq8U5HBj3rLjuaUI=\u0022"},{"Name":"Last-Modified","Value":"Fri, 02 May 2025 19:54:39 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/DreamEleven.Web/data/players.json">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\data\players.json'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-x4eyW9hJ6FTRVG7Efs8NDd7x4573ENgSCB8hl8VZn7c="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"97368"},{"Name":"Content-Type","Value":"application/json"},{"Name":"ETag","Value":"\u0022x4eyW9hJ6FTRVG7Efs8NDd7x4573ENgSCB8hl8VZn7c=\u0022"},{"Name":"Last-Modified","Value":"Thu, 01 May 2025 20:13:11 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-tuShUdUle0ccXe\u002BGhK26EFHr5R4uq8U5HBj3rLjuaUI="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"97291"},{"Name":"Content-Type","Value":"application/json"},{"Name":"ETag","Value":"\u0022tuShUdUle0ccXe\u002BGhK26EFHr5R4uq8U5HBj3rLjuaUI=\u0022"},{"Name":"Last-Modified","Value":"Fri, 02 May 2025 19:54:39 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/DreamEleven.Web/DreamEleven.Web.bundle.scp.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\DreamEleven.Web.t754m7p81e.bundle.scp.css'))</AssetFile>

@@ -77,29 +77,11 @@
                     var team = group.Key;
 
                     <div class="card mb-4">
-                        <div class="card-header d-flex justify-content-between align-items-start">
 
-                            <!-- Takımın Adı ve detayları -->
-                            <div class="d-flex flex-column justify-content-center" style="margin-top: 5px;">
-                                <a href="/team/details/@team.Id" class="text-decoration-none fw-bold"
-                                    style="font-size: 22px;">@team.TeamName</a>
-                            </div>
-
-                            <div class="text-end">
-                                <div class="d-flex justify-content-end align-items-center mt-1">
-                                    <a href="/profile/@(ViewBag.TeamOwners[team.Id])"
-                                        class="text-decoration-none d-flex align-items-center">
-                                        <img src="@(string.IsNullOrEmpty(ViewBag.TeamOwnerImages[team.Id]) ? "/images/users/User.jpg" : ViewBag.TeamOwnerImages[team.Id])"
-                                            alt="Profil" class="rounded-circle"
-                                            style="width: 15px; height: 15px; object-fit: cover;">
-
-                                        <small class="ms-1 fw-semibold text-light">@ViewBag.TeamOwners[team.Id]</small>
-                                    </a>
-                                </div>
-
-                                <small class="d-block">@team.CreatedAt.ToShortDateString()</small>
-
-                            </div>
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <a href="/team/details/@team.Id" class="text-decoration-none fw-bold"
+                                style="font-size: 20px;">@team.TeamName</a>
+                            <span>@team.CreatedAt.ToShortDateString()</span>
                         </div>
 
 
@@ -135,6 +117,23 @@
                                     }
                                 </div>
                             </div>
+
+                            <!-- Takımı oluşturan kullanıcı -->
+                            <div class="d-flex justify-content-end align-items-center"
+                                style="margin-bottom: -15px; padding: 12px 4px;">
+
+                                <a href="/profile/@ViewBag.TeamOwners[team.Id]"
+                                    class="d-flex align-items-center text-decoration-none" style="font-size: 13px;">
+
+                                    <img src="@(string.IsNullOrEmpty(ViewBag.TeamOwnerImages[team.Id]) ? "/images/users/User.jpg" : ViewBag.TeamOwnerImages[team.Id])"
+                                        alt="@ViewBag.TeamOwners[team.Id]" class="rounded-circle"
+                                        style="width: 22px; height: 22px; object-fit: cover; margin-right: 5px;">
+
+                                    <span class="fw-semibold">@ViewBag.TeamOwners[team.Id]</span>
+                                </a>
+
+                            </div>
+
                         </div>
                     </div>
                 }

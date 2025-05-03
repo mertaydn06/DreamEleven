@@ -53,7 +53,7 @@ namespace DreamEleven.Web
                 }
             }
 
-            // Normal kullanıcı
+            // Kullanıcı
             const string username = "mertaydn";
             const string userEmail = "user@gmail.com";
             const string userPassword = "User123*";
@@ -81,21 +81,25 @@ namespace DreamEleven.Web
                 }
             }
 
-            // Oyuncular JSON'dan yüklenecek
-            string filePath = Path.Combine(env.WebRootPath, "data", "players.json");
-            if (File.Exists(filePath))
-            {
-                string json = await File.ReadAllTextAsync(filePath);
-                var players = JsonSerializer.Deserialize<List<Player>>(json, new JsonSerializerOptions
-                {
-                    PropertyNameCaseInsensitive = true,
-                    Converters = { new PositionTypeConverter() } // Enum için konverter ekledik
-                });
 
-                if (players != null)
+            // Oyuncular JSON'dan yüklenecek
+            if (!context.Players.Any())
+            {
+                string filePath = Path.Combine(env.WebRootPath, "data", "players.json");
+                if (File.Exists(filePath))
                 {
-                    context.Players.AddRange(players);
-                    await context.SaveChangesAsync();
+                    string json = await File.ReadAllTextAsync(filePath);
+                    var players = JsonSerializer.Deserialize<List<Player>>(json, new JsonSerializerOptions
+                    {
+                        PropertyNameCaseInsensitive = true,
+                        Converters = { new PositionTypeConverter() }
+                    });
+
+                    if (players != null)
+                    {
+                        context.Players.AddRange(players);
+                        await context.SaveChangesAsync();
+                    }
                 }
             }
         }

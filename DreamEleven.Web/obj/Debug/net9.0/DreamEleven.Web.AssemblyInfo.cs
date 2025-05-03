@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DreamEleven.Web")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4af6ee379aeb13877e2006425acf130b0b905eee")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+99f38a4833285559630126945ebe93c59c7cad88")]
 [assembly: System.Reflection.AssemblyProductAttribute("DreamEleven.Web")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DreamEleven.Web")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

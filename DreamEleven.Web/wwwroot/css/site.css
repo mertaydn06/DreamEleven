@@ -200,3 +200,8 @@ body.modal-open {
 .btn-close {
   filter: invert(1) grayscale(100%) brightness(200%);
 }
+.page-item a {
+  padding: 0.5rem 1rem; /* iç boşluk */
+  min-width: auto;      /* genişlik içeriğe göre */
+  white-space: nowrap;  /* metnin alt satıra kaymasını engeller */
+}
