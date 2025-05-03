@@ -4,8 +4,8 @@ namespace DreamEleven.Entities
     {
         public int Id { get; set; }
 
-        public int TeamId { get; set; }  // Takım ID'si
-        public int PlayerId { get; set; }  // Oyuncu ID'si
+        public int TeamId { get; set; }
+        public int PlayerId { get; set; }
 
         // Navigation Properties
         public Team Team { get; set; } = null!;  // Takım bilgisi

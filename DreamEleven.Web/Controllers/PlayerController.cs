@@ -7,37 +7,40 @@ namespace DreamEleven.Web.Controllers
 {
     public class PlayerController : Controller
     {
-        private readonly IPlayerService _playerService;
-        private readonly UserManager<User> _userManager;
+        private readonly UserManager<User> _userManager;    // Kullanıcı yönetimi için UserManager servisi
+        private readonly IPlayerService _playerService;     // Oyuncu işlemleri için IPlayerService
 
-        public PlayerController(IPlayerService playerService, UserManager<User> userManager)
+        public PlayerController(UserManager<User> userManager, IPlayerService playerService)
         {
-            _playerService = playerService;
-            _userManager = userManager;
+            _userManager = userManager;        // UserManager servisi sınıfa atanır
+            _playerService = playerService;    // Oyuncu servisi sınıfa atanır
         }
 
 
-        [Route("player/{slug}")]
+        [Route("player/{slug}")]  // URL'nin slug kısmına göre oyuncu detaylarını gösterir.
         public async Task<IActionResult> PlayerDetails(string slug, int page = 1)
         {
             if (string.IsNullOrEmpty(slug))
                 return NotFound();
 
-            var player = await _playerService.GetBySlugAsync(slug);
+            var player = await _playerService.GetBySlugAsync(slug);  // Sluga göre oyuncu verisi alınır.
+
             if (player == null)
                 return NotFound();
 
-            var sessionKey = $"RandomTeamOrder_{slug}";
 
-            var teamPlayers = player.TeamPlayers?.ToList() ?? new List<DreamEleven.Entities.TeamPlayer>();
+            var sessionKey = $"RandomTeamOrder_{slug}";  // Her oyuncuya özel session anahtarı oluşturulur.
+
+            var teamPlayers = player.TeamPlayers?.ToList() ?? new List<DreamEleven.Entities.TeamPlayer>();  // Oyuncunun takımlarına ait oyuncular alınır.
 
             var allTeams = teamPlayers
-                .Select(tp => tp.Team)
-                .DistinctBy(t => t.Id)
+                .Select(tp => tp.Team)   // Takımların listesi alınır.
+                .DistinctBy(t => t.Id)   // Aynı takımların tekrarını engeller.
                 .ToList();
 
-            // Sıralı ID listesi Session'da var mı kontrol ediyoruz
-            var sessionData = HttpContext.Session.GetString(sessionKey);
+
+            var sessionData = HttpContext.Session.GetString(sessionKey);  // Session'da veriler var mı kontrol edilir.
+
             List<int> shuffledIds;
 
             if (string.IsNullOrEmpty(sessionData))
@@ -53,10 +56,11 @@ namespace DreamEleven.Web.Controllers
                 shuffledIds = System.Text.Json.JsonSerializer.Deserialize<List<int>>(sessionData)!;
             }
 
-            // Şu anda elimizde rastgele sıralanmış ID'ler var, bu ID'lere göre sıralıyoruz
             allTeams = shuffledIds
-                .Select(id => allTeams.First(t => t.Id == id))
+                .Select(id => allTeams.First(t => t.Id == id))  // ID'lere göre takımlar sıralanır.
                 .ToList();
+
+
 
             var pageSize = 3;
             var pagedTeams = allTeams
@@ -68,12 +72,15 @@ namespace DreamEleven.Web.Controllers
                 .Where(tp => pagedTeams.Any(t => t.Id == tp.TeamId))
                 .ToList();
 
-            var teamOwners = new Dictionary<int, string>();
-            var teamOwnerImages = new Dictionary<int, string>();
+
+
+            var teamOwners = new Dictionary<int, string>();       // Takım sahiplerinin bilgilerini tutar.
+            var teamOwnerImages = new Dictionary<int, string>();  // Takım sahiplerinin resimlerini tutar.
 
             foreach (var team in allTeams)
             {
                 var user = await _userManager.FindByIdAsync(team.UserId);
+
                 if (user != null)
                 {
                     teamOwners[team.Id] = user.UserName!;
@@ -86,26 +93,31 @@ namespace DreamEleven.Web.Controllers
                 }
             }
 
+
+            // Veritabanından alınan ve oturumdan getirilen veriler ViewBag ile view'a aktarılır.
+            ViewBag.Player = player;
             ViewBag.AllTeamsForSidebar = allTeams;
+
             ViewBag.TeamOwners = teamOwners;
             ViewBag.TeamOwnerImages = teamOwnerImages;
+
             ViewBag.CurrentPage = page;
             ViewBag.TotalPages = (int)Math.Ceiling((double)allTeams.Count / pageSize);
-            ViewBag.Player = player;
 
             return View(pagedTeamPlayers);
         }
 
 
         [HttpGet]
-        [Route("Player/SearchPlayers")]
+        [Route("Player/SearchPlayers")]  // Oyuncu arama için bir route tanımlanır.
         public async Task<IActionResult> SearchPlayers(string query)
         {
             if (string.IsNullOrEmpty(query))
                 return Json(new List<object>());
 
-            var players = await _playerService.GetPlayersByNameAsync(query);
+            var players = await _playerService.GetPlayersByNameAsync(query);  // Arama metnine göre oyuncular getirilir.
 
+            // Arama sonuçlarını JSON formatında döndürür.
             var result = players.Select(p => new
             {
                 name = p.Name,
@@ -113,7 +125,7 @@ namespace DreamEleven.Web.Controllers
                 imageUrl = p.ImageUrl
             });
 
-            return Json(result);
+            return Json(result);  // JSON formatında sonuç döndürülür.
         }
     }
 }

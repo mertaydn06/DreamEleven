@@ -1,23 +1,18 @@
-using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using DreamEleven.Web.Models;
-using System.Reflection.Metadata.Ecma335;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using DreamEleven.Identity;
 using Microsoft.AspNetCore.Identity;
 
 namespace DreamEleven.Web.Controllers
 {
-
     public class AccountController : Controller
     {
-        private readonly UserManager<User> _userManager;
-        private readonly SignInManager<User> _signInManager;
+        private readonly UserManager<User> _userManager;      // Kullanıcı yönetimi için UserManager servisi
+        private readonly SignInManager<User> _signInManager;  // Kullanıcı oturum açma işlemleri için SignInManager servisi
 
         public AccountController(UserManager<User> userManager, SignInManager<User> signInManager)
         {
-            _userManager = userManager;
-            _signInManager = signInManager;
+            _userManager = userManager;       // UserManager servisi sınıfa atanır
+            _signInManager = signInManager;   // SignInManager servisi sınıfa atanır
         }
 
 
@@ -27,24 +22,24 @@ namespace DreamEleven.Web.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Register(RegisterViewModel model)  // Formdan gelen yeni kayıt VM burada karşılanır.
+        public async Task<IActionResult> Register(RegisterViewModel model)  // Formdan gelen yeni kayıt VM ile burada karşılanır.
         {
             if (!ModelState.IsValid)
                 return View(model);
 
-            var user = new User
+            var user = new User  // Yeni bir User nesnesi oluşturduk.
             {
-                UserName = model.UserName,
-                Email = model.Email,
+                UserName = model.UserName,        // Formdan gelen kullanıcı adı
+                Email = model.Email,              // Formdan gelen e-posta adresi
                 CreatedAt = DateTime.UtcNow,
-                Image = "/images/users/User.jpg"
+                Image = "/images/users/User.jpg"  // Varsayılan profil resmi
             };
 
-            IdentityResult result = await _userManager.CreateAsync(user, model.Password);  // Şifreyi hashleyerek (PasswordHasher) veritabanına kaydeder.
+            IdentityResult result = await _userManager.CreateAsync(user, model.Password);  // Şifreyi hashleyerek (PasswordHasher) veritabanına kaydettik.
 
-            if (result.Succeeded)
+            if (result.Succeeded)  // Eğer kullanıcı başarıyla oluşturulmuşsa
             {
-                await _userManager.AddToRoleAsync(user, "User");
+                await _userManager.AddToRoleAsync(user, "User");  // Kullanıcıya 'User' rolü atanır.
                 await _signInManager.SignInAsync(user, isPersistent: false);
 
                 return RedirectToAction("Index", "Home");
@@ -59,7 +54,8 @@ namespace DreamEleven.Web.Controllers
 
         public IActionResult Login(string? returnUrl = null)
         {
-            ViewBag.ReturnUrl = returnUrl;
+            ViewBag.ReturnUrl = returnUrl;  // returnUrl'i ViewBag ile view'a gönderir (giriş başarılı olduktan sonra bu URL'ye yönlendirme için).
+
             return View();
         }
 
@@ -77,11 +73,11 @@ namespace DreamEleven.Web.Controllers
                 return View(model);
             }
 
-            var result = await _signInManager.PasswordSignInAsync(user, model.Password, model.RememberMe, false);
+            var result = await _signInManager.PasswordSignInAsync(user, model.Password, model.RememberMe, false);  // Şifreyi kontrol ederek giriş işlemini yapar.
 
             if (result.Succeeded)
             {
-                return Redirect(returnUrl ?? "/");  // Giriş başarılı ise Login'den gelinen sayfaya gider yoksa anasayfaya gider.
+                return Redirect(returnUrl ?? "/");  // Eğer returnUrl varsa, oraya yönlendirir; yoksa ana sayfaya gider.
             }
 
             ModelState.AddModelError("", "Giriş başarısız.");

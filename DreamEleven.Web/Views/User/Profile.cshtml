@@ -138,32 +138,35 @@
 
             <!-- Pagination işlemi -->
             <div class="d-flex justify-content-center mt-4" style="width: 100%;">
-                <div style="width: 100%; display: flex; justify-content: center;">
-                    <nav>
-                        <ul class="pagination">
-                            @if (ViewBag.CurrentPage > 1)
-                            {
-                                <li class="page-item">
-                                    <a class="page-link" href="?page=@(ViewBag.CurrentPage - 1)">« Önceki</a>
-                                </li>
-                            }
+                <nav>
+                    <ul class="pagination m-0 p-0">
+                        @if (ViewBag.CurrentPage > 1)
+                        {
+                            <li class="page-item">
+                                <a class="page-link" href="?page=@(ViewBag.CurrentPage - 1)">« Önceki</a>
+                            </li>
+                        }
 
-                            @for (int i = 1; i <= ViewBag.TotalPages; i++)
-                            {
-                                <li class="page-item @(i == ViewBag.CurrentPage ? "active" : "")">
-                                    <a class="page-link" href="?page=@i">@i</a>
-                                </li>
-                            }
+                        @{
+                            int startPage = Math.Max(1, ViewBag.CurrentPage - 3); // Geçerli sayfadan 3 sayfa önce başla
+                            int endPage = Math.Min(ViewBag.TotalPages, ViewBag.CurrentPage + 3);
+                        }
 
-                            @if (ViewBag.CurrentPage < ViewBag.TotalPages)
-                            {
-                                <li class="page-item">
-                                    <a class="page-link" href="?page=@(ViewBag.CurrentPage + 1)">Sonraki »</a>
-                                </li>
-                            }
-                        </ul>
-                    </nav>
-                </div>
+                        @for (int i = startPage; i <= endPage; i++)
+                        {
+                            <li class="page-item @(i == ViewBag.CurrentPage ? "active" : "")">
+                                <a class="page-link" href="?page=@i">@i</a>
+                            </li>
+                        }
+
+                        @if (ViewBag.CurrentPage < ViewBag.TotalPages)
+                        {
+                            <li class="page-item">
+                                <a class="page-link" href="?page=@(ViewBag.CurrentPage + 1)">Sonraki »</a>
+                            </li>
+                        }
+                    </ul>
+                </nav>
             </div>
 
         </div>

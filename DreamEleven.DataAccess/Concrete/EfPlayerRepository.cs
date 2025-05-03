@@ -10,7 +10,7 @@ namespace DreamEleven.DataAccess.Concrete
 
         public EfPlayerRepository(DreamElevenDbContext context)
         {
-            _context = context;
+            _context = context;  // Dependency Injection (DI) kullanılarak DbContext enjekte ediliyor
         }
 
 
@@ -27,25 +27,21 @@ namespace DreamEleven.DataAccess.Concrete
         public async Task<Player?> GetBySlugAsync(string slug)
         {
             return await _context.Players
-                .Include(p => p.TeamPlayers)                    // Oyuncunun takım bağlantıları
-                .ThenInclude(tp => tp.Team)                     // Her bağlantının takımı
-                .ThenInclude(t => t.TeamPlayers)
-                .ThenInclude(tp => tp.Player)
-                .FirstOrDefaultAsync(p => p.Slug == slug);      // Slug eşleşen ilk oyuncuyu getir
-        }
+                .Include(p => p.TeamPlayers)                     // Oyuncunun takım bağlantıları
+                .ThenInclude(tp => tp.Team)                      // Her bağlantının takımı
+                .ThenInclude(t => t.TeamPlayers)                 // Takımın oyuncuları
+                .ThenInclude(tp => tp.Player)                    // Takım oyuncularının oyuncuları
+                .FirstOrDefaultAsync(p => p.Slug == slug);       // Slug eşleşen ilk oyuncuyu getir
 
-        public async Task AddPlayerAsync(Player player)
-        {
-            _context.Players.Add(player);
-            await _context.SaveChangesAsync();
         }
 
         public async Task<List<Player>> GetPlayersByNameAsync(string query)
         {
-            query = query.ToLower();
+            query = query.ToLower();  // Arama sorgusunu küçük harfe çevirir
+
             return await _context.Players
-                .Where(p => p.Name.ToLower().Contains(query))
-                .ToListAsync();
+                .Where(p => p.Name.ToLower().Contains(query))    // Adında sorgu ile eşleşen oyuncuları filtreler
+                .ToListAsync();                                  // Sonuçları asenkron olarak listeye dönüştürür
         }
     }
 }

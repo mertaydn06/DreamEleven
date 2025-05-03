@@ -76,10 +76,11 @@
                 </div>
             }
 
+
             <!-- Pagination işlemi -->
             <div class="d-flex justify-content-center mt-4" style="width: 100%;">
                 <nav>
-                    <ul class="pagination">
+                    <ul class="pagination m-0 p-0">
                         @if (ViewBag.CurrentPage > 1)
                         {
                             <li class="page-item">
@@ -87,7 +88,12 @@
                             </li>
                         }
 
-                        @for (int i = 1; i <= ViewBag.TotalPages; i++)
+                        @{
+                            int startPage = Math.Max(1, ViewBag.CurrentPage - 3); // Geçerli sayfadan 3 sayfa önce başla
+                            int endPage = Math.Min(ViewBag.TotalPages, ViewBag.CurrentPage + 3);
+                        }
+
+                        @for (int i = startPage; i <= endPage; i++)
                         {
                             <li class="page-item @(i == ViewBag.CurrentPage ? "active" : "")">
                                 <a class="page-link" href="?page=@i">@i</a>
@@ -105,6 +111,7 @@
             </div>
 
         </div>
+
 
         <!-- Sağ: Popüler Oyuncular ve Takımlar -->
         <div class="col-md-4" style="margin-top: 45px;">

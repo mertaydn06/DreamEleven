@@ -10,7 +10,7 @@ namespace DreamEleven.DataAccess.Concrete
 
         public EfTeamRepository(DreamElevenDbContext context)
         {
-            _context = context;
+            _context = context;  // Dependency Injection (DI) kullanılarak DbContext enjekte ediliyor
         }
 
 

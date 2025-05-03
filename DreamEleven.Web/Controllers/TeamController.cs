@@ -11,34 +11,35 @@ namespace DreamEleven.Web.Controllers
 {
     public class TeamController : Controller
     {
-        private readonly ITeamService _teamService;
-        private readonly IPlayerService _playerService;
-        private readonly UserManager<User> _userManager;
+        private readonly UserManager<User> _userManager;    // Kullanıcı yönetimi için UserManager servisi
+        private readonly ITeamService _teamService;         // Takım işlemleri için ITeamService
+        private readonly IPlayerService _playerService;     // Oyuncu işlemleri için IPlayerService
 
-        public TeamController(ITeamService teamService, IPlayerService playerService, UserManager<User> userManager)
+        public TeamController(UserManager<User> userManager, ITeamService teamService, IPlayerService playerService)
         {
-            _teamService = teamService;           // Takım işlemleri servisi
-            _playerService = playerService;       // Oyuncu işlemleri servisi (listeleme vs.)
-            _userManager = userManager;
+            _userManager = userManager;        // UserManager servisi sınıfa atanır
+            _teamService = teamService;        // Takım servisi sınıfa atanır
+            _playerService = playerService;    // Oyuncu servisi sınıfa atanır
         }
 
 
         [Authorize]
         public async Task<IActionResult> Create(string formation = "4-4-2")
         {
-            // Eğer URL'den formasyon parametresi geldiyse onu kullan, yoksa varsayılan "4-4-2" kullan
+            // Eğer URL'den formasyon parametresi geldiyse onu kullan, yoksa varsayılan "4-4-2" kullanır.
             var defaultFormation = formation ?? "4-4-2";
 
             var model = new CreateTeamViewModel
             {
                 Formation = defaultFormation,
-                Players = FormationHelper.GetSlots(defaultFormation)
-                    .Select(slot => new TeamPlayerInput { PositionSlot = slot })
-                    .ToList()
+                Players = FormationHelper.GetSlots(defaultFormation)      // Formasyona göre pozisyonlar alınır.
+            .Select(slot => new TeamPlayerInput { PositionSlot = slot })  // Her pozisyon için giriş modeli oluşturulur.
+            .ToList()
             };
 
-            ViewBag.Formations = FormationHelper.AvailableFormations;
-            ViewBag.AllPlayers = await _playerService.GetAllPlayersAsync();
+            // Formasyonlar ve oyuncular ViewBag'e atanır
+            ViewBag.Formations = FormationHelper.AvailableFormations;  // Mevcut formasyonlar
+            ViewBag.AllPlayers = await _playerService.GetAllPlayersAsync();  // Tüm oyuncular
 
             return View(model);
         }
@@ -50,8 +51,10 @@ namespace DreamEleven.Web.Controllers
             if (!ModelState.IsValid || model.Players.Any(p => p.PlayerId <= 0))
             {
                 ModelState.AddModelError("", "Tüm pozisyonlara oyuncu seçmelisiniz.");
+
                 ViewBag.Formations = FormationHelper.AvailableFormations;
                 ViewBag.AllPlayers = await _playerService.GetAllPlayersAsync();
+
                 return View(model);
             }
 
@@ -78,7 +81,8 @@ namespace DreamEleven.Web.Controllers
 
         public async Task<IActionResult> Details(int id)
         {
-            var team = await _teamService.GetTeamByIdAsync(id);
+            var team = await _teamService.GetTeamByIdAsync(id);  // Takım bilgileri alınır.
+
             if (team == null) return NotFound();
 
             var commentVMs = new List<CommentViewModel>();
@@ -98,9 +102,8 @@ namespace DreamEleven.Web.Controllers
                 });
             }
 
-            var owner = await _userManager.FindByIdAsync(team.UserId);
+            var owner = await _userManager.FindByIdAsync(team.UserId);  // Takım sahibinin bilgileri alınır.
             ViewBag.TeamOwner = owner;
-
 
             ViewBag.Comments = commentVMs;
             return View(team);
@@ -123,8 +126,7 @@ namespace DreamEleven.Web.Controllers
 
             await _teamService.DeleteTeamAsync(teamId);
 
-            return Redirect($"/profile/{User.Identity!.Name}");
+            return Redirect($"/profile/{User.Identity!.Name}");  // Profil sayfasına yönlendirilir.
         }
-
     }
 }

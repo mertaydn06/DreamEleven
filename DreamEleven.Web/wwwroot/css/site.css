@@ -125,7 +125,6 @@ body {
   align-items: center;
   justify-content: center;
   min-height: calc(100vh - 80px);
-  /* footer boşluğu için */
   padding-top: 60px;
   padding-bottom: 60px;
 }
@@ -143,11 +142,8 @@ body {
 
 select.form-select {
   background-color: #222;
-  /* Koyu bir gri */
   color: #fff;
-  /* Yazılar beyaz olsun */
   border: 1px solid #444;
-  /* Kenar çizgisi hafif belirgin */
 }
 
 select.form-select:focus {
@@ -155,18 +151,15 @@ select.form-select:focus {
   color: #fff;
   border-color: #555;
   box-shadow: 0 0 5px rgba(81, 203, 238, 1);
-  /* İstersen kaldırırız */
 }
 
 option {
   background-color: #222;
-  /* Dropdown açıldığında da koyu */
   color: #fff;
 }
 
 input.form-control {
   background-color: #222;
-  /* Aynı koyu renk */
   color: #fff;
   border: 1px solid #444;
 }
@@ -200,8 +193,9 @@ body.modal-open {
 .btn-close {
   filter: invert(1) grayscale(100%) brightness(200%);
 }
+
 .page-item a {
-  padding: 0.5rem 1rem; /* iç boşluk */
-  min-width: auto;      /* genişlik içeriğe göre */
-  white-space: nowrap;  /* metnin alt satıra kaymasını engeller */
+  padding: 0.5rem 1rem;
+  min-width: auto;
+  white-space: nowrap;
 }

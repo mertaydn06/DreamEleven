@@ -9,7 +9,7 @@ namespace DreamEleven.Entities
         public string ImageUrl { get; set; } = string.Empty;
         public string Slug { get; set; } = string.Empty;
 
-        public PositionType Position { get; set; }  // Oyuncunun mevkisi
+        public PositionType Position { get; set; }
 
         public enum PositionType
         {

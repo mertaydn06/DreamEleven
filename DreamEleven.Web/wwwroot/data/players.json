@@ -376,6 +376,14 @@
         "Slug": "loftus-cheek"
     },
     {
+        "Name": "Çağlar Söyüncü",
+        "Overall": 78,
+        "RealTeam": "Fenerbahçe",
+        "Position": "Defender",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/320141-1728391611.JPG?lm=1",
+        "Slug": "caglar-soyuncu"
+    },
+    {
         "Name": "Aymeric Laporte",
         "Overall": 84,
         "RealTeam": "Al-Nassr",
@@ -446,14 +454,6 @@
         "Position": "Defender",
         "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/239743-1669189009.jpg?lm=1",
         "Slug": "przemyslaw-frankowski"
-    },
-    {
-        "Name": "Çağlar Söyüncü",
-        "Overall": 78,
-        "RealTeam": "Fenerbahçe",
-        "Position": "Defender",
-        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/320141-1728391611.JPG?lm=1",
-        "Slug": "caglar-soyuncu"
     },
     {
         "Name": "Felix Uduokhai",
@@ -1528,6 +1528,14 @@
         "Slug": "lewis-ferguson"
     },
     {
+        "Name": "Fred",
+        "Overall": 81,
+        "RealTeam": "Fenerbahçe",
+        "Position": "Midfielder",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/191614-1728391871.JPG?lm=1",
+        "Slug": "fred"
+    },
+    {
         "Name": "Yunus Musah",
         "Overall": 81,
         "RealTeam": "AC Milan",
@@ -1638,14 +1646,6 @@
         "Position": "Midfielder",
         "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/410425-1665607355.jpg?lm=1",
         "Slug": "yves-bissouma"
-    },
-    {
-        "Name": "Fred",
-        "Overall": 81,
-        "RealTeam": "Fenerbahçe",
-        "Position": "Midfielder",
-        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/191614-1728391871.JPG?lm=1",
-        "Slug": "fred"
     },
     {
         "Name": "Talisca",
@@ -2448,6 +2448,22 @@
         "Slug": "moussa-diaby"
     },
     {
+        "Name": "Youssef En-Nesyri",
+        "Overall": 81,
+        "RealTeam": "Fenerbahçe",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/433049-1728392433.JPG?lm=1",
+        "Slug": "youssef-en-nesyri"
+    },
+    {
+        "Name": "Barış Alper Yılmaz",
+        "Overall": 80,
+        "RealTeam": "Galatasaray",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/541537-1671104025.png?lm=1",
+        "Slug": "baris-alper-yilmaz"
+    },
+    {
         "Name": "Kingsley Coman",
         "Overall": 85,
         "RealTeam": "Bayern Munich",
@@ -2510,118 +2526,6 @@
         "Position": "Forward",
         "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/159471-1712776387.jpg?lm=1",
         "Slug": "serge-gnabry"
-    },
-    {
-        "Name": "Heung-min Son",
-        "Overall": 89,
-        "RealTeam": "Tottenham Hotspur",
-        "Position": "Forward",
-        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/91845-1669336455.jpg?lm=1",
-        "Slug": "heung-min-son"
-    },
-    {
-        "Name": "Jadon Sancho",
-        "Overall": 84,
-        "RealTeam": "Manchester United",
-        "Position": "Forward",
-        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/401173-1688564217.jpg?lm=1",
-        "Slug": "jadon-sancho"
-    },
-    {
-        "Name": "Jean-Philippe Mateta",
-        "Overall": 78,
-        "RealTeam": "Crystal Palace",
-        "Position": "Forward",
-        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/420002-1723202650.jpg?lm=1",
-        "Slug": "jean-philippe-mateta"
-    },
-    {
-        "Name": "Kolo Muani",
-        "Overall": 85,
-        "RealTeam": "Juventus",
-        "Position": "Forward",
-        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/487969-1718697120.jpg?lm=1",
-        "Slug": "kolo-muani"
-    },
-    {
-        "Name": "Mykhaylo Mudryk",
-        "Overall": 81,
-        "RealTeam": "Chelsea",
-        "Position": "Forward",
-        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/537860-1732822624.jpg?lm=1",
-        "Slug": "mykhaylo-mudryk"
-    },
-    {
-        "Name": "Richarlison",
-        "Overall": 82,
-        "RealTeam": "Tottenham Hotspur",
-        "Position": "Forward",
-        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/378710-1665608231.jpg?lm=1",
-        "Slug": "richarlison"
-    },
-    {
-        "Name": "Alexander Sörloth",
-        "Overall": 84,
-        "RealTeam": "Atletico Madrid",
-        "Position": "Forward",
-        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/238407-1716403969.jpg?lm=1",
-        "Slug": "alexander-sorloth"
-    },
-    {
-        "Name": "Romelu Lukaku",
-        "Overall": 85,
-        "RealTeam": "Napoli",
-        "Position": "Forward",
-        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/96341-1661780981.jpg?lm=1",
-        "Slug": "romelu-lukaku"
-    },
-    {
-        "Name": "Antoine Griezmann",
-        "Overall": 86,
-        "RealTeam": "Atletico Madrid",
-        "Position": "Forward",
-        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/125781-1719928503.jpg?lm=1",
-        "Slug": "antoine-griezmann"
-    },
-    {
-        "Name": "Paulo Dybala",
-        "Overall": 86,
-        "RealTeam": "AS Roma",
-        "Position": "Forward",
-        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/206050-1725530843.jpg?lm=1",
-        "Slug": "paulo-dybala"
-    },
-    {
-        "Name": "Youssef En-Nesyri",
-        "Overall": 81,
-        "RealTeam": "Fenerbahçe",
-        "Position": "Forward",
-        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/433049-1728392433.JPG?lm=1",
-        "Slug": "youssef-en-nesyri"
-    },
-    {
-        "Name": "Barış Alper Yılmaz",
-        "Overall": 80,
-        "RealTeam": "Galatasaray",
-        "Position": "Forward",
-        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/541537-1671104025.png?lm=1",
-        "Slug": "baris-alper-yilmaz"
-    },
-    {
-        "Name": "Aleksandar Mitrović",
-        "Overall": 83,
-        "RealTeam": "Al Hilal",
-        "Position": "Forward",
-        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/51152-1697050954.png?lm=1",
-        "Slug": "aleksandar-mitrovic"
-    },
-    {
-        "Name": "Malcom",
-        "Overall": 84,
-        "RealTeam": "Al Hilal",
-        "Position": "Forward",
-        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/323704-1697052788.png?lm=1",
-        "Slug": "malcom"
     },
     {
         "Name": "Roberto Firmino",
@@ -2750,5 +2654,101 @@
         "Position": "Forward",
         "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/327757-1739883988.JPG?lm=1",
         "Slug": "krzysztof-piatek"
+    },
+    {
+        "Name": "Heung-min Son",
+        "Overall": 89,
+        "RealTeam": "Tottenham Hotspur",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/91845-1669336455.jpg?lm=1",
+        "Slug": "heung-min-son"
+    },
+    {
+        "Name": "Jadon Sancho",
+        "Overall": 84,
+        "RealTeam": "Manchester United",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/401173-1688564217.jpg?lm=1",
+        "Slug": "jadon-sancho"
+    },
+    {
+        "Name": "Jean-Philippe Mateta",
+        "Overall": 78,
+        "RealTeam": "Crystal Palace",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/420002-1723202650.jpg?lm=1",
+        "Slug": "jean-philippe-mateta"
+    },
+    {
+        "Name": "Kolo Muani",
+        "Overall": 85,
+        "RealTeam": "Juventus",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/487969-1718697120.jpg?lm=1",
+        "Slug": "kolo-muani"
+    },
+    {
+        "Name": "Mykhaylo Mudryk",
+        "Overall": 81,
+        "RealTeam": "Chelsea",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/537860-1732822624.jpg?lm=1",
+        "Slug": "mykhaylo-mudryk"
+    },
+    {
+        "Name": "Richarlison",
+        "Overall": 82,
+        "RealTeam": "Tottenham Hotspur",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/378710-1665608231.jpg?lm=1",
+        "Slug": "richarlison"
+    },
+    {
+        "Name": "Alexander Sörloth",
+        "Overall": 84,
+        "RealTeam": "Atletico Madrid",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/238407-1716403969.jpg?lm=1",
+        "Slug": "alexander-sorloth"
+    },
+    {
+        "Name": "Romelu Lukaku",
+        "Overall": 85,
+        "RealTeam": "Napoli",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/96341-1661780981.jpg?lm=1",
+        "Slug": "romelu-lukaku"
+    },
+    {
+        "Name": "Antoine Griezmann",
+        "Overall": 86,
+        "RealTeam": "Atletico Madrid",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/125781-1719928503.jpg?lm=1",
+        "Slug": "antoine-griezmann"
+    },
+    {
+        "Name": "Paulo Dybala",
+        "Overall": 86,
+        "RealTeam": "AS Roma",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/206050-1725530843.jpg?lm=1",
+        "Slug": "paulo-dybala"
+    },
+    {
+        "Name": "Aleksandar Mitrović",
+        "Overall": 83,
+        "RealTeam": "Al Hilal",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/51152-1697050954.png?lm=1",
+        "Slug": "aleksandar-mitrovic"
+    },
+    {
+        "Name": "Malcom",
+        "Overall": 84,
+        "RealTeam": "Al Hilal",
+        "Position": "Forward",
+        "ImageUrl": "https://img.a.transfermarkt.technology/portrait/header/323704-1697052788.png?lm=1",
+        "Slug": "malcom"
     }
 ]

@@ -15,8 +15,8 @@ builder.Services.AddDbContext<DreamElevenDbContext>(options =>
 
 
 // Servisleri dependency injection container'a ekliyoruz
-builder.Services.AddScoped<ITeamRepository, EfTeamRepository>();  // DB erişimi için
-builder.Services.AddScoped<ITeamService, TeamManager>();          // Controller'a servis için
+builder.Services.AddScoped<ITeamRepository, EfTeamRepository>();
+builder.Services.AddScoped<ITeamService, TeamManager>();
 builder.Services.AddScoped<IPlayerRepository, EfPlayerRepository>();
 builder.Services.AddScoped<IPlayerService, PlayerManager>();
 builder.Services.AddScoped<ICommentRepository, EfCommentRepository>();

@@ -11,7 +11,7 @@
     <form asp-action="Create" method="post">
         <div class="row">
 
-            <!-- Sol kısım: Takım adı ve diziliş seçimi -->
+            <!-- Sol: Takım adı ve diziliş seçimi -->
             <div class="col-md-4 d-flex flex-column" style="margin-top: 55px;">
 
                 <div class="mb-3">
@@ -35,7 +35,7 @@
             </div>
 
 
-            <!-- Sağ kısım: Takım oyuncularının sahada gösterimi -->
+            <!-- Sağ: Takım oyuncularının sahada gösterimi -->
             <div class="col-md-8">
                 <h4 class="text-center mb-4 text-light">Takım Oluştur</h4>
 
@@ -173,251 +173,254 @@
 
 
 
-<script>
+@section Scripts {
 
-    // Seçilen oyuncuları tutacak bir Set oluşturuyoruz
-    let selectedPlayers = new Set();
+    <script>
+        // Seçilen oyuncuları tutacak bir Set oluşturuyoruz
+        let selectedPlayers = new Set();
 
-    function selectPlayerCard(index, playerId, card, playerImage, playerOverall, playerName) {
-        // Önceki seçili oyuncuyu kaldır
-        const previousPlayerId = document.getElementById('playerSelect' + index).value;
-        if (previousPlayerId && previousPlayerId !== "0") {
-            selectedPlayers.delete(parseInt(previousPlayerId));
+        function selectPlayerCard(index, playerId, card, playerImage, playerOverall, playerName) {
+            // Önceki seçili oyuncuyu kaldır
+            const previousPlayerId = document.getElementById('playerSelect' + index).value;
+            if (previousPlayerId && previousPlayerId !== "0") {
+                selectedPlayers.delete(parseInt(previousPlayerId));
+            }
+
+            // Yeni oyuncuyu ekle
+            selectedPlayers.add(playerId);
+
+            // Mevcut seçim işlemleri
+            const allCards = card.closest('.modal-body').querySelectorAll('.modal-player-card');
+            allCards.forEach(c => c.classList.remove('selected'));
+            card.classList.add('selected');
+
+            document.getElementById('playerSelect' + index).value = playerId;
+            const playerSlot = document.querySelector(`[data-position="${slotFromIndex(index)}"]`);
+            playerSlot.innerHTML = `
+                    <div class="player-card" data-bs-toggle="modal" data-bs-target="#playerModal${index}" style="cursor:pointer;">
+                        <img src="${playerImage}" alt="${playerName}">
+                        <div class="player-info">
+                            <div class="player-name">${playerName}</div>
+                            <div class="player-overall">${playerOverall}</div>
+                        </div>
+                    </div>
+                `;
+
+            // Tüm modallardaki oyuncu görünürlüğünü güncelle
+            updatePlayerVisibility();
+
+            const modal = document.getElementById('playerModal' + index);
+            const bsModal = bootstrap.Modal.getInstance(modal);
+            bsModal.hide();
         }
 
-        // Yeni oyuncuyu ekle
-        selectedPlayers.add(playerId);
+        function slotFromIndex(index) {
+            const playerSlots = document.querySelectorAll('.player-slot');
+            return playerSlots[index]?.dataset.position;
+        }
 
-        // Mevcut seçim işlemleri
-        const allCards = card.closest('.modal-body').querySelectorAll('.modal-player-card');
-        allCards.forEach(c => c.classList.remove('selected'));
-        card.classList.add('selected');
+        // Oyuncu görünürlüğünü güncelleyen fonksiyon
+        function updatePlayerVisibility() {
+            document.querySelectorAll('.modal-player-card').forEach(card => {
+                const playerId = parseInt(card.getAttribute('onclick').match(/selectPlayerCard\(\d+,\s*(\d+)/)[1]);
+                const col = card.closest('.col');
 
-        document.getElementById('playerSelect' + index).value = playerId;
-        const playerSlot = document.querySelector(`[data-position="${slotFromIndex(index)}"]`);
-        playerSlot.innerHTML = `
-        <div class="player-card" data-bs-toggle="modal" data-bs-target="#playerModal${index}" style="cursor:pointer;">
-            <img src="${playerImage}" alt="${playerName}">
-            <div class="player-info">
-                <div class="player-name">${playerName}</div>
-                <div class="player-overall">${playerOverall}</div>
-            </div>
-        </div>
-    `;
+                // Eğer oyuncu seçiliyse ve bu kart seçili olan kartın modalında değilse, gizle
+                if (selectedPlayers.has(playerId)) {
+                    const modalId = card.closest('.modal').id;
+                    const currentPlayerId = document.getElementById('playerSelect' + modalId.replace('playerModal', '')).value;
 
-        // Tüm modallardaki oyuncu görünürlüğünü güncelle
-        updatePlayerVisibility();
-
-        const modal = document.getElementById('playerModal' + index);
-        const bsModal = bootstrap.Modal.getInstance(modal);
-        bsModal.hide();
-    }
-
-    function slotFromIndex(index) {
-        const playerSlots = document.querySelectorAll('.player-slot');
-        return playerSlots[index]?.dataset.position;
-    }
-
-    // Oyuncu görünürlüğünü güncelleyen fonksiyon
-    function updatePlayerVisibility() {
-        document.querySelectorAll('.modal-player-card').forEach(card => {
-            const playerId = parseInt(card.getAttribute('onclick').match(/selectPlayerCard\(\d+,\s*(\d+)/)[1]);
-            const col = card.closest('.col');
-
-            // Eğer oyuncu seçiliyse ve bu kart seçili olan kartın modalında değilse, gizle
-            if (selectedPlayers.has(playerId)) {
-                const modalId = card.closest('.modal').id;
-                const currentPlayerId = document.getElementById('playerSelect' + modalId.replace('playerModal', '')).value;
-
-                if (parseInt(currentPlayerId) !== playerId) {
-                    col.style.display = 'none';
+                    if (parseInt(currentPlayerId) !== playerId) {
+                        col.style.display = 'none';
+                    } else {
+                        col.style.display = '';
+                    }
                 } else {
                     col.style.display = '';
                 }
-            } else {
-                col.style.display = '';
-            }
-        });
-    }
-
-    document.addEventListener('DOMContentLoaded', function () {
-        // Başlangıçta seçili olan oyuncuları topluyoruz
-        document.querySelectorAll('input[name$=".PlayerId"]').forEach(input => {
-            if (input.value && input.value !== "0") {
-                selectedPlayers.add(parseInt(input.value));
-            }
-        });
-
-        // Seçili oyuncuları gizle
-        updatePlayerVisibility();
-
-        const formationSelect = document.getElementById('formationSelect');
-
-        function updatePositions(formation) {
-            const positions = document.querySelectorAll('.player-slot');
-            const [def, mid, fwd] = formation.split('-').map(Number);
-
-            positions[0].style.left = '50%';
-            positions[0].style.top = '85%';
-
-            let currentIndex = 1;
-
-            for (let i = 0; i < def; i++) {
-                positions[currentIndex].style.left = `${(100 / (def + 1)) * (i + 1)}%`;
-                positions[currentIndex].style.top = '63%';
-                currentIndex++;
-            }
-
-            for (let i = 0; i < mid; i++) {
-                positions[currentIndex].style.left = `${(100 / (mid + 1)) * (i + 1)}%`;
-                positions[currentIndex].style.top = '40%';
-                currentIndex++;
-            }
-
-            for (let i = 0; i < fwd; i++) {
-                positions[currentIndex].style.left = `${(100 / (fwd + 1)) * (i + 1)}%`;
-                positions[currentIndex].style.top = '15%';
-                currentIndex++;
-            }
+            });
         }
 
-        formationSelect.addEventListener('change', function () {
-            const selectedFormation = this.value;
-            document.getElementById('Formation').value = selectedFormation;
-            window.location.href = `/Team/Create?formation=${selectedFormation}`;
-        });
-
-        updatePositions(formationSelect.value);
-
-        const saveTeamBtn = document.getElementById('saveTeamBtn');
-        saveTeamBtn.addEventListener('click', function (e) {
-            let allSelected = true;
-
-            document.querySelectorAll('input[name$=".PlayerId"]').forEach((input) => {
-                if (input.value === "" || input.value === "0") {
-                    allSelected = false;
+        document.addEventListener('DOMContentLoaded', function () {
+            // Başlangıçta seçili olan oyuncuları topluyoruz
+            document.querySelectorAll('input[name$=".PlayerId"]').forEach(input => {
+                if (input.value && input.value !== "0") {
+                    selectedPlayers.add(parseInt(input.value));
                 }
             });
 
-            if (!allSelected) {
-                e.preventDefault();
-                e.stopPropagation();
-                alert("Tüm oyuncuları seçmelisiniz!");
+            // Seçili oyuncuları gizle
+            updatePlayerVisibility();
+
+            const formationSelect = document.getElementById('formationSelect');
+
+            function updatePositions(formation) {
+                const positions = document.querySelectorAll('.player-slot');
+                const [def, mid, fwd] = formation.split('-').map(Number);
+
+                positions[0].style.left = '50%';
+                positions[0].style.top = '85%';
+
+                let currentIndex = 1;
+
+                for (let i = 0; i < def; i++) {
+                    positions[currentIndex].style.left = `${(100 / (def + 1)) * (i + 1)}%`;
+                    positions[currentIndex].style.top = '63%';
+                    currentIndex++;
+                }
+
+                for (let i = 0; i < mid; i++) {
+                    positions[currentIndex].style.left = `${(100 / (mid + 1)) * (i + 1)}%`;
+                    positions[currentIndex].style.top = '40%';
+                    currentIndex++;
+                }
+
+                for (let i = 0; i < fwd; i++) {
+                    positions[currentIndex].style.left = `${(100 / (fwd + 1)) * (i + 1)}%`;
+                    positions[currentIndex].style.top = '15%';
+                    currentIndex++;
+                }
             }
-        });
 
-        // Modal açıldığında oyuncu görünürlüğünü güncelle
-        document.querySelectorAll('.modal').forEach(modal => {
-            modal.addEventListener('show.bs.modal', function () {
-                updatePlayerVisibility();
+            formationSelect.addEventListener('change', function () {
+                const selectedFormation = this.value;
+                document.getElementById('Formation').value = selectedFormation;
+                window.location.href = `/Team/Create?formation=${selectedFormation}`;
             });
-        });
 
-        // Arama işlevselliği
-        document.querySelectorAll('.player-search').forEach(searchInput => {
-            searchInput.addEventListener('input', function () {
-                const modalId = this.dataset.modalId;
-                const searchTerm = this.value.toLowerCase();
-                const playerCards = document.querySelectorAll(`#playerModal${modalId} .modal-player-card`);
+            updatePositions(formationSelect.value);
 
-                playerCards.forEach(card => {
-                    const col = card.closest('.col');
-                    const playerName = card.querySelector('.card-title').textContent.toLowerCase();
-                    const playerTeam = card.querySelector('small').textContent.toLowerCase();
+            const saveTeamBtn = document.getElementById('saveTeamBtn');
+            saveTeamBtn.addEventListener('click', function (e) {
+                let allSelected = true;
 
-                    if (searchTerm === "" || playerName.includes(searchTerm) || playerTeam.includes(searchTerm)) {
-                        col.style.display = ''; // Eğer arama kutusu boşsa, tüm oyuncuları göster
-                    } else {
-                        col.style.display = 'none';
+                document.querySelectorAll('input[name$=".PlayerId"]').forEach((input) => {
+                    if (input.value === "" || input.value === "0") {
+                        allSelected = false;
                     }
+                });
+
+                if (!allSelected) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    alert("Tüm oyuncuları seçmelisiniz!");
+                }
+            });
+
+            // Modal açıldığında oyuncu görünürlüğünü güncelle
+            document.querySelectorAll('.modal').forEach(modal => {
+                modal.addEventListener('show.bs.modal', function () {
+                    updatePlayerVisibility();
+                });
+            });
+
+            // Arama işlevselliği
+            document.querySelectorAll('.player-search').forEach(searchInput => {
+                searchInput.addEventListener('input', function () {
+                    const modalId = this.dataset.modalId;
+                    const searchTerm = this.value.toLowerCase();
+                    const playerCards = document.querySelectorAll(`#playerModal${modalId} .modal-player-card`);
+
+                    playerCards.forEach(card => {
+                        const col = card.closest('.col');
+                        const playerName = card.querySelector('.card-title').textContent.toLowerCase();
+                        const playerTeam = card.querySelector('small').textContent.toLowerCase();
+
+                        if (searchTerm === "" || playerName.includes(searchTerm) || playerTeam.includes(searchTerm)) {
+                            col.style.display = ''; // Eğer arama kutusu boşsa, tüm oyuncuları göster
+                        } else {
+                            col.style.display = 'none';
+                        }
+                    });
                 });
             });
         });
-    });
 
-</script>
+    </script>
 
 
-<style>
-    .modal-content {
-        background: rgba(20, 20, 20, 0.95);
-        color: #ffffffd9;
-        border: 1px solid #333;
-    }
+    <style>
+        .modal-content {
+            background: rgba(20, 20, 20, 0.95);
+            color: #ffffffd9;
+            border: 1px solid #333;
+        }
 
-    .modal-body {
-        max-height: 70vh;
-        overflow-y: auto;
-    }
+        .modal-body {
+            max-height: 70vh;
+            overflow-y: auto;
+        }
 
-    body.modal-open {
-        padding-right: 0 !important;
-        overflow-y: auto !important;
+        body.modal-open {
+            padding-right: 0 !important;
+            overflow-y: auto !important;
 
-    }
+        }
 
-    .search-container {
-        flex: 1;
-        margin: 0 15px;
-    }
+        .search-container {
+            flex: 1;
+            margin: 0 15px;
+        }
 
-    .player-search {
-        width: 100%;
-        max-width: 300px;
-        background: rgba(255, 255, 255, 0.1);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        color: white;
-    }
+        .player-search {
+            width: 100%;
+            max-width: 300px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+        }
 
-    .player-search:focus {
-        background: rgba(255, 255, 255, 0.15);
-        border-color: rgba(255, 255, 255, 0.3);
-        color: white;
-        box-shadow: none;
-    }
+        .player-search:focus {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.3);
+            color: white;
+            box-shadow: none;
+        }
 
-    .player-search::placeholder {
-        color: rgba(255, 255, 255, 0.6);
-    }
+        .player-search::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
 
-    .modal-player-card {
-        background: rgba(44, 44, 44, 0.85);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        cursor: pointer;
-    }
+        .modal-player-card {
+            background: rgba(44, 44, 44, 0.85);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
 
-    .modal-player-card:hover {
-        transform: scale(1.03);
-    }
+        .modal-player-card:hover {
+            transform: scale(1.03);
+        }
 
-    .overall-badge {
-        position: absolute;
-        top: 8px;
-        right: 12px;
-        z-index: 2;
-    }
+        .overall-badge {
+            position: absolute;
+            top: 8px;
+            right: 12px;
+            z-index: 2;
+        }
 
-    .overall-badge .badge {
-        font-size: 1rem;
-        padding: 0.4rem 0.6rem;
-        background-color: #0d6efd;
-        color: white;
-    }
+        .overall-badge .badge {
+            font-size: 1rem;
+            padding: 0.4rem 0.6rem;
+            background-color: #0d6efd;
+            color: white;
+        }
 
-    .position-select {
-        width: 45px;
-        height: 45px;
-        border-radius: 50%;
-        background: white;
-        border: 2px solid #fff;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 22px;
-        transition: all 0.3s ease;
-    }
+        .position-select {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: white;
+            border: 2px solid #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            transition: all 0.3s ease;
+        }
 
-    .position-select:hover {
-        transform: scale(1.1);
-    }
-</style>
+        .position-select:hover {
+            transform: scale(1.1);
+        }
+    </style>
+
+}

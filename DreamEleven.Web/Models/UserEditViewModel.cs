@@ -1,5 +1,3 @@
-using System.ComponentModel.DataAnnotations;
-
 public class UserEditViewModel
 {
     public required string Id { get; set; }

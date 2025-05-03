@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DreamEleven.Entities")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+99f38a4833285559630126945ebe93c59c7cad88")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7a6bad9b5826f6e7b6b1e1e998d77c7871cbae2c")]
 [assembly: System.Reflection.AssemblyProductAttribute("DreamEleven.Entities")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DreamEleven.Entities")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

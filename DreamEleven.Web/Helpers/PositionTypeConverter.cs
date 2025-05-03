@@ -1,4 +1,3 @@
-using System;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using DreamEleven.Entities;
@@ -11,7 +10,7 @@ namespace DreamEleven.Web
         {
             var value = reader.GetString();
 
-            return value switch  // json'dan gelen oyuncu mevkilerini burada entity'deki enum değerleriyle eşleştirdik.
+            return value switch  // Json'dan gelen oyuncu mevkilerini burada entity'deki enum değerleriyle eşleştirdik.
             {
                 "Goalkeeper" => Player.PositionType.Goalkeeper,
                 "Defender" => Player.PositionType.Defender,
