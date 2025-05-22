@@ -3,7 +3,7 @@
 ---
 
 # 🌟 Dream Eleven Nedir?
-Dream Eleven, kullanıcıların öne çıkan futbolculardan **hayal takımları** oluşturabileceği, **haftanın en iyi oyuncularını** ve **popüler futbolcuları** takip edebileceği özel bir web platformudur.
+Dream Eleven, kullanıcıların haftanın en iyi ve en popüler oyuncularını takip edip kendi ideal takımlarını kurabilecekleri özel bir web platformudur.
 
 Bu platformda:
 - 📊 Kullanıcılar kendi takımlarını kurar.
@@ -64,3 +64,22 @@ Bu platformda:
 
 - **Session Management:**
   - Haftanın popüler takımları ve oyuncuları sayfa yenilense bile sabit kalır.
+
+---
+
+## 📸 Görüntüler
+
+### Ana Sayfa
+![Ana Sayfa](assets/homepage.jpg)
+
+### Oyuncu Detayları
+![Oyuncu Detayları](assets/playerdetails.jpg)
+
+### Takım Detayları
+![Takım Detayları](assets/teamdetails.jpg)
+
+### Kullanıcı Detayları
+![Kullanıcı Detayları](assets/userdetails.jpg)
+
+### Giriş / Kayıt Sayfaları
+![Giriş / Kayıt Sayfaları](assets/register.jpg)
